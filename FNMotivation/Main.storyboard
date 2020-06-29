@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -21,37 +22,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="SeH-Fg-ge3">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="B7f-qR-QsG">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homeCell" rowHeight="172" id="uLM-GX-Xdu" customClass="HomeViewCell" customModule="FNMotivation" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.5" width="374" height="172"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uLM-GX-Xdu" id="R8m-yi-73x">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="172"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kal-P6-NhL">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeCell" id="D6o-IL-hKG" customClass="HomeViewCell" customModule="FNMotivation" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="20" width="394" height="180"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uii-ib-tgZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CwV-eN-2za">
-                                                    <rect key="frame" x="20" y="13" width="334" height="146.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aTU-tO-SgT">
+                                                    <rect key="frame" x="20" y="17" width="354" height="146.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="u13-kZ-NrH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="43"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="YyP-GR-dvq">
+                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="43"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dutch Coronavirus cases rise by 729 to 34,136" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JI-iS-AhX">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="266" height="43"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dutch Coronavirus cases rise by 729 to 34,136" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRY-sA-pFm">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="286" height="43"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="43" id="WTA-8j-gsr"/>
-                                                                        <constraint firstAttribute="width" constant="271" id="nIh-zB-81E"/>
+                                                                        <constraint firstAttribute="height" constant="43" id="iGP-o7-GTC"/>
+                                                                        <constraint firstAttribute="width" constant="271" id="qCl-8G-Mjs"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHb-k1-g4f">
-                                                                    <rect key="frame" x="298" y="0.0" width="36" height="36"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="did-99-0hj">
+                                                                    <rect key="frame" x="318" y="0.0" width="36" height="36"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="36" id="3hW-dv-Ytd"/>
-                                                                        <constraint firstAttribute="width" constant="36" id="Mm2-Nk-67b"/>
+                                                                        <constraint firstAttribute="height" constant="36" id="o4W-yy-2hI"/>
+                                                                        <constraint firstAttribute="width" constant="36" id="y5T-gj-sWt"/>
                                                                     </constraints>
                                                                     <state key="normal" image="icn_favorite">
                                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large">
@@ -61,72 +69,77 @@
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izr-a7-n8Z">
-                                                            <rect key="frame" x="0.0" y="53" width="334" height="14.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6Z-a7-3d3">
+                                                            <rect key="frame" x="0.0" y="53" width="354" height="14.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Heart Disease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Su2-AC-ipV">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="204.5" height="14.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Heart Disease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEv-k5-9pi">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="224.5" height="14.5"/>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
                                                                     <color key="textColor" name="DarkBlue"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Rigga on 14/03/2020" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wf9-1E-1a0">
-                                                                    <rect key="frame" x="204.5" y="0.0" width="129.5" height="14.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Rigga on 14/03/2020" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USI-ML-BEM">
+                                                                    <rect key="frame" x="224.5" y="0.0" width="129.5" height="14.5"/>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dutch Coronavirus cases rise by 729 to 34,136. Dutch Coronavirus cases rise by 729 to 34,136." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLT-VQ-Pyt">
-                                                            <rect key="frame" x="0.0" y="77.5" width="334" height="29"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dutch Coronavirus cases rise by 729 to 34,136. Dutch Coronavirus cases rise by 729 to 34,136." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLr-L0-36K">
+                                                            <rect key="frame" x="0.0" y="77.5" width="354" height="29"/>
                                                             <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="12"/>
                                                             <color key="textColor" name="DarkGray"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="krF-Ln-7Xg">
-                                                            <rect key="frame" x="0.0" y="116.5" width="334" height="30"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="k6K-nt-QCp">
+                                                            <rect key="frame" x="0.0" y="116.5" width="354" height="30"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLg-u2-XpV">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2D-tO-jmE">
                                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
                                                                     <color key="backgroundColor" name="Orange"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="100" id="CSX-7A-ALV"/>
-                                                                        <constraint firstAttribute="height" constant="30" id="UOc-b7-S4G"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="Pz1-wI-Kmf"/>
+                                                                        <constraint firstAttribute="width" constant="100" id="aCq-JB-t2s"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                                                     <state key="normal" title="Follow">
                                                                         <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m19-Bg-Pte">
-                                                                    <rect key="frame" x="132" y="0.0" width="30" height="30"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqd-dN-Kum">
+                                                                    <rect key="frame" x="142" y="0.0" width="30" height="30"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="30" id="HEG-TW-6GH"/>
-                                                                        <constraint firstAttribute="width" constant="30" id="uMT-OW-brU"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="3EU-R6-DTw"/>
+                                                                        <constraint firstAttribute="width" constant="30" id="pnu-bC-g6p"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                                     <state key="normal" image="icn_share">
                                                                         <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     </state>
                                                                 </button>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neF-Bn-od2">
-                                                                    <rect key="frame" x="194" y="0.0" width="140" height="30"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zus-hM-UG3">
+                                                                    <rect key="frame" x="214" y="0.0" width="140" height="30"/>
                                                                     <subviews>
-                                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHC-Ae-uNq">
+                                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqN-u4-dJt">
                                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="70" id="M0i-da-kVI"/>
+                                                                                <constraint firstAttribute="width" constant="70" id="xqU-mq-idm"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                                             <state key="normal" title="120" image="icn_comment">
                                                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             </state>
                                                                         </button>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfL-Z8-TsR">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXC-aN-Zx3">
                                                                             <rect key="frame" x="70" y="0.0" width="70" height="30"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="70" id="5NF-Ea-PSc"/>
+                                                                                <constraint firstAttribute="width" constant="70" id="qKX-hu-TiY"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                                             <state key="normal" title="23" image="icn_like">
@@ -139,41 +152,54 @@
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="146.5" id="zG7-ov-LXA"/>
+                                                        <constraint firstAttribute="height" constant="146.5" id="5e5-dI-8dP"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="146.5" id="S32-1H-lqu"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="CwV-eN-2za" firstAttribute="centerY" secondItem="R8m-yi-73x" secondAttribute="centerY" id="1jG-7g-2gY"/>
-                                                <constraint firstItem="CwV-eN-2za" firstAttribute="leading" secondItem="R8m-yi-73x" secondAttribute="leading" constant="20" id="jX1-Ra-bv8"/>
-                                                <constraint firstAttribute="trailing" secondItem="CwV-eN-2za" secondAttribute="trailing" constant="20" id="rJL-mO-zSE"/>
+                                                <constraint firstItem="aTU-tO-SgT" firstAttribute="leading" secondItem="uii-ib-tgZ" secondAttribute="leading" constant="20" id="6gp-Ju-1CC"/>
+                                                <constraint firstItem="aTU-tO-SgT" firstAttribute="centerY" secondItem="uii-ib-tgZ" secondAttribute="centerY" id="Lto-wB-flT"/>
+                                                <constraint firstAttribute="trailing" secondItem="aTU-tO-SgT" secondAttribute="trailing" constant="20" id="M5Y-CB-lPa"/>
                                             </constraints>
-                                        </tableViewCellContentView>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <size key="customSize" width="394" height="180"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="authorLabel" destination="wf9-1E-1a0" id="7k9-z3-7s2"/>
-                                            <outlet property="bookmarkButton" destination="PHb-k1-g4f" id="qIH-VN-gN1"/>
-                                            <outlet property="categoryLabel" destination="Su2-AC-ipV" id="ETl-5t-K9c"/>
-                                            <outlet property="commentsButton" destination="VHC-Ae-uNq" id="kGN-QP-JTb"/>
-                                            <outlet property="excerptLabel" destination="JLT-VQ-Pyt" id="aQu-Go-I3B"/>
-                                            <outlet property="followButton" destination="qLg-u2-XpV" id="ARe-hj-ZIs"/>
-                                            <outlet property="likesButton" destination="cfL-Z8-TsR" id="7fh-Q7-R5M"/>
-                                            <outlet property="shareButton" destination="m19-Bg-Pte" id="ue8-iI-wwL"/>
-                                            <outlet property="titleLabel" destination="0JI-iS-AhX" id="KfM-Xz-adk"/>
+                                            <outlet property="authorLabel" destination="USI-ML-BEM" id="4OD-Y1-lXo"/>
+                                            <outlet property="bookmarkButton" destination="did-99-0hj" id="i03-D4-wXX"/>
+                                            <outlet property="categoryLabel" destination="HEv-k5-9pi" id="lUu-Ox-8UG"/>
+                                            <outlet property="commentsButton" destination="EqN-u4-dJt" id="AEf-tc-jeO"/>
+                                            <outlet property="excerptLabel" destination="WLr-L0-36K" id="t17-6d-2YU"/>
+                                            <outlet property="followButton" destination="W2D-tO-jmE" id="QoW-mq-Hdb"/>
+                                            <outlet property="likesButton" destination="HXC-aN-Zx3" id="MWD-jJ-4mK"/>
+                                            <outlet property="shareButton" destination="cqd-dN-Kum" id="pDG-bi-Qgu"/>
+                                            <outlet property="titleLabel" destination="WRY-sA-pFm" id="8FC-JB-yMz"/>
                                         </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="cxx-5E-5Sq" id="6KR-eo-Odj"/>
-                                    <outlet property="delegate" destination="cxx-5E-5Sq" id="oV6-cc-3hX"/>
+                                    <outlet property="dataSource" destination="cxx-5E-5Sq" id="paX-Cu-2ji"/>
+                                    <outlet property="delegate" destination="cxx-5E-5Sq" id="zsD-wl-X7h"/>
                                 </connections>
-                            </tableView>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="SeH-Fg-ge3" firstAttribute="leading" secondItem="ZPr-ZE-A0A" secondAttribute="leading" id="Oph-qg-4K1"/>
-                            <constraint firstItem="SeH-Fg-ge3" firstAttribute="trailing" secondItem="ZPr-ZE-A0A" secondAttribute="trailing" id="cG6-9P-zFz"/>
-                            <constraint firstItem="SeH-Fg-ge3" firstAttribute="bottom" secondItem="ZPr-ZE-A0A" secondAttribute="bottom" id="ekt-xd-zIs"/>
-                            <constraint firstItem="SeH-Fg-ge3" firstAttribute="top" secondItem="ZPr-ZE-A0A" secondAttribute="top" id="ifX-uY-hF5"/>
+                            <constraint firstItem="B7f-qR-QsG" firstAttribute="trailing" secondItem="ZPr-ZE-A0A" secondAttribute="trailing" id="8bS-pg-dIi"/>
+                            <constraint firstItem="B7f-qR-QsG" firstAttribute="leading" secondItem="ZPr-ZE-A0A" secondAttribute="leading" id="GE4-Ck-THU"/>
+                            <constraint firstItem="B7f-qR-QsG" firstAttribute="top" secondItem="ZPr-ZE-A0A" secondAttribute="top" id="ayX-Xh-EOh"/>
+                            <constraint firstItem="B7f-qR-QsG" firstAttribute="bottom" secondItem="ZPr-ZE-A0A" secondAttribute="bottom" id="pNZ-NK-TMv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZPr-ZE-A0A"/>
                     </view>
@@ -181,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pae-Ee-6p7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63.768115942028992" y="-654.24107142857144"/>
+            <point key="canvasLocation" x="19" y="-654"/>
         </scene>
         <!--Community-->
         <scene sceneID="nD2-Ti-jNp">
@@ -332,12 +358,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIM-ee-t7o">
                                         <rect key="frame" x="20" y="21" width="374" height="86"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_notification" translatesAutoresizingMaskIntoConstraints="NO" id="rK0-SK-y5w">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amiro-memoji" translatesAutoresizingMaskIntoConstraints="NO" id="rK0-SK-y5w">
                                                 <rect key="frame" x="0.0" y="0.0" width="86" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="86" id="4VB-Y7-JXb"/>
                                                     <constraint firstAttribute="width" constant="86" id="K5E-rf-grl"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="43"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="25B-6E-vaE">
                                                 <rect key="frame" x="86" y="0.0" width="288" height="86"/>
@@ -523,6 +554,7 @@
                             <constraint firstAttribute="trailing" secondItem="MKW-xe-muz" secondAttribute="trailing" id="iy6-of-OgL"/>
                             <constraint firstItem="MKW-xe-muz" firstAttribute="leading" secondItem="4XV-vd-k1O" secondAttribute="leading" id="qol-Q5-met"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="lVR-xd-92z"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b66-8C-Cbn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -531,6 +563,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="amiro-memoji" width="394" height="393"/>
         <image name="icn_comment" width="24" height="24"/>
         <image name="icn_community" width="30" height="30"/>
         <image name="icn_community_active" width="30" height="30"/>

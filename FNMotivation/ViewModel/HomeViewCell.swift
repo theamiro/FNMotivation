@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewCell: UITableViewCell {
+class HomeViewCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bookmarkButton: UIButton!
@@ -20,15 +20,4 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var commentsButton: UIButton!
     @IBOutlet weak var likesButton: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
