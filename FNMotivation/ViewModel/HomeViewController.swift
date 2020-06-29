@@ -33,6 +33,7 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         print(indexPath.row)
+        self.performSegue(withIdentifier: "toDetailView", sender: self)
     }
 }
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
