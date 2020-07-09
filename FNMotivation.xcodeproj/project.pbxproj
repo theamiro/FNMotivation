@@ -11,6 +11,9 @@
 		020A621C2493EAD50010AB3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020A621B2493EAD50010AB3F /* Main.storyboard */; };
 		020A621E2493F1920010AB3F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 020A621D2493F1920010AB3F /* Colors.xcassets */; };
 		020A62202493F60F0010AB3F /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 020A621F2493F60F0010AB3F /* fonts */; };
+		02411DEA24B6FF3700E3158F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02411DE924B6FF3700E3158F /* User.swift */; };
+		02411DED24B6FFE300E3158F /* NetworkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02411DEC24B6FFE300E3158F /* NetworkingController.swift */; };
+		02411DEF24B7026000E3158F /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02411DEE24B7026000E3158F /* DefaultValues.swift */; };
 		029859832493E39400FDAF1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029859822493E39400FDAF1C /* AppDelegate.swift */; };
 		029859852493E39400FDAF1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029859842493E39400FDAF1C /* SceneDelegate.swift */; };
 		029859872493E39400FDAF1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029859862493E39400FDAF1C /* ViewController.swift */; };
@@ -48,6 +51,9 @@
 		020A621B2493EAD50010AB3F /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		020A621D2493F1920010AB3F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		020A621F2493F60F0010AB3F /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		02411DE924B6FF3700E3158F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		02411DEC24B6FFE300E3158F /* NetworkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingController.swift; sourceTree = "<group>"; };
+		02411DEE24B7026000E3158F /* DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
 		0298597F2493E39400FDAF1C /* FNMotivation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FNMotivation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029859822493E39400FDAF1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		029859842493E39400FDAF1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02411DEB24B6FFC600E3158F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				02411DEC24B6FFE300E3158F /* NetworkingController.swift */,
+				02411DEE24B7026000E3158F /* DefaultValues.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		029859762493E39400FDAF1C = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +142,7 @@
 		029859812493E39400FDAF1C /* FNMotivation */ = {
 			isa = PBXGroup;
 			children = (
+				02411DEB24B6FFC600E3158F /* Extensions */,
 				02AAC3D12494A52B002A2B49 /* Model */,
 				02AAC3D42494A54F002A2B49 /* View */,
 				02AAC3D32494A542002A2B49 /* ViewModel */,
@@ -166,6 +182,7 @@
 		02AAC3D12494A52B002A2B49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02411DE924B6FF3700E3158F /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -453,9 +470,12 @@
 				02AAC3D62494A57F002A2B49 /* HomeViewController.swift in Sources */,
 				029859872493E39400FDAF1C /* ViewController.swift in Sources */,
 				029859832493E39400FDAF1C /* AppDelegate.swift in Sources */,
+				02411DED24B6FFE300E3158F /* NetworkingController.swift in Sources */,
+				02411DEF24B7026000E3158F /* DefaultValues.swift in Sources */,
 				029859852493E39400FDAF1C /* SceneDelegate.swift in Sources */,
 				0298598D2493E39400FDAF1C /* FNMotivation.xcdatamodeld in Sources */,
 				02AAC3D82494A63B002A2B49 /* HomeViewCell.swift in Sources */,
+				02411DEA24B6FF3700E3158F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

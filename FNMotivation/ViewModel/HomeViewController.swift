@@ -9,12 +9,10 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
     let reuseIdentifier = "homeCell"
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
 }
 extension HomeViewController: UICollectionViewDataSource {
