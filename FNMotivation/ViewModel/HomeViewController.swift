@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeViewController: UIViewController {
     let reuseIdentifier = "homeCell"
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }
 extension HomeViewController: UICollectionViewDataSource {
@@ -36,7 +36,7 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 40.0, height: 180.0)
+        return CGSize(width: view.frame.width - 40.0, height: 200.0)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 20.0

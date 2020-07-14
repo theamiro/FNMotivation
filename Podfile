@@ -9,6 +9,8 @@ target 'FNMotivation' do
 pod 'Firebase/Analytics'
 pod 'IQKeyboardManagerSwift'
 pod 'Alamofire', '~> 5.2'
+pod 'XLPagerTabStrip'
+pod 'DLRadioButton', '~> 1.4'
 
   target 'FNMotivationTests' do
     inherit! :search_paths

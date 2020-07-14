@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.2.1)
+  - DLRadioButton (1.4.12)
   - Firebase/Analytics (6.14.0):
     - Firebase/Core
   - Firebase/Core (6.14.0):
@@ -66,15 +67,19 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - DLRadioButton (~> 1.4)
   - Firebase/Analytics
   - IQKeyboardManagerSwift
+  - XLPagerTabStrip
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - DLRadioButton
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -87,9 +92,11 @@ SPEC REPOS:
     - GoogleUtilities
     - IQKeyboardManagerSwift
     - nanopb
+    - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   Firebase: 0219bb4782eb1406f1b9b0628a2e625484ce910d
   FirebaseAnalytics: f68b9f3f1241385129ae0a83b63627fc420c05e5
   FirebaseCore: 632e05cc5e1199d9147122c16d92305eb04c34bd
@@ -102,7 +109,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: 29bd0d8f850efbd28cff6d99e8b7da1f8d236bcf
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 806f6828b7a7a9989050e198028e90b67b7506fc
+PODFILE CHECKSUM: 5e78da2366aed9c8ab4d6e1d82ab25807782e54b
 
 COCOAPODS: 1.9.1

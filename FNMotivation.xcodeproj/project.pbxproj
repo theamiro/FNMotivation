@@ -11,9 +11,14 @@
 		020A621C2493EAD50010AB3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020A621B2493EAD50010AB3F /* Main.storyboard */; };
 		020A621E2493F1920010AB3F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 020A621D2493F1920010AB3F /* Colors.xcassets */; };
 		020A62202493F60F0010AB3F /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 020A621F2493F60F0010AB3F /* fonts */; };
+		020B200424BE18FD003E2F58 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B200324BE18FD003E2F58 /* AuthenticationViewController.swift */; };
+		020B200724BE2023003E2F58 /* StoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B200624BE2023003E2F58 /* StoryDetailViewController.swift */; };
 		02411DEA24B6FF3700E3158F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02411DE924B6FF3700E3158F /* User.swift */; };
 		02411DED24B6FFE300E3158F /* NetworkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02411DEC24B6FFE300E3158F /* NetworkingController.swift */; };
 		02411DEF24B7026000E3158F /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02411DEE24B7026000E3158F /* DefaultValues.swift */; };
+		027BB39724BDC53900F6FFA2 /* FNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BB39624BDC53900F6FFA2 /* FNView.swift */; };
+		027BB39A24BDED1D00F6FFA2 /* FNTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BB39924BDED1D00F6FFA2 /* FNTextField.swift */; };
+		027BB39C24BDFC7100F6FFA2 /* FNCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BB39B24BDFC7100F6FFA2 /* FNCheckBox.swift */; };
 		029859832493E39400FDAF1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029859822493E39400FDAF1C /* AppDelegate.swift */; };
 		029859852493E39400FDAF1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029859842493E39400FDAF1C /* SceneDelegate.swift */; };
 		029859872493E39400FDAF1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029859862493E39400FDAF1C /* ViewController.swift */; };
@@ -21,8 +26,16 @@
 		0298598F2493E39900FDAF1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0298598E2493E39900FDAF1C /* Assets.xcassets */; };
 		0298599D2493E39A00FDAF1C /* FNMotivationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298599C2493E39A00FDAF1C /* FNMotivationTests.swift */; };
 		029859A82493E39A00FDAF1C /* FNMotivationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029859A72493E39A00FDAF1C /* FNMotivationUITests.swift */; };
+		02A2A49624BB646400FF99A7 /* AuthenticationDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2A49524BB646400FF99A7 /* AuthenticationDataObject.swift */; };
+		02A2A49824BB649C00FF99A7 /* NetworkingValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2A49724BB649C00FF99A7 /* NetworkingValues.swift */; };
+		02A2A49B24BB72B200FF99A7 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2A49A24BB72B200FF99A7 /* ErrorMessages.swift */; };
+		02A2A49E24BB73D300FF99A7 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2A49D24BB73D300FF99A7 /* AuthenticationManager.swift */; };
+		02AA45D824BD9C69002624C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AA45D724BD9C69002624C0 /* LoginViewController.swift */; };
+		02AA45DE24BDAA4D002624C0 /* AuthenticationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AA45DD24BDAA4D002624C0 /* AuthenticationBarViewController.swift */; };
+		02AA45E024BDAB5D002624C0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AA45DF24BDAB5D002624C0 /* RegisterViewController.swift */; };
 		02AAC3D62494A57F002A2B49 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AAC3D52494A57F002A2B49 /* HomeViewController.swift */; };
 		02AAC3D82494A63B002A2B49 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AAC3D72494A63B002A2B49 /* HomeViewCell.swift */; };
+		02FABDAB24BDBFFC0099A931 /* FNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FABDAA24BDBFFC0099A931 /* FNButton.swift */; };
 		2A33728793CDF5818B456362 /* Pods_FNMotivation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8ED8D6DDE86BE7B0CB6638 /* Pods_FNMotivation.framework */; };
 		A99E572909CF60395070DFE0 /* Pods_FNMotivation_FNMotivationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFCB98DC640C6A68496EB31 /* Pods_FNMotivation_FNMotivationUITests.framework */; };
 		EA100E7CB6D8553E55296011 /* Pods_FNMotivationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F03DBA4AC1225A97CF6CEC1 /* Pods_FNMotivationTests.framework */; };
@@ -51,9 +64,14 @@
 		020A621B2493EAD50010AB3F /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		020A621D2493F1920010AB3F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		020A621F2493F60F0010AB3F /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		020B200324BE18FD003E2F58 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		020B200624BE2023003E2F58 /* StoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController.swift; sourceTree = "<group>"; };
 		02411DE924B6FF3700E3158F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		02411DEC24B6FFE300E3158F /* NetworkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingController.swift; sourceTree = "<group>"; };
 		02411DEE24B7026000E3158F /* DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
+		027BB39624BDC53900F6FFA2 /* FNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNView.swift; sourceTree = "<group>"; };
+		027BB39924BDED1D00F6FFA2 /* FNTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNTextField.swift; sourceTree = "<group>"; };
+		027BB39B24BDFC7100F6FFA2 /* FNCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNCheckBox.swift; sourceTree = "<group>"; };
 		0298597F2493E39400FDAF1C /* FNMotivation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FNMotivation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029859822493E39400FDAF1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		029859842493E39400FDAF1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,8 +85,16 @@
 		029859A32493E39A00FDAF1C /* FNMotivationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FNMotivationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		029859A72493E39A00FDAF1C /* FNMotivationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNMotivationUITests.swift; sourceTree = "<group>"; };
 		029859A92493E39A00FDAF1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02A2A49524BB646400FF99A7 /* AuthenticationDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDataObject.swift; sourceTree = "<group>"; };
+		02A2A49724BB649C00FF99A7 /* NetworkingValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingValues.swift; sourceTree = "<group>"; };
+		02A2A49A24BB72B200FF99A7 /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
+		02A2A49D24BB73D300FF99A7 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		02AA45D724BD9C69002624C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		02AA45DD24BDAA4D002624C0 /* AuthenticationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationBarViewController.swift; sourceTree = "<group>"; };
+		02AA45DF24BDAB5D002624C0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		02AAC3D52494A57F002A2B49 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		02AAC3D72494A63B002A2B49 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		02FABDAA24BDBFFC0099A931 /* FNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNButton.swift; sourceTree = "<group>"; };
 		0F03DBA4AC1225A97CF6CEC1 /* Pods_FNMotivationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FNMotivationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3B39107F73353E0A3B91F0 /* Pods-FNMotivation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FNMotivation.release.xcconfig"; path = "Target Support Files/Pods-FNMotivation/Pods-FNMotivation.release.xcconfig"; sourceTree = "<group>"; };
 		24040B61A6615AE74F28A09D /* Pods-FNMotivation-FNMotivationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FNMotivation-FNMotivationUITests.release.xcconfig"; path = "Target Support Files/Pods-FNMotivation-FNMotivationUITests/Pods-FNMotivation-FNMotivationUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,13 +134,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		020B200524BE200D003E2F58 /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				020B200624BE2023003E2F58 /* StoryDetailViewController.swift */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
 		02411DEB24B6FFC600E3158F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				027BB39824BDED0400F6FFA2 /* Textfields */,
+				027BB39524BDC52200F6FFA2 /* Views */,
+				02FABDA924BDBFE60099A931 /* Buttons */,
+				02A2A49C24BB73BF00FF99A7 /* AuthenticationManager */,
+				02A2A49924BB72A200FF99A7 /* Validation */,
 				02411DEC24B6FFE300E3158F /* NetworkingController.swift */,
 				02411DEE24B7026000E3158F /* DefaultValues.swift */,
+				02A2A49724BB649C00FF99A7 /* NetworkingValues.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		027BB39524BDC52200F6FFA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				027BB39624BDC53900F6FFA2 /* FNView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		027BB39824BDED0400F6FFA2 /* Textfields */ = {
+			isa = PBXGroup;
+			children = (
+				027BB39924BDED1D00F6FFA2 /* FNTextField.swift */,
+			);
+			path = Textfields;
 			sourceTree = "<group>";
 		};
 		029859762493E39400FDAF1C = {
@@ -179,6 +235,34 @@
 			path = FNMotivationUITests;
 			sourceTree = "<group>";
 		};
+		02A2A49424BB644A00FF99A7 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				02A2A49524BB646400FF99A7 /* AuthenticationDataObject.swift */,
+				02AA45D724BD9C69002624C0 /* LoginViewController.swift */,
+				02AA45DF24BDAB5D002624C0 /* RegisterViewController.swift */,
+				02AA45DD24BDAA4D002624C0 /* AuthenticationBarViewController.swift */,
+				020B200324BE18FD003E2F58 /* AuthenticationViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		02A2A49924BB72A200FF99A7 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				02A2A49A24BB72B200FF99A7 /* ErrorMessages.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		02A2A49C24BB73BF00FF99A7 /* AuthenticationManager */ = {
+			isa = PBXGroup;
+			children = (
+				02A2A49D24BB73D300FF99A7 /* AuthenticationManager.swift */,
+			);
+			path = AuthenticationManager;
+			sourceTree = "<group>";
+		};
 		02AAC3D12494A52B002A2B49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +274,8 @@
 		02AAC3D32494A542002A2B49 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				020B200524BE200D003E2F58 /* Story */,
+				02A2A49424BB644A00FF99A7 /* Authentication */,
 				02AAC3D52494A57F002A2B49 /* HomeViewController.swift */,
 				02AAC3D72494A63B002A2B49 /* HomeViewCell.swift */,
 			);
@@ -201,6 +287,15 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		02FABDA924BDBFE60099A931 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				02FABDAA24BDBFFC0099A931 /* FNButton.swift */,
+				027BB39B24BDFC7100F6FFA2 /* FNCheckBox.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		97D1DB11DACE2FE86A14F46D /* Frameworks */ = {
@@ -467,12 +562,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027BB39724BDC53900F6FFA2 /* FNView.swift in Sources */,
+				02AA45DE24BDAA4D002624C0 /* AuthenticationBarViewController.swift in Sources */,
+				02AA45D824BD9C69002624C0 /* LoginViewController.swift in Sources */,
 				02AAC3D62494A57F002A2B49 /* HomeViewController.swift in Sources */,
+				027BB39C24BDFC7100F6FFA2 /* FNCheckBox.swift in Sources */,
 				029859872493E39400FDAF1C /* ViewController.swift in Sources */,
 				029859832493E39400FDAF1C /* AppDelegate.swift in Sources */,
+				02A2A49624BB646400FF99A7 /* AuthenticationDataObject.swift in Sources */,
 				02411DED24B6FFE300E3158F /* NetworkingController.swift in Sources */,
+				02A2A49824BB649C00FF99A7 /* NetworkingValues.swift in Sources */,
+				020B200424BE18FD003E2F58 /* AuthenticationViewController.swift in Sources */,
+				020B200724BE2023003E2F58 /* StoryDetailViewController.swift in Sources */,
 				02411DEF24B7026000E3158F /* DefaultValues.swift in Sources */,
+				02FABDAB24BDBFFC0099A931 /* FNButton.swift in Sources */,
+				02A2A49E24BB73D300FF99A7 /* AuthenticationManager.swift in Sources */,
 				029859852493E39400FDAF1C /* SceneDelegate.swift in Sources */,
+				02AA45E024BDAB5D002624C0 /* RegisterViewController.swift in Sources */,
+				02A2A49B24BB72B200FF99A7 /* ErrorMessages.swift in Sources */,
+				027BB39A24BDED1D00F6FFA2 /* FNTextField.swift in Sources */,
 				0298598D2493E39400FDAF1C /* FNMotivation.xcdatamodeld in Sources */,
 				02AAC3D82494A63B002A2B49 /* HomeViewCell.swift in Sources */,
 				02411DEA24B6FF3700E3158F /* User.swift in Sources */,
@@ -561,7 +669,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -615,7 +723,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
