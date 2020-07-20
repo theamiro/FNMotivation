@@ -27,6 +27,7 @@ class AuthenticationBarViewController: ButtonBarPagerTabStripViewController {
         self.settings.style.buttonBarItemFont = UIFont(name: "Futura", size: 13.0)!
         
         self.settings.style.buttonBarItemTitleColor = UIColor(named: "DarkGray")!
+        containerView.isScrollEnabled = false
         
         super.viewDidLoad()
         
