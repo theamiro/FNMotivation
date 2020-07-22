@@ -1,27 +1,28 @@
 //
-//  AuthenticationBarViewController.swift
+//  ProfileTabsViewController.swift
 //  FNMotivation
 //
-//  Created by Michael Amiro on 14/07/2020.
+//  Created by Michael Amiro on 21/07/2020.
 //  Copyright © 2020 Michael Amiro. All rights reserved.
 //
 
 import UIKit
 import XLPagerTabStrip
 
-class AuthenticationBarViewController: ButtonBarPagerTabStripViewController {
+class ProfileTabsViewController: ButtonBarPagerTabStripViewController {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController")
-        let registrationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "registrationViewController")
+        let profileViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profileViewController")
+        let storyPostsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "storyPostsViewController")
+        let commentsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "commentsViewController")
         
-        return [loginViewController, registrationViewController]
+        return [profileViewController, storyPostsViewController, commentsViewController]
     }
-    
+
     override func viewDidLoad() {
         self.settings.style.selectedBarHeight = 4
-        self.settings.style.buttonBarBackgroundColor = UIColor(named: "OffWhite")!
-        self.settings.style.buttonBarItemBackgroundColor = UIColor(named: "OffWhite")!
+        self.settings.style.buttonBarBackgroundColor = UIColor(named: "BrilliantWhite")!
+        self.settings.style.buttonBarItemBackgroundColor = UIColor(named: "BrilliantWhite")!
         
         self.settings.style.selectedBarBackgroundColor = UIColor(named: "DarkBlue")!
         self.settings.style.buttonBarItemFont = UIFont(name: "Futura", size: 13.0)!
@@ -37,10 +38,6 @@ class AuthenticationBarViewController: ButtonBarPagerTabStripViewController {
             oldCell?.label.textColor = UIColor(named: "MediumGray")
             newCell?.label.textColor = UIColor(named: "DarkBlue")
         }
-        buttonBarView.layer.shadowColor = UIColor.black.cgColor
-        buttonBarView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        buttonBarView.layer.shadowOpacity = 0.2
-        buttonBarView.layer.shadowRadius = 6
-        buttonBarView.layer.masksToBounds =  false
+        
     }
 }

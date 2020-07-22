@@ -15,8 +15,16 @@ class AuthenticationViewController: UIViewController {
     @IBOutlet weak var pageSubtitleLabel: UILabel!
     @IBOutlet weak var authenticationServicesButton: UIButton!
     @IBOutlet weak var GIDSignInButton: UIButton!
+    @IBOutlet weak var parentView: FNView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        parentView.layer.cornerRadius = 20
+        parentView.layer.shadowColor = UIColor.black.cgColor
+        parentView.layer.shadowOffset = CGSize.zero
+        parentView.layer.shadowOpacity = 0.1
+        parentView.layer.shadowRadius = 6
+        parentView.layer.masksToBounds = false
+        parentView.layer.borderWidth = 2.0
+        parentView.layer.borderColor = UIColor(named: "BrilliantWhite")?.cgColor
     }
 }

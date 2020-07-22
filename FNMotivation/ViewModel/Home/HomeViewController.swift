@@ -12,29 +12,44 @@ import Alamofire
 class HomeViewController: FNViewController {
     let reuseIdentifier = "homeCell"
     
+    var storyPosts: [Post] =  []
+    var selectedPost: Post?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        for _ in 1...30 {
+            storyPosts.append(Post(title: DummyData.loremIpsum.truncate(toLength: 50), meta: "By Amiro on 20/12/2019", category: "Heat Disease", body: DummyData.loremIpsum, link: "https://fnmotivation.com"))
+        }
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailView" {
+            navigationController?.navigationBar.transform = .init(translationX: 0, y: 0)
+            if let storyDetailViewController = segue.destination as? StoryDetailViewController {
+                storyDetailViewController.post = selectedPost
+            }
+        }
     }
 }
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return storyPosts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HomeViewCell
-        cell.titleLabel.text = "Dutch Coronavirus cases rise by 729 to 34,136"
-        cell.categoryLabel.text = "Heart Disease"
-        cell.authorLabel.text = "By Rigga on 14/04/2020"
-        cell.excerptLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed ligula egestas urna ultrices interdum non quis dui."
+        cell.titleLabel.text = storyPosts[indexPath.row].title
+        cell.categoryLabel.text = storyPosts[indexPath.row].category
+        cell.authorLabel.text = storyPosts[indexPath.row].meta
+        cell.excerptLabel.text = storyPosts[indexPath.row].body
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         print(indexPath.row)
+        
+        let post = storyPosts[indexPath.row]
+        selectedPost = post
+        
         self.performSegue(withIdentifier: "toDetailView", sender: self)
     }
 }

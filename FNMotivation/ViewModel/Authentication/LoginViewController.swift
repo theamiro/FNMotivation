@@ -23,6 +23,12 @@ class LoginViewController: UIViewController, IndicatorInfoProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.layer.cornerRadius = 10
+        loginButton.layer.shadowColor = UIColor(named: "DarkBlue")?.cgColor
+        loginButton.layer.shadowOffset = CGSize.zero
+        loginButton.layer.shadowOpacity = 0.2
+        loginButton.layer.shadowRadius = 6
+        loginButton.layer.masksToBounds =  false
         
     }
     

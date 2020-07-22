@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: FNViewController {
+class AccountViewController: FNViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

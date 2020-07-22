@@ -22,9 +22,9 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>FuturaBold.ttf</string>
-		<string>FuturaLight.ttf</string>
-		<string>FuturaMedium.ttf</string>
+		<string>Futura Bold.ttf</string>
+		<string>Futura Light.ttf</string>
+		<string>Futura Medium.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

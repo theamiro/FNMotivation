@@ -16,7 +16,7 @@ class RegisterViewController: UIViewController, IndicatorInfoProvider, SFSafariV
         return IndicatorInfo(title: "SIGNUP")
     }
     
-   
+    
     @IBOutlet weak var usernameTextField: FNTextField!
     @IBOutlet weak var firstNameTextField: FNTextField!
     @IBOutlet weak var emailAddressTextField: FNTextField!
@@ -28,6 +28,13 @@ class RegisterViewController: UIViewController, IndicatorInfoProvider, SFSafariV
         super.viewDidLoad()
         setTermsOfUse()
         
+        for family in UIFont.familyNames {
+            print("family:", family)
+            for font in UIFont.fontNames(forFamilyName: family) {
+                print("font:", font)
+            }
+        }
+        
     }
     
     func setTermsOfUse() {
@@ -35,6 +42,7 @@ class RegisterViewController: UIViewController, IndicatorInfoProvider, SFSafariV
         let attributedString = NSMutableAttributedString(string: "By signing up, you accept the terms of use.")
         attributedString.setAttributes([.link: url], range: NSMakeRange(30, 12))
         self.termsTextView.attributedText = attributedString
+        self.termsTextView.font = UIFont(name: "Futura-Medium", size: 13.0)
         self.termsTextView.textAlignment = .center
         self.termsTextView.textColor = .lightGray
         self.termsTextView.linkTextAttributes = [
@@ -50,8 +58,8 @@ extension RegisterViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         let termsOfUseView = SFSafariViewController(url: NSURL(string: NetworkingValues.termsOfUse)! as URL)
         termsOfUseView.preferredBarTintColor = .white
-        termsOfUseView.preferredControlTintColor = UIColor(named: "Accent")
-        termsOfUseView.dismissButtonStyle = .done
+        termsOfUseView.preferredControlTintColor = UIColor(named: "DarkBlue")
+        termsOfUseView.dismissButtonStyle = .close
         termsOfUseView.title = "Terms of Use"
         self.present(termsOfUseView, animated: true, completion: nil)
         termsOfUseView.delegate = self

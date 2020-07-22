@@ -29,6 +29,7 @@ class FNViewController: UIViewController {
         let title = UIBarButtonItem(title: navigationItem.title, style: .plain, target: nil, action: nil)
         title.tintColor = .label
         title.setTitleTextAttributes([.font: UIFont(name: "Futura-Medium", size: 20)!], for: .normal)
+        title.setTitleTextAttributes([.font: UIFont(name: "Futura-Medium", size: 20)!], for: .highlighted)
         
         let width = view.frame.width
         
