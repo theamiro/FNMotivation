@@ -17,7 +17,11 @@ enum NetworkCallType {
     case delete
 }
 
-class NetworkController {
+class NetworkingService {
+    
+    private init() {}
+    static let shared = NetworkingService()
+    
     func makeCall(fromUrl url: String, networkCallType: NetworkCallType, requestBody: [String: Any] = [:], headerEnabled: Bool = false, completion: @escaping (Bool, String, Any?)->()) {
         
         guard let validUrl = URL(string: url) else {
@@ -64,7 +68,7 @@ class NetworkController {
                         completion(true, "success", jsonOutput)
                     } else {
                         completion(true, "success with no JSON output.", nil)
-                    }
+                }
                 case .failure(let error):
                     if let jsonOutput = response.response {
                         completion(false, error.localizedDescription, jsonOutput)

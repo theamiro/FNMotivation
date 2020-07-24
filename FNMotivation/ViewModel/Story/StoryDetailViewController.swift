@@ -8,25 +8,9 @@
 
 import UIKit
 
-struct Post {
-    var title: String
-    var meta: String
-    var category: String
-    var body: String
-    var link: URL
-    
-    init(title: String, meta: String, category: String, body: String, link: String) {
-        self.title = title
-        self.meta = meta
-        self.category = category
-        self.body = body
-        self.link = URL(string: link)!
-    }
-}
-
 class StoryDetailViewController: UIViewController {
 
-    var post: Post!
+    var post: Story!
     
     @IBOutlet weak var postThumbnail: UIImageView!
     @IBOutlet weak var storyTitleLabel: UILabel!
@@ -40,14 +24,14 @@ class StoryDetailViewController: UIViewController {
         configureTextView()
         
         storyTitleLabel.text = post.title
-        storyMetaLabel.text = post.meta
-        storyCategoryLabel.text = post.category
-        storyBodyTextView.text = post.body
+        storyMetaLabel.text = post.username
+        storyCategoryLabel.text = post.communityCategories
+        storyBodyTextView.text = post.story
     }
     
     @IBAction func shareStoryButton(_ sender: Any) {
         let message = "Hey! I found this article on Future Now Motivation. Check it out!"
-        let url = post.link
+        let url = "https://wp.me"
         
         let activityViewController = UIActivityViewController(activityItems: [message, url], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.storyTitleLabel

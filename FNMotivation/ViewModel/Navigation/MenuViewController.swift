@@ -11,28 +11,40 @@ import UIKit
 struct MenuOption {
     var menuIcon: UIImage
     var menuTitle: String
+    var key: MenuDataKeys
     
-    init(menuIcon: UIImage, menuTitle: String) {
+    init(menuIcon: UIImage, menuTitle: String, key: MenuDataKeys) {
         self.menuIcon = menuIcon
         self.menuTitle = menuTitle
+        self.key = key
     }
+}
+enum MenuDataKeys {
+    case about
+    case contact
+    case other
 }
 
 class MenuViewController: UIViewController {
+    
+    var currentActiveNavigation: UINavigationController?
+    
     let reuseIdentifier = "menuCell"
     
     @IBOutlet weak var versionLabel: UILabel!
     
     var menuOptions: [MenuOption] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         versionLabel.text = "Version: " + Bundle.main.fullVersion
         
-        menuOptions.append(MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "About FNM"))
-        menuOptions.append(MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Contact"))
-        menuOptions.append(MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Visit Website"))
+        menuOptions.append(MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "About FNM", key: .about))
+        menuOptions.append(MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Contact", key: .contact))
+        menuOptions.append(MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Visit Website", key: .other))
     }
 }
+
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuOptions.count
@@ -40,12 +52,15 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as! MenuViewCell
-//        cell.menuIcon = UIImageView(image: menuOptions[indexPath.row].menuIcon)
+        //        cell.menuIcon = UIImageView(image: menuOptions[indexPath.row].menuIcon)
         cell.menuTitle.text = menuOptions[indexPath.row].menuTitle
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44.0
+        return 60.0
     }
 }

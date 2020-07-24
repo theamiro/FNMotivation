@@ -9,18 +9,73 @@
 import UIKit
 import Alamofire
 
+// MARK: - StoryData
+struct StoryResponse: Codable{
+    let success: Bool
+    let data: [Story]
+    
+    enum CodingKeys: String, CodingKey {
+        case success = "success"
+        case data = "data"
+    }
+}
+
+// MARK: - Post
+struct Story: Codable {
+    let postID: Int
+    let title: String
+    let communityCategories: String
+    let summary: String
+    let postThumbnail: String
+    let story: String
+    let tags: String
+    let username: String
+    
+    enum CodingKeys: String, CodingKey {
+        case postID = "post_id"
+        case title = "title"
+        case communityCategories = "community_categories"
+        case summary = "summary"
+        case postThumbnail = "post_thumbnail"
+        case story = "story"
+        case tags = "tags"
+        case username = "username"
+    }
+}
+
+
 class HomeViewController: FNViewController {
     let reuseIdentifier = "homeCell"
+    @IBOutlet weak var collectionView: UICollectionView!
+    let refreshControl = UIRefreshControl()
     
-    var storyPosts: [Post] =  []
-    var selectedPost: Post?
+    var storyPosts: [Story] =  []
+    var selectedPost: Story?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for _ in 1...30 {
-            storyPosts.append(Post(title: DummyData.loremIpsum.truncate(toLength: 50), meta: "By Amiro on 20/12/2019", category: "Heat Disease", body: DummyData.loremIpsum, link: "https://fnmotivation.com"))
+        guard let url = URL(string: NetworkingValues.apiUrl + "/posts") else { return }
+        let urlRequest = URLRequest(url: url)
+        
+        AF.request(urlRequest).validate().responseDecodable(of: StoryResponse.self) { (response) in
+            guard let storyResponse = response.value else {
+                return
+            }
+            let stories = storyResponse.data
+            
+            for story in stories {
+                self.storyPosts.append(story)
+            }
+            self.collectionView.reloadData()
         }
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
+    
+    @objc func refreshData() {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailView" {
             navigationController?.navigationBar.transform = .init(translationX: 0, y: 0)
@@ -38,9 +93,9 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HomeViewCell
         cell.titleLabel.text = storyPosts[indexPath.row].title
-        cell.categoryLabel.text = storyPosts[indexPath.row].category
-        cell.authorLabel.text = storyPosts[indexPath.row].meta
-        cell.excerptLabel.text = storyPosts[indexPath.row].body
+        cell.categoryLabel.text = storyPosts[indexPath.row].communityCategories
+        cell.authorLabel.text = storyPosts[indexPath.row].username
+        cell.excerptLabel.text = storyPosts[indexPath.row].story
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -50,6 +105,11 @@ extension HomeViewController: UICollectionViewDataSource {
         let post = storyPosts[indexPath.row]
         selectedPost = post
         
+        if let baseViewController = self.navigationController?.tabBarController?.parent as? BaseViewController {
+            if baseViewController.menuVisible {
+                baseViewController.hideSideMenu()
+            }
+        }
         self.performSegue(withIdentifier: "toDetailView", sender: self)
     }
 }

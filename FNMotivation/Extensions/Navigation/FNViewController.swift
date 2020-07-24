@@ -48,7 +48,7 @@ class FNViewController: UIViewController {
     
     @objc func menuTapped() {
         if let baseViewController = self.navigationController?.tabBarController?.parent as? BaseViewController {
-            baseViewController.toggleSideMenu()
+            baseViewController.toggleSideMenu(fromViewController: self)
         }
     }
     

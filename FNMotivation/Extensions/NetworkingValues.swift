@@ -9,7 +9,7 @@
 import Foundation
 
 class NetworkingValues {
-    static let apiUrl = "https://albertfnmotivation.herokuapp.com/api/v1/"
+    static let apiUrl = "http://fnmotivation-env.eba-6prrfkyq.us-east-1.elasticbeanstalk.com/api/v1"
     
     static let termsOfUse = "https://albertfnmotivation.herokuapp.com/api/v1/"
 }

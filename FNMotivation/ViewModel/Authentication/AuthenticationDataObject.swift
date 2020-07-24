@@ -24,7 +24,7 @@ class AuthenticationDataObject {
             "avatar": avatar
         ]
         
-        NetworkController().makeCall(fromUrl: (NetworkingValues.apiUrl + "/users/register"), networkCallType: .post, requestBody: parameters) { (state, message, dataObject) in
+        NetworkingService.shared.makeCall(fromUrl: (NetworkingValues.apiUrl + "/users/register"), networkCallType: .post, requestBody: parameters) { (state, message, dataObject) in
             if state {
                 guard let response = dataObject as? [String:Any],
                     let token = response["token"] as? String else {
