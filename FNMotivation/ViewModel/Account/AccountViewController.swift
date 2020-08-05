@@ -10,6 +10,7 @@ import UIKit
 
 class AccountViewController: FNViewController {
 
+    @IBOutlet weak var fullNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

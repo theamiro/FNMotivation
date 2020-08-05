@@ -9,6 +9,8 @@
 import UIKit
 
 class AlertsController {
+    static let shared = AlertsController.init()
+    
     func generateAlert(withError error: String) {
         let alert = UIAlertController(title: "", message: error, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
@@ -19,4 +21,5 @@ class AlertsController {
         window.makeKeyAndVisible()
         window.rootViewController?.present(alert, animated: true, completion: nil)
     }
+    
 }

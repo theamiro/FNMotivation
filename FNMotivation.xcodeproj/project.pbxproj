@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		020A621A2493EA7D0010AB3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 020A62192493EA7D0010AB3F /* GoogleService-Info.plist */; };
 		020A621C2493EAD50010AB3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020A621B2493EAD50010AB3F /* Main.storyboard */; };
 		020A621E2493F1920010AB3F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 020A621D2493F1920010AB3F /* Colors.xcassets */; };
 		020B200424BE18FD003E2F58 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B200324BE18FD003E2F58 /* AuthenticationViewController.swift */; };
 		020B200724BE2023003E2F58 /* StoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B200624BE2023003E2F58 /* StoryDetailViewController.swift */; };
+		0216F60824DB22A900FFE870 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0216F60724DB22A900FFE870 /* Validation.swift */; };
 		0218959E24C5F8C100CAEA44 /* NotificationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218959D24C5F8C100CAEA44 /* NotificationViewCell.swift */; };
 		021895A124C60BEE00CAEA44 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021895A024C60BEE00CAEA44 /* BaseViewController.swift */; };
 		021895A424C616AC00CAEA44 /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021895A324C616AC00CAEA44 /* MenuViewCell.swift */; };
@@ -34,6 +34,9 @@
 		027BB39724BDC53900F6FFA2 /* FNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BB39624BDC53900F6FFA2 /* FNView.swift */; };
 		027BB39A24BDED1D00F6FFA2 /* FNTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BB39924BDED1D00F6FFA2 /* FNTextField.swift */; };
 		027BB39C24BDFC7100F6FFA2 /* FNCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027BB39B24BDFC7100F6FFA2 /* FNCheckBox.swift */; };
+		027FF56924DAD8910019D09C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 027FF56824DAD8910019D09C /* GoogleService-Info.plist */; };
+		027FF56C24DADC8F0019D09C /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027FF56B24DADC8F0019D09C /* AuthenticationServices.framework */; };
+		027FF56E24DAECC30019D09C /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FF56D24DAECC30019D09C /* KeychainItem.swift */; };
 		0289D3E724C7165900EC8311 /* CommunityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289D3E624C7165900EC8311 /* CommunityCollectionViewCell.swift */; };
 		0289D3E924C7266F00EC8311 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289D3E824C7266F00EC8311 /* CommentsViewController.swift */; };
 		0289D3EB24C7278900EC8311 /* ProfileTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289D3EA24C7278900EC8311 /* ProfileTabsViewController.swift */; };
@@ -55,6 +58,8 @@
 		02AA45E024BDAB5D002624C0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AA45DF24BDAB5D002624C0 /* RegisterViewController.swift */; };
 		02AAC3D62494A57F002A2B49 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AAC3D52494A57F002A2B49 /* HomeViewController.swift */; };
 		02AAC3D82494A63B002A2B49 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AAC3D72494A63B002A2B49 /* HomeViewCell.swift */; };
+		02DC597624DA98660009E55C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC597524DA98660009E55C /* Images.swift */; };
+		02DF498E24CED08A0071CD6C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF498D24CED08A0071CD6C /* Date.swift */; };
 		02FABDAB24BDBFFC0099A931 /* FNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FABDAA24BDBFFC0099A931 /* FNButton.swift */; };
 		2A33728793CDF5818B456362 /* Pods_FNMotivation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8ED8D6DDE86BE7B0CB6638 /* Pods_FNMotivation.framework */; };
 		A99E572909CF60395070DFE0 /* Pods_FNMotivation_FNMotivationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFCB98DC640C6A68496EB31 /* Pods_FNMotivation_FNMotivationUITests.framework */; };
@@ -80,11 +85,11 @@
 
 /* Begin PBXFileReference section */
 		020A62172493EA5C0010AB3F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		020A62192493EA7D0010AB3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		020A621B2493EAD50010AB3F /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		020A621D2493F1920010AB3F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		020B200324BE18FD003E2F58 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		020B200624BE2023003E2F58 /* StoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController.swift; sourceTree = "<group>"; };
+		0216F60724DB22A900FFE870 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		0218959D24C5F8C100CAEA44 /* NotificationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewCell.swift; sourceTree = "<group>"; };
 		021895A024C60BEE00CAEA44 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		021895A324C616AC00CAEA44 /* MenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
@@ -107,6 +112,10 @@
 		027BB39624BDC53900F6FFA2 /* FNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNView.swift; sourceTree = "<group>"; };
 		027BB39924BDED1D00F6FFA2 /* FNTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNTextField.swift; sourceTree = "<group>"; };
 		027BB39B24BDFC7100F6FFA2 /* FNCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNCheckBox.swift; sourceTree = "<group>"; };
+		027FF56824DAD8910019D09C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		027FF56A24DADC690019D09C /* FNMotivation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FNMotivation.entitlements; sourceTree = "<group>"; };
+		027FF56B24DADC8F0019D09C /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		027FF56D24DAECC30019D09C /* KeychainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
 		0289D3E624C7165900EC8311 /* CommunityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCollectionViewCell.swift; sourceTree = "<group>"; };
 		0289D3E824C7266F00EC8311 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		0289D3EA24C7278900EC8311 /* ProfileTabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabsViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +143,8 @@
 		02AA45DF24BDAB5D002624C0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		02AAC3D52494A57F002A2B49 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		02AAC3D72494A63B002A2B49 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		02DC597524DA98660009E55C /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		02DF498D24CED08A0071CD6C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		02FABDAA24BDBFFC0099A931 /* FNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNButton.swift; sourceTree = "<group>"; };
 		0F03DBA4AC1225A97CF6CEC1 /* Pods_FNMotivationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FNMotivationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3B39107F73353E0A3B91F0 /* Pods-FNMotivation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FNMotivation.release.xcconfig"; path = "Target Support Files/Pods-FNMotivation/Pods-FNMotivation.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027FF56C24DADC8F0019D09C /* AuthenticationServices.framework in Frameworks */,
 				2A33728793CDF5818B456362 /* Pods_FNMotivation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,6 +249,7 @@
 		02411DEB24B6FFC600E3158F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				02DC597424DA98550009E55C /* Images */,
 				0229615D24CB1C87003DB937 /* Alerts */,
 				021895AC24C6D5C900CAEA44 /* Strings */,
 				021895A724C621F800CAEA44 /* Global */,
@@ -249,6 +262,7 @@
 				02411DEC24B6FFE300E3158F /* NetworkingService.swift */,
 				02411DEE24B7026000E3158F /* DefaultValues.swift */,
 				02A2A49724BB649C00FF99A7 /* NetworkingValues.swift */,
+				02DF498D24CED08A0071CD6C /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -357,6 +371,7 @@
 		029859812493E39400FDAF1C /* FNMotivation */ = {
 			isa = PBXGroup;
 			children = (
+				027FF56A24DADC690019D09C /* FNMotivation.entitlements */,
 				02411DEB24B6FFC600E3158F /* Extensions */,
 				02AAC3D12494A52B002A2B49 /* Model */,
 				02AAC3D42494A54F002A2B49 /* View */,
@@ -370,7 +385,7 @@
 				020A621B2493EAD50010AB3F /* Main.storyboard */,
 				0298598B2493E39400FDAF1C /* FNMotivation.xcdatamodeld */,
 				029859932493E39A00FDAF1C /* Info.plist */,
-				020A62192493EA7D0010AB3F /* GoogleService-Info.plist */,
+				027FF56824DAD8910019D09C /* GoogleService-Info.plist */,
 				021895B524C6E4F900CAEA44 /* Fonts */,
 			);
 			path = FNMotivation;
@@ -410,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				02A2A49A24BB72B200FF99A7 /* ErrorMessages.swift */,
+				0216F60724DB22A900FFE870 /* Validation.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -418,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				02A2A49D24BB73D300FF99A7 /* AuthenticationManager.swift */,
+				027FF56D24DAECC30019D09C /* KeychainItem.swift */,
 			);
 			path = AuthenticationManager;
 			sourceTree = "<group>";
@@ -453,6 +470,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		02DC597424DA98550009E55C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				02DC597524DA98660009E55C /* Images.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		02FABDA924BDBFE60099A931 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +490,7 @@
 		97D1DB11DACE2FE86A14F46D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				027FF56B24DADC8F0019D09C /* AuthenticationServices.framework */,
 				7D8ED8D6DDE86BE7B0CB6638 /* Pods_FNMotivation.framework */,
 				EEFCB98DC640C6A68496EB31 /* Pods_FNMotivation_FNMotivationUITests.framework */,
 				0F03DBA4AC1225A97CF6CEC1 /* Pods_FNMotivationTests.framework */,
@@ -497,6 +523,7 @@
 				0298597C2493E39400FDAF1C /* Frameworks */,
 				0298597D2493E39400FDAF1C /* Resources */,
 				9D80A88FC0F8F493AAC435D1 /* [CP] Embed Pods Frameworks */,
+				06C184D6A5479F62E97BD542 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -535,6 +562,7 @@
 				029859A02493E39A00FDAF1C /* Frameworks */,
 				029859A12493E39A00FDAF1C /* Resources */,
 				6558F986A341614E30C24BF1 /* [CP] Embed Pods Frameworks */,
+				7D17F7FCA371980D59D1BEB8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -596,11 +624,11 @@
 			files = (
 				020A621C2493EAD50010AB3F /* Main.storyboard in Resources */,
 				020A621E2493F1920010AB3F /* Colors.xcassets in Resources */,
-				020A621A2493EA7D0010AB3F /* GoogleService-Info.plist in Resources */,
 				021895BA24C6E51900CAEA44 /* Futura Bold.ttf in Resources */,
 				0298598F2493E39900FDAF1C /* Assets.xcassets in Resources */,
 				021895B924C6E51900CAEA44 /* Futura Medium.ttf in Resources */,
 				021895BB24C6E51900CAEA44 /* Futura Light.ttf in Resources */,
+				027FF56924DAD8910019D09C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +671,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		06C184D6A5479F62E97BD542 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FNMotivation/Pods-FNMotivation-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FNMotivation/Pods-FNMotivation-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FNMotivation/Pods-FNMotivation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6558F986A341614E30C24BF1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -658,6 +703,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FNMotivation-FNMotivationUITests/Pods-FNMotivation-FNMotivationUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D17F7FCA371980D59D1BEB8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FNMotivation-FNMotivationUITests/Pods-FNMotivation-FNMotivationUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FNMotivation-FNMotivationUITests/Pods-FNMotivation-FNMotivationUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FNMotivation-FNMotivationUITests/Pods-FNMotivation-FNMotivationUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9D80A88FC0F8F493AAC435D1 /* [CP] Embed Pods Frameworks */ = {
@@ -730,17 +792,20 @@
 			files = (
 				027BB39724BDC53900F6FFA2 /* FNView.swift in Sources */,
 				02AA45DE24BDAA4D002624C0 /* AuthenticationBarViewController.swift in Sources */,
+				0216F60824DB22A900FFE870 /* Validation.swift in Sources */,
 				02AA45D824BD9C69002624C0 /* LoginViewController.swift in Sources */,
 				021895AB24C6D43200CAEA44 /* DummyData.swift in Sources */,
 				02AAC3D62494A57F002A2B49 /* HomeViewController.swift in Sources */,
 				021895A624C6171A00CAEA44 /* MenuViewController.swift in Sources */,
 				021895A124C60BEE00CAEA44 /* BaseViewController.swift in Sources */,
+				02DC597624DA98660009E55C /* Images.swift in Sources */,
 				0218959E24C5F8C100CAEA44 /* NotificationViewCell.swift in Sources */,
 				027BB39C24BDFC7100F6FFA2 /* FNCheckBox.swift in Sources */,
 				021895AE24C6D5D600CAEA44 /* Strings.swift in Sources */,
 				026A720724C5CD7000ECC477 /* AccountViewController.swift in Sources */,
 				029859872493E39400FDAF1C /* ViewController.swift in Sources */,
 				026A720B24C5D57200ECC477 /* CommunityViewController.swift in Sources */,
+				02DF498E24CED08A0071CD6C /* Date.swift in Sources */,
 				029859832493E39400FDAF1C /* AppDelegate.swift in Sources */,
 				021895A924C6220500CAEA44 /* Bundle.swift in Sources */,
 				0289D3E724C7165900EC8311 /* CommunityCollectionViewCell.swift in Sources */,
@@ -766,6 +831,7 @@
 				0289D3EF24C7325D00EC8311 /* ProfileViewController.swift in Sources */,
 				021895A424C616AC00CAEA44 /* MenuViewCell.swift in Sources */,
 				0289D3EB24C7278900EC8311 /* ProfileTabsViewController.swift in Sources */,
+				027FF56E24DAECC30019D09C /* KeychainItem.swift in Sources */,
 				02AAC3D82494A63B002A2B49 /* HomeViewCell.swift in Sources */,
 				02411DEA24B6FF3700E3158F /* User.swift in Sources */,
 			);
@@ -922,15 +988,19 @@
 			baseConfigurationReference = CA2AA665972D1D8AB5C19463 /* Pods-FNMotivation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FNMotivation/FNMotivation.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CVR223BS4M;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = T7Q9QM92G2;
 				INFOPLIST_FILE = FNMotivation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.personal.FNMotivationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fnmotivation.fnmotivation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -941,15 +1011,19 @@
 			baseConfigurationReference = 1C3B39107F73353E0A3B91F0 /* Pods-FNMotivation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FNMotivation/FNMotivation.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CVR223BS4M;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = T7Q9QM92G2;
 				INFOPLIST_FILE = FNMotivation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.personal.FNMotivationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fnmotivation.fnmotivation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

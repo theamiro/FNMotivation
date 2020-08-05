@@ -8,8 +8,20 @@
 
 import UIKit
 
-class HomeViewCell: UICollectionViewCell {
+protocol HomeCollectionViewFunctionsDelegate {
+    func followAuthor(cell: HomeViewCell)
+    
+    func shareStory(cell: HomeViewCell)
+    
+    func postComment(cell: HomeViewCell)
+    
+    func loveStory(cell: HomeViewCell)
+}
 
+class HomeViewCell: UICollectionViewCell {
+    
+    var delegate: HomeCollectionViewFunctionsDelegate?
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bookmarkButton: UIButton!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -20,4 +32,15 @@ class HomeViewCell: UICollectionViewCell {
     @IBOutlet weak var commentsButton: UIButton!
     @IBOutlet weak var likesButton: UIButton!
     
+    @IBAction func followAuthor(_ sender: Any) {
+        delegate?.followAuthor(cell: self)
+    }
+    
+    @IBAction func shareStory(_ sender: Any) {
+        delegate?.shareStory(cell: self)
+    }
+    @IBAction func postComment(_ sender: Any) {
+    }
+    @IBAction func loveStory(_ sender: Any) {
+    }
 }

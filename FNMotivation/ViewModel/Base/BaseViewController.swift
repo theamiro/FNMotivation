@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol BaseViewDelegate: class {
+    
+}
+
 class BaseViewController: UIViewController {
     
     @IBOutlet var recognizer: UIPanGestureRecognizer!
@@ -22,7 +26,8 @@ class BaseViewController: UIViewController {
     private let overlay = UIView()
     private let tapRecognizer = UITapGestureRecognizer()
     
-    let menuViewController: MenuViewController? = nil
+    var menuViewController: MenuViewController?
+    weak var delegate: BaseViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +39,15 @@ class BaseViewController: UIViewController {
         tapRecognizer.addTarget(self, action: #selector(hideSideMenu))
         overlay.addGestureRecognizer(tapRecognizer)
         addOverlay()
+        
+        
+        for childViewController in self.children {
+            if let sideMenu = childViewController as? MenuViewController {
+                menuViewController = sideMenu
+//                self.delegate = menuViewController
+                break
+            }
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -69,7 +83,6 @@ class BaseViewController: UIViewController {
             overlay.alpha = translation.x / 500
             contentContainerLeading.constant = 0 + translation.x
         }
-        
         // if the side menu is visible
         // and user finger move to left
         // and the distance moved is smaller than the side menu's width
@@ -78,17 +91,6 @@ class BaseViewController: UIViewController {
             overlay.alpha = 0.5 + translation.x / 500
             contentContainerLeading.constant = menuContainer.frame.size.width + translation.x
         }
-    }
-    
-    @objc func showSideMenu(){
-        UIView.animateKeyframes(withDuration: 0.3, delay: 0, options: [], animations: {
-            self.menuContainerLeading.constant = 0
-            self.contentContainerLeading.constant = 0 + self.menuContainer.frame.size.width
-            self.overlay.alpha = 0.5
-            self.view.layoutIfNeeded()
-        }, completion: { (_ ) in
-            self.menuVisible = true
-        })
     }
     
     @objc func hideSideMenu(){
@@ -104,11 +106,25 @@ class BaseViewController: UIViewController {
     
     func toggleSideMenu(fromViewController: UIViewController) {
         if menuVisible {
-            hideSideMenu()
+            UIView.animateKeyframes(withDuration: 0.3, delay: 0, options: [], animations: {
+                self.menuContainerLeading.constant = 0 - self.menuContainer.frame.size.width // hide the side menu to the left
+                self.contentContainerLeading.constant = 0 // move the content view to original position
+                self.contentContainer.alpha = 1
+                self.overlay.alpha = 0
+                self.view.layoutIfNeeded()
+            })
         } else {
-            
-            showSideMenu()
+            self.menuViewController?.currentNavigationController = fromViewController.navigationController
+            self.view.layoutIfNeeded()
+            UIView.animateKeyframes(withDuration: 0.3, delay: 0, options: [], animations: {
+                self.menuContainerLeading.constant = 0 // move the side menu to the right to show it
+                self.contentContainerLeading.constant = self.menuContainer.frame.size.width // move the content view to the right
+                self.contentContainer.alpha = 1
+                self.overlay.alpha = 0.5
+                self.view.layoutIfNeeded()
+            })
         }
+        menuVisible = !menuVisible
     }
     
     func addOverlay() {

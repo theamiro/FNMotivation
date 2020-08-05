@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import XLPagerTabStrip
 
 class LoginViewController: UIViewController, IndicatorInfoProvider {
@@ -29,7 +30,19 @@ class LoginViewController: UIViewController, IndicatorInfoProvider {
         loginButton.layer.shadowOpacity = 0.2
         loginButton.layer.shadowRadius = 6
         loginButton.layer.masksToBounds =  false
-        
     }
-    
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        loginButton.setTitle("Logging in...", for: .normal)
+        AuthenticationManager.shared.performUserAuthentication(userEmail: emailAddressTextField.text!, password: passwordTextField.text!) { (state, message) in
+            if state {
+                print(message)
+                if let authenticationViewController = self.parent?.parent as? AuthenticationViewController {
+                    print("This is the correct view controller to dismiss")
+                    authenticationViewController.dismiss(animated: true, completion: nil)
+                }
+            } else {
+                print(message)
+            }
+        }
+    }
 }

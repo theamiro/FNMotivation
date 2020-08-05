@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1074477878112-37gd9c5sbesr1ilcf353jfoh6bipe3km.apps.googleusercontent.com</string>
+	<string>1074477878112-s51m970a4g0ismplis3gqq4qk5d2lijr.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1074477878112-37gd9c5sbesr1ilcf353jfoh6bipe3km</string>
+	<string>com.googleusercontent.apps.1074477878112-s51m970a4g0ismplis3gqq4qk5d2lijr</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCf9ryxeLjNcMUQ2CvjL29aTwVDUcNyZb0</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,23 +13,23 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.personal.FNMotivationApp</string>
+	<string>com.fnmotivation.fnmotivation</string>
 	<key>PROJECT_ID</key>
 	<string>fnmotivation-analytics</string>
 	<key>STORAGE_BUCKET</key>
 	<string>fnmotivation-analytics.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1074477878112:ios:171d17ffa6c3bb115bec05</string>
+	<string>1:1074477878112:ios:2369652854d36d935bec05</string>
 	<key>DATABASE_URL</key>
 	<string>https://fnmotivation-analytics.firebaseio.com</string>
 </dict>

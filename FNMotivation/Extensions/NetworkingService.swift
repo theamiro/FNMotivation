@@ -64,13 +64,13 @@ class NetworkingService {
             print("response-----------------------------\n\n", response, "\n\nresponse-----------------------------")
             switch response.result {
                 case .success:
-                    if let jsonOutput = response.response {
+                    if let jsonOutput = response.value {
                         completion(true, "success", jsonOutput)
                     } else {
                         completion(true, "success with no JSON output.", nil)
                 }
                 case .failure(let error):
-                    if let jsonOutput = response.response {
+                    if let jsonOutput = response.value {
                         completion(false, error.localizedDescription, jsonOutput)
                     } else {
                         completion(false, error.localizedDescription, nil)

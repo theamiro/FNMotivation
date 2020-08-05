@@ -22,11 +22,7 @@ class StoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTextView()
-        
-        storyTitleLabel.text = post.title
-        storyMetaLabel.text = post.username
-        storyCategoryLabel.text = post.communityCategories
-        storyBodyTextView.text = post.story
+        initialize()
     }
     
     @IBAction func shareStoryButton(_ sender: Any) {
@@ -37,6 +33,13 @@ class StoryDetailViewController: UIViewController {
         activityViewController.popoverPresentationController?.sourceView = self.storyTitleLabel
         
         self.present(activityViewController, animated: true, completion: nil)
+    }
+    func initialize() {
+        postThumbnail.getImageFromURL(using: post.postThumbnail)
+        storyTitleLabel.text = post.title
+        storyMetaLabel.text = "\(post.userID)"
+        storyCategoryLabel.text = post.communityCategories
+        storyBodyTextView.text = post.story
     }
     
     fileprivate func configureTextView() {

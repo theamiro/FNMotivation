@@ -111,6 +111,9 @@
                                                                             <integer key="value" value="5"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="followAuthor:" destination="D6o-IL-hKG" eventType="touchUpInside" id="XmA-fd-wDu"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bC3-lz-Zye">
                                                                     <rect key="frame" x="142" y="7.5" width="30" height="30"/>
@@ -122,6 +125,9 @@
                                                                     <state key="normal" image="icn_share">
                                                                         <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="shareStory:" destination="D6o-IL-hKG" eventType="touchUpInside" id="BX8-kr-3if"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myW-kQ-eyn">
                                                                     <rect key="frame" x="214" y="7.5" width="140" height="30"/>
@@ -136,6 +142,9 @@
                                                                             <state key="normal" title="120" image="icn_comment">
                                                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             </state>
+                                                                            <connections>
+                                                                                <action selector="postComment:" destination="D6o-IL-hKG" eventType="touchUpInside" id="Bz3-e1-FMo"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTG-9E-5te">
                                                                             <rect key="frame" x="70" y="0.0" width="70" height="30"/>
@@ -147,6 +156,9 @@
                                                                             <state key="normal" title="23" image="icn_like">
                                                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             </state>
+                                                                            <connections>
+                                                                                <action selector="loveStory:" destination="D6o-IL-hKG" eventType="touchUpInside" id="HYT-WY-3ui"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                 </stackView>
@@ -232,6 +244,9 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_background" translatesAutoresizingMaskIntoConstraints="NO" id="T9I-Lm-R6O">
                                                 <rect key="frame" x="0.0" y="-89" width="414" height="289"/>
+                                                <accessibility key="accessibilityConfiguration" label="Header Image">
+                                                    <bool key="isElement" value="YES"/>
+                                                </accessibility>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="289" id="SJ3-1F-rid"/>
                                                 </constraints>
@@ -390,22 +405,22 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
             </objects>
             <point key="canvasLocation" x="728.98550724637687" y="-653.57142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="2qJ-6z-kf3">
             <objects>
-                <viewController storyboardIdentifier="aboutViewController" id="2rw-jO-iKv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aboutViewController" id="2rw-jO-iKv" customClass="AboutViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hht-1Y-zMs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About FNM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqa-Pt-Ri5">
-                                <rect key="frame" x="20" y="84" width="374" height="26"/>
+                                <rect key="frame" x="20" y="59" width="374" height="26"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="l5m-Ak-Cdg">
-                                <rect key="frame" x="0.0" y="110" width="414" height="169.5"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="169.5"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed ligula egestas urna ultrices interdum non quis dui. Aliquam eu tellus id ante tempor tempus. Duis ornare a tellus vitae mollis. Praesent posuere justo a lectus euismod, id hendrerit dui dignissim. Etiam eget justo gravida nunc convallis volutpat at eu ex. Suspendisse potenti. Duis a velit non lacus ullamcorper aliquet mollis sit amet neque. Aenean luctus faucibus sapien sit amet porttitor.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="16"/>
@@ -416,14 +431,18 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="qqa-Pt-Ri5" firstAttribute="leading" secondItem="YaC-0m-jog" secondAttribute="leading" constant="20" id="HC0-4M-sqI"/>
-                            <constraint firstItem="l5m-Ak-Cdg" firstAttribute="top" secondItem="qqa-Pt-Ri5" secondAttribute="bottom" id="R9Y-JN-8AH"/>
+                            <constraint firstItem="l5m-Ak-Cdg" firstAttribute="top" secondItem="qqa-Pt-Ri5" secondAttribute="bottom" constant="10" id="R9Y-JN-8AH"/>
                             <constraint firstItem="YaC-0m-jog" firstAttribute="trailing" secondItem="qqa-Pt-Ri5" secondAttribute="trailing" constant="20" id="WYV-2x-6AB"/>
-                            <constraint firstItem="qqa-Pt-Ri5" firstAttribute="top" secondItem="YaC-0m-jog" secondAttribute="top" constant="40" id="Weu-sY-1E2"/>
+                            <constraint firstItem="qqa-Pt-Ri5" firstAttribute="top" secondItem="YaC-0m-jog" secondAttribute="top" constant="15" id="Weu-sY-1E2"/>
                             <constraint firstItem="YaC-0m-jog" firstAttribute="trailing" secondItem="l5m-Ak-Cdg" secondAttribute="trailing" id="qLY-yT-2ZR"/>
                             <constraint firstItem="l5m-Ak-Cdg" firstAttribute="leading" secondItem="YaC-0m-jog" secondAttribute="leading" id="wFF-yG-CN5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YaC-0m-jog"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutTextView" destination="l5m-Ak-Cdg" id="EcM-5X-aVM"/>
+                        <outlet property="aboutTitle" destination="qqa-Pt-Ri5" id="v3t-B0-Buc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1js-lG-Owf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -923,6 +942,9 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         <viewLayoutGuide key="safeArea" id="zMp-4p-Aj1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="bog-1z-3aI"/>
+                    <connections>
+                        <outlet property="fullNameLabel" destination="3f4-eF-xUE" id="s1m-K9-OMM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eh9-Hs-hTD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1093,6 +1115,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         <viewLayoutGuide key="safeArea" id="cfI-85-EZS"/>
                     </view>
                     <connections>
+                        <outlet property="logoutButton" destination="07K-yG-L76" id="gb7-eU-3U2"/>
                         <outlet property="versionLabel" destination="7IC-v4-kvF" id="ynn-vb-8mg"/>
                     </connections>
                 </viewController>
@@ -1134,19 +1157,19 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="302"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vum-Cx-PL2">
-                                <rect key="frame" x="20" y="74" width="374" height="34"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="26"/>
+                                <rect key="frame" x="20" y="84" width="374" height="34"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="26"/>
                                 <color key="textColor" name="Orange"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOo-CQ-92k">
-                                <rect key="frame" x="20" y="113" width="374" height="21"/>
+                                <rect key="frame" x="20" y="123" width="374" height="21"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ut-wu-200" userLabel="ParentView" customClass="FNView" customModule="FNMotivation" customModuleProvider="target">
-                                <rect key="frame" x="20" y="164" width="374" height="450"/>
+                                <rect key="frame" x="20" y="174" width="374" height="450"/>
                                 <subviews>
                                     <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knm-Me-6n4">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="450"/>
@@ -1232,7 +1255,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         <constraints>
                             <constraint firstItem="Uus-1T-uEQ" firstAttribute="width" secondItem="HhI-cJ-eIF" secondAttribute="width" id="1rJ-Pe-8tc"/>
                             <constraint firstItem="0ut-wu-200" firstAttribute="top" secondItem="kOo-CQ-92k" secondAttribute="bottom" constant="30" id="7j2-Ow-ZDm"/>
-                            <constraint firstItem="vum-Cx-PL2" firstAttribute="top" secondItem="m7m-SX-Rjh" secondAttribute="top" constant="30" id="AQe-X7-8VG"/>
+                            <constraint firstItem="vum-Cx-PL2" firstAttribute="top" secondItem="m7m-SX-Rjh" secondAttribute="top" constant="40" id="AQe-X7-8VG"/>
                             <constraint firstItem="Uus-1T-uEQ" firstAttribute="centerX" secondItem="m7m-SX-Rjh" secondAttribute="centerX" id="Ckx-Ps-gf0"/>
                             <constraint firstItem="m7m-SX-Rjh" firstAttribute="top" secondItem="Uus-1T-uEQ" secondAttribute="top" constant="44" id="Ncm-wb-hqg"/>
                             <constraint firstItem="0ut-wu-200" firstAttribute="leading" secondItem="m7m-SX-Rjh" secondAttribute="leading" constant="20" id="P4F-AR-NxG"/>
@@ -1375,6 +1398,9 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="gdL-Ag-ANP" eventType="touchUpInside" id="kqj-kB-qUL"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2ak-Fc-E5a">
                                 <rect key="frame" x="20" y="181" width="350" height="36"/>
