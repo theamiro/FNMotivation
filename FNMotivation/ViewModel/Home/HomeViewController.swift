@@ -45,9 +45,6 @@ struct Story: Codable {
         case created = "createdAt"
     }
 }
-extension Story {
-    
-}
 
 class HomeViewController: FNViewController {
     let reuseIdentifier = "homeCell"
@@ -114,13 +111,12 @@ class HomeViewController: FNViewController {
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return storyPosts.count
-//        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HomeViewCell
         cell.titleLabel.text = storyPosts[indexPath.row].title
-        cell.categoryLabel.text = storyPosts[indexPath.row].communityCategories
+        cell.categoryLabel.text = storyPosts[indexPath.row].communityCategories.capitalizingFirstLetter()
         cell.authorLabel.text = "By \(storyPosts[indexPath.row].userID) on \(storyPosts[indexPath.row].created.getDate())"
         cell.excerptLabel.text = storyPosts[indexPath.row].story
         cell.delegate = self

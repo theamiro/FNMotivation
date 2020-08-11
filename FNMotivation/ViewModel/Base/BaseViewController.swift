@@ -44,7 +44,6 @@ class BaseViewController: UIViewController {
         for childViewController in self.children {
             if let sideMenu = childViewController as? MenuViewController {
                 menuViewController = sideMenu
-//                self.delegate = menuViewController
                 break
             }
         }
@@ -52,46 +51,46 @@ class BaseViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
     }
-    @IBAction func swipeForMenu(_ sender: Any) {
-        let translation = recognizer.translation(in: self.view)
-        if(recognizer.state == .ended || recognizer.state == .failed || recognizer.state == .cancelled){
-            if(menuVisible){
-                if(translation.x < 0){
-                    toggleSideMenu(fromViewController: self)
-                }
-            } else {
-                if(translation.x > 100.0){
-                    toggleSideMenu(fromViewController: self)
-                } else {
-                    view.layoutIfNeeded()
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.menuContainerLeading.constant = 0 - self.menuContainer.frame.size.width
-                        self.contentContainerLeading.constant = 0
-                        self.overlay.alpha = 0
-                        self.view.layoutIfNeeded()
-                    })
-                }
-            }
-            return
-        }
-        
-        // if side menu is not visisble
-        // and user finger move to right
-        // and the distance moved is smaller than the side menu's width
-        if(!menuVisible && translation.x > 0.0 && translation.x <= menuContainer.frame.size.width) {
-            menuContainerLeading.constant = 0 - menuContainer.frame.size.width + translation.x
-            overlay.alpha = translation.x / 500
-            contentContainerLeading.constant = 0 + translation.x
-        }
-        // if the side menu is visible
-        // and user finger move to left
-        // and the distance moved is smaller than the side menu's width
-        if(menuVisible && translation.x >= 0 - menuContainer.frame.size.width && translation.x < 0.0) {
-            menuContainerLeading.constant = 0 + translation.x
-            overlay.alpha = 0.5 + translation.x / 500
-            contentContainerLeading.constant = menuContainer.frame.size.width + translation.x
-        }
-    }
+//    @IBAction func swipeForMenu(_ sender: Any) {
+//        let translation = recognizer.translation(in: self.view)
+//        if(recognizer.state == .ended || recognizer.state == .failed || recognizer.state == .cancelled){
+//            if(menuVisible){
+//                if(translation.x < 0){
+//                    toggleSideMenu(fromViewController: self)
+//                }
+//            } else {
+//                if(translation.x > 100.0){
+//                    toggleSideMenu(fromViewController: self)
+//                } else {
+//                    view.layoutIfNeeded()
+//                    UIView.animate(withDuration: 0.3, animations: {
+//                        self.menuContainerLeading.constant = 0 - self.menuContainer.frame.size.width
+//                        self.contentContainerLeading.constant = 0
+//                        self.overlay.alpha = 0
+//                        self.view.layoutIfNeeded()
+//                    })
+//                }
+//            }
+//            return
+//        }
+//
+//        // if side menu is not visisble
+//        // and user finger move to right
+//        // and the distance moved is smaller than the side menu's width
+//        if(!menuVisible && translation.x > 0.0 && translation.x <= menuContainer.frame.size.width) {
+//            menuContainerLeading.constant = 0 - menuContainer.frame.size.width + translation.x
+//            overlay.alpha = translation.x / 500
+//            contentContainerLeading.constant = 0 + translation.x
+//        }
+//        // if the side menu is visible
+//        // and user finger move to left
+//        // and the distance moved is smaller than the side menu's width
+//        if(menuVisible && translation.x >= 0 - menuContainer.frame.size.width && translation.x < 0.0) {
+//            menuContainerLeading.constant = 0 + translation.x
+//            overlay.alpha = 0.5 + translation.x / 500
+//            contentContainerLeading.constant = menuContainer.frame.size.width + translation.x
+//        }
+//    }
     
     @objc func hideSideMenu(){
         UIView.animateKeyframes(withDuration: 0.3, delay: 0, options: [], animations: {

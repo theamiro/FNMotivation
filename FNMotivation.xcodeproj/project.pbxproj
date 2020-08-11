@@ -58,6 +58,9 @@
 		02AA45E024BDAB5D002624C0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AA45DF24BDAB5D002624C0 /* RegisterViewController.swift */; };
 		02AAC3D62494A57F002A2B49 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AAC3D52494A57F002A2B49 /* HomeViewController.swift */; };
 		02AAC3D82494A63B002A2B49 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AAC3D72494A63B002A2B49 /* HomeViewCell.swift */; };
+		02B7F9B224E133D70081F13E /* AddStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7F9B124E133D70081F13E /* AddStoryViewController.swift */; };
+		02B7F9B824E1441A0081F13E /* FNTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7F9B724E1441A0081F13E /* FNTextView.swift */; };
+		02B7F9BA24E1466F0081F13E /* FNToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7F9B924E1466F0081F13E /* FNToolbar.swift */; };
 		02DC597624DA98660009E55C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC597524DA98660009E55C /* Images.swift */; };
 		02DF498E24CED08A0071CD6C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF498D24CED08A0071CD6C /* Date.swift */; };
 		02FABDAB24BDBFFC0099A931 /* FNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FABDAA24BDBFFC0099A931 /* FNButton.swift */; };
@@ -143,6 +146,9 @@
 		02AA45DF24BDAB5D002624C0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		02AAC3D52494A57F002A2B49 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		02AAC3D72494A63B002A2B49 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		02B7F9B124E133D70081F13E /* AddStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoryViewController.swift; sourceTree = "<group>"; };
+		02B7F9B724E1441A0081F13E /* FNTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNTextView.swift; sourceTree = "<group>"; };
+		02B7F9B924E1466F0081F13E /* FNToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNToolbar.swift; sourceTree = "<group>"; };
 		02DC597524DA98660009E55C /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		02DF498D24CED08A0071CD6C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		02FABDAA24BDBFFC0099A931 /* FNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNButton.swift; sourceTree = "<group>"; };
@@ -190,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				020B200624BE2023003E2F58 /* StoryDetailViewController.swift */,
+				02B7F9B124E133D70081F13E /* AddStoryViewController.swift */,
 			);
 			path = Story;
 			sourceTree = "<group>";
@@ -249,6 +256,8 @@
 		02411DEB24B6FFC600E3158F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				02B7F9B624E144000081F13E /* TextViews */,
+				02B7F9B324E1374B0081F13E /* Keyboard */,
 				02DC597424DA98550009E55C /* Images */,
 				0229615D24CB1C87003DB937 /* Alerts */,
 				021895AC24C6D5C900CAEA44 /* Strings */,
@@ -468,6 +477,22 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		02B7F9B324E1374B0081F13E /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				02B7F9B924E1466F0081F13E /* FNToolbar.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		02B7F9B624E144000081F13E /* TextViews */ = {
+			isa = PBXGroup;
+			children = (
+				02B7F9B724E1441A0081F13E /* FNTextView.swift */,
+			);
+			path = TextViews;
 			sourceTree = "<group>";
 		};
 		02DC597424DA98550009E55C /* Images */ = {
@@ -804,6 +829,7 @@
 				021895AE24C6D5D600CAEA44 /* Strings.swift in Sources */,
 				026A720724C5CD7000ECC477 /* AccountViewController.swift in Sources */,
 				029859872493E39400FDAF1C /* ViewController.swift in Sources */,
+				02B7F9B224E133D70081F13E /* AddStoryViewController.swift in Sources */,
 				026A720B24C5D57200ECC477 /* CommunityViewController.swift in Sources */,
 				02DF498E24CED08A0071CD6C /* Date.swift in Sources */,
 				029859832493E39400FDAF1C /* AppDelegate.swift in Sources */,
@@ -826,10 +852,12 @@
 				029859852493E39400FDAF1C /* SceneDelegate.swift in Sources */,
 				02AA45E024BDAB5D002624C0 /* RegisterViewController.swift in Sources */,
 				02A2A49B24BB72B200FF99A7 /* ErrorMessages.swift in Sources */,
+				02B7F9BA24E1466F0081F13E /* FNToolbar.swift in Sources */,
 				027BB39A24BDED1D00F6FFA2 /* FNTextField.swift in Sources */,
 				0298598D2493E39400FDAF1C /* FNMotivation.xcdatamodeld in Sources */,
 				0289D3EF24C7325D00EC8311 /* ProfileViewController.swift in Sources */,
 				021895A424C616AC00CAEA44 /* MenuViewCell.swift in Sources */,
+				02B7F9B824E1441A0081F13E /* FNTextView.swift in Sources */,
 				0289D3EB24C7278900EC8311 /* ProfileTabsViewController.swift in Sources */,
 				027FF56E24DAECC30019D09C /* KeychainItem.swift in Sources */,
 				02AAC3D82494A63B002A2B49 /* HomeViewCell.swift in Sources */,

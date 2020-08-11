@@ -38,7 +38,7 @@ class StoryDetailViewController: UIViewController {
         postThumbnail.getImageFromURL(using: post.postThumbnail)
         storyTitleLabel.text = post.title
         storyMetaLabel.text = "\(post.userID)"
-        storyCategoryLabel.text = post.communityCategories
+        storyCategoryLabel.text = post.communityCategories.capitalizingFirstLetter()
         storyBodyTextView.text = post.story
     }
     

@@ -15,6 +15,7 @@ target 'FNMotivation' do
   pod 'GoogleSignIn'
   pod 'IQKeyboardManagerSwift'
   pod 'KeychainSwift'
+  pod 'RichEditorView'
   pod 'XLPagerTabStrip'
   
   target 'FNMotivationTests' do

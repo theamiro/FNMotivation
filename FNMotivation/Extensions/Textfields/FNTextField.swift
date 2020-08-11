@@ -22,11 +22,13 @@ class FNTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setIcon()
+        initializeTextField()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setIcon()
+        initializeTextField()
     }
     
     func setIcon() {
@@ -46,6 +48,11 @@ class FNTextField: UITextField {
         } else {
             leftView = nil
         }
+    }
+    func initializeTextField() {
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor(named: "LightGray")?.cgColor
+        self.layer.cornerRadius = 5
     }
 }
 extension FNTextField {

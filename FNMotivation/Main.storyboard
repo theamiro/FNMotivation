@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fsp-ad-TAt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yvo-c9-dPJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -704,11 +704,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgw-rX-nnk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="3Ur-sO-LcB">
-                    <connections>
-                        <action selector="swipeForMenu:" destination="Fsp-ad-TAt" id="7ZG-aT-GHd"/>
-                    </connections>
-                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="3Ur-sO-LcB"/>
             </objects>
             <point key="canvasLocation" x="-1607.2463768115942" y="59.598214285714285"/>
         </scene>
@@ -1705,6 +1701,85 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
             </objects>
             <point key="canvasLocation" x="-1249" y="1422"/>
         </scene>
+        <!--Add Story-->
+        <scene sceneID="mx0-x3-CH0">
+            <objects>
+                <viewController storyboardIdentifier="addStoryViewController" title="Add Story" id="Yvo-c9-dPJ" customClass="AddStoryViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RTX-Yg-W1b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhk-tt-9o3" customClass="FNTextField" customModule="FNMotivation" customModuleProvider="target">
+                                <rect key="frame" x="20" y="94" width="374" height="46"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="DarkBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="ics-2v-rGO"/>
+                                    <constraint firstAttribute="height" constant="46" id="lgk-YR-2kV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="yes" smartQuotesType="yes" textContentType="email"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_title"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0cD-B6-o9Q" customClass="FNTextField" customModule="FNMotivation" customModuleProvider="target">
+                                <rect key="frame" x="20" y="492" width="374" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="DarkBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="46" id="Tjr-8B-tGu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="yes" smartQuotesType="yes" textContentType="email"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_tags"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" allowsEditingTextAttributes="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSV-HR-xlz" customClass="FNTextView" customModule="FNMotivation" customModuleProvider="target">
+                                <rect key="frame" x="20" y="160" width="374" height="312"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="312" id="XmT-Ae-asi"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <attributes>
+                                            <color key="NSColor" name="DarkGray"/>
+                                            <font key="NSFont" size="16" name="FuturaBT-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="done" smartInsertDeleteType="yes" smartQuotesType="yes"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="C46-9e-Abh" firstAttribute="trailing" secondItem="0cD-B6-o9Q" secondAttribute="trailing" constant="20" id="3E4-WO-4Mf"/>
+                            <constraint firstItem="Vhk-tt-9o3" firstAttribute="top" secondItem="C46-9e-Abh" secondAttribute="top" constant="50" id="6bC-zi-19k"/>
+                            <constraint firstItem="vSV-HR-xlz" firstAttribute="trailing" secondItem="C46-9e-Abh" secondAttribute="trailing" constant="-20" id="7Nc-Gz-pHY"/>
+                            <constraint firstItem="vSV-HR-xlz" firstAttribute="top" secondItem="Vhk-tt-9o3" secondAttribute="bottom" constant="20" id="Dwp-RG-8Wm"/>
+                            <constraint firstItem="0cD-B6-o9Q" firstAttribute="leading" secondItem="C46-9e-Abh" secondAttribute="leading" constant="20" id="K6Y-yK-Tf3"/>
+                            <constraint firstItem="0cD-B6-o9Q" firstAttribute="top" secondItem="vSV-HR-xlz" secondAttribute="bottom" constant="20" id="Mug-o5-9jy"/>
+                            <constraint firstItem="Vhk-tt-9o3" firstAttribute="leading" secondItem="C46-9e-Abh" secondAttribute="leading" constant="20" id="hMl-VD-zSE"/>
+                            <constraint firstItem="vSV-HR-xlz" firstAttribute="leading" secondItem="C46-9e-Abh" secondAttribute="leading" constant="20" id="l2M-Az-2zf"/>
+                            <constraint firstItem="C46-9e-Abh" firstAttribute="trailing" secondItem="Vhk-tt-9o3" secondAttribute="trailing" constant="20" id="tP8-4c-vmq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C46-9e-Abh"/>
+                    </view>
+                    <connections>
+                        <outlet property="editor" destination="vSV-HR-xlz" id="t7P-oU-NQr"/>
+                        <outlet property="storyTags" destination="0cD-B6-o9Q" id="ypO-Jb-eic"/>
+                        <outlet property="storyTitle" destination="Vhk-tt-9o3" id="0BI-Jf-lB8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N1O-Dw-EGe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2411.594202898551" y="-656.25"/>
+        </scene>
     </scenes>
     <resources>
         <image name="GoogleLogo" width="825" height="825"/>
@@ -1727,6 +1802,8 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
         <image name="icn_password" width="24" height="24"/>
         <image name="icn_send" width="24" height="24"/>
         <image name="icn_share" width="30" height="30"/>
+        <image name="icn_tags" width="24" height="24"/>
+        <image name="icn_title" width="24" height="24"/>
         <image name="icn_user" width="30" height="30"/>
         <image name="icn_user_active" width="30" height="30"/>
         <image name="icn_username" width="24" height="24"/>
@@ -1740,6 +1817,9 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
         </namedColor>
         <namedColor name="DarkBlue">
             <color red="0.023529411764705882" green="0.30980392156862746" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkGray">
+            <color red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DarkGray">
             <color red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
