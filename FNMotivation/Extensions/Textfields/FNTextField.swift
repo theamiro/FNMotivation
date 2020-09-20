@@ -18,6 +18,13 @@ class FNTextField: UITextField {
         }
     }
     
+    @IBInspectable
+    var focusIcon: UIImage? {
+        didSet {
+            setIcon()
+        }
+    }
+    
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,23 +43,56 @@ class FNTextField: UITextField {
             // We have to enable leftViewMode so that we can embed image here
             leftViewMode = .always
             
-            // Creating an imageView as Image container
-            let leftImageView = UIImageView(frame: CGRect(x: 10, y: 0, width: 20, height: 20))
-            leftImageView.image = defaultIcon
-            
-            let view = UIView(frame: CGRect(x:0, y:0, width: 28, height: 20))
-            view.addSubview(leftImageView)
-            
             leftView?.isHidden = false
-            leftView = view
+            leftView = setDefaultView()
         } else {
             leftView = nil
         }
     }
+    func setDefaultView() -> UIView {
+        // Creating an imageView as Image container
+        let leftImageView = UIImageView(frame: CGRect(x: 10, y: 0, width: 20, height: 20))
+        leftImageView.image = defaultIcon
+        
+        let view = UIView(frame: CGRect(x:0, y:0, width: 28, height: 20))
+        view.addSubview(leftImageView)
+        
+        return view
+    }
+    
+    func setFocusView() -> UIView {
+        // Creating an imageView as Image container
+        let leftImageView = UIImageView(frame: CGRect(x: 10, y: 0, width: 20, height: 20))
+        leftImageView.image = focusIcon
+        
+        let view = UIView(frame: CGRect(x:0, y:0, width: 28, height: 20))
+        view.addSubview(leftImageView)
+        
+        return view
+    }
+    
     func initializeTextField() {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor(named: "LightGray")?.cgColor
         self.layer.cornerRadius = 5
+    }
+}
+extension FNTextField: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        leftView = nil
+        if focusIcon != nil {
+            // We have to enable leftViewMode so that we can embed image here
+            leftViewMode = .always
+            
+            leftView?.isHidden = false
+            leftView = setFocusView()
+        } else {
+            leftView = nil
+        }
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        leftView = nil
+        setIcon()
     }
 }
 extension FNTextField {

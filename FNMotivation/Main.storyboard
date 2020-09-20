@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yvo-c9-dPJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fsp-ad-TAt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -15,16 +15,16 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Home-->
+        <!--Stories-->
         <scene sceneID="5BD-Re-qje">
             <objects>
-                <viewController id="cxx-5E-5Sq" customClass="HomeViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="storiesViewController" title="Stories" id="cxx-5E-5Sq" customClass="StoriesViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y1n-KK-k2Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="B7f-qR-QsG">
-                                <rect key="frame" x="0.0" y="40" width="414" height="773"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kal-P6-NhL">
                                     <size key="itemSize" width="394" height="200"/>
@@ -33,7 +33,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeCell" id="D6o-IL-hKG" customClass="HomeViewCell" customModule="FNMotivation" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="storyCell" id="D6o-IL-hKG" customClass="StoryCollectionViewCell" customModule="FNMotivation" customModuleProvider="target">
                                         <rect key="frame" x="10" y="20" width="394" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uii-ib-tgZ">
@@ -211,7 +211,7 @@
                         <constraints>
                             <constraint firstItem="B7f-qR-QsG" firstAttribute="trailing" secondItem="ZPr-ZE-A0A" secondAttribute="trailing" id="8bS-pg-dIi"/>
                             <constraint firstItem="B7f-qR-QsG" firstAttribute="leading" secondItem="ZPr-ZE-A0A" secondAttribute="leading" id="GE4-Ck-THU"/>
-                            <constraint firstItem="B7f-qR-QsG" firstAttribute="top" secondItem="Y1n-KK-k2Z" secondAttribute="top" constant="40" id="ayX-Xh-EOh"/>
+                            <constraint firstItem="B7f-qR-QsG" firstAttribute="top" secondItem="Y1n-KK-k2Z" secondAttribute="top" id="ayX-Xh-EOh"/>
                             <constraint firstItem="B7f-qR-QsG" firstAttribute="bottom" secondItem="ZPr-ZE-A0A" secondAttribute="bottom" id="pNZ-NK-TMv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZPr-ZE-A0A"/>
@@ -226,39 +226,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pae-Ee-6p7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="-654.24107142857144"/>
+            <point key="canvasLocation" x="1886.9565217391305" y="-1823.4375"/>
         </scene>
         <!--Story Post-->
         <scene sceneID="9ud-3L-uuk">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="Qau-ja-sge" customClass="StoryDetailViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FtA-j5-7j4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yr-yP-hdR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67n-gY-rLA">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1416"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_background" translatesAutoresizingMaskIntoConstraints="NO" id="T9I-Lm-R6O">
-                                                <rect key="frame" x="0.0" y="-89" width="414" height="289"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
                                                 <accessibility key="accessibilityConfiguration" label="Header Image">
                                                     <bool key="isElement" value="YES"/>
                                                 </accessibility>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="289" id="SJ3-1F-rid"/>
+                                                    <constraint firstAttribute="height" constant="256" id="SJ3-1F-rid"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dutch Coronavirus cases rise by 729 to 34,136" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbc-iE-8gO">
-                                                <rect key="frame" x="20" y="210" width="374" height="52"/>
+                                                <rect key="frame" x="20" y="266" width="374" height="52"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1L0-ZV-eKI">
-                                                <rect key="frame" x="20" y="272" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="328" width="374" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CNe-iF-GBf">
                                                         <rect key="frame" x="0.0" y="5.5" width="274" height="39"/>
@@ -300,7 +300,7 @@
                                                 </constraints>
                                             </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="NHA-jU-XUB">
-                                                <rect key="frame" x="0.0" y="337" width="414" height="1009"/>
+                                                <rect key="frame" x="0.0" y="393" width="414" height="937"/>
                                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed ligula egestas urna ultrices interdum non quis dui. Aliquam eu tellus id ante tempor tempus. Duis ornare a tellus vitae mollis. Praesent posuere justo a lectus euismod, id hendrerit dui dignissim. Etiam eget justo gravida nunc convallis volutpat at eu ex. Suspendisse potenti. Duis a velit non lacus ullamcorper aliquet mollis sit amet neque. Aenean luctus faucibus sapien sit amet porttitor.
 
 Sed fringilla felis porttitor dui aliquam, ac rhoncus ipsum dictum. Cras porta quis est nec pellentesque. Aenean interdum vel nunc at rhoncus. Nulla in porta massa. Fusce ante mi, suscipit ut tincidunt eu, ullamcorper nec nibh. Pellentesque pretium elit mattis, accumsan metus vitae, cursus erat. Curabitur scelerisque eros risus, et feugiat libero facilisis sit amet. Nullam sed ullamcorper metus, vel sodales tellus. Aenean eget pellentesque dolor. Curabitur vitae diam vitae leo iaculis commodo. Pellentesque aliquet tincidunt enim in luctus. Curabitur egestas augue sed lacus ornare, eget varius metus molestie. Nunc massa nibh, ultricies ut pulvinar sed, porttitor at ipsum. Praesent semper eu diam eget tristique. Sed finibus diam a augue ultricies dapibus.
@@ -318,7 +318,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="nbc-iE-8gO" secondAttribute="trailing" constant="20" id="1Pw-Oz-AUt"/>
                                             <constraint firstItem="T9I-Lm-R6O" firstAttribute="centerX" secondItem="67n-gY-rLA" secondAttribute="centerX" id="4RD-q2-zQt"/>
-                                            <constraint firstItem="T9I-Lm-R6O" firstAttribute="top" secondItem="67n-gY-rLA" secondAttribute="top" constant="-89" id="8vG-Fk-hpd"/>
+                                            <constraint firstItem="T9I-Lm-R6O" firstAttribute="top" secondItem="67n-gY-rLA" secondAttribute="top" id="8vG-Fk-hpd"/>
                                             <constraint firstAttribute="trailing" secondItem="NHA-jU-XUB" secondAttribute="trailing" id="BBg-gu-GEY"/>
                                             <constraint firstItem="nbc-iE-8gO" firstAttribute="leading" secondItem="67n-gY-rLA" secondAttribute="leading" constant="20" id="CTR-MO-r70"/>
                                             <constraint firstItem="T9I-Lm-R6O" firstAttribute="width" secondItem="67n-gY-rLA" secondAttribute="width" id="KLE-8A-hrj"/>
@@ -342,7 +342,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </constraints>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTj-67-ko6">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="758" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bHu-Va-nGf"/>
                                 </constraints>
@@ -386,7 +386,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         <viewLayoutGuide key="safeArea" id="2Dh-an-bLl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Story Post" largeTitleDisplayMode="never" id="Wt6-aU-mdI">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="icn_share" id="lyk-Cf-Am4">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icn_share" style="plain" id="lyk-Cf-Am4">
                             <connections>
                                 <action selector="shareStoryButton:" destination="Qau-ja-sge" id="bFv-p2-p2A"/>
                             </connections>
@@ -403,24 +403,18 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzu-o0-iHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="728.98550724637687" y="-653.57142857142856"/>
+            <point key="canvasLocation" x="2620.289855072464" y="-1823.4375"/>
         </scene>
-        <!--About View Controller-->
+        <!--About FNM-->
         <scene sceneID="2qJ-6z-kf3">
             <objects>
-                <viewController storyboardIdentifier="aboutViewController" id="2rw-jO-iKv" customClass="AboutViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aboutViewController" title="About FNM" id="2rw-jO-iKv" customClass="AboutViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hht-1Y-zMs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About FNM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqa-Pt-Ri5">
-                                <rect key="frame" x="20" y="59" width="374" height="26"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="l5m-Ak-Cdg">
-                                <rect key="frame" x="0.0" y="95" width="414" height="169.5"/>
+                                <rect key="frame" x="0.0" y="54" width="414" height="169.5"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed ligula egestas urna ultrices interdum non quis dui. Aliquam eu tellus id ante tempor tempus. Duis ornare a tellus vitae mollis. Praesent posuere justo a lectus euismod, id hendrerit dui dignissim. Etiam eget justo gravida nunc convallis volutpat at eu ex. Suspendisse potenti. Duis a velit non lacus ullamcorper aliquet mollis sit amet neque. Aenean luctus faucibus sapien sit amet porttitor.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="16"/>
@@ -430,10 +424,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="qqa-Pt-Ri5" firstAttribute="leading" secondItem="YaC-0m-jog" secondAttribute="leading" constant="20" id="HC0-4M-sqI"/>
-                            <constraint firstItem="l5m-Ak-Cdg" firstAttribute="top" secondItem="qqa-Pt-Ri5" secondAttribute="bottom" constant="10" id="R9Y-JN-8AH"/>
-                            <constraint firstItem="YaC-0m-jog" firstAttribute="trailing" secondItem="qqa-Pt-Ri5" secondAttribute="trailing" constant="20" id="WYV-2x-6AB"/>
-                            <constraint firstItem="qqa-Pt-Ri5" firstAttribute="top" secondItem="YaC-0m-jog" secondAttribute="top" constant="15" id="Weu-sY-1E2"/>
+                            <constraint firstItem="l5m-Ak-Cdg" firstAttribute="top" secondItem="YaC-0m-jog" secondAttribute="top" constant="10" id="fgU-od-Hw1"/>
                             <constraint firstItem="YaC-0m-jog" firstAttribute="trailing" secondItem="l5m-Ak-Cdg" secondAttribute="trailing" id="qLY-yT-2ZR"/>
                             <constraint firstItem="l5m-Ak-Cdg" firstAttribute="leading" secondItem="YaC-0m-jog" secondAttribute="leading" id="wFF-yG-CN5"/>
                         </constraints>
@@ -441,7 +432,6 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                     </view>
                     <connections>
                         <outlet property="aboutTextView" destination="l5m-Ak-Cdg" id="EcM-5X-aVM"/>
-                        <outlet property="aboutTitle" destination="qqa-Pt-Ri5" id="v3t-B0-Buc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1js-lG-Owf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -457,7 +447,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zOi-Ly-32p">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SVZ-2d-weX">
                                     <size key="itemSize" width="128" height="128"/>
@@ -473,7 +463,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                             <rect key="frame" x="0.0" y="0.0" width="126" height="143"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_alcohol_addiction" translatesAutoresizingMaskIntoConstraints="NO" id="Ed7-Yf-291">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Ed7-Yf-291">
                                                     <rect key="frame" x="0.0" y="-2" width="126" height="147"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcohol Addiction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4L-HC-OLN">
@@ -524,6 +514,9 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         <viewLayoutGuide key="safeArea" id="1lo-MG-nLB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Community" id="DTN-Tc-vZy"/>
+                    <connections>
+                        <outlet property="collectionView" destination="zOi-Ly-32p" id="p9h-6K-dUc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHN-YU-C3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -538,7 +531,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aay-t7-2Ql">
-                                <rect key="frame" x="0.0" y="40" width="414" height="773"/>
+                                <rect key="frame" x="0.0" y="40" width="414" height="822"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notificationCell" rowHeight="64" id="agN-jp-7tU" customClass="NotificationViewCell" customModule="FNMotivation" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="64"/>
@@ -580,16 +573,16 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="iXz-UG-wTv">
-                                                            <rect key="frame" x="60" y="0.0" width="296" height="47.5"/>
+                                                            <rect key="frame" x="60" y="0.0" width="296" height="48.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alonzo created a new comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFa-T8-2C2">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="198.5" height="27.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="184.5" height="28.5"/>
                                                                     <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 minutes ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0E5-IH-eT7">
-                                                                    <rect key="frame" x="0.0" y="27.5" width="63.5" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="28.5" width="60" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="MZf-9A-X1O"/>
                                                                     </constraints>
@@ -711,7 +704,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
         <!--Navigation Controller-->
         <scene sceneID="wjc-dE-TsQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="f0w-Bc-aKK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="homeNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="f0w-Bc-aKK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="icn_home" selectedImage="icn_home_active" id="UOC-ZQ-SC3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gOe-ov-afe">
@@ -731,29 +724,65 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         <gestureRecognizers/>
                     </toolbar>
                     <connections>
-                        <segue destination="cxx-5E-5Sq" kind="relationship" relationship="rootViewController" id="o3M-HC-YLe"/>
+                        <segue destination="mo2-Tk-dLq" kind="relationship" relationship="rootViewController" id="kJL-bB-qGt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFn-jp-OT2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-775" y="-653"/>
+            <point key="canvasLocation" x="-1441" y="-1341"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home-->
+        <scene sceneID="OEt-vd-Yyt">
+            <objects>
+                <viewController title="Home" id="mo2-Tk-dLq" customClass="FNViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PXI-a4-nwL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVt-s9-crb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRL-yL-WzR">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                        <connections>
+                                            <segue destination="y55-oH-xgU" kind="embed" id="Xby-gU-SqU"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NRL-yL-WzR" secondAttribute="trailing" id="CRT-zP-xtM"/>
+                                    <constraint firstItem="NRL-yL-WzR" firstAttribute="top" secondItem="JVt-s9-crb" secondAttribute="top" id="Fkl-FY-3VJ"/>
+                                    <constraint firstItem="NRL-yL-WzR" firstAttribute="leading" secondItem="JVt-s9-crb" secondAttribute="leading" id="P2f-CJ-Fhm"/>
+                                    <constraint firstAttribute="bottom" secondItem="NRL-yL-WzR" secondAttribute="bottom" id="i7o-bG-pO0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JVt-s9-crb" firstAttribute="leading" secondItem="Zh9-Bz-O8J" secondAttribute="leading" id="2Gp-Dn-m91"/>
+                            <constraint firstItem="JVt-s9-crb" firstAttribute="top" secondItem="Zh9-Bz-O8J" secondAttribute="top" id="Cit-bk-fUH"/>
+                            <constraint firstItem="JVt-s9-crb" firstAttribute="trailing" secondItem="Zh9-Bz-O8J" secondAttribute="trailing" id="iZp-Nh-GYD"/>
+                            <constraint firstAttribute="bottom" secondItem="JVt-s9-crb" secondAttribute="bottom" id="tZ6-wW-1Ll"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zh9-Bz-O8J"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="57w-nP-4Od"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J3w-0L-yD7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-717.39130434782612" y="-1341.2946428571429"/>
+        </scene>
+        <!--Tab Bar View Controller-->
         <scene sceneID="PTa-nz-Elg">
             <objects>
-                <tabBarController id="wcT-Vf-MwV" sceneMemberID="viewController">
+                <tabBarController id="wcT-Vf-MwV" customClass="FNTabBarViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ude-wb-j8Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="DarkBlue"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="f0w-Bc-aKK" kind="relationship" relationship="viewControllers" id="aAX-ys-PQh"/>
-                        <segue destination="XUs-vo-HUY" kind="relationship" relationship="viewControllers" id="ruf-2w-eEX"/>
-                        <segue destination="5Xf-db-060" kind="relationship" relationship="viewControllers" id="8BK-NR-rNb"/>
-                        <segue destination="Wyj-gl-mSE" kind="relationship" relationship="viewControllers" id="Lw4-ao-khq"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="REa-hN-Xld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -762,7 +791,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
         <!--Navigation Controller-->
         <scene sceneID="MqM-cw-78B">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XUs-vo-HUY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="communityNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="XUs-vo-HUY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="icn_community" selectedImage="icn_community_active" id="Vwg-ua-XuO">
                         <color key="badgeColor" name="Orange"/>
                     </tabBarItem>
@@ -836,13 +865,13 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="TtL-qc-SW8">
-                                                        <rect key="frame" x="72" y="26" width="158" height="36"/>
+                                                        <rect key="frame" x="76" y="26" width="150" height="36"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wOQ-e5-DBp">
-                                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="36"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="43" height="36"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGV-Md-R6d">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="47.5" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="43" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="cJQ-cg-lyX"/>
                                                                         </constraints>
@@ -851,7 +880,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVL-bS-aNt">
-                                                                        <rect key="frame" x="0.0" y="20" width="47.5" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="20" width="43" height="16"/>
                                                                         <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="11"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -859,17 +888,17 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                                 </subviews>
                                                             </stackView>
                                                             <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbA-0p-Lae">
-                                                                <rect key="frame" x="78.5" y="0.0" width="1" height="36"/>
+                                                                <rect key="frame" x="74" y="0.0" width="1" height="36"/>
                                                                 <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="1" id="M7d-Q3-QRs"/>
                                                                 </constraints>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="g7f-DK-jIA">
-                                                                <rect key="frame" x="110.5" y="0.0" width="47.5" height="36"/>
+                                                                <rect key="frame" x="106" y="0.0" width="44" height="36"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="125" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdW-MG-ONo">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="47.5" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="btQ-9J-HE6"/>
                                                                         </constraints>
@@ -878,7 +907,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqC-qf-SJw">
-                                                                        <rect key="frame" x="0.0" y="20" width="47.5" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="20" width="44" height="16"/>
                                                                         <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="11"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -907,10 +936,10 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xqg-EY-k8T">
-                                <rect key="frame" x="0.0" y="216" width="414" height="597"/>
+                                <rect key="frame" x="0.0" y="216" width="414" height="646"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eoo-m4-3EP">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="597"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="646"/>
                                         <connections>
                                             <segue destination="CFf-8t-HCP" kind="embed" id="SID-Mp-1L9"/>
                                         </connections>
@@ -949,7 +978,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
         <!--Navigation Controller-->
         <scene sceneID="PTJ-vK-hYX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Xf-db-060" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="notificationsNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="5Xf-db-060" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="icn_notification" selectedImage="icn_notification_active" id="8ed-Ij-sse"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SAN-bP-PCL">
@@ -1011,14 +1040,14 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Julia Ramsey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmH-6r-w4e">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Michael Amiro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmH-6r-w4e">
                                 <rect key="frame" x="36" y="155" width="304" height="29"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                                 <color key="textColor" name="OffWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="5" sectionFooterHeight="5" translatesAutoresizingMaskIntoConstraints="NO" id="shM-vY-JR9">
-                                <rect key="frame" x="0.0" y="224" width="360" height="572"/>
+                                <rect key="frame" x="0.0" y="224" width="360" height="536"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell" rowHeight="60" id="V8k-uN-1C6" customClass="MenuViewCell" customModule="FNMotivation" customModuleProvider="target">
@@ -1064,11 +1093,11 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                     <outlet property="delegate" destination="Zt1-fF-f09" id="C9r-ZL-dOM"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="V4C-65-ZOe">
-                                <rect key="frame" x="36" y="796" width="304" height="36"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="V4C-65-ZOe">
+                                <rect key="frame" x="36" y="760" width="304" height="72"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07K-yG-L76">
-                                        <rect key="frame" x="0.0" y="0.0" width="203" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="vTD-Ds-eQx"/>
                                         </constraints>
@@ -1078,15 +1107,15 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                             <color key="titleColor" name="MediumGray"/>
                                         </state>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bundle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IC-v4-kvF">
-                                        <rect key="frame" x="260" y="0.0" width="44" height="36"/>
-                                        <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="14"/>
-                                        <color key="textColor" name="MediumGray"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bundle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IC-v4-kvF">
+                                        <rect key="frame" x="0.0" y="36" width="304" height="36"/>
+                                        <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="11"/>
+                                        <color key="textColor" name="LightGray"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="6B3-TR-OMD"/>
+                                    <constraint firstAttribute="height" constant="72" id="6B3-TR-OMD"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -1122,7 +1151,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
         <!--Navigation Controller-->
         <scene sceneID="Jl1-VY-UXx">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wyj-gl-mSE" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="profileNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="Wyj-gl-mSE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="icn_user" selectedImage="icn_user_active" id="hEr-mw-5Og"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5AO-Ze-bPz">
@@ -1368,6 +1397,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="yes" smartQuotesType="yes" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_mail"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="focusIcon" value="icn_mail_active"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8go-NQ-DMC" customClass="FNTextField" customModule="FNMotivation" customModuleProvider="target">
@@ -1382,6 +1412,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES" smartDashesType="no" smartQuotesType="no" textContentType="password"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_password"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="focusIcon" value="icn_password_active"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUd-ue-l6F" customClass="FNButton" customModule="FNMotivation" customModuleProvider="target">
@@ -1401,17 +1432,21 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2ak-Fc-E5a">
                                 <rect key="frame" x="20" y="181" width="350" height="36"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brj-Ba-791" customClass="FNCheckBox" customModule="FNMotivation" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brj-Ba-791" customClass="FNCheckBox" customModule="FNMotivation" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="LSq-F9-IYd"/>
                                             <constraint firstAttribute="height" constant="36" id="mvX-Rx-uWC"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Remember me">
                                             <color key="titleColor" name="MediumGray"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checkbox_active"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="checkbox_inactive"/>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBg-u5-3B3">
                                         <rect key="frame" x="220" y="0.0" width="130" height="36"/>
@@ -1480,6 +1515,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" smartDashesType="no" smartInsertDeleteType="yes" smartQuotesType="yes" textContentType="name"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_username"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="focusIcon" value="icn_username_active"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CZz-cG-0sA" customClass="FNTextField" customModule="FNMotivation" customModuleProvider="target">
@@ -1494,6 +1530,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="emailAddress" returnKeyType="go" smartDashesType="no" smartInsertDeleteType="yes" smartQuotesType="yes" textContentType="email"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_mail"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="focusIcon" value="icn_mail_active"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13V-oP-RPl" customClass="FNButton" customModule="FNMotivation" customModuleProvider="target">
@@ -1519,6 +1556,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES" smartDashesType="no" smartQuotesType="no" textContentType="password"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_password"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="focusIcon" value="icn_password_active"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JSW-4O-fcs" customClass="FNTextField" customModule="FNMotivation" customModuleProvider="target">
@@ -1533,6 +1571,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_username"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="focusIcon" value="icn_username_active"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Terms of Use" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="c8c-fx-ZDM">
@@ -1587,7 +1626,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
             <objects>
                 <viewController id="CFf-8t-HCP" customClass="ProfileTabsViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jlF-cZ-g0m">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="597"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="646"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="REc-Tu-g0U" customClass="ButtonBarView" customModule="XLPagerTabStrip">
@@ -1605,7 +1644,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 <cells/>
                             </collectionView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gju-jq-x21">
-                                <rect key="frame" x="0.0" y="60" width="414" height="537"/>
+                                <rect key="frame" x="0.0" y="60" width="414" height="586"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1701,16 +1740,16 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
             </objects>
             <point key="canvasLocation" x="-1249" y="1422"/>
         </scene>
-        <!--Add Story-->
+        <!--Create Story Post-->
         <scene sceneID="mx0-x3-CH0">
             <objects>
-                <viewController storyboardIdentifier="addStoryViewController" title="Add Story" id="Yvo-c9-dPJ" customClass="AddStoryViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addStoryViewController" title="Create Story Post" id="Yvo-c9-dPJ" customClass="AddStoryViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RTX-Yg-W1b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhk-tt-9o3" customClass="FNTextField" customModule="FNMotivation" customModuleProvider="target">
-                                <rect key="frame" x="20" y="94" width="374" height="46"/>
+                                <rect key="frame" x="20" y="118" width="374" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="DarkBlue"/>
                                 <constraints>
@@ -1718,17 +1757,17 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                     <constraint firstAttribute="height" constant="46" id="lgk-YR-2kV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="yes" smartQuotesType="yes" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="yes" smartQuotesType="yes"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_title"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0cD-B6-o9Q" customClass="FNTextField" customModule="FNMotivation" customModuleProvider="target">
-                                <rect key="frame" x="20" y="492" width="374" height="34"/>
+                                <rect key="frame" x="20" y="526" width="374" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="DarkBlue"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="46" id="Tjr-8B-tGu"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="Tjr-8B-tGu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="yes" smartQuotesType="yes" textContentType="email"/>
@@ -1736,32 +1775,26 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                     <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_tags"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" allowsEditingTextAttributes="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSV-HR-xlz" customClass="FNTextView" customModule="FNMotivation" customModuleProvider="target">
-                                <rect key="frame" x="20" y="160" width="374" height="312"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Body" allowsEditingTextAttributes="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSV-HR-xlz" customClass="FNTextView" customModule="FNMotivation" customModuleProvider="target">
+                                <rect key="frame" x="20" y="194" width="374" height="312"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="312" id="XmT-Ae-asi"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                        <attributes>
-                                            <color key="NSColor" name="DarkGray"/>
-                                            <font key="NSFont" size="16" name="FuturaBT-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="done" smartInsertDeleteType="yes" smartQuotesType="yes"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_body"/>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="C46-9e-Abh" firstAttribute="trailing" secondItem="0cD-B6-o9Q" secondAttribute="trailing" constant="20" id="3E4-WO-4Mf"/>
-                            <constraint firstItem="Vhk-tt-9o3" firstAttribute="top" secondItem="C46-9e-Abh" secondAttribute="top" constant="50" id="6bC-zi-19k"/>
+                            <constraint firstItem="Vhk-tt-9o3" firstAttribute="top" secondItem="C46-9e-Abh" secondAttribute="top" constant="30" id="6bC-zi-19k"/>
                             <constraint firstItem="vSV-HR-xlz" firstAttribute="trailing" secondItem="C46-9e-Abh" secondAttribute="trailing" constant="-20" id="7Nc-Gz-pHY"/>
-                            <constraint firstItem="vSV-HR-xlz" firstAttribute="top" secondItem="Vhk-tt-9o3" secondAttribute="bottom" constant="20" id="Dwp-RG-8Wm"/>
+                            <constraint firstItem="vSV-HR-xlz" firstAttribute="top" secondItem="Vhk-tt-9o3" secondAttribute="bottom" constant="30" id="Dwp-RG-8Wm"/>
                             <constraint firstItem="0cD-B6-o9Q" firstAttribute="leading" secondItem="C46-9e-Abh" secondAttribute="leading" constant="20" id="K6Y-yK-Tf3"/>
                             <constraint firstItem="0cD-B6-o9Q" firstAttribute="top" secondItem="vSV-HR-xlz" secondAttribute="bottom" constant="20" id="Mug-o5-9jy"/>
                             <constraint firstItem="Vhk-tt-9o3" firstAttribute="leading" secondItem="C46-9e-Abh" secondAttribute="leading" constant="20" id="hMl-VD-zSE"/>
@@ -1770,6 +1803,9 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C46-9e-Abh"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="97X-sT-AkS"/>
+                    <navigationItem key="navigationItem" title="Create a Story Post" id="fZm-vd-MMn"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="editor" destination="vSV-HR-xlz" id="t7P-oU-NQr"/>
                         <outlet property="storyTags" destination="0cD-B6-o9Q" id="ypO-Jb-eic"/>
@@ -1778,7 +1814,488 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1O-Dw-EGe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="3114" y="-656"/>
+        </scene>
+        <!--Create Story Post-->
+        <scene sceneID="mnR-yZ-jpL">
+            <objects>
+                <navigationController storyboardIdentifier="addStoryNavigationViewController" title="Create Story Post" automaticallyAdjustsScrollViewInsets="NO" id="aeH-zF-Ire" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icn_plus" id="KEY-mg-aJq"/>
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yap-OP-Hxk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Yvo-c9-dPJ" kind="relationship" relationship="rootViewController" id="R6L-Tw-Pt2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DFs-sc-0HY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="2411.594202898551" y="-656.25"/>
+        </scene>
+        <!--Home Bar View Controller-->
+        <scene sceneID="ZIk-Ha-A2h">
+            <objects>
+                <viewController id="y55-oH-xgU" customClass="HomeBarViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="biH-la-rGM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymq-0x-kUk">
+                                <rect key="frame" x="0.0" y="50" width="414" height="758"/>
+                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GsU-bp-6In" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VB3-de-Vvu"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MCl-Pi-U9I">
+                                    <size key="itemSize" width="128" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xe4-60-2Sg">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KLK-jn-uxJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="128" height="50"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                        <color key="value" name="MediumGray"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GsU-bp-6In" firstAttribute="top" secondItem="biH-la-rGM" secondAttribute="top" id="KdS-XE-yv4"/>
+                            <constraint firstAttribute="trailing" secondItem="ymq-0x-kUk" secondAttribute="trailing" id="Mt8-2o-kIs"/>
+                            <constraint firstItem="GsU-bp-6In" firstAttribute="leading" secondItem="biH-la-rGM" secondAttribute="leading" id="P3F-vR-AdQ"/>
+                            <constraint firstItem="ymq-0x-kUk" firstAttribute="top" secondItem="GsU-bp-6In" secondAttribute="bottom" id="b7I-lg-Vil"/>
+                            <constraint firstItem="ymq-0x-kUk" firstAttribute="leading" secondItem="biH-la-rGM" secondAttribute="leading" id="fiV-sQ-dfj"/>
+                            <constraint firstAttribute="bottom" secondItem="ymq-0x-kUk" secondAttribute="bottom" id="taw-N9-QWg"/>
+                            <constraint firstAttribute="trailing" secondItem="GsU-bp-6In" secondAttribute="trailing" id="uoU-IZ-cWJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I52-FU-zMo"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonBarView" destination="GsU-bp-6In" id="qB6-HI-RjD"/>
+                        <outlet property="containerView" destination="ymq-0x-kUk" id="jmV-9D-7JG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evk-re-efN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.666666666666671" y="-1191.2946428571429"/>
+        </scene>
+        <!--Articles-->
+        <scene sceneID="g71-a3-Rrn">
+            <objects>
+                <viewController storyboardIdentifier="articlesViewController" title="Articles" id="FBe-Ou-Eks" customClass="ArticlesViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vtm-kG-G4f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SVn-9e-ZPP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UyB-Uv-F0t">
+                                    <size key="itemSize" width="394" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="articleCell" id="r3n-kE-zZc" customClass="ArticleCollectionViewCell" customModule="FNMotivation" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="20" width="394" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rUm-mk-WaC">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="200"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5r6-64-cpH">
+                                                    <rect key="frame" x="20" y="10" width="354" height="180"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="u5I-aJ-78Z">
+                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dutch Coronavirus cases rise by 729 to 34,136" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lE-Mv-pfL">
+                                                                    <rect key="frame" x="0.0" y="1.5" width="270" height="42"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="270" id="JZw-zx-c0j"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dW-Lm-1qn">
+                                                                    <rect key="frame" x="318" y="4.5" width="36" height="36"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="36" id="Pt3-33-AM6"/>
+                                                                        <constraint firstAttribute="width" constant="36" id="whO-se-zBq"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="icn_favorite">
+                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large">
+                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                        </preferredSymbolConfiguration>
+                                                                    </state>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2n-cG-ikp">
+                                                            <rect key="frame" x="0.0" y="45" width="354" height="45"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Heart Disease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTy-Xn-bEw">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="201" height="45"/>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                                                    <color key="textColor" name="DarkBlue"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Rigga on 14/03/2020" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-Dc-3JM">
+                                                                    <rect key="frame" x="201" y="0.0" width="153" height="45"/>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed ligula egestas urna ultrices interdum non quis dui. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bS-fF-CN1">
+                                                            <rect key="frame" x="0.0" y="90" width="354" height="45"/>
+                                                            <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="14"/>
+                                                            <color key="textColor" name="DarkGray"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ThN-Tu-2yl">
+                                                            <rect key="frame" x="0.0" y="135" width="354" height="45"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4h-gb-Aoy">
+                                                                    <rect key="frame" x="0.0" y="7.5" width="100" height="30"/>
+                                                                    <color key="backgroundColor" name="Orange"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="Pyu-C1-0ZA"/>
+                                                                        <constraint firstAttribute="width" constant="100" id="tcf-Kp-HAG"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                                                    <state key="normal" title="Follow">
+                                                                        <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="followAuthor:" destination="r3n-kE-zZc" eventType="touchUpInside" id="1LW-LB-J4G"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vnp-Tk-qpb">
+                                                                    <rect key="frame" x="142" y="7.5" width="30" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="jJK-d3-XAX"/>
+                                                                        <constraint firstAttribute="width" constant="30" id="rLR-KZ-BV1"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                                    <state key="normal" image="icn_share">
+                                                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="shareStory:" destination="r3n-kE-zZc" eventType="touchUpInside" id="BeE-ZA-GMN"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngn-Km-PDi">
+                                                                    <rect key="frame" x="214" y="7.5" width="140" height="30"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4h-8A-dtY">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="70" id="67g-R1-R3i"/>
+                                                                                <constraint firstAttribute="height" constant="30" id="LmB-AX-uc1"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                                            <state key="normal" title="120" image="icn_comment">
+                                                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="postComment:" destination="r3n-kE-zZc" eventType="touchUpInside" id="0o3-wv-CyX"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zq7-Ti-ub3">
+                                                                            <rect key="frame" x="70" y="0.0" width="70" height="30"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="30" id="MYd-fl-5TK"/>
+                                                                                <constraint firstAttribute="width" constant="70" id="n9o-hC-JF0"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                                            <state key="normal" title="23" image="icn_like">
+                                                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="loveStory:" destination="r3n-kE-zZc" eventType="touchUpInside" id="rXR-ZM-Zxv"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="180" id="Yts-3n-WXL"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="5r6-64-cpH" secondAttribute="trailing" constant="20" id="T8R-tm-iW2"/>
+                                                <constraint firstItem="5r6-64-cpH" firstAttribute="leading" secondItem="rUm-mk-WaC" secondAttribute="leading" constant="20" id="xzZ-KR-a47"/>
+                                                <constraint firstItem="5r6-64-cpH" firstAttribute="centerY" secondItem="rUm-mk-WaC" secondAttribute="centerY" id="zbP-W5-fil"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <size key="customSize" width="394" height="200"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="authorLabel" destination="zs4-Dc-3JM" id="ElD-6C-RwB"/>
+                                            <outlet property="bookmarkButton" destination="1dW-Lm-1qn" id="ZkK-A7-eXF"/>
+                                            <outlet property="categoryLabel" destination="hTy-Xn-bEw" id="jyH-Ka-dPU"/>
+                                            <outlet property="commentsButton" destination="g4h-8A-dtY" id="ScT-tj-Woe"/>
+                                            <outlet property="excerptLabel" destination="2bS-fF-CN1" id="gUe-Op-61u"/>
+                                            <outlet property="followButton" destination="y4h-gb-Aoy" id="5AQ-vh-D9D"/>
+                                            <outlet property="likesButton" destination="zq7-Ti-ub3" id="1J5-zP-W47"/>
+                                            <outlet property="shareButton" destination="Vnp-Tk-qpb" id="1D7-0r-qcN"/>
+                                            <outlet property="titleLabel" destination="0lE-Mv-pfL" id="j33-lL-hL8"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="FBe-Ou-Eks" id="JgK-bm-QnR"/>
+                                    <outlet property="delegate" destination="FBe-Ou-Eks" id="zl2-I6-VNd"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SVn-9e-ZPP" firstAttribute="trailing" secondItem="8gn-b3-oWr" secondAttribute="trailing" id="7BX-5s-yqo"/>
+                            <constraint firstItem="SVn-9e-ZPP" firstAttribute="bottom" secondItem="8gn-b3-oWr" secondAttribute="bottom" id="TTv-6F-OOo"/>
+                            <constraint firstItem="SVn-9e-ZPP" firstAttribute="leading" secondItem="8gn-b3-oWr" secondAttribute="leading" id="YuJ-Qw-M4n"/>
+                            <constraint firstItem="SVn-9e-ZPP" firstAttribute="top" secondItem="Vtm-kG-G4f" secondAttribute="top" id="ibX-yN-xHg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8gn-b3-oWr"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="wVl-kA-azw">
+                        <barButtonItem key="backBarButtonItem" title=" " id="kN0-Js-CUU"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="SVn-9e-ZPP" id="gFU-Fh-Q1v"/>
+                        <segue destination="JdK-mH-N8r" kind="show" identifier="toDetailView" id="J4M-Wk-KyH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ou-5c-nbi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4455.072463768116" y="-1823.4375"/>
+        </scene>
+        <!--Story Post-->
+        <scene sceneID="6hN-lV-5q9">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="JdK-mH-N8r" customClass="ArticleDetailViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tgX-3x-jb6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OwP-J3-JDg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qeq-bF-DiP">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1344"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_background" translatesAutoresizingMaskIntoConstraints="NO" id="kyY-QZ-9Xb">
+                                                <rect key="frame" x="0.0" y="-89" width="414" height="289"/>
+                                                <accessibility key="accessibilityConfiguration" label="Header Image">
+                                                    <bool key="isElement" value="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="289" id="EiA-04-ztm"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dutch Coronavirus cases rise by 729 to 34,136" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68u-sd-yjp">
+                                                <rect key="frame" x="20" y="210" width="374" height="52"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lfd-My-uUx">
+                                                <rect key="frame" x="20" y="272" width="374" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="H47-5Q-DcJ">
+                                                        <rect key="frame" x="0.0" y="5.5" width="274" height="39"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Rigga on 14/03/2020" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgd-G5-1e2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="153" height="17"/>
+                                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Heart Disease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzu-Oy-DlV">
+                                                                <rect key="frame" x="0.0" y="22" width="83" height="17"/>
+                                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                                                <color key="textColor" name="DarkBlue"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-l2-QQf">
+                                                        <rect key="frame" x="274" y="10" width="100" height="30"/>
+                                                        <color key="backgroundColor" name="Orange"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="2BO-P4-h7A"/>
+                                                            <constraint firstAttribute="height" constant="30" id="QtS-Rb-05s"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                                        <state key="normal" title="Follow">
+                                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="DIo-6D-Ab3"/>
+                                                </constraints>
+                                            </stackView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="pBC-rT-Rh2">
+                                                <rect key="frame" x="0.0" y="337" width="414" height="937"/>
+                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed ligula egestas urna ultrices interdum non quis dui. Aliquam eu tellus id ante tempor tempus. Duis ornare a tellus vitae mollis. Praesent posuere justo a lectus euismod, id hendrerit dui dignissim. Etiam eget justo gravida nunc convallis volutpat at eu ex. Suspendisse potenti. Duis a velit non lacus ullamcorper aliquet mollis sit amet neque. Aenean luctus faucibus sapien sit amet porttitor.
+
+Sed fringilla felis porttitor dui aliquam, ac rhoncus ipsum dictum. Cras porta quis est nec pellentesque. Aenean interdum vel nunc at rhoncus. Nulla in porta massa. Fusce ante mi, suscipit ut tincidunt eu, ullamcorper nec nibh. Pellentesque pretium elit mattis, accumsan metus vitae, cursus erat. Curabitur scelerisque eros risus, et feugiat libero facilisis sit amet. Nullam sed ullamcorper metus, vel sodales tellus. Aenean eget pellentesque dolor. Curabitur vitae diam vitae leo iaculis commodo. Pellentesque aliquet tincidunt enim in luctus. Curabitur egestas augue sed lacus ornare, eget varius metus molestie. Nunc massa nibh, ultricies ut pulvinar sed, porttitor at ipsum. Praesent semper eu diam eget tristique. Sed finibus diam a augue ultricies dapibus.
+
+Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut suscipit ultricies mauris vel eleifend. Suspendisse congue vestibulum augue vitae auctor. Sed condimentum sem consectetur sapien facilisis, ut vestibulum nibh hendrerit. Etiam cursus tellus sit amet dignissim vulputate. Nulla bibendum orci vel gravida molestie. Morbi iaculis iaculis est eget ullamcorper. Fusce metus ipsum, pharetra non enim in, ultricies ornare nisl. Mauris nec mi ultrices lorem sodales hendrerit a et leo. Morbi et lacinia urna. Donec sed velit dolor. Aenean tellus quam, consectetur eu consectetur quis, tristique non velit.
+
+Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut suscipit ultricies mauris vel eleifend. Suspendisse congue vestibulum augue vitae auctor. Sed condimentum sem consectetur sapien facilisis, ut vestibulum nibh hendrerit. Etiam cursus tellus sit amet dignissim vulputate. Nulla bibendum orci vel gravida molestie. Morbi iaculis iaculis est eget ullamcorper. Fusce metus ipsum, pharetra non enim in, ultricies ornare nisl. Mauris nec mi ultrices lorem sodales hendrerit a et leo. Morbi et lacinia urna. Donec sed velit dolor. Aenean tellus quam, consectetur eu consectetur quis, tristique non velit.</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="lfd-My-uUx" firstAttribute="top" secondItem="68u-sd-yjp" secondAttribute="bottom" constant="10" id="CK9-d0-Vu0"/>
+                                            <constraint firstAttribute="trailing" secondItem="68u-sd-yjp" secondAttribute="trailing" constant="20" id="DkH-ex-0MR"/>
+                                            <constraint firstAttribute="bottom" secondItem="pBC-rT-Rh2" secondAttribute="bottom" constant="70" id="HkM-sd-RAa"/>
+                                            <constraint firstItem="pBC-rT-Rh2" firstAttribute="leading" secondItem="Qeq-bF-DiP" secondAttribute="leading" id="VxM-IB-vEK"/>
+                                            <constraint firstItem="68u-sd-yjp" firstAttribute="top" secondItem="kyY-QZ-9Xb" secondAttribute="bottom" constant="10" id="XJg-zS-jrh"/>
+                                            <constraint firstItem="pBC-rT-Rh2" firstAttribute="top" secondItem="lfd-My-uUx" secondAttribute="bottom" constant="15" id="fRN-2j-vus"/>
+                                            <constraint firstAttribute="trailing" secondItem="pBC-rT-Rh2" secondAttribute="trailing" id="fkK-28-eZG"/>
+                                            <constraint firstAttribute="trailing" secondItem="lfd-My-uUx" secondAttribute="trailing" constant="20" id="l9A-3y-668"/>
+                                            <constraint firstItem="kyY-QZ-9Xb" firstAttribute="centerX" secondItem="Qeq-bF-DiP" secondAttribute="centerX" id="pjT-Xp-qz5"/>
+                                            <constraint firstItem="kyY-QZ-9Xb" firstAttribute="width" secondItem="Qeq-bF-DiP" secondAttribute="width" id="skG-UX-LS7"/>
+                                            <constraint firstItem="68u-sd-yjp" firstAttribute="leading" secondItem="Qeq-bF-DiP" secondAttribute="leading" constant="20" id="vJI-w2-ZiL"/>
+                                            <constraint firstItem="kyY-QZ-9Xb" firstAttribute="top" secondItem="Qeq-bF-DiP" secondAttribute="top" constant="-89" id="xUY-EC-vOo"/>
+                                            <constraint firstItem="lfd-My-uUx" firstAttribute="leading" secondItem="Qeq-bF-DiP" secondAttribute="leading" constant="20" id="ya6-hm-Sdh"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Qeq-bF-DiP" firstAttribute="height" secondItem="OwP-J3-JDg" secondAttribute="height" priority="250" id="HzZ-SJ-KEi"/>
+                                    <constraint firstItem="Qeq-bF-DiP" firstAttribute="width" secondItem="OwP-J3-JDg" secondAttribute="width" id="JoR-Y9-uR8"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qeq-bF-DiP" secondAttribute="bottom" id="dPo-7x-Cb1"/>
+                                    <constraint firstItem="Qeq-bF-DiP" firstAttribute="leading" secondItem="OwP-J3-JDg" secondAttribute="leading" id="iS5-Qm-JSO"/>
+                                    <constraint firstItem="Qeq-bF-DiP" firstAttribute="top" secondItem="OwP-J3-JDg" secondAttribute="top" id="joz-DH-wId"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qeq-bF-DiP" secondAttribute="trailing" id="ukr-G2-EjB"/>
+                                </constraints>
+                            </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BG4-mj-YUY">
+                                <rect key="frame" x="0.0" y="758" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ndr-Ds-FCS"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Item" image="icn_comment" style="plain" id="7xl-vF-9GX">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iaW-sn-2Ja">
+                                            <rect key="frame" x="20" y="13" width="30" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="icn_comment"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="0TT-vg-t33">
+                                        <inset key="imageInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a comment" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="khg-lz-swN">
+                                            <rect key="frame" x="50" y="8" width="300" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" image="checkbox_active" style="plain" id="n2R-Gr-CXZ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Gaa-jQ-Dlx">
+                                            <rect key="frame" x="370" y="7" width="24" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="icn_send"/>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OwP-J3-JDg" firstAttribute="leading" secondItem="SUl-wr-aaY" secondAttribute="leading" id="3Qo-p8-Dik"/>
+                            <constraint firstItem="OwP-J3-JDg" firstAttribute="trailing" secondItem="SUl-wr-aaY" secondAttribute="trailing" id="Jzs-QM-tlT"/>
+                            <constraint firstItem="OwP-J3-JDg" firstAttribute="bottom" secondItem="SUl-wr-aaY" secondAttribute="bottom" id="M0G-mr-BhA"/>
+                            <constraint firstItem="OwP-J3-JDg" firstAttribute="top" secondItem="SUl-wr-aaY" secondAttribute="top" id="XVc-AR-7ih"/>
+                            <constraint firstItem="BG4-mj-YUY" firstAttribute="trailing" secondItem="SUl-wr-aaY" secondAttribute="trailing" id="f5d-Ja-v8l"/>
+                            <constraint firstItem="SUl-wr-aaY" firstAttribute="bottom" secondItem="BG4-mj-YUY" secondAttribute="bottom" id="ifc-2j-Ftd"/>
+                            <constraint firstItem="BG4-mj-YUY" firstAttribute="leading" secondItem="SUl-wr-aaY" secondAttribute="leading" id="nIL-BH-brW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SUl-wr-aaY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Story Post" largeTitleDisplayMode="never" id="1zr-2P-M2a">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icn_share" style="plain" id="NSj-vY-xMr">
+                            <connections>
+                                <action selector="shareStoryButton:" destination="JdK-mH-N8r" id="JUb-82-9XO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="followButton" destination="A6F-l2-QQf" id="lhe-QU-Csn"/>
+                        <outlet property="postThumbnail" destination="kyY-QZ-9Xb" id="nwP-he-PCj"/>
+                        <outlet property="storyBodyTextView" destination="pBC-rT-Rh2" id="xWu-k8-cml"/>
+                        <outlet property="storyCategoryLabel" destination="gzu-Oy-DlV" id="ox8-Kp-swh"/>
+                        <outlet property="storyMetaLabel" destination="bgd-G5-1e2" id="XwQ-mM-OB0"/>
+                        <outlet property="storyTitleLabel" destination="68u-sd-yjp" id="1TL-8N-tEp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jl6-Dr-1Ow" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5188.4057971014499" y="-1823.4375"/>
         </scene>
     </scenes>
     <resources>
@@ -1786,8 +2303,10 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
         <image name="White Logo Square" width="56" height="56"/>
         <image name="amiro-memoji" width="394" height="393"/>
         <image name="checkbox_active" width="18" height="18"/>
+        <image name="checkbox_inactive" width="18" height="18"/>
         <image name="header_background" width="375" height="260"/>
         <image name="icn_about" width="20" height="20"/>
+        <image name="icn_body" width="24" height="24"/>
         <image name="icn_comment" width="24" height="24"/>
         <image name="icn_community" width="30" height="30"/>
         <image name="icn_community_active" width="30" height="30"/>
@@ -1797,9 +2316,12 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
         <image name="icn_like" width="24" height="24"/>
         <image name="icn_logout" width="20" height="20"/>
         <image name="icn_mail" width="24" height="24"/>
+        <image name="icn_mail_active" width="24" height="24"/>
         <image name="icn_notification" width="30" height="30"/>
         <image name="icn_notification_active" width="30" height="30"/>
         <image name="icn_password" width="24" height="24"/>
+        <image name="icn_password_active" width="24" height="24"/>
+        <image name="icn_plus" width="59" height="59"/>
         <image name="icn_send" width="24" height="24"/>
         <image name="icn_share" width="30" height="30"/>
         <image name="icn_tags" width="24" height="24"/>
@@ -1807,8 +2329,9 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
         <image name="icn_user" width="30" height="30"/>
         <image name="icn_user_active" width="30" height="30"/>
         <image name="icn_username" width="24" height="24"/>
-        <image name="img_alcohol_addiction" width="97" height="110"/>
+        <image name="icn_username_active" width="24" height="24"/>
         <image name="menu_background" width="325" height="160"/>
+        <image name="placeholder" width="512" height="512"/>
         <namedColor name="BlueWhite">
             <color red="0.94509803921568625" green="0.95294117647058818" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1821,8 +2344,8 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
         <namedColor name="DarkGray">
             <color red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="DarkGray">
-            <color red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="LightGray">
+            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MediumGray">
             <color red="0.58039215686274515" green="0.58039215686274515" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

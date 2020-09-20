@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import RichEditorView
 
-class AddStoryViewController: UIViewController {
+class AddStoryViewController: FNAlternateViewController {
     
     @IBOutlet weak var storyTitle: FNTextField!
     @IBOutlet weak var storyTags: FNTextField!

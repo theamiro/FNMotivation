@@ -11,29 +11,19 @@ import UIKit
 @IBDesignable
 class FNCheckBox: UIButton {
     // MARK: - Properties
-    
-    var isChecked: Bool = false {
-        didSet{
-            self.setNeedsDisplay()
-        }
-    }
-    
-    @IBInspectable
-    var checkedImage: UIImage? {
-        didSet {
-            setupViews()
-        }
-    }
-    
     @IBInspectable
     var uncheckedImage: UIImage? {
         didSet {
             setupViews()
         }
     }
-    
+    @IBInspectable
+    var checkedImage: UIImage? {
+        didSet {
+            setupViews()
+        }
+    }
     private var feedbackGenerator: UIImpactFeedbackGenerator?
-    
     //  MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,14 +34,9 @@ class FNCheckBox: UIButton {
         super.init(coder: aDecoder)
         setupViews()
     }
-    // TODO: - Clear this content Fix the Checkbox
     func setupViews() {
         self.titleEdgeInsets.left = 5.0
-        if isChecked {
-            self.setImage(checkedImage, for: .normal)
-        } else {
-            self.setImage(uncheckedImage, for: .normal)
-        }
+        self.setImage(uncheckedImage, for: .normal)
     }
     
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -61,10 +46,11 @@ class FNCheckBox: UIButton {
     }
     
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //        super.touchesEnded(touches, with: event)
-        self.isChecked = !isChecked
-        if isChecked {
-            self.setImage(checkedImage, for: .normal)
+        super.touchesEnded(touches, with: event)
+        self.isSelected = !isSelected
+        
+        if isSelected {
+            self.setImage(checkedImage, for: .selected)
         } else {
             self.setImage(uncheckedImage, for: .normal)
         }

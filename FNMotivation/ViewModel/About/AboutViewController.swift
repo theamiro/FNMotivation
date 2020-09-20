@@ -10,7 +10,6 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
-    @IBOutlet weak var aboutTitle: UILabel!
     @IBOutlet weak var aboutTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()

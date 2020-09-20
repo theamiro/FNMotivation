@@ -110,7 +110,7 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - Protobuf (3.11.4)
-  - RichEditorView (5.0.0)
+  - PushNotifications (3.0.4)
   - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
@@ -123,7 +123,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - IQKeyboardManagerSwift
   - KeychainSwift
-  - RichEditorView
+  - PushNotifications
   - XLPagerTabStrip
 
 SPEC REPOS:
@@ -153,7 +153,7 @@ SPEC REPOS:
     - KeychainSwift
     - nanopb
     - Protobuf
-    - RichEditorView
+    - PushNotifications
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
@@ -182,9 +182,9 @@ SPEC CHECKSUMS:
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
-  RichEditorView: 1bbb07b87ca2d479ac29a6877014b38b8df233ef
+  PushNotifications: 6e3d148e5e129af9d4a9279b288c934f9a7f9066
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: a23d574c392043a6ff63124c8743801e53792601
+PODFILE CHECKSUM: bea4a6797dc6872bc59105b5a5c072bd39fa22c4
 
 COCOAPODS: 1.9.1

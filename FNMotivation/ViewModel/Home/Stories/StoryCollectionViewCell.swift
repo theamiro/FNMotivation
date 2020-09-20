@@ -8,19 +8,19 @@
 
 import UIKit
 
-protocol HomeCollectionViewFunctionsDelegate {
-    func followAuthor(cell: HomeViewCell)
+protocol StoryCollectionViewFunctionsDelegate {
+    func followAuthor(cell: StoryCollectionViewCell)
     
-    func shareStory(cell: HomeViewCell)
+    func shareStory(cell: StoryCollectionViewCell)
     
-    func postComment(cell: HomeViewCell)
+    func postComment(cell: StoryCollectionViewCell)
     
-    func loveStory(cell: HomeViewCell)
+    func loveStory(cell: StoryCollectionViewCell)
 }
 
-class HomeViewCell: UICollectionViewCell {
+class StoryCollectionViewCell: UICollectionViewCell {
     
-    var delegate: HomeCollectionViewFunctionsDelegate?
+    var delegate: StoryCollectionViewFunctionsDelegate?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bookmarkButton: UIButton!

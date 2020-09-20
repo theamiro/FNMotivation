@@ -13,19 +13,27 @@ import FirebaseMessaging
 import Firebase
 import GoogleSignIn
 import IQKeyboardManagerSwift
+import PushNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     
     var window: UIWindow?
+    let beamsClient = PushNotifications.shared
     let gcmMessageIDKey = "gcmMessageIDKey"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        // Pusher Notifications
+//        self.beamsClient.start(instanceId: "YOUR_INSTANCE_ID")
+//        self.beamsClient.registerForRemoteNotifications()
+//        try? self.beamsClient.addDeviceInterest(interest: "hello")
+        
+        // TODO: - move this to the onboarding
         if #available(iOS 10.0, *) {
-            // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
-            
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            
             UNUserNotificationCenter.current().requestAuthorization(
                 options: authOptions,
                 completionHandler: {_, _ in })
@@ -38,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         Messaging.messaging().delegate = self
         // Override point for customization after application launch.
-        FirebaseApp.configure()
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
@@ -88,6 +95,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print(userInfo)
         
         completionHandler(UIBackgroundFetchResult.newData)
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let deviceTokenString = deviceToken.hexString
+        print("This is the token: \(deviceTokenString)")
+//        self.beamsClient.registerDeviceToken(deviceToken)
     }
 
     // MARK: UISceneSession Lifecycle

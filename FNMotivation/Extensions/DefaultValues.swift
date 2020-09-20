@@ -13,3 +13,10 @@ public let defaultsHolder = UserDefaults.standard
 class DefaultValues {
     static let tokenKey = "USER_TOKEN"
 }
+
+extension Data {
+    var hexString: String {
+        let hexString = map { String(format: "%02.2hhx", $0) }.joined()
+        return hexString
+    }
+}

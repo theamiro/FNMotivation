@@ -10,7 +10,7 @@ import UIKit
 
 class StoryDetailViewController: UIViewController {
 
-    var post: Story!
+    var story: Story!
     
     @IBOutlet weak var postThumbnail: UIImageView!
     @IBOutlet weak var storyTitleLabel: UILabel!
@@ -35,11 +35,15 @@ class StoryDetailViewController: UIViewController {
         self.present(activityViewController, animated: true, completion: nil)
     }
     func initialize() {
-        postThumbnail.getImageFromURL(using: post.postThumbnail)
-        storyTitleLabel.text = post.title
-        storyMetaLabel.text = "\(post.userID)"
-        storyCategoryLabel.text = post.communityCategories.capitalizingFirstLetter()
-        storyBodyTextView.text = post.story
+        if let thumbnailURL = story.postThumbnail {
+            postThumbnail.getImageFromURL(using: thumbnailURL)
+        } else {
+            postThumbnail.image = UIImage(named: "placeholder")
+        }
+        storyTitleLabel.text = story.title
+        storyMetaLabel.text = "\(story.userID)"
+        storyCategoryLabel.text = story.communityTitle.capitalizingFirstLetter()
+        storyBodyTextView.text = story.body
     }
     
     fileprivate func configureTextView() {

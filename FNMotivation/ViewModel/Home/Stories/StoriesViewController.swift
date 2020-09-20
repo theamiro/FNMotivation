@@ -9,58 +9,53 @@
 import UIKit
 import Alamofire
 import DZNEmptyDataSet
+import XLPagerTabStrip
 
 // MARK: - StoryData
 struct StoryResponse: Codable{
     let success: Bool
     let data: [Story]
-    
-    enum CodingKeys: String, CodingKey {
-        case success = "success"
-        case data = "data"
-    }
 }
 
-// MARK: - Post
+// MARK: - Story
 struct Story: Codable {
-    let postID: Int
-    let title: String
-    let communityCategories: String
-    let summary: String
-    let postThumbnail: String
-    let story: String
-    let tags: String
+    let storyID: Int
+    let title, body: String
+    let postThumbnail: String?
+    let communityTitle: String
     let userID: Int
-    let created: String
+    let username: String
+    let communityThumbnail: String
     
     enum CodingKeys: String, CodingKey {
-        case postID = "post_id"
-        case title = "title"
-        case communityCategories = "community_categories"
-        case summary = "summary"
+        case storyID = "story_id"
+        case title, body
         case postThumbnail = "post_thumbnail"
-        case story = "story"
-        case tags = "tags"
+        case communityTitle = "community_title"
         case userID = "user_id"
-        case created = "createdAt"
+        case username
+        case communityThumbnail = "community_thumbnail"
     }
 }
 
-class HomeViewController: FNViewController {
-    let reuseIdentifier = "homeCell"
+class StoriesViewController: FNViewController, IndicatorInfoProvider {
+    let reuseIdentifier = "storyCell"
     @IBOutlet weak var collectionView: UICollectionView!
     let refreshControl = UIRefreshControl()
     
-    var storyPosts: [Story] =  []
-    var selectedPost: Story?
+    var stories: [Story] =  []
+    var selectedStory: Story?
+    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "STORIES")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureEmptyDataSet()
         
-        guard let url = URL(string: NetworkingValues.apiUrl + "/posts") else { return }
+        guard let url = URL(string: NetworkingValues.apiUrl + "/stories?from=0&to=100") else { return }
         let urlRequest = URLRequest(url: url)
-        
         
         AF.request(urlRequest).validate().responseDecodable(of: StoryResponse.self) { (response) in
             guard let storyResponse = response.value else {
@@ -69,7 +64,7 @@ class HomeViewController: FNViewController {
             let stories = storyResponse.data
             
             for story in stories {
-                self.storyPosts.append(story)
+                self.stories.append(story)
             }
             self.collectionView.reloadData()
         }
@@ -90,7 +85,7 @@ class HomeViewController: FNViewController {
         if segue.identifier == "toDetailView" {
             navigationController?.navigationBar.transform = .init(translationX: 0, y: 0)
             if let storyDetailViewController = segue.destination as? StoryDetailViewController {
-                storyDetailViewController.post = selectedPost
+                storyDetailViewController.story = selectedStory
             }
         }
     }
@@ -108,24 +103,25 @@ class HomeViewController: FNViewController {
 //    }
 }
 
-extension HomeViewController: UICollectionViewDataSource {
+extension StoriesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return storyPosts.count
+        return stories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HomeViewCell
-        cell.titleLabel.text = storyPosts[indexPath.row].title
-        cell.categoryLabel.text = storyPosts[indexPath.row].communityCategories.capitalizingFirstLetter()
-        cell.authorLabel.text = "By \(storyPosts[indexPath.row].userID) on \(storyPosts[indexPath.row].created.getDate())"
-        cell.excerptLabel.text = storyPosts[indexPath.row].story
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! StoryCollectionViewCell
+        cell.titleLabel.text = stories[indexPath.row].title
+        cell.categoryLabel.text = stories[indexPath.row].communityTitle.capitalizingFirstLetter()
+        cell.authorLabel.text = "By \(stories[indexPath.row].userID) on"
+//        \(stories[indexPath.row].created.getDate())
+        cell.excerptLabel.text = stories[indexPath.row].body
         cell.delegate = self
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        let post = storyPosts[indexPath.row]
-        selectedPost = post
+        let story = stories[indexPath.row]
+        selectedStory = story
         
         if let baseViewController = self.navigationController?.tabBarController?.parent as? BaseViewController {
 //            baseViewController.recognizer.isEnabled = false
@@ -137,12 +133,12 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
-extension HomeViewController: HomeCollectionViewFunctionsDelegate {
-    func postComment(cell: HomeViewCell) {}
+extension StoriesViewController: StoryCollectionViewFunctionsDelegate {
+    func postComment(cell: StoryCollectionViewCell) {}
     
-    func loveStory(cell: HomeViewCell) {}
+    func loveStory(cell: StoryCollectionViewCell) {}
     
-    func shareStory(cell: HomeViewCell) {
+    func shareStory(cell: StoryCollectionViewCell) {
         let message = "Hey! I found this article on Future Now Motivation. Check it out!"
         let url = "https://wp.me"
         
@@ -152,7 +148,7 @@ extension HomeViewController: HomeCollectionViewFunctionsDelegate {
         self.present(activityViewController, animated: true, completion: nil)
     }
     
-    func followAuthor(cell: HomeViewCell) {
+    func followAuthor(cell: StoryCollectionViewCell) {
         let authenticationViewController = UIStoryboard(name: "Main", bundle:
             Bundle.main).instantiateViewController(withIdentifier:
                 "authenticationViewController") as! AuthenticationViewController
@@ -161,7 +157,7 @@ extension HomeViewController: HomeCollectionViewFunctionsDelegate {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
+extension StoriesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width - 40.0, height: 200.0)
     }
@@ -174,7 +170,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+extension StoriesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     func emptyDataSetShouldFade(in scrollView: UIScrollView) -> Bool {
         return true
@@ -182,7 +178,7 @@ extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
         let image = UIImage(named: "icn_about_me")
-        scrollView.tintColor = UIColor(named: "BlueWhite")!
+        scrollView.tintColor = .systemBackground
         return image
     }
     
@@ -190,7 +186,7 @@ extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let text = "Sorry, no stories at this time."
         let attribs = [
-            NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 24.0)!,
+            NSAttributedString.Key.font: UIFont(name: "Futura", size: 20.0)!,
             NSAttributedString.Key.foregroundColor: UIColor(named: "MediumGray")!
         ]
         
@@ -205,7 +201,7 @@ extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
         para.lineBreakMode = NSLineBreakMode.byWordWrapping
         para.alignment = NSTextAlignment.center
         let attribs = [
-            NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 14.0)!,
+            NSAttributedString.Key.font: UIFont(name: "Futura", size: 14.0)!,
             NSAttributedString.Key.foregroundColor: UIColor.lightGray,
             NSAttributedString.Key.paragraphStyle: para
         ]
@@ -226,7 +222,7 @@ extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     // Set the background color of your empty data set
     func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
-        return UIColor(named: "BlueWhite")!
+        return UIColor.systemBackground
     }
     func verticalOffset(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {
         return 0

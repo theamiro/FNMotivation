@@ -61,7 +61,6 @@ class NetworkingService {
         }
         
         AF.request(requestControl).validate().responseJSON { response in
-            print("response-----------------------------\n\n", response, "\n\nresponse-----------------------------")
             switch response.result {
                 case .success:
                     if let jsonOutput = response.value {
