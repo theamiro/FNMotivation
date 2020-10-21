@@ -7,19 +7,32 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class AlertsController {
-    static let shared = AlertsController.init()
+    let alertNoButtonStyle = SCLAlertView.SCLAppearance(
+        kWindowWidth: 300.0,
+        kTitleFont: UIFont(name: "Futura", size: 22)!,
+        kTextFont: UIFont(name: "Futura", size: 14)!,
+        kButtonFont: UIFont(name: "Futura", size: 16)!,
+        showCloseButton: false,
+        showCircularIcon: false,
+        contentViewCornerRadius : 10.0,
+        fieldCornerRadius: 4.0,
+        buttonCornerRadius: 4.0
+    )
     
-    func generateAlert(withError error: String) {
-        let alert = UIAlertController(title: "", message: error, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-        
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UIViewController()
-        window.windowLevel = UIWindow.Level.alert + 1;
-        window.makeKeyAndVisible()
-        window.rootViewController?.present(alert, animated: true, completion: nil)
+    func generateAlert(withError errorMessage: String) {
+        let alert = SCLAlertView(appearance: self.alertNoButtonStyle)
+        alert.addButton("dismiss", backgroundColor: UIColor.red, textColor: .white, showTimeout: nil) {}
+        alert.showError("There's a problem", subTitle: errorMessage, closeButtonTitle: nil, timeout: nil, colorStyle: 0x050F50, colorTextButton: 0xFFFFFF, circleIconImage: nil, animationStyle: .noAnimation)
     }
+    
+    func generateAlert(withSuccess successMessage: String, andTitle titleMessage: String = "Success"){
+        let alert = SCLAlertView(appearance: self.alertNoButtonStyle)
+        alert.addButton("dismiss", backgroundColor: UIColor(named: "DarkBlue"), textColor: .white, showTimeout: nil) {}
+        alert.showError(titleMessage, subTitle: successMessage, closeButtonTitle: nil, timeout: nil, colorStyle: 0x050F50, colorTextButton: 0xFFFFFF, circleIconImage: nil, animationStyle: .noAnimation)
+    }
+    
     
 }

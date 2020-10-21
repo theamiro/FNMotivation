@@ -74,7 +74,8 @@ extension AuthenticationViewController: ASAuthorizationControllerDelegate {
                 let username = passwordCredential.user
                 let password = passwordCredential.password
             
-            default: break
+            default:
+                break
         }
     }
     
@@ -88,5 +89,11 @@ extension AuthenticationViewController: ASAuthorizationControllerDelegate {
 extension AuthenticationViewController: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return view.window!
+    }
+}
+
+extension AuthenticationViewController: LoginViewDelegate {
+    func loginSuccessful(token: String) {
+        print("Auth: \(token)" )
     }
 }

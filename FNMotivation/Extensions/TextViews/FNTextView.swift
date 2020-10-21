@@ -31,7 +31,7 @@ class FNTextView: UITextView {
     
     private func setIcon() {
         if defaultIcon != nil {
-            let leftImageView = UIImageView(frame: CGRect(x: 10, y: 0, width: 20, height: 20))
+            let leftImageView = UIImageView(frame: CGRect(x: 10, y: 13, width: 20, height: 20))
             leftImageView.image = defaultIcon
             
             let view = UIView(frame: CGRect(x:0, y:0, width: 28, height: 20))

@@ -11,7 +11,10 @@ import Foundation
 public let defaultsHolder = UserDefaults.standard
 
 class DefaultValues {
+    static let fullname = "USER_FULLNAME"
     static let tokenKey = "USER_TOKEN"
+    static let authNotificationKey = "authNotificationKey"
+    static let logoutNotificationKey = "logoutNotificationKey"
 }
 
 extension Data {

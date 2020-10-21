@@ -10,7 +10,13 @@ import UIKit
 import Alamofire
 import XLPagerTabStrip
 
+protocol LoginViewDelegate: class{
+    func loginSuccessful(token: String)
+}
+
 class LoginViewController: UIViewController, IndicatorInfoProvider {
+    
+    weak var delegate: LoginViewDelegate?
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "LOGIN")
@@ -33,16 +39,27 @@ class LoginViewController: UIViewController, IndicatorInfoProvider {
     }
     @IBAction func loginButtonTapped(_ sender: Any) {
         loginButton.setTitle("Logging in...", for: .normal)
-        AuthenticationManager.shared.performUserAuthentication(userEmail: emailAddressTextField.text!, password: passwordTextField.text!) { (state, message) in
-            if state {
-                print(message)
-                if let authenticationViewController = self.parent?.parent as? AuthenticationViewController {
-                    print("This is the correct view controller to dismiss")
-                    authenticationViewController.dismiss(animated: true, completion: nil)
+        if let email = emailAddressTextField.text,
+            let password = passwordTextField.text {
+            AuthenticationManager().performUserAuthentication(userEmail: email, password: password) { (state, message) in
+                if state {
+                    AlertsController().generateAlert(withSuccess: message, andTitle: "Welcome back!")
+                    
+                    let authNotification = Notification.Name(DefaultValues.authNotificationKey)
+                    NotificationCenter.default.post(name: authNotification, object: nil)
+                    
+                    self.delegate?.loginSuccessful(token: "token")
+                } else {
+                    self.resetForm()
+                    AlertsController().generateAlert(withError: message)
                 }
-            } else {
-                print(message)
             }
+        } else {
+            AlertsController().generateAlert(withError: "There are some missing fields!")
         }
+    }
+    private func resetForm() {
+        loginButton.setTitle("Log in", for: .normal)
+        passwordTextField.text = ""
     }
 }

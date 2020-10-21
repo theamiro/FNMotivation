@@ -12,9 +12,11 @@ import XLPagerTabStrip
 class AuthenticationBarViewController: ButtonBarPagerTabStripViewController {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController")
-        let registrationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "registrationViewController")
+        guard let loginViewController = storyboard?.instantiateViewController(withIdentifier: "loginViewController") as? LoginViewController else { return []}
+        loginViewController.delegate = self
         
+        guard let registrationViewController = storyboard?.instantiateViewController(withIdentifier: "registrationViewController") as? RegisterViewController else { return [] }
+        registrationViewController.delegate = self
         return [loginViewController, registrationViewController]
     }
     
@@ -42,5 +44,21 @@ class AuthenticationBarViewController: ButtonBarPagerTabStripViewController {
         buttonBarView.layer.shadowOpacity = 0.2
         buttonBarView.layer.shadowRadius = 6
         buttonBarView.layer.masksToBounds =  false
+    }
+}
+
+extension AuthenticationBarViewController: LoginViewDelegate {
+    func loginSuccessful(token: String) {
+        if let authenticationViewController = self.parent as? AuthenticationViewController {
+            authenticationViewController.dismiss(animated: true, completion: nil)
+        }
+        print("Bar: \(token)")
+    }
+}
+extension AuthenticationBarViewController: SignupViewDelegate {
+    func signupSuccessful() {
+        if let authenticationViewController = self.parent as? AuthenticationViewController {
+            authenticationViewController.dismiss(animated: true, completion: nil)
+        }
     }
 }

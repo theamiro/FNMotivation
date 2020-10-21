@@ -14,32 +14,32 @@ protocol BaseViewDelegate: class {
 
 class BaseViewController: UIViewController {
     
-    @IBOutlet var recognizer: UIPanGestureRecognizer!
-    @IBOutlet weak var menuContainer: UIView!
-    @IBOutlet weak var contentContainer: UIView!
-    
-    @IBOutlet weak var menuContainerLeading: NSLayoutConstraint!
-    @IBOutlet weak var contentContainerLeading: NSLayoutConstraint!
-    
+    weak var delegate: BaseViewDelegate?
     var menuVisible: Bool = false
+    var menuViewController: MenuViewController?
     
     private let overlay = UIView()
     private let tapRecognizer = UITapGestureRecognizer()
     
-    var menuViewController: MenuViewController?
-    weak var delegate: BaseViewDelegate?
+    @IBOutlet var recognizer: UIPanGestureRecognizer!
+    @IBOutlet weak var menuContainer: UIView!
+    @IBOutlet weak var contentContainer: UIView!
+    @IBOutlet weak var menuContainerLeading: NSLayoutConstraint!
+    @IBOutlet weak var contentContainerLeading: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         menuContainerLeading.constant = 0 - menuContainer.frame.size.width
+        
         overlay.frame = CGRect(x: 0, y: 0, width: contentContainer.frame.width, height: contentContainer.frame.height)
         overlay.backgroundColor = UIColor.black
         overlay.alpha = 0
-        tapRecognizer.numberOfTapsRequired = 1
-        tapRecognizer.addTarget(self, action: #selector(hideSideMenu))
         overlay.addGestureRecognizer(tapRecognizer)
+        
         addOverlay()
         
+        tapRecognizer.numberOfTapsRequired = 1
+        tapRecognizer.addTarget(self, action: #selector(hideSideMenu))
         
         for childViewController in self.children {
             if let sideMenu = childViewController as? MenuViewController {

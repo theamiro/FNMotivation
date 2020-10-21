@@ -18,20 +18,30 @@ class AuthenticationManager {
         defaultsHolder.set(newToken, forKey: DefaultValues.tokenKey)
     }
     
+    func currentSessionIsActive()->Bool{
+        return defaultsHolder.value(forKey: DefaultValues.tokenKey) as? String != nil ? true : false
+    }
+    
+    func storeUserNames(withData userdata: UserProfileData){
+        defaultsHolder.set(userdata.fullname, forKey: DefaultValues.fullname)
+    }
+    
     func performUserAuthentication(userEmail: String, password: String, completion: @escaping (Bool, String)->()) {
         let parameters: [String: Any] = [
             "email": userEmail,
             "password": password
         ]
-        NetworkingService.shared.makeCall(fromUrl: (NetworkingValues.apiUrl + "/users/login"), networkCallType: .post, requestBody: parameters) { (state, message, dataObject) in
+        NetworkingService.shared.makeCall(fromUrl: (NetworkingValues.apiUrl + "/auth/login"), networkCallType: .post, requestBody: parameters) { (state, message, dataObject) in
             if state {
-                guard let response = dataObject as? [String: Any],
-                    let token = response["token"] as? String else {
-                    completion(false, ErrorMessage.parseError)
-                    return
+                if let response = dataObject as? [String: Any] {
+                    let message = response["msg"] as? String
+                    guard let token = response["token"] as? String else {
+                        completion(false, message!)
+                        return
                 }
-                AuthenticationManager.shared.createUserSession(withNewToken: token)
-                completion(true, "Welcome. You can now post and comment on FNMotivation!")
+                    AuthenticationManager.shared.createUserSession(withNewToken: token)
+                    completion(true, "Welcome. You can now post and comment on FNMotivation!")
+                }
             } else {
                 AlertsController().generateAlert(withError: message)
                 completion(state, message)
@@ -39,25 +49,55 @@ class AuthenticationManager {
         }
     }
     
-    func performUserRegistration(username: String, userEmail: String, password: String, completion: @escaping (Bool, String)->()) {
+    func performUserRegistration(username: String, firstName: String, lastName: String, userEmail: String, password: String, completion: @escaping (Bool, String)->()) {
         let parameters: [String: Any] = [
             "username": username,
+            "firstname": firstName,
+            "lastname": lastName,
             "email": userEmail,
             "password": password
         ]
-        NetworkingService.shared.makeCall(fromUrl: (NetworkingValues.apiUrl + "/users/register"), networkCallType: .post, requestBody: parameters) { (state, message, dataObject) in
+        NetworkingService.shared.makeCall(fromUrl: (NetworkingValues.apiUrl + "/auth/register"), networkCallType: .post, requestBody: parameters) { (state, message, dataObject) in
             if state {
-                guard let response = dataObject as? [String: Any],
+                guard let response = dataObject as? [String:Any],
                     let token = response["token"] as? String else {
                         completion(false, ErrorMessage.parseError)
                         return
                 }
-                AuthenticationManager.shared.createUserSession(withNewToken: token)
-                completion(true, "Welcome. You can now post and comment on FNMotivation!")
+                AuthenticationManager().createUserSession(withNewToken: token)
+                completion(true, "Congratulations! You are now able to take full advantage of FNMotivation®.")
             } else {
-                AlertsController().generateAlert(withError: message)
+                //                AlertsController().generateAlert(withError: message)
+                print(message)
                 completion(state, message)
             }
+        }
+    }
+//    func logoutUser(completion: @escaping (Bool, String)->()){
+    func logoutUser(completion: @escaping (String)->()){
+        self.removeUserSession()
+        completion("Logout Successful")
+//        NetworkingService.shared.makeCall(fromUrl: (NetworkingValues.apiUrl + "/user/logout"), networkCallType: .post, headerEnabled: true) { (state, message, dataObject) in
+//            if state {
+//                guard let response = dataObject as? [String:Any], let userMessage = response["message"] as? String else {
+//                    completion(false, ErrorMessage.parseError)
+//                    return
+//                }
+                self.removeUserSession()
+//                completion(true, userMessage)
+//            } else {
+//                AlertsController().generateAlert(withError: message)
+//                completion(state, message)
+//            }
+//        }
+    }
+    
+    private func removeUserSession(){
+        if defaultsHolder.value(forKey: DefaultValues.tokenKey) as? String != nil {
+            defaultsHolder.removeObject(forKey: DefaultValues.tokenKey)
+        }
+        if defaultsHolder.value(forKey: DefaultValues.fullname) as? String != nil {
+            defaultsHolder.removeObject(forKey: DefaultValues.fullname)
         }
     }
 }

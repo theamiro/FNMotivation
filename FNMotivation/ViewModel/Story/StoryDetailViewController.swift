@@ -41,7 +41,7 @@ class StoryDetailViewController: UIViewController {
             postThumbnail.image = UIImage(named: "placeholder")
         }
         storyTitleLabel.text = story.title
-        storyMetaLabel.text = "\(story.userID)"
+        storyMetaLabel.text = "By \(story.username.capitalizingFirstLetter())"
         storyCategoryLabel.text = story.communityTitle.capitalizingFirstLetter()
         storyBodyTextView.text = story.body
     }

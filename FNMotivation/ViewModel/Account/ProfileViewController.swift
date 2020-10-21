@@ -9,11 +9,31 @@
 import UIKit
 import XLPagerTabStrip
 
-class ProfileViewController: UIViewController {
+// MARK: - Welcome
+struct ProfileResponse: Codable {
+    let success: Bool
+    let data: UserProfileData
+}
 
+// MARK: - DataClass
+struct UserProfileData: Codable {
+    let username: String
+    let fullname: String?
+    let gender: String?
+    let dob: String?
+    let role: String
+    let avatar: String?
+    let createdAt: String
+    
+    enum CodingKeys: String, CodingKey {
+        case username, fullname, gender, dob, role, avatar
+        case createdAt
+    }
+}
+
+class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }
 extension ProfileViewController: IndicatorInfoProvider {

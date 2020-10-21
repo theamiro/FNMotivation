@@ -10,12 +10,13 @@ import UIKit
 import XLPagerTabStrip
 import SafariServices
 
+protocol SignupViewDelegate: class{
+    func signupSuccessful()
+}
+
 class RegisterViewController: UIViewController, IndicatorInfoProvider, SFSafariViewControllerDelegate {
     
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "SIGNUP")
-    }
-    
+    weak var delegate: SignupViewDelegate!
     
     @IBOutlet weak var usernameTextField: FNTextField!
     @IBOutlet weak var firstNameTextField: FNTextField!
@@ -23,18 +24,33 @@ class RegisterViewController: UIViewController, IndicatorInfoProvider, SFSafariV
     @IBOutlet weak var passwordTextField: FNTextField!
     @IBOutlet weak var termsTextView: UITextView!
     
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "SIGNUP")
+    }
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         setTermsOfUse()
         
-        for family in UIFont.familyNames {
-            print("family:", family)
-            for font in UIFont.fontNames(forFamilyName: family) {
-                print("font:", font)
+    }
+    
+    @IBAction func signupButtonTapped(_ sender: Any) {
+        if let username = usernameTextField.text,
+            let firstName = firstNameTextField.text,
+            let emailAddress = emailAddressTextField.text,
+            let password = passwordTextField.text {
+            AuthenticationManager().performUserRegistration(username: username, firstName: firstName, lastName: firstName, userEmail: emailAddress, password: password) { (state, message) in
+                if state {
+                    self.delegate.signupSuccessful()
+                    AlertsController().generateAlert(withSuccess: message, andTitle: "Welcome")
+                } else {
+//                    resetForm()
+                    AlertsController().generateAlert(withError: "Missing Fields!")
+                }
             }
+        } else {
+            AlertsController().generateAlert(withError: "Missing Fields!")
         }
-        
     }
     
     func setTermsOfUse() {

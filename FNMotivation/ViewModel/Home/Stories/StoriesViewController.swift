@@ -42,6 +42,7 @@ class StoriesViewController: FNViewController, IndicatorInfoProvider {
     let reuseIdentifier = "storyCell"
     @IBOutlet weak var collectionView: UICollectionView!
     let refreshControl = UIRefreshControl()
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var stories: [Story] =  []
     var selectedStory: Story?
@@ -52,8 +53,14 @@ class StoriesViewController: FNViewController, IndicatorInfoProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureEmptyDataSet()
-        
+        activityIndicator.startAnimating()
+//        configureEmptyDataSet()
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(makeCall), for: .valueChanged)
+        makeCall()
+    }
+    
+    @objc func makeCall() {
         guard let url = URL(string: NetworkingValues.apiUrl + "/stories?from=0&to=100") else { return }
         let urlRequest = URLRequest(url: url)
         
@@ -62,18 +69,17 @@ class StoriesViewController: FNViewController, IndicatorInfoProvider {
                 return
             }
             let stories = storyResponse.data
-            
+            self.stories.removeAll(keepingCapacity: false)
             for story in stories {
                 self.stories.append(story)
             }
             self.collectionView.reloadData()
+            self.activityIndicator.stopAnimating()
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+            self.activityIndicator.isHidden = true
         }
-        collectionView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-    }
-    
-    @objc func refreshData() {
-        
     }
     
     func configureEmptyDataSet() {
@@ -83,24 +89,11 @@ class StoriesViewController: FNViewController, IndicatorInfoProvider {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailView" {
-            navigationController?.navigationBar.transform = .init(translationX: 0, y: 0)
             if let storyDetailViewController = segue.destination as? StoryDetailViewController {
                 storyDetailViewController.story = selectedStory
             }
         }
     }
-//    func getProfile(forUser userID: Int) {
-//        NetworkingService.shared.makeCall(fromUrl: NetworkingValues.apiUrl + "/users/profile/\(userID)", networkCallType: .get) { (state, message, dataObject) in
-//            if state {
-//                guard let response = dataObject as? [String: Any],
-//                    let username = response["username"] as? String else {
-//                        print("error getting profile")
-//                        return
-//                }
-//                print(username)
-//            }
-//        }
-//    }
 }
 
 extension StoriesViewController: UICollectionViewDataSource {
@@ -112,7 +105,7 @@ extension StoriesViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! StoryCollectionViewCell
         cell.titleLabel.text = stories[indexPath.row].title
         cell.categoryLabel.text = stories[indexPath.row].communityTitle.capitalizingFirstLetter()
-        cell.authorLabel.text = "By \(stories[indexPath.row].userID) on"
+        cell.authorLabel.text = "By \(stories[indexPath.row].username)"
 //        \(stories[indexPath.row].created.getDate())
         cell.excerptLabel.text = stories[indexPath.row].body
         cell.delegate = self
@@ -149,11 +142,15 @@ extension StoriesViewController: StoryCollectionViewFunctionsDelegate {
     }
     
     func followAuthor(cell: StoryCollectionViewCell) {
-        let authenticationViewController = UIStoryboard(name: "Main", bundle:
-            Bundle.main).instantiateViewController(withIdentifier:
-                "authenticationViewController") as! AuthenticationViewController
-        authenticationViewController.modalPresentationStyle = .formSheet
-        self.present(authenticationViewController, animated: true, completion: nil)
+        if AuthenticationManager().currentSessionIsActive() {
+            AlertsController().generateAlert(withSuccess: "Followed the Author")
+        } else {
+            let authenticationViewController = UIStoryboard(name: "Main", bundle:
+                Bundle.main).instantiateViewController(withIdentifier:
+                    "authenticationViewController") as! AuthenticationViewController
+            authenticationViewController.modalPresentationStyle = .formSheet
+            self.present(authenticationViewController, animated: true, completion: nil)
+        }
     }
 }
 
@@ -164,10 +161,10 @@ extension StoriesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 20.0
     }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset.y
-        navigationController?.navigationBar.transform = .init(translationX: 0.0, y: min(0, -offset))
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let offset = scrollView.contentOffset.y
+//        navigationController?.navigationBar.transform = .init(translationX: 0.0, y: min(0, -offset))
+//    }
 }
 
 extension StoriesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
@@ -217,7 +214,7 @@ extension StoriesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate 
     }
     
     func emptyDataSet(_ scrollView: UIScrollView, didTap button: UIButton) {
-        refreshData()
+        makeCall()
     }
     
     // Set the background color of your empty data set

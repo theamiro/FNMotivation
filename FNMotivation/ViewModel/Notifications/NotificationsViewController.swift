@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Notification {
+struct RemoteNotification {
     var profileImage: UIImage
     var message: String
     var time: String
@@ -24,7 +24,7 @@ struct Notification {
 
 class NotificationsViewController: FNViewController, UIActionSheetDelegate {
     
-    var notifications: [Notification] = []
+    var notifications: [RemoteNotification] = []
     @IBOutlet weak var tableView: UITableView!
     var reuseIdentifier = "notificationCell"
     
@@ -36,7 +36,7 @@ class NotificationsViewController: FNViewController, UIActionSheetDelegate {
         
         tableView.allowsSelection = false
         for i in 1...20 {
-            notifications.append(Notification(profileImage: UIImage(named: "amiro-memoji")!, message: "Lorem ipsum dolor sit amet.", time: "\(i) mins ago", read: i % 2 == 0 ? true : false))
+            notifications.append(RemoteNotification(profileImage: UIImage(named: "amiro-memoji")!, message: "Lorem ipsum dolor sit amet.", time: "\(i) mins ago", read: i % 2 == 0 ? true : false))
         }
     }
 }

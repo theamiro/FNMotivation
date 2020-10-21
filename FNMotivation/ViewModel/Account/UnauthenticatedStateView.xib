@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UnauthenticatedStateView" customModule="FNMotivation" customModuleProvider="target">
+            <connections>
+                <outlet property="authenticationButton" destination="yYQ-CR-w9B" id="LyJ-3w-Iqg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.triangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ktA-TM-bAg">
+                    <rect key="frame" x="139" y="65" width="136" height="134"/>
+                    <color key="tintColor" name="LightGray"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="136" id="qF7-4v-YiJ"/>
+                        <constraint firstAttribute="height" constant="136" id="qm7-SK-gu8"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To view this content, create an account or sign in" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PH6-Qe-xsD">
+                    <rect key="frame" x="20" y="220" width="374" height="47"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                    <color key="textColor" name="MediumGray"/>
+                    <color key="highlightedColor" name="MediumGray"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYQ-CR-w9B" customClass="FNButton" customModule="FNMotivation" customModuleProvider="target">
+                    <rect key="frame" x="32" y="297" width="350" height="52"/>
+                    <color key="backgroundColor" name="DarkBlue"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="qgJ-yL-tmA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <state key="normal" title="Sign in or Create an account">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="authenticationButtonTapped" destination="-1" eventType="touchUpInside" id="Acl-4b-hJD"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" name="BrilliantWhite"/>
+            <constraints>
+                <constraint firstItem="PH6-Qe-xsD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="8hQ-mk-9vC"/>
+                <constraint firstItem="ktA-TM-bAg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Bnq-Ww-0JT"/>
+                <constraint firstItem="ktA-TM-bAg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Ffc-59-uAW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yYQ-CR-w9B" secondAttribute="trailing" constant="32" id="Iae-36-xtn"/>
+                <constraint firstItem="PH6-Qe-xsD" firstAttribute="top" secondItem="ktA-TM-bAg" secondAttribute="bottom" constant="20" id="LKv-zQ-as8"/>
+                <constraint firstItem="yYQ-CR-w9B" firstAttribute="top" secondItem="PH6-Qe-xsD" secondAttribute="bottom" constant="30" id="T7R-b3-aRl"/>
+                <constraint firstItem="yYQ-CR-w9B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="Weh-EP-JMS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PH6-Qe-xsD" secondAttribute="trailing" constant="20" id="bPS-Fb-YSN"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="89.0625"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="exclamationmark.triangle" catalog="system" width="128" height="112"/>
+        <namedColor name="BrilliantWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkBlue">
+            <color red="0.023529411764705882" green="0.30980392156862746" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightGray">
+            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MediumGray">
+            <color red="0.58039215686274515" green="0.58039215686274515" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

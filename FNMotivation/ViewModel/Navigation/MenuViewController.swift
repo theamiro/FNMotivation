@@ -29,37 +29,86 @@ enum MenuDataKeys {
 class MenuViewController: UIViewController {
     
     var currentNavigationController: UINavigationController?
-    
     let reuseIdentifier = "menuCell"
+    let authNotificationName = Notification.Name(DefaultValues.authNotificationKey)
+    let logoutNotificationName = Notification.Name(DefaultValues.logoutNotificationKey)
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @IBOutlet weak var userFullName: UILabel!
+    @IBOutlet weak var userProfileImage: UIImageView!
     
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var menuTableView: UITableView!
     
     var menuOptions: [MenuOption] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        versionLabel.text = "Version: " + Bundle.main.fullVersion
-        menuOptions.append(MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Home", key: .home))
-        menuOptions.append(MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "About FNM", key: .about))
-        menuOptions.append(MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Contact", key: .contact))
-        menuOptions.append(MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Visit Website", key: .other))
-        
-        logoutButton.addTarget(self, action: #selector(logoutAction), for: .touchUpInside)
+        initializeMenuView()
+        handleAuthenticatedState()
+        createObservers()
+    }
+    
+    func createObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(MenuViewController.handleAuth(notification:)), name: authNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MenuViewController.handleAuth(notification:)), name: logoutNotificationName, object: nil)
+    }
+    
+    @objc
+    func handleAuth(notification: NSNotification) {
+        handleAuthenticatedState()
     }
     
     @objc
     private func logoutAction() {
-        let alert = UIAlertController(title: "\(KeychainItem.currentUserIdentifier)", message: "Are you sure you want to log out of FN Motivation?", preferredStyle: .alert)
+        
+        let alert = UIAlertController(title: "Are you sure?", message: "By logging out you will no longer have access to your saved searches or your user specific information from this device.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Log out", style: .destructive, handler: { (logout) in
-            KeychainItem.deleteUserIdentifierFromKeychain()
-            print("User Successsfully Logged out. Keychain Deleted")
+            AuthenticationManager().logoutUser { (message) in
+                let logoutNotificationName = Notification.Name(rawValue: DefaultValues.logoutNotificationKey)
+                NotificationCenter.default.post(name: logoutNotificationName, object: nil)
+            }
         }))
         if let baseViewController = self.parent as? BaseViewController {
             baseViewController.hideSideMenu()
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    func handleAuthenticatedState() {
+        if AuthenticationManager().currentSessionIsActive() {
+            self.userProfileImage.image = #imageLiteral(resourceName: "amiro-memoji")
+            // TODO: - Refactor
+            self.userFullName.isHidden = false
+            self.userFullName.text = "Your Name here"
+            
+            menuOptions = [
+                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Home", key: .home),
+                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "About FNM", key: .about),
+                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Contact", key: .contact),
+                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Visit Website", key: .other)
+            ]
+            self.logoutButton.isHidden = false
+        } else {
+            self.userProfileImage.image = UIImage(named: "avatar")
+            self.userFullName.text = "Sign in"
+            menuOptions = [
+                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Home", key: .home),
+                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "About FNM", key: .about),
+                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Contact", key: .contact),
+                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Visit Website", key: .other)
+            ]
+            self.logoutButton.isHidden = true
+        }
+        self.menuTableView.reloadData()
+    }
+    private func initializeMenuView() {
+        logoutButton.addTarget(self, action: #selector(logoutAction), for: .touchUpInside)
+        versionLabel.text = "Version: " + Bundle.main.fullVersion
     }
 }
 
@@ -106,5 +155,17 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
+    }
+}
+
+extension MenuViewController: LoginViewDelegate {
+    func loginSuccessful(token: String) {
+        userFullName.text = token
+    }
+}
+
+extension MenuViewController: SignupViewDelegate {
+    func signupSuccessful() {
+        
     }
 }

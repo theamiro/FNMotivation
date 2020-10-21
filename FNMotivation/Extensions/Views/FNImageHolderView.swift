@@ -1,38 +1,39 @@
 //
-//  FNView.swift
+//  UIView.swift
 //  FNMotivation
 //
-//  Created by Michael Amiro on 14/07/2020.
+//  Created by Michael Amiro on 08/10/2020.
 //  Copyright © 2020 Michael Amiro. All rights reserved.
 //
 
 import UIKit
 
-class FNView: UIView {
-
+class FNImageHolderView: UIView {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        configureView()
+        //        configureView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-//        configureView()
+        //        configureView()
     }
-
+    
     private var shadowLayer: CAShapeLayer!
-    private var cornerRadius: CGFloat = 25.0
-    private var fillColor: UIColor = .red // the color applied to the shadowLayer, rather than the view's backgroundColor
+    private var cornerRadius: CGFloat = 10.0
+    private var fillColor: UIColor = .white
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        layer.cornerRadius = 10.0
         if shadowLayer == nil {
             shadowLayer = CAShapeLayer()
             
             shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
             shadowLayer.fillColor = fillColor.cgColor
             
-            shadowLayer.shadowColor = UIColor.label.cgColor
+            shadowLayer.shadowColor = UIColor.black.cgColor
             shadowLayer.shadowPath = shadowLayer.path
             shadowLayer.shadowOffset = CGSize(width: 0.0, height: 1.0)
             shadowLayer.shadowOpacity = 0.2
@@ -42,3 +43,14 @@ class FNView: UIView {
         }
     }
 }
+
+
+//extension UIView {
+//    func dropShadow() {
+//        self.layer.shadowColor = UIColor.black.cgColor
+//        self.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+//        self.layer.shadowOpacity = 0.2
+//        self.layer.shadowRadius = 6
+//        self.layer.masksToBounds =  false
+//    }
+//}

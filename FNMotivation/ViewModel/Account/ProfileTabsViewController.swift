@@ -16,7 +16,7 @@ class ProfileTabsViewController: ButtonBarPagerTabStripViewController {
         let storyPostsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "storyPostsViewController")
         let commentsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "commentsViewController")
         
-        return [profileViewController, storyPostsViewController, commentsViewController]
+        return [profileViewController, commentsViewController]
     }
 
     override func viewDidLoad() {
@@ -38,6 +38,11 @@ class ProfileTabsViewController: ButtonBarPagerTabStripViewController {
             oldCell?.label.textColor = UIColor(named: "MediumGray")
             newCell?.label.textColor = UIColor(named: "DarkBlue")
         }
+        buttonBarView.layer.shadowColor = UIColor.black.cgColor
+        buttonBarView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        buttonBarView.layer.shadowOpacity = 0.2
+        buttonBarView.layer.shadowRadius = 6
+        buttonBarView.layer.masksToBounds =  false
         
     }
 }

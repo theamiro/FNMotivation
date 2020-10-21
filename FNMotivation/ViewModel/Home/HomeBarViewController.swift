@@ -21,8 +21,8 @@ class HomeBarViewController: ButtonBarPagerTabStripViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.settings.style.selectedBarHeight = 4
-        self.settings.style.buttonBarBackgroundColor = UIColor(named: "OffWhite")!
-        self.settings.style.buttonBarItemBackgroundColor = UIColor(named: "OffWhite")!
+        self.settings.style.buttonBarBackgroundColor = UIColor(named: "BrilliantWhite")!
+        self.settings.style.buttonBarItemBackgroundColor = UIColor(named: "BrilliantWhite")!
         
         self.settings.style.selectedBarBackgroundColor = UIColor(named: "DarkBlue")!
         self.settings.style.buttonBarItemFont = UIFont(name: "Futura", size: 13.0)!

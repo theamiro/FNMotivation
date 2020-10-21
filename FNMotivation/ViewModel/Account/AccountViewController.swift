@@ -11,20 +11,23 @@ import UIKit
 class AccountViewController: FNViewController {
 
     @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var followersLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func handleAuthenticatedState() {
+        if AuthenticationManager().currentSessionIsActive() {
+            fullNameLabel.text = "Your Name Here"
+            
+        } else {
+            fullNameLabel.text = "Sign in or Create an Account"
+            profileImage.image = UIImage(named: "avatar")
+            followersLabel.text = "-"
+            followingLabel.text = "-"
+        }
     }
-    */
-
 }

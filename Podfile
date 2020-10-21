@@ -17,6 +17,7 @@ target 'FNMotivation' do
   pod 'KeychainSwift'
   pod 'PushNotifications'
   pod 'XLPagerTabStrip'
+  pod 'SCLAlertView'
   
   target 'FNMotivationTests' do
     inherit! :search_paths

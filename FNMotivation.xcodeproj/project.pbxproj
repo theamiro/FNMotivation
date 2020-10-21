@@ -26,6 +26,7 @@
 		021895BA24C6E51900CAEA44 /* Futura Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 021895B724C6E51900CAEA44 /* Futura Bold.ttf */; };
 		021895BB24C6E51900CAEA44 /* Futura Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 021895B824C6E51900CAEA44 /* Futura Light.ttf */; };
 		0229615F24CB1C9B003DB937 /* AlertsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0229615E24CB1C9B003DB937 /* AlertsController.swift */; };
+		023C7F22251DD5AE009BE502 /* AccountDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C7F21251DD5AE009BE502 /* AccountDataObject.swift */; };
 		02411DEA24B6FF3700E3158F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02411DE924B6FF3700E3158F /* User.swift */; };
 		02411DED24B6FFE300E3158F /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02411DEC24B6FFE300E3158F /* NetworkingService.swift */; };
 		02411DEF24B7026000E3158F /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02411DEE24B7026000E3158F /* DefaultValues.swift */; };
@@ -56,7 +57,6 @@
 		0298598F2493E39900FDAF1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0298598E2493E39900FDAF1C /* Assets.xcassets */; };
 		0298599D2493E39A00FDAF1C /* FNMotivationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298599C2493E39A00FDAF1C /* FNMotivationTests.swift */; };
 		029859A82493E39A00FDAF1C /* FNMotivationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029859A72493E39A00FDAF1C /* FNMotivationUITests.swift */; };
-		02A2A49624BB646400FF99A7 /* AuthenticationDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2A49524BB646400FF99A7 /* AuthenticationDataObject.swift */; };
 		02A2A49824BB649C00FF99A7 /* NetworkingValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2A49724BB649C00FF99A7 /* NetworkingValues.swift */; };
 		02A2A49B24BB72B200FF99A7 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2A49A24BB72B200FF99A7 /* ErrorMessages.swift */; };
 		02A2A49E24BB73D300FF99A7 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2A49D24BB73D300FF99A7 /* AuthenticationManager.swift */; };
@@ -69,8 +69,12 @@
 		02B7F9B224E133D70081F13E /* AddStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7F9B124E133D70081F13E /* AddStoryViewController.swift */; };
 		02B7F9B824E1441A0081F13E /* FNTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7F9B724E1441A0081F13E /* FNTextView.swift */; };
 		02B7F9BA24E1466F0081F13E /* FNToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7F9B924E1466F0081F13E /* FNToolbar.swift */; };
+		02D33CF6252F06A80089A50A /* CommentsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D33CF5252F06A70089A50A /* CommentsViewCell.swift */; };
+		02D33CF8252F19AD0089A50A /* FNImageHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D33CF7252F19AD0089A50A /* FNImageHolderView.swift */; };
 		02DC597624DA98660009E55C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC597524DA98660009E55C /* Images.swift */; };
 		02DF498E24CED08A0071CD6C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF498D24CED08A0071CD6C /* Date.swift */; };
+		02E89883252F48D40095BE5A /* UnauthenticatedStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E89881252F48D40095BE5A /* UnauthenticatedStateView.swift */; };
+		02E89884252F48D40095BE5A /* UnauthenticatedStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02E89882252F48D40095BE5A /* UnauthenticatedStateView.xib */; };
 		02FABDAB24BDBFFC0099A931 /* FNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FABDAA24BDBFFC0099A931 /* FNButton.swift */; };
 		2A33728793CDF5818B456362 /* Pods_FNMotivation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8ED8D6DDE86BE7B0CB6638 /* Pods_FNMotivation.framework */; };
 		A99E572909CF60395070DFE0 /* Pods_FNMotivation_FNMotivationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFCB98DC640C6A68496EB31 /* Pods_FNMotivation_FNMotivationUITests.framework */; };
@@ -115,6 +119,7 @@
 		021895B724C6E51900CAEA44 /* Futura Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Bold.ttf"; sourceTree = "<group>"; };
 		021895B824C6E51900CAEA44 /* Futura Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Light.ttf"; sourceTree = "<group>"; };
 		0229615E24CB1C9B003DB937 /* AlertsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsController.swift; sourceTree = "<group>"; };
+		023C7F21251DD5AE009BE502 /* AccountDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataObject.swift; sourceTree = "<group>"; };
 		02411DE924B6FF3700E3158F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		02411DEC24B6FFE300E3158F /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		02411DEE24B7026000E3158F /* DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
@@ -152,7 +157,6 @@
 		029859A32493E39A00FDAF1C /* FNMotivationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FNMotivationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		029859A72493E39A00FDAF1C /* FNMotivationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNMotivationUITests.swift; sourceTree = "<group>"; };
 		029859A92493E39A00FDAF1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		02A2A49524BB646400FF99A7 /* AuthenticationDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDataObject.swift; sourceTree = "<group>"; };
 		02A2A49724BB649C00FF99A7 /* NetworkingValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingValues.swift; sourceTree = "<group>"; };
 		02A2A49A24BB72B200FF99A7 /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
 		02A2A49D24BB73D300FF99A7 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -165,8 +169,12 @@
 		02B7F9B124E133D70081F13E /* AddStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoryViewController.swift; sourceTree = "<group>"; };
 		02B7F9B724E1441A0081F13E /* FNTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNTextView.swift; sourceTree = "<group>"; };
 		02B7F9B924E1466F0081F13E /* FNToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNToolbar.swift; sourceTree = "<group>"; };
+		02D33CF5252F06A70089A50A /* CommentsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewCell.swift; sourceTree = "<group>"; };
+		02D33CF7252F19AD0089A50A /* FNImageHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNImageHolderView.swift; sourceTree = "<group>"; };
 		02DC597524DA98660009E55C /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		02DF498D24CED08A0071CD6C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		02E89881252F48D40095BE5A /* UnauthenticatedStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnauthenticatedStateView.swift; sourceTree = "<group>"; };
+		02E89882252F48D40095BE5A /* UnauthenticatedStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnauthenticatedStateView.xib; sourceTree = "<group>"; };
 		02FABDAA24BDBFFC0099A931 /* FNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNButton.swift; sourceTree = "<group>"; };
 		0F03DBA4AC1225A97CF6CEC1 /* Pods_FNMotivationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FNMotivationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3B39107F73353E0A3B91F0 /* Pods-FNMotivation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FNMotivation.release.xcconfig"; path = "Target Support Files/Pods-FNMotivation/Pods-FNMotivation.release.xcconfig"; sourceTree = "<group>"; };
@@ -270,6 +278,14 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
+		023C7F20251DD594009BE502 /* AccountDataObject */ = {
+			isa = PBXGroup;
+			children = (
+				023C7F21251DD5AE009BE502 /* AccountDataObject.swift */,
+			);
+			path = AccountDataObject;
+			sourceTree = "<group>";
+		};
 		02411DEB24B6FFC600E3158F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,11 +348,15 @@
 		026A720C24C5F47900ECC477 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				023C7F20251DD594009BE502 /* AccountDataObject */,
 				026A720624C5CD7000ECC477 /* AccountViewController.swift */,
 				0289D3E824C7266F00EC8311 /* CommentsViewController.swift */,
+				02D33CF5252F06A70089A50A /* CommentsViewCell.swift */,
 				0289D3EA24C7278900EC8311 /* ProfileTabsViewController.swift */,
 				0289D3EC24C72EA200EC8311 /* StoryPostsViewController.swift */,
 				0289D3EE24C7325D00EC8311 /* ProfileViewController.swift */,
+				02E89881252F48D40095BE5A /* UnauthenticatedStateView.swift */,
+				02E89882252F48D40095BE5A /* UnauthenticatedStateView.xib */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -389,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				027BB39624BDC53900F6FFA2 /* FNView.swift */,
+				02D33CF7252F19AD0089A50A /* FNImageHolderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -468,7 +489,6 @@
 		02A2A49424BB644A00FF99A7 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				02A2A49524BB646400FF99A7 /* AuthenticationDataObject.swift */,
 				02AA45D724BD9C69002624C0 /* LoginViewController.swift */,
 				02AA45DF24BDAB5D002624C0 /* RegisterViewController.swift */,
 				02AA45DD24BDAA4D002624C0 /* AuthenticationBarViewController.swift */,
@@ -702,6 +722,7 @@
 				021895B924C6E51900CAEA44 /* Futura Medium.ttf in Resources */,
 				021895BB24C6E51900CAEA44 /* Futura Light.ttf in Resources */,
 				02A7C47324ED402500129E1C /* GoogleService-Info.plist in Resources */,
+				02E89884252F48D40095BE5A /* UnauthenticatedStateView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -865,6 +886,7 @@
 			files = (
 				027BB39724BDC53900F6FFA2 /* FNView.swift in Sources */,
 				025C35B9251794B900A19CC7 /* ArticleCollectionViewCell.swift in Sources */,
+				02D33CF6252F06A80089A50A /* CommentsViewCell.swift in Sources */,
 				02AA45DE24BDAA4D002624C0 /* AuthenticationBarViewController.swift in Sources */,
 				0216F60824DB22A900FFE870 /* Validation.swift in Sources */,
 				02AA45D824BD9C69002624C0 /* LoginViewController.swift in Sources */,
@@ -875,6 +897,7 @@
 				02DC597624DA98660009E55C /* Images.swift in Sources */,
 				0218959E24C5F8C100CAEA44 /* NotificationViewCell.swift in Sources */,
 				027BB39C24BDFC7100F6FFA2 /* FNCheckBox.swift in Sources */,
+				02D33CF8252F19AD0089A50A /* FNImageHolderView.swift in Sources */,
 				021895AE24C6D5D600CAEA44 /* Strings.swift in Sources */,
 				026A720724C5CD7000ECC477 /* AccountViewController.swift in Sources */,
 				029859872493E39400FDAF1C /* ViewController.swift in Sources */,
@@ -885,7 +908,6 @@
 				021895A924C6220500CAEA44 /* Bundle.swift in Sources */,
 				0289D3E724C7165900EC8311 /* CommunityCollectionViewCell.swift in Sources */,
 				0204439825178B880085F159 /* HomeBarViewController.swift in Sources */,
-				02A2A49624BB646400FF99A7 /* AuthenticationDataObject.swift in Sources */,
 				02411DED24B6FFE300E3158F /* NetworkingService.swift in Sources */,
 				02A2A49824BB649C00FF99A7 /* NetworkingValues.swift in Sources */,
 				025C35B725178EDA00A19CC7 /* ArticlesViewController.swift in Sources */,
@@ -913,7 +935,9 @@
 				0298598D2493E39400FDAF1C /* FNMotivation.xcdatamodeld in Sources */,
 				0289D3EF24C7325D00EC8311 /* ProfileViewController.swift in Sources */,
 				021895A424C616AC00CAEA44 /* MenuViewCell.swift in Sources */,
+				023C7F22251DD5AE009BE502 /* AccountDataObject.swift in Sources */,
 				02B7F9B824E1441A0081F13E /* FNTextView.swift in Sources */,
+				02E89883252F48D40095BE5A /* UnauthenticatedStateView.swift in Sources */,
 				0289D3EB24C7278900EC8311 /* ProfileTabsViewController.swift in Sources */,
 				027FF56E24DAECC30019D09C /* KeychainItem.swift in Sources */,
 				02AAC3D82494A63B002A2B49 /* StoryCollectionViewCell.swift in Sources */,
@@ -1075,7 +1099,7 @@
 				CODE_SIGN_ENTITLEMENTS = FNMotivation/FNMotivation.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.00002;
+				CURRENT_PROJECT_VERSION = 2.00004;
 				DEVELOPMENT_TEAM = T7Q9QM92G2;
 				INFOPLIST_FILE = FNMotivation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1098,7 +1122,7 @@
 				CODE_SIGN_ENTITLEMENTS = FNMotivation/FNMotivation.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.00002;
+				CURRENT_PROJECT_VERSION = 2.00004;
 				DEVELOPMENT_TEAM = T7Q9QM92G2;
 				INFOPLIST_FILE = FNMotivation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

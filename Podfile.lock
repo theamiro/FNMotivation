@@ -111,6 +111,7 @@ PODS:
   - nanopb/encode (0.3.9011)
   - Protobuf (3.11.4)
   - PushNotifications (3.0.4)
+  - SCLAlertView (0.8)
   - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
@@ -124,6 +125,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - KeychainSwift
   - PushNotifications
+  - SCLAlertView
   - XLPagerTabStrip
 
 SPEC REPOS:
@@ -154,6 +156,7 @@ SPEC REPOS:
     - nanopb
     - Protobuf
     - PushNotifications
+    - SCLAlertView
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
@@ -183,8 +186,9 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
   PushNotifications: 6e3d148e5e129af9d4a9279b288c934f9a7f9066
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: bea4a6797dc6872bc59105b5a5c072bd39fa22c4
+PODFILE CHECKSUM: 3a1cdaac0b6fd2c95f45b51f3c8488c3bc2ed161
 
 COCOAPODS: 1.9.1

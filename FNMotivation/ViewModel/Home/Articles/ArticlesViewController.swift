@@ -39,8 +39,9 @@ struct Article: Codable {
 }
 
 class ArticlesViewController: FNViewController, IndicatorInfoProvider {
-    let reuseIdentifier = "articleCell"
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    let reuseIdentifier = "articleCell"
     let refreshControl = UIRefreshControl()
     
     var articles: [Article] =  []
@@ -49,9 +50,17 @@ class ArticlesViewController: FNViewController, IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "ARTICLES")
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(makeCall), for: .valueChanged)
+        makeCall()
+//        configureEmptyDataSet()
+    }
+    
+    @objc private func makeCall() {
         guard let url = URL(string: NetworkingValues.apiUrl + "/posts?from=0&to=100") else { return }
         let urlRequest = URLRequest(url: url)
         
@@ -60,19 +69,24 @@ class ArticlesViewController: FNViewController, IndicatorInfoProvider {
                 return
             }
             let articles = articleResponse.data
-            
+            self.articles.removeAll(keepingCapacity: false)
             for article in articles {
                 self.articles.append(article)
             }
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
             self.collectionView.reloadData()
         }
-        collectionView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-//        configureEmptyDataSet()
     }
-    
-    @objc private func refreshData() {
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailView" {
+            if let articleDetailViewController = segue.destination as? ArticleDetailViewController {
+                articleDetailViewController.article = selectedArticle
+            }
+        }
     }
 }
 extension ArticlesViewController: UICollectionViewDataSource {
@@ -135,10 +149,6 @@ extension ArticlesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 20.0
     }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset.y
-        navigationController?.navigationBar.transform = .init(translationX: 0.0, y: min(0, -offset))
-    }
 }
 
 extension ArticlesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
@@ -188,7 +198,7 @@ extension ArticlesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
     }
     
     func emptyDataSet(_ scrollView: UIScrollView, didTap button: UIButton) {
-        refreshData()
+        makeCall()
     }
     
     // Set the background color of your empty data set

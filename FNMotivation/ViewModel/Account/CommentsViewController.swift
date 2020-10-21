@@ -11,14 +11,13 @@ import XLPagerTabStrip
 
 class CommentsViewController: UIViewController, IndicatorInfoProvider {
     
+    var reuseIdentifier = "commentCell"
+    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "Comments")
     }
-
-    var reuseIdentifier = "commentCell"
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }
 extension CommentsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -27,8 +26,13 @@ extension CommentsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier)
-        cell?.detailTextLabel?.text = "This is a comment."
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? CommentsViewCell
+        cell?.commentLabel.text = "Lorem ipsum dolor sit amet sit dolor ipsum lorem."
+        cell?.categoryLabel.text = "Anxiety"
+        cell?.dateLabel.text = "21st January 2019"
         return cell!
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 72.0
     }
 }
