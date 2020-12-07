@@ -13,6 +13,12 @@ import GoogleSignIn
 
 class AuthenticationViewController: UIViewController {
     
+    let authNotificationName = Notification.Name(DefaultValues.authNotificationKey)
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var pageTitleLabel: UILabel!
     @IBOutlet weak var pageSubtitleLabel: UILabel!
@@ -20,11 +26,20 @@ class AuthenticationViewController: UIViewController {
     @IBOutlet weak var GIDSignInButton: UIButton!
     @IBOutlet weak var parentView: FNView!
     
+    weak var loginDelegate: LoginViewDelegate?
+    weak var signupDelegate: SignupViewDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeView()
         initializeSignInOptions()
+        createObservers()
     }
+    
+    func createObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(AuthenticationViewController.dismiss(animated:completion:)), name: authNotificationName, object: nil)
+    }
+    
     func initializeView() {
         parentView.layer.cornerRadius = 20
         parentView.layer.shadowColor = UIColor.black.cgColor
@@ -65,24 +80,55 @@ extension AuthenticationViewController: ASAuthorizationControllerDelegate {
             case let appleIDCredential as ASAuthorizationAppleIDCredential:
                 // Create an account in your system.
                 let userIdentifier = appleIDCredential.user
-                let firstName = appleIDCredential.fullName?.givenName
-                let lastName = appleIDCredential.fullName?.familyName
-                let emailAddress = appleIDCredential.email
+                guard let givenName = appleIDCredential.fullName?.givenName else { return }
+                guard let familyName = appleIDCredential.fullName?.familyName else { return }
+                
+                var fullName: String {
+                    return givenName + " " + familyName
+                }
+                guard let email = appleIDCredential.email,
+                    let token = appleIDCredential.identityToken?.base64EncodedString() else {
+                            AlertsController().generateAlert(withError: "Error getting Apple Sign in Credentials")
+                            return
+                }
+                
+                AuthenticationManager().performThirdPartyRegistration(provider: .apple, email: email, userID: userIdentifier, fullName: fullName, token: token, avatar: "") { (state, message) in
+                    if state {
+                        AlertsController().generateAlert(withSuccess: message, andTitle: "Welcome back!")
+                        guard let token = defaultsHolder.string(forKey: DefaultValues.tokenKey) else { return }
+                        
+                        let authNotification = Notification.Name(DefaultValues.authNotificationKey)
+                        NotificationCenter.default.post(name: authNotification, object: nil, userInfo: ["token": token])
+                        self.loginDelegate?.loginSuccessful()
+                    } else {
+                        AlertsController().generateAlert(withError: message)
+                    }
+            }
             
             case let passwordCredential as ASPasswordCredential:
                 // Sign in using an existing iCloud Keychain credential.
                 let username = passwordCredential.user
                 let password = passwordCredential.password
             
+                AuthenticationManager().performUserAuthentication(userEmail: username, password: password) { (state, message) in
+                    if state {
+                        AlertsController().generateAlert(withSuccess: message, andTitle: "Welcome back!")
+                        guard let token = defaultsHolder.string(forKey: DefaultValues.tokenKey) else { return }
+                        
+                        let authNotification = Notification.Name(DefaultValues.authNotificationKey)
+                        NotificationCenter.default.post(name: authNotification, object: nil, userInfo: ["token": token])
+                        self.loginDelegate?.loginSuccessful()
+                    } else {
+                        AlertsController().generateAlert(withError: message)
+                    }
+            }
             default:
                 break
         }
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        let alert = UIAlertController(title: "Authorization Error", message: error.localizedDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        AlertsController().generateAlert(withError: error.localizedDescription)
     }
 }
 
@@ -93,7 +139,12 @@ extension AuthenticationViewController: ASAuthorizationControllerPresentationCon
 }
 
 extension AuthenticationViewController: LoginViewDelegate {
-    func loginSuccessful(token: String) {
-        print("Auth: \(token)" )
+    func loginSuccessful() {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+extension AuthenticationViewController: SignupViewDelegate {
+    func signupSuccessful() {
+        self.dismiss(animated: true, completion: nil)
     }
 }

@@ -14,8 +14,10 @@ target 'FNMotivation' do
   pod 'Firebase/Messaging'
   pod 'GoogleSignIn'
   pod 'IQKeyboardManagerSwift'
+  pod 'JWTDecode'
   pod 'KeychainSwift'
   pod 'PushNotifications'
+  pod 'SwiftyJSON'
   pod 'XLPagerTabStrip'
   pod 'SCLAlertView'
   

@@ -12,7 +12,6 @@
 		020A621E2493F1920010AB3F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 020A621D2493F1920010AB3F /* Colors.xcassets */; };
 		020B200424BE18FD003E2F58 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B200324BE18FD003E2F58 /* AuthenticationViewController.swift */; };
 		020B200724BE2023003E2F58 /* StoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B200624BE2023003E2F58 /* StoryDetailViewController.swift */; };
-		0215D55924ECFA7A0063A0F3 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215D55824ECFA7A0063A0F3 /* TabViewController.swift */; };
 		0215D55C24ECFD230063A0F3 /* FNTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215D55B24ECFD230063A0F3 /* FNTabBarViewController.swift */; };
 		0216F60824DB22A900FFE870 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0216F60724DB22A900FFE870 /* Validation.swift */; };
 		0218959E24C5F8C100CAEA44 /* NotificationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218959D24C5F8C100CAEA44 /* NotificationViewCell.swift */; };
@@ -52,7 +51,6 @@
 		0289D3EF24C7325D00EC8311 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0289D3EE24C7325D00EC8311 /* ProfileViewController.swift */; };
 		029859832493E39400FDAF1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029859822493E39400FDAF1C /* AppDelegate.swift */; };
 		029859852493E39400FDAF1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029859842493E39400FDAF1C /* SceneDelegate.swift */; };
-		029859872493E39400FDAF1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029859862493E39400FDAF1C /* ViewController.swift */; };
 		0298598D2493E39400FDAF1C /* FNMotivation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0298598B2493E39400FDAF1C /* FNMotivation.xcdatamodeld */; };
 		0298598F2493E39900FDAF1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0298598E2493E39900FDAF1C /* Assets.xcassets */; };
 		0298599D2493E39A00FDAF1C /* FNMotivationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298599C2493E39A00FDAF1C /* FNMotivationTests.swift */; };
@@ -105,7 +103,6 @@
 		020A621D2493F1920010AB3F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		020B200324BE18FD003E2F58 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		020B200624BE2023003E2F58 /* StoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController.swift; sourceTree = "<group>"; };
-		0215D55824ECFA7A0063A0F3 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		0215D55B24ECFD230063A0F3 /* FNTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNTabBarViewController.swift; sourceTree = "<group>"; };
 		0216F60724DB22A900FFE870 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		0218959D24C5F8C100CAEA44 /* NotificationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewCell.swift; sourceTree = "<group>"; };
@@ -147,7 +144,6 @@
 		0298597F2493E39400FDAF1C /* FNMotivation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FNMotivation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029859822493E39400FDAF1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		029859842493E39400FDAF1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		029859862493E39400FDAF1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0298598C2493E39400FDAF1C /* FNMotivation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FNMotivation.xcdatamodel; sourceTree = "<group>"; };
 		0298598E2493E39900FDAF1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		029859932493E39A00FDAF1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -454,12 +450,10 @@
 				02AAC3D32494A542002A2B49 /* ViewModel */,
 				029859822493E39400FDAF1C /* AppDelegate.swift */,
 				029859842493E39400FDAF1C /* SceneDelegate.swift */,
-				029859862493E39400FDAF1C /* ViewController.swift */,
 				0298598E2493E39900FDAF1C /* Assets.xcassets */,
 				020A621D2493F1920010AB3F /* Colors.xcassets */,
 				020A62172493EA5C0010AB3F /* LaunchScreen.storyboard */,
 				020A621B2493EAD50010AB3F /* Main.storyboard */,
-				0215D55824ECFA7A0063A0F3 /* TabViewController.swift */,
 				0298598B2493E39400FDAF1C /* FNMotivation.xcdatamodeld */,
 				029859932493E39A00FDAF1C /* Info.plist */,
 				02A7C47224ED402500129E1C /* GoogleService-Info.plist */,
@@ -623,6 +617,8 @@
 			dependencies = (
 			);
 			name = FNMotivation;
+			packageProductDependencies = (
+			);
 			productName = FNMotivation;
 			productReference = 0298597F2493E39400FDAF1C /* FNMotivation.app */;
 			productType = "com.apple.product-type.application";
@@ -699,6 +695,8 @@
 				Base,
 			);
 			mainGroup = 029859762493E39400FDAF1C;
+			packageReferences = (
+			);
 			productRefGroup = 029859802493E39400FDAF1C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -900,7 +898,6 @@
 				02D33CF8252F19AD0089A50A /* FNImageHolderView.swift in Sources */,
 				021895AE24C6D5D600CAEA44 /* Strings.swift in Sources */,
 				026A720724C5CD7000ECC477 /* AccountViewController.swift in Sources */,
-				029859872493E39400FDAF1C /* ViewController.swift in Sources */,
 				02B7F9B224E133D70081F13E /* AddStoryViewController.swift in Sources */,
 				026A720B24C5D57200ECC477 /* CommunityViewController.swift in Sources */,
 				02DF498E24CED08A0071CD6C /* Date.swift in Sources */,
@@ -912,7 +909,6 @@
 				02A2A49824BB649C00FF99A7 /* NetworkingValues.swift in Sources */,
 				025C35B725178EDA00A19CC7 /* ArticlesViewController.swift in Sources */,
 				020B200424BE18FD003E2F58 /* AuthenticationViewController.swift in Sources */,
-				0215D55924ECFA7A0063A0F3 /* TabViewController.swift in Sources */,
 				020B200724BE2023003E2F58 /* StoryDetailViewController.swift in Sources */,
 				0229615F24CB1C9B003DB937 /* AlertsController.swift in Sources */,
 				02411DEF24B7026000E3158F /* DefaultValues.swift in Sources */,
@@ -1099,7 +1095,7 @@
 				CODE_SIGN_ENTITLEMENTS = FNMotivation/FNMotivation.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.00004;
+				CURRENT_PROJECT_VERSION = 2.4;
 				DEVELOPMENT_TEAM = T7Q9QM92G2;
 				INFOPLIST_FILE = FNMotivation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1122,7 +1118,7 @@
 				CODE_SIGN_ENTITLEMENTS = FNMotivation/FNMotivation.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.00004;
+				CURRENT_PROJECT_VERSION = 2.4;
 				DEVELOPMENT_TEAM = T7Q9QM92G2;
 				INFOPLIST_FILE = FNMotivation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

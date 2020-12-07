@@ -530,7 +530,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHN-YU-C3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857.97101449275374" y="12.723214285714285"/>
+            <point key="canvasLocation" x="654" y="13"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="tdh-3M-fO1">
@@ -821,7 +821,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLd-Ty-jOt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="67" y="14"/>
+            <point key="canvasLocation" x="-87" y="13"/>
         </scene>
         <!--Profile-->
         <scene sceneID="rvE-Mk-lq4">

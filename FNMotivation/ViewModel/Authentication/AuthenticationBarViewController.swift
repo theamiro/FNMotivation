@@ -48,11 +48,10 @@ class AuthenticationBarViewController: ButtonBarPagerTabStripViewController {
 }
 
 extension AuthenticationBarViewController: LoginViewDelegate {
-    func loginSuccessful(token: String) {
+    func loginSuccessful() {
         if let authenticationViewController = self.parent as? AuthenticationViewController {
             authenticationViewController.dismiss(animated: true, completion: nil)
         }
-        print("Bar: \(token)")
     }
 }
 extension AuthenticationBarViewController: SignupViewDelegate {

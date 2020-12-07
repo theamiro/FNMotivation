@@ -98,7 +98,7 @@ extension ArticlesViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ArticleCollectionViewCell
         cell.titleLabel.text = articles[indexPath.row].title
         cell.categoryLabel.text = articles[indexPath.row].communityTitle.capitalizingFirstLetter()
-        cell.authorLabel.text = "By \(articles[indexPath.row].userID) on"
+        cell.authorLabel.text = "By \(articles[indexPath.row].username)"
         //        \(stories[indexPath.row].created.getDate())
         cell.excerptLabel.text = articles[indexPath.row].redirectLink
         cell.delegate = self

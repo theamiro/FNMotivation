@@ -11,7 +11,7 @@ import Alamofire
 import XLPagerTabStrip
 
 protocol LoginViewDelegate: class{
-    func loginSuccessful(token: String)
+    func loginSuccessful()
 }
 
 class LoginViewController: UIViewController, IndicatorInfoProvider {
@@ -44,11 +44,11 @@ class LoginViewController: UIViewController, IndicatorInfoProvider {
             AuthenticationManager().performUserAuthentication(userEmail: email, password: password) { (state, message) in
                 if state {
                     AlertsController().generateAlert(withSuccess: message, andTitle: "Welcome back!")
+                    guard let token = defaultsHolder.string(forKey: DefaultValues.tokenKey) else { return }
                     
                     let authNotification = Notification.Name(DefaultValues.authNotificationKey)
-                    NotificationCenter.default.post(name: authNotification, object: nil)
-                    
-                    self.delegate?.loginSuccessful(token: "token")
+                    NotificationCenter.default.post(name: authNotification, object: nil, userInfo: ["token": token])
+                    self.delegate?.loginSuccessful()
                 } else {
                     self.resetForm()
                     AlertsController().generateAlert(withError: message)

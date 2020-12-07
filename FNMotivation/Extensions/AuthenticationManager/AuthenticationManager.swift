@@ -7,6 +7,13 @@
 //
 
 import Foundation
+import JWTDecode
+import SwiftyJSON
+
+enum AuthProvider {
+    case google
+    case apple
+}
 
 class AuthenticationManager {
     static let shared = AuthenticationManager.init()
@@ -22,8 +29,8 @@ class AuthenticationManager {
         return defaultsHolder.value(forKey: DefaultValues.tokenKey) as? String != nil ? true : false
     }
     
-    func storeUserNames(withData userdata: UserProfileData){
-        defaultsHolder.set(userdata.fullname, forKey: DefaultValues.fullname)
+    func storeUserNames(withData fullName: String){
+        defaultsHolder.set(fullName, forKey: DefaultValues.fullname)
     }
     
     func performUserAuthentication(userEmail: String, password: String, completion: @escaping (Bool, String)->()) {
@@ -38,8 +45,19 @@ class AuthenticationManager {
                     guard let token = response["token"] as? String else {
                         completion(false, message!)
                         return
-                }
+                    }
+                    do {
+                        let jwt = try decode(jwt: token)
+                        let jwtBody = jwt.body
+                        let user = jwtBody["user"]
+                        
+                        print(jwtBody) //[String: Any]
+                    } catch {
+                        print(error)
+                    }
+                    
                     AuthenticationManager.shared.createUserSession(withNewToken: token)
+//                    AuthenticationManager.shared.storeUserNames(withData: user)
                     completion(true, "Welcome. You can now post and comment on FNMotivation!")
                 }
             } else {
@@ -67,29 +85,68 @@ class AuthenticationManager {
                 AuthenticationManager().createUserSession(withNewToken: token)
                 completion(true, "Congratulations! You are now able to take full advantage of FNMotivation®.")
             } else {
-                //                AlertsController().generateAlert(withError: message)
+                AlertsController().generateAlert(withError: message)
                 print(message)
                 completion(state, message)
             }
         }
     }
+    func performThirdPartyRegistration(provider: AuthProvider, email: String, userID: String, fullName: String, token: String, avatar: String, completion: @escaping (Bool, String)->()) {
+        switch provider {
+            case .google:
+                let parameters: [String: Any] = [
+                    "email": email,
+                    "fullname": fullName,
+                    "google_id": userID,
+                    "googleToken": token,
+                    "avatar": ""
+                ]
+                NetworkingService.shared.makeCall(fromUrl: NetworkingValues.apiUrl + "/auth/googleLogin", networkCallType: .post, requestBody: parameters) { [weak self] (state, message, dataObject)  in
+                    if state {
+                        guard let response = dataObject as? [String:Any], let token = response["token"] as? String else {
+                            completion(false, ErrorMessage.parseError)
+                            return
+                        }
+                        AuthenticationManager().createUserSession(withNewToken: token)
+                        self!.storeUserNames(withData: fullName)
+                        completion(true, "Congratulations! You are now able to take full advantage of FNMotivation®.")
+                    } else {
+                        AlertsController().generateAlert(withError: message)
+                        completion(state, message)
+                    }
+                }
+            break
+            case .apple:
+                let parameters: [String: Any] = [
+                    "email": email,
+                    "fullname": fullName,
+                    "apple_id": userID,
+                    "appleToken": token,
+                    "avatar": ""
+                ]
+                NetworkingService.shared.makeCall(fromUrl: NetworkingValues.apiUrl + "/auth/appleLogin", networkCallType: .post, requestBody: parameters) { [weak self] (state, message, dataObject)  in
+                    if state {
+                        guard let response = dataObject as? [String:Any], let token = response["token"] as? String else {
+                            completion(false, ErrorMessage.parseError)
+                            return
+                        }
+                        AuthenticationManager().createUserSession(withNewToken: token)
+//                        Fix the name issue Unexpectedly found nil while unwrapping an Optional value
+//                        self!.storeUserNames(withData: fullName)
+                        completion(true, "Congratulations! You are now able to take full advantage of FNMotivation®.")
+                    } else {
+                        AlertsController().generateAlert(withError: message)
+                        completion(state, message)
+                    }
+                }
+            break
+        }
+
+    }
 //    func logoutUser(completion: @escaping (Bool, String)->()){
     func logoutUser(completion: @escaping (String)->()){
         self.removeUserSession()
         completion("Logout Successful")
-//        NetworkingService.shared.makeCall(fromUrl: (NetworkingValues.apiUrl + "/user/logout"), networkCallType: .post, headerEnabled: true) { (state, message, dataObject) in
-//            if state {
-//                guard let response = dataObject as? [String:Any], let userMessage = response["message"] as? String else {
-//                    completion(false, ErrorMessage.parseError)
-//                    return
-//                }
-                self.removeUserSession()
-//                completion(true, userMessage)
-//            } else {
-//                AlertsController().generateAlert(withError: message)
-//                completion(state, message)
-//            }
-//        }
     }
     
     private func removeUserSession(){
@@ -100,4 +157,5 @@ class AuthenticationManager {
             defaultsHolder.removeObject(forKey: DefaultValues.fullname)
         }
     }
+    
 }

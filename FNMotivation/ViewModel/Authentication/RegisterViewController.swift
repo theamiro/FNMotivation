@@ -37,12 +37,16 @@ class RegisterViewController: UIViewController, IndicatorInfoProvider, SFSafariV
     @IBAction func signupButtonTapped(_ sender: Any) {
         if let username = usernameTextField.text,
             let firstName = firstNameTextField.text,
+            let lastName = firstNameTextField.text,
             let emailAddress = emailAddressTextField.text,
             let password = passwordTextField.text {
-            AuthenticationManager().performUserRegistration(username: username, firstName: firstName, lastName: firstName, userEmail: emailAddress, password: password) { (state, message) in
+            AuthenticationManager().performUserRegistration(username: username, firstName: firstName, lastName: lastName, userEmail: emailAddress, password: password) { (state, message) in
                 if state {
-                    self.delegate.signupSuccessful()
+                    let authNotification = Notification.Name(DefaultValues.signUpNotificationKey)
+                    NotificationCenter.default.post(name: authNotification, object: nil)
+                    
                     AlertsController().generateAlert(withSuccess: message, andTitle: "Welcome")
+                    self.delegate.signupSuccessful()
                 } else {
 //                    resetForm()
                     AlertsController().generateAlert(withError: "Missing Fields!")

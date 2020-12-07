@@ -15,6 +15,7 @@ class DefaultValues {
     static let tokenKey = "USER_TOKEN"
     static let authNotificationKey = "authNotificationKey"
     static let logoutNotificationKey = "logoutNotificationKey"
+    static let signUpNotificationKey = "signUpNotificationKey"
 }
 
 extension Data {

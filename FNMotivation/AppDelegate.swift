@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
     let beamsClient = PushNotifications.shared
     let gcmMessageIDKey = "gcmMessageIDKey"
+    weak var delegate: LoginViewDelegate?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -170,14 +171,37 @@ extension AppDelegate: GIDSignInDelegate {
             print(error)
             return
         }
-        guard let authentication = user.authentication else { return }
-        print("""
-            GoogleSignIn Successful: \n
-            authToken: \(authentication.idToken!) \n
-            accessToken: \(authentication.accessToken!) \n
-            """)
+        
+        if let userID = user.userID,
+        let idToken = user.authentication.idToken,
+        let fullName = user.profile.name,
+            let email = user.profile.email {
+            print("""
+                GoogleSignIn Successful: \n
+                user ID: \(userID) \n
+                email: \(email) \n
+                fullName: \(fullName) \n
+                idToken: \(idToken) \n
+                """)
+            AuthenticationManager.shared.performThirdPartyRegistration(provider: .google, email: email, userID: userID, fullName: fullName, token: idToken, avatar: "") { (state, message) in
+                if state {
+                    AlertsController().generateAlert(withSuccess: message, andTitle: "Welcome back!")
+                    guard let token = defaultsHolder.string(forKey: DefaultValues.tokenKey) else { return }
+                    
+                    let authNotification = Notification.Name(DefaultValues.authNotificationKey)
+//                    NotificationCenter.default.post(name: authNotification, object: nil, userInfo: ["token": token])
+                    self.delegate?.loginSuccessful()
+                } else {
+                    AlertsController().generateAlert(withError: message)
+                }
+            }
+        }
 //        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
 //                                                       accessToken: authentication.accessToken)
+    }
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+              withError error: Error!) {
+        AlertsController().generateAlert(withError: error.localizedDescription)
     }
     
     @available(iOS 9.0, *)

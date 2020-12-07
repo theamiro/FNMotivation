@@ -54,9 +54,31 @@ class FNTabBarViewController:  UITabBarController, UITabBarControllerDelegate {
     //MARK: UITabbar Delegate
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController.isKind(of: AddStoryViewController.self) {
-            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "addStoryNavigationViewController")
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true, completion: nil)
+            if AuthenticationManager().currentSessionIsActive() {
+                var viewController: UIViewController?
+                
+                let selector = UIAlertController(title: "", message: "Select type of post to add", preferredStyle: .actionSheet)
+                let articleAction = UIAlertAction(title: "Article", style: .default) { (action) in
+                    viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "addStoryNavigationViewController")
+                    viewController?.modalPresentationStyle = .overFullScreen
+                    self.present(viewController!, animated: true, completion: nil)
+                }
+                let storyAction = UIAlertAction(title: "Story", style: .default) { (action) in
+                    viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "addStoryNavigationViewController")
+                    viewController?.modalPresentationStyle = .overFullScreen
+                    self.present(viewController!, animated: true, completion: nil)
+                }
+                selector.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                }))
+                
+                selector.addAction(articleAction)
+                selector.addAction(storyAction)
+                self.present(selector, animated: true, completion: nil)
+            } else {
+                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "authenticationViewController")
+                vc.modalPresentationStyle = .formSheet
+                self.present(vc, animated: true, completion: nil)
+            }
             return false
         }
         return true

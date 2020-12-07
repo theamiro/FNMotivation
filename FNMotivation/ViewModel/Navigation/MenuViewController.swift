@@ -24,6 +24,7 @@ enum MenuDataKeys {
     case about
     case contact
     case other
+    case authentication
 }
 
 class MenuViewController: UIViewController {
@@ -32,6 +33,7 @@ class MenuViewController: UIViewController {
     let reuseIdentifier = "menuCell"
     let authNotificationName = Notification.Name(DefaultValues.authNotificationKey)
     let logoutNotificationName = Notification.Name(DefaultValues.logoutNotificationKey)
+    let signUpNotificationName = Notification.Name(DefaultValues.signUpNotificationKey)
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -56,6 +58,7 @@ class MenuViewController: UIViewController {
     func createObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(MenuViewController.handleAuth(notification:)), name: authNotificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MenuViewController.handleAuth(notification:)), name: logoutNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MenuViewController.handleAuth(notification:)), name: signUpNotificationName, object: nil)
     }
     
     @objc
@@ -65,7 +68,6 @@ class MenuViewController: UIViewController {
     
     @objc
     private func logoutAction() {
-        
         let alert = UIAlertController(title: "Are you sure?", message: "By logging out you will no longer have access to your saved searches or your user specific information from this device.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Log out", style: .destructive, handler: { (logout) in
@@ -81,10 +83,10 @@ class MenuViewController: UIViewController {
     }
     func handleAuthenticatedState() {
         if AuthenticationManager().currentSessionIsActive() {
-            self.userProfileImage.image = #imageLiteral(resourceName: "amiro-memoji")
+            self.userProfileImage.image = UIImage(named: "avatar")
             // TODO: - Refactor
             self.userFullName.isHidden = false
-            self.userFullName.text = "Your Name here"
+            self.userFullName.text = defaultsHolder.value(forKey: DefaultValues.fullname) as? String
             
             menuOptions = [
                 MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Home", key: .home),
@@ -94,9 +96,10 @@ class MenuViewController: UIViewController {
             ]
             self.logoutButton.isHidden = false
         } else {
-            self.userProfileImage.image = UIImage(named: "avatar")
+            self.userProfileImage.image = #imageLiteral(resourceName: "avatar")
             self.userFullName.text = "Sign in"
             menuOptions = [
+                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Sign in/Create your account", key: .authentication),
                 MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Home", key: .home),
                 MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "About FNM", key: .about),
                 MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Contact", key: .contact),
@@ -126,10 +129,15 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("selected")
         if let currentActiveNav = self.currentNavigationController, let baseViewController = self.parent as? BaseViewController {
             baseViewController.hideSideMenu()
             switch menuOptions[indexPath.row].key {
+                case .authentication:
+                    guard let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "authenticationViewController") as? AuthenticationViewController else { return }
+                    if let baseViewController = self.parent as? BaseViewController {
+                        baseViewController.hideSideMenu()
+                        baseViewController.present(controller, animated: true, completion: nil)
+                    }
                 case .home:
                     print("home")
                     currentActiveNav.popToRootViewController(animated: true)
@@ -159,8 +167,8 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MenuViewController: LoginViewDelegate {
-    func loginSuccessful(token: String) {
-        userFullName.text = token
+    func loginSuccessful() {
+        
     }
 }
 
