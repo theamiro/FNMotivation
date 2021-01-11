@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fsp-ad-TAt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fsp-ad-TAt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -95,7 +97,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nyD-JU-T0Q">
                                                             <rect key="frame" x="0.0" y="135" width="354" height="45"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCT-ky-KrI">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCT-ky-KrI">
                                                                     <rect key="frame" x="0.0" y="7.5" width="100" height="30"/>
                                                                     <color key="backgroundColor" name="Orange"/>
                                                                     <constraints>
@@ -104,7 +106,7 @@
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                                                     <state key="normal" title="Follow">
-                                                                        <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                        <color key="titleColor" systemColor="systemBackgroundColor"/>
                                                                     </state>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -123,7 +125,7 @@
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                                     <state key="normal" image="icn_share">
-                                                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <color key="titleColor" systemColor="labelColor"/>
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="shareStory:" destination="D6o-IL-hKG" eventType="touchUpInside" id="BX8-kr-3if"/>
@@ -140,7 +142,7 @@
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                                             <state key="normal" title="120" image="icn_comment">
-                                                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="titleColor" systemColor="labelColor"/>
                                                                             </state>
                                                                             <connections>
                                                                                 <action selector="postComment:" destination="D6o-IL-hKG" eventType="touchUpInside" id="Bz3-e1-FMo"/>
@@ -154,7 +156,7 @@
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                                             <state key="normal" title="23" image="icn_like">
-                                                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="titleColor" systemColor="labelColor"/>
                                                                             </state>
                                                                             <connections>
                                                                                 <action selector="loveStory:" destination="D6o-IL-hKG" eventType="touchUpInside" id="HYT-WY-3ui"/>
@@ -181,7 +183,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <size key="customSize" width="394" height="200"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -214,7 +216,8 @@
                                 </constraints>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ZPr-ZE-A0A"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="B7f-qR-QsG" firstAttribute="trailing" secondItem="ZPr-ZE-A0A" secondAttribute="trailing" id="8bS-pg-dIi"/>
                             <constraint firstItem="B7f-qR-QsG" firstAttribute="leading" secondItem="ZPr-ZE-A0A" secondAttribute="leading" id="GE4-Ck-THU"/>
@@ -223,7 +226,6 @@
                             <constraint firstItem="zZO-Wb-5QZ" firstAttribute="centerX" secondItem="Y1n-KK-k2Z" secondAttribute="centerX" id="k2M-L6-bAP"/>
                             <constraint firstItem="B7f-qR-QsG" firstAttribute="bottom" secondItem="ZPr-ZE-A0A" secondAttribute="bottom" id="pNZ-NK-TMv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ZPr-ZE-A0A"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Tn5-za-7Md">
                         <barButtonItem key="backBarButtonItem" title=" " id="jQ7-ny-7Pg"/>
@@ -250,7 +252,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67n-gY-rLA">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1472"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_background" translatesAutoresizingMaskIntoConstraints="NO" id="T9I-Lm-R6O">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
@@ -287,7 +289,7 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dc6-vP-VCm">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dc6-vP-VCm">
                                                         <rect key="frame" x="274" y="10" width="100" height="30"/>
                                                         <color key="backgroundColor" name="Orange"/>
                                                         <constraints>
@@ -296,7 +298,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                                         <state key="normal" title="Follow">
-                                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -310,27 +312,30 @@
                                                 </constraints>
                                             </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="NHA-jU-XUB">
-                                                <rect key="frame" x="0.0" y="393" width="414" height="1009"/>
-                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed ligula egestas urna ultrices interdum non quis dui. Aliquam eu tellus id ante tempor tempus. Duis ornare a tellus vitae mollis. Praesent posuere justo a lectus euismod, id hendrerit dui dignissim. Etiam eget justo gravida nunc convallis volutpat at eu ex. Suspendisse potenti. Duis a velit non lacus ullamcorper aliquet mollis sit amet neque. Aenean luctus faucibus sapien sit amet porttitor.
-
-Sed fringilla felis porttitor dui aliquam, ac rhoncus ipsum dictum. Cras porta quis est nec pellentesque. Aenean interdum vel nunc at rhoncus. Nulla in porta massa. Fusce ante mi, suscipit ut tincidunt eu, ullamcorper nec nibh. Pellentesque pretium elit mattis, accumsan metus vitae, cursus erat. Curabitur scelerisque eros risus, et feugiat libero facilisis sit amet. Nullam sed ullamcorper metus, vel sodales tellus. Aenean eget pellentesque dolor. Curabitur vitae diam vitae leo iaculis commodo. Pellentesque aliquet tincidunt enim in luctus. Curabitur egestas augue sed lacus ornare, eget varius metus molestie. Nunc massa nibh, ultricies ut pulvinar sed, porttitor at ipsum. Praesent semper eu diam eget tristique. Sed finibus diam a augue ultricies dapibus.
-
-Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut suscipit ultricies mauris vel eleifend. Suspendisse congue vestibulum augue vitae auctor. Sed condimentum sem consectetur sapien facilisis, ut vestibulum nibh hendrerit. Etiam cursus tellus sit amet dignissim vulputate. Nulla bibendum orci vel gravida molestie. Morbi iaculis iaculis est eget ullamcorper. Fusce metus ipsum, pharetra non enim in, ultricies ornare nisl. Mauris nec mi ultrices lorem sodales hendrerit a et leo. Morbi et lacinia urna. Donec sed velit dolor. Aenean tellus quam, consectetur eu consectetur quis, tristique non velit.
-
-Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut suscipit ultricies mauris vel eleifend. Suspendisse congue vestibulum augue vitae auctor. Sed condimentum sem consectetur sapien facilisis, ut vestibulum nibh hendrerit. Etiam cursus tellus sit amet dignissim vulputate. Nulla bibendum orci vel gravida molestie. Morbi iaculis iaculis est eget ullamcorper. Fusce metus ipsum, pharetra non enim in, ultricies ornare nisl. Mauris nec mi ultrices lorem sodales hendrerit a et leo. Morbi et lacinia urna. Donec sed velit dolor. Aenean tellus quam, consectetur eu consectetur quis, tristique non velit.</string>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <rect key="frame" x="0.0" y="393" width="414" height="283.5"/>
+                                                <mutableString key="text">Sed fringilla felis porttitor dui aliquam, ac rhoncus ipsum dictum. Cras porta quis est nec pellentesque. Aenean interdum vel nunc at rhoncus. Nulla in porta massa. Fusce ante mi, suscipit ut tincidunt eu, ullamcorper nec nibh. Pellentesque pretium elit mattis, accumsan metus vitae, cursus erat. Curabitur scelerisque eros risus, et feugiat libero facilisis sit amet. Nullam sed ullamcorper metus, vel sodales tellus. Aenean eget pellentesque dolor. Curabitur vitae diam vitae leo iaculis commodo. Pellentesque aliquet tincidunt enim in luctus. Curabitur egestas augue sed lacus ornare, eget varius metus molestie. Nunc massa nibh, ultricies ut pulvinar sed, porttitor at ipsum. Praesent semper eu diam eget tristique. Sed finibus diam a augue ultricies dapibus.</mutableString>
+                                                <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
                                             </textView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bwg-Sm-lrn">
+                                                <rect key="frame" x="0.0" y="696.5" width="414" height="31.5"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="Qau-ja-sge" id="i33-LK-Exv"/>
+                                                    <outlet property="delegate" destination="Qau-ja-sge" id="GOV-mM-s8J"/>
+                                                </connections>
+                                            </tableView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="nbc-iE-8gO" secondAttribute="trailing" constant="20" id="1Pw-Oz-AUt"/>
                                             <constraint firstItem="T9I-Lm-R6O" firstAttribute="centerX" secondItem="67n-gY-rLA" secondAttribute="centerX" id="4RD-q2-zQt"/>
                                             <constraint firstItem="T9I-Lm-R6O" firstAttribute="top" secondItem="67n-gY-rLA" secondAttribute="top" id="8vG-Fk-hpd"/>
                                             <constraint firstAttribute="trailing" secondItem="NHA-jU-XUB" secondAttribute="trailing" id="BBg-gu-GEY"/>
                                             <constraint firstItem="nbc-iE-8gO" firstAttribute="leading" secondItem="67n-gY-rLA" secondAttribute="leading" constant="20" id="CTR-MO-r70"/>
+                                            <constraint firstAttribute="bottom" secondItem="Bwg-Sm-lrn" secondAttribute="bottom" constant="80" id="CZy-xR-bwc"/>
+                                            <constraint firstItem="Bwg-Sm-lrn" firstAttribute="top" secondItem="NHA-jU-XUB" secondAttribute="bottom" constant="20" id="IeP-fg-CmW"/>
                                             <constraint firstItem="T9I-Lm-R6O" firstAttribute="width" secondItem="67n-gY-rLA" secondAttribute="width" id="KLE-8A-hrj"/>
                                             <constraint firstAttribute="trailing" secondItem="1L0-ZV-eKI" secondAttribute="trailing" constant="20" id="NoO-fh-4q5"/>
                                             <constraint firstItem="NHA-jU-XUB" firstAttribute="top" secondItem="1L0-ZV-eKI" secondAttribute="bottom" constant="15" id="OeA-ir-hOK"/>
@@ -338,7 +343,8 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                             <constraint firstItem="1L0-ZV-eKI" firstAttribute="leading" secondItem="67n-gY-rLA" secondAttribute="leading" constant="20" id="eCT-C0-A06"/>
                                             <constraint firstItem="nbc-iE-8gO" firstAttribute="top" secondItem="T9I-Lm-R6O" secondAttribute="bottom" constant="10" id="fbp-Hh-lGH"/>
                                             <constraint firstItem="1L0-ZV-eKI" firstAttribute="top" secondItem="nbc-iE-8gO" secondAttribute="bottom" constant="10" id="jSa-fv-AIf"/>
-                                            <constraint firstAttribute="bottom" secondItem="NHA-jU-XUB" secondAttribute="bottom" constant="70" id="mCC-zi-Ul9"/>
+                                            <constraint firstAttribute="trailing" secondItem="Bwg-Sm-lrn" secondAttribute="trailing" id="twr-6U-2n8"/>
+                                            <constraint firstItem="Bwg-Sm-lrn" firstAttribute="leading" secondItem="67n-gY-rLA" secondAttribute="leading" id="zCd-gz-rDy"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -351,49 +357,66 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                     <constraint firstItem="67n-gY-rLA" firstAttribute="height" secondItem="4yr-yP-hdR" secondAttribute="height" priority="250" id="Vxv-fD-Ab5"/>
                                 </constraints>
                             </scrollView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTj-67-ko6">
-                                <rect key="frame" x="0.0" y="758" width="414" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05M-f4-j1d">
+                                <rect key="frame" x="0.0" y="758" width="414" height="84"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="jeM-hg-4tF">
+                                        <rect key="frame" x="15" y="8" width="384" height="36"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_comment" translatesAutoresizingMaskIntoConstraints="NO" id="wiK-PQ-nLs">
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="36" id="HUi-yY-Vyq"/>
+                                                    <constraint firstAttribute="height" constant="36" id="Jtl-Vu-VgR"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYa-ae-yqe">
+                                                <rect key="frame" x="36" y="1" width="312" height="35"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" smartDashesType="no" smartInsertDeleteType="yes" smartQuotesType="yes"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aP4-HF-njr">
+                                                <rect key="frame" x="348" y="0.0" width="36" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="36" id="9Ct-gK-hNA"/>
+                                                    <constraint firstAttribute="height" constant="36" id="J9T-aH-gQ1"/>
+                                                </constraints>
+                                                <state key="normal" image="icn_send">
+                                                    <color key="titleColor" name="Orange"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="BlueWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bHu-Va-nGf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="84" id="5jF-fi-8l6"/>
+                                    <constraint firstItem="jeM-hg-4tF" firstAttribute="leading" secondItem="05M-f4-j1d" secondAttribute="leading" constant="15" id="A7M-cF-RNU"/>
+                                    <constraint firstAttribute="height" priority="999" constant="84" id="OuK-GY-wiJ"/>
+                                    <constraint firstItem="jeM-hg-4tF" firstAttribute="top" secondItem="05M-f4-j1d" secondAttribute="top" constant="8" id="ZUw-q0-3QM"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="abA-lY-mkG"/>
+                                    <constraint firstAttribute="trailing" secondItem="jeM-hg-4tF" secondAttribute="trailing" constant="15" id="gtT-iC-1Cg"/>
                                 </constraints>
-                                <items>
-                                    <barButtonItem title="Item" image="icn_comment" style="plain" id="Qar-Qh-ZCU">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UKL-jL-3gQ">
-                                            <rect key="frame" x="20" y="13" width="30" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="icn_comment"/>
-                                        </button>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" id="wNS-Xs-zzm">
-                                        <inset key="imageInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a comment" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="qX8-nu-wnc">
-                                            <rect key="frame" x="50" y="8" width="300" height="34"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                    </barButtonItem>
-                                    <barButtonItem title="Item" image="checkbox_active" style="plain" id="4Jl-Zo-I24">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MYD-0r-Exr">
-                                            <rect key="frame" x="370" y="7" width="24" height="36"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="icn_send"/>
-                                        </button>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="2Dh-an-bLl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="05M-f4-j1d" firstAttribute="trailing" secondItem="2Dh-an-bLl" secondAttribute="trailing" id="1qR-Dh-0ld"/>
+                            <constraint firstItem="05M-f4-j1d" firstAttribute="leading" secondItem="2Dh-an-bLl" secondAttribute="leading" id="5ly-5S-Acw"/>
+                            <constraint firstAttribute="bottom" secondItem="05M-f4-j1d" secondAttribute="bottom" id="6GL-8x-nak"/>
                             <constraint firstItem="4yr-yP-hdR" firstAttribute="top" secondItem="2Dh-an-bLl" secondAttribute="top" id="Bq5-tT-eLp"/>
                             <constraint firstItem="4yr-yP-hdR" firstAttribute="trailing" secondItem="2Dh-an-bLl" secondAttribute="trailing" id="PpG-qC-aeL"/>
-                            <constraint firstItem="2Dh-an-bLl" firstAttribute="bottom" secondItem="yTj-67-ko6" secondAttribute="bottom" id="RYw-hT-xh8"/>
                             <constraint firstItem="4yr-yP-hdR" firstAttribute="bottom" secondItem="2Dh-an-bLl" secondAttribute="bottom" id="dpb-ao-Z57"/>
-                            <constraint firstItem="yTj-67-ko6" firstAttribute="trailing" secondItem="2Dh-an-bLl" secondAttribute="trailing" id="eYj-tM-YIp"/>
-                            <constraint firstItem="yTj-67-ko6" firstAttribute="leading" secondItem="2Dh-an-bLl" secondAttribute="leading" id="lfq-ja-TbI"/>
                             <constraint firstItem="4yr-yP-hdR" firstAttribute="leading" secondItem="2Dh-an-bLl" secondAttribute="leading" id="xi4-pS-AVR"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="2Dh-an-bLl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Story Post" largeTitleDisplayMode="never" id="Wt6-aU-mdI">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="icn_share" style="plain" id="lyk-Cf-Am4">
@@ -403,12 +426,16 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="commentToolbar" destination="05M-f4-j1d" id="gNI-En-Glr"/>
+                        <outlet property="commentToolbarBottomConstraint" destination="6GL-8x-nak" id="YM8-eI-Mq2"/>
+                        <outlet property="commentsTable" destination="Bwg-Sm-lrn" id="OA4-sO-pAy"/>
                         <outlet property="followButton" destination="dc6-vP-VCm" id="mgW-BL-EmP"/>
                         <outlet property="postThumbnail" destination="T9I-Lm-R6O" id="Afk-Qx-GgB"/>
                         <outlet property="storyBodyTextView" destination="NHA-jU-XUB" id="n9S-2O-cCz"/>
                         <outlet property="storyCategoryLabel" destination="ezV-8P-7K3" id="yc8-VK-Kxs"/>
                         <outlet property="storyMetaLabel" destination="BM7-Ty-qur" id="PRU-Yf-XHZ"/>
                         <outlet property="storyTitleLabel" destination="nbc-iE-8gO" id="Tlp-L8-QrS"/>
+                        <outlet property="textView" destination="rYa-ae-yqe" id="zOi-sQ-3tY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzu-o0-iHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -426,19 +453,19 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="l5m-Ak-Cdg">
                                 <rect key="frame" x="0.0" y="54" width="414" height="169.5"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed ligula egestas urna ultrices interdum non quis dui. Aliquam eu tellus id ante tempor tempus. Duis ornare a tellus vitae mollis. Praesent posuere justo a lectus euismod, id hendrerit dui dignissim. Etiam eget justo gravida nunc convallis volutpat at eu ex. Suspendisse potenti. Duis a velit non lacus ullamcorper aliquet mollis sit amet neque. Aenean luctus faucibus sapien sit amet porttitor.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="YaC-0m-jog"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="l5m-Ak-Cdg" firstAttribute="top" secondItem="YaC-0m-jog" secondAttribute="top" constant="10" id="fgU-od-Hw1"/>
                             <constraint firstItem="YaC-0m-jog" firstAttribute="trailing" secondItem="l5m-Ak-Cdg" secondAttribute="trailing" id="qLY-yT-2ZR"/>
                             <constraint firstItem="l5m-Ak-Cdg" firstAttribute="leading" secondItem="YaC-0m-jog" secondAttribute="leading" id="wFF-yG-CN5"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="YaC-0m-jog"/>
                     </view>
                     <connections>
                         <outlet property="aboutTextView" destination="l5m-Ak-Cdg" id="EcM-5X-aVM"/>
@@ -514,14 +541,14 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="1lo-MG-nLB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zOi-Ly-32p" firstAttribute="leading" secondItem="1lo-MG-nLB" secondAttribute="leading" id="DxF-kU-3cP"/>
                             <constraint firstItem="zOi-Ly-32p" firstAttribute="trailing" secondItem="1lo-MG-nLB" secondAttribute="trailing" id="sHt-5I-AUs"/>
                             <constraint firstItem="zOi-Ly-32p" firstAttribute="bottom" secondItem="1lo-MG-nLB" secondAttribute="bottom" id="t75-2t-GiR"/>
                             <constraint firstItem="zOi-Ly-32p" firstAttribute="top" secondItem="1lo-MG-nLB" secondAttribute="top" id="yDv-kV-WQM"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="1lo-MG-nLB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Community" id="DTN-Tc-vZy"/>
                     <connections>
@@ -570,7 +597,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="9VT-mo-icV"/>
                                                                 <constraint firstItem="pI6-7z-PIY" firstAttribute="centerY" secondItem="ZkI-TH-0O1" secondAttribute="centerY" id="9ao-51-d0X"/>
@@ -642,14 +669,14 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4BQ-Yh-KiT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aay-t7-2Ql" firstAttribute="leading" secondItem="4BQ-Yh-KiT" secondAttribute="leading" id="HCN-ZT-932"/>
                             <constraint firstItem="aay-t7-2Ql" firstAttribute="bottom" secondItem="4BQ-Yh-KiT" secondAttribute="bottom" id="XiO-JW-k6z"/>
                             <constraint firstItem="aay-t7-2Ql" firstAttribute="trailing" secondItem="4BQ-Yh-KiT" secondAttribute="trailing" id="m6z-uy-pKy"/>
                             <constraint firstItem="aay-t7-2Ql" firstAttribute="top" secondItem="nB3-vv-Kon" secondAttribute="top" constant="40" id="sWa-Fv-iuB"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4BQ-Yh-KiT"/>
                     </view>
                     <navigationItem key="navigationItem" title="Notifications" id="S9A-Nm-csL"/>
                     <connections>
@@ -681,7 +708,8 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tVr-ND-5i3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="mhw-gy-wB8" firstAttribute="width" secondItem="Kxz-UO-FEB" secondAttribute="width" id="4jy-Jz-gAM"/>
@@ -693,7 +721,6 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <constraint firstItem="mhw-gy-wB8" firstAttribute="leading" secondItem="Kxz-UO-FEB" secondAttribute="leading" id="ypc-zm-uK0"/>
                             <constraint firstItem="mhw-gy-wB8" firstAttribute="height" secondItem="Kxz-UO-FEB" secondAttribute="height" id="zyv-YX-Sb3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="tVr-ND-5i3"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="3Ur-sO-LcB" appends="YES" id="mTp-Dn-uXl"/>
                         </connections>
@@ -760,7 +787,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                         </connections>
                                     </containerView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="NRL-yL-WzR" secondAttribute="trailing" id="CRT-zP-xtM"/>
                                     <constraint firstItem="NRL-yL-WzR" firstAttribute="top" secondItem="JVt-s9-crb" secondAttribute="top" id="Fkl-FY-3VJ"/>
@@ -769,14 +796,14 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Zh9-Bz-O8J"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JVt-s9-crb" firstAttribute="leading" secondItem="Zh9-Bz-O8J" secondAttribute="leading" id="2Gp-Dn-m91"/>
                             <constraint firstItem="JVt-s9-crb" firstAttribute="top" secondItem="Zh9-Bz-O8J" secondAttribute="top" id="Cit-bk-fUH"/>
                             <constraint firstItem="JVt-s9-crb" firstAttribute="trailing" secondItem="Zh9-Bz-O8J" secondAttribute="trailing" id="iZp-Nh-GYD"/>
                             <constraint firstAttribute="bottom" secondItem="JVt-s9-crb" secondAttribute="bottom" id="tZ6-wW-1Ll"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Zh9-Bz-O8J"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="57w-nP-4Od"/>
                 </viewController>
@@ -841,7 +868,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                         </connections>
                                     </containerView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Eoo-m4-3EP" firstAttribute="top" secondItem="Xqg-EY-k8T" secondAttribute="top" id="Nlk-lg-b1a"/>
                                     <constraint firstAttribute="trailing" secondItem="Eoo-m4-3EP" secondAttribute="trailing" id="j2e-OZ-JGs"/>
@@ -871,7 +898,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="72" id="EOE-Mz-aMl"/>
                                                     <constraint firstAttribute="width" constant="72" id="EhL-ln-h3W"/>
@@ -913,7 +940,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                             </stackView>
                                                             <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbA-0p-Lae">
                                                                 <rect key="frame" x="78.5" y="0.0" width="1" height="36"/>
-                                                                <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="1" id="M7d-Q3-QRs"/>
                                                                 </constraints>
@@ -960,7 +987,8 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="zMp-4p-Aj1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tCq-nq-Lmc" firstAttribute="top" secondItem="zMp-4p-Aj1" secondAttribute="top" id="MNe-Ei-oWD"/>
                             <constraint firstItem="Xqg-EY-k8T" firstAttribute="bottom" secondItem="zMp-4p-Aj1" secondAttribute="bottom" id="Raq-uh-0Nn"/>
@@ -970,7 +998,6 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <constraint firstItem="Xqg-EY-k8T" firstAttribute="leading" secondItem="zMp-4p-Aj1" secondAttribute="leading" id="uj6-WL-KwZ"/>
                             <constraint firstItem="Xqg-EY-k8T" firstAttribute="trailing" secondItem="zMp-4p-Aj1" secondAttribute="trailing" id="yW2-1o-jD4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zMp-4p-Aj1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="bog-1z-3aI"/>
                     <connections>
@@ -1036,7 +1063,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="eWi-18-IwD" firstAttribute="centerY" secondItem="vd3-N8-Dld" secondAttribute="centerY" id="CxL-fj-EZR"/>
                                     <constraint firstItem="eWi-18-IwD" firstAttribute="centerX" secondItem="vd3-N8-Dld" secondAttribute="centerX" id="SVo-dF-RNk"/>
@@ -1057,7 +1084,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="5" sectionFooterHeight="5" translatesAutoresizingMaskIntoConstraints="NO" id="shM-vY-JR9">
                                 <rect key="frame" x="0.0" y="224" width="360" height="536"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell" rowHeight="60" id="V8k-uN-1C6" customClass="MenuViewCell" customModule="FNMotivation" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="360" height="60"/>
@@ -1128,7 +1155,8 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="cfI-85-EZS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="V4C-65-ZOe" firstAttribute="leading" secondItem="cfI-85-EZS" secondAttribute="leading" constant="36" id="6wr-5c-ghL"/>
                             <constraint firstItem="shM-vY-JR9" firstAttribute="leading" secondItem="cfI-85-EZS" secondAttribute="leading" id="AOe-Vi-BcT"/>
@@ -1146,7 +1174,6 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <constraint firstItem="HEd-KC-ieM" firstAttribute="centerX" secondItem="cfI-85-EZS" secondAttribute="centerX" id="rwc-uF-jU3"/>
                             <constraint firstItem="cfI-85-EZS" firstAttribute="trailing" secondItem="tmH-6r-w4e" secondAttribute="trailing" constant="20" id="zaO-0B-a7M"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cfI-85-EZS"/>
                     </view>
                     <connections>
                         <outlet property="logoutButton" destination="07K-yG-L76" id="gb7-eU-3U2"/>
@@ -1220,7 +1247,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                         </connections>
                                     </containerView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="450" id="E3S-vH-fG6"/>
                                     <constraint firstAttribute="bottom" secondItem="knm-Me-6n4" secondAttribute="bottom" id="H8n-QX-XtQ"/>
@@ -1243,7 +1270,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaE-2K-RHE">
                                         <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
-                                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="Par-QN-8O9"/>
                                             <constraint firstAttribute="width" constant="56" id="eIw-DT-Z2u"/>
@@ -1273,7 +1300,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                         <inset key="imageEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
                                         <state key="normal" image="GoogleLogo">
-                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" systemColor="labelColor"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -1288,7 +1315,8 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="m7m-SX-Rjh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Uus-1T-uEQ" firstAttribute="width" secondItem="HhI-cJ-eIF" secondAttribute="width" id="1rJ-Pe-8tc"/>
                             <constraint firstItem="0ut-wu-200" firstAttribute="top" secondItem="kOo-CQ-92k" secondAttribute="bottom" constant="30" id="7j2-Ow-ZDm"/>
@@ -1309,7 +1337,6 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <constraint firstItem="m7m-SX-Rjh" firstAttribute="bottom" secondItem="gFE-mL-u5c" secondAttribute="bottom" constant="46" id="xbp-2r-etz"/>
                             <constraint firstItem="sfl-F6-5IU" firstAttribute="leading" secondItem="m7m-SX-Rjh" secondAttribute="leading" constant="20" id="yXD-d9-vel"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="m7m-SX-Rjh"/>
                     </view>
                     <connections>
                         <outlet property="GIDSignInButton" destination="k9B-Ap-ggX" id="lDk-dI-mX0"/>
@@ -1337,7 +1364,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             </scrollView>
                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JDA-OR-Cge" customClass="ButtonBarView" customModule="XLPagerTabStrip">
                                 <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5Db-zM-Tkw"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="bDx-Ng-Wx3"/>
@@ -1365,7 +1392,8 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </userDefinedRuntimeAttributes>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PxY-Eq-ywb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="BdJ-qi-nYH" secondAttribute="trailing" id="5aA-Fk-AvA"/>
                             <constraint firstItem="JDA-OR-Cge" firstAttribute="top" secondItem="KRL-Ix-brh" secondAttribute="top" id="HDW-PV-14X"/>
@@ -1378,7 +1406,6 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <constraint firstItem="JDA-OR-Cge" firstAttribute="leading" secondItem="KRL-Ix-brh" secondAttribute="leading" id="uPv-HD-dfp"/>
                             <constraint firstItem="BdJ-qi-nYH" firstAttribute="leading" secondItem="KRL-Ix-brh" secondAttribute="leading" id="vv2-cn-YrU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PxY-Eq-ywb"/>
                     </view>
                     <size key="freeformSize" width="374" height="500"/>
                     <connections>
@@ -1427,7 +1454,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                     <userDefinedRuntimeAttribute type="image" keyPath="focusIcon" value="icn_password_active"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUd-ue-l6F" customClass="FNButton" customModule="FNMotivation" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUd-ue-l6F" customClass="FNButton" customModule="FNMotivation" customModuleProvider="target">
                                 <rect key="frame" x="20" y="242" width="350" height="52"/>
                                 <color key="backgroundColor" name="DarkBlue"/>
                                 <constraints>
@@ -1460,7 +1487,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                             <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="checkbox_inactive"/>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBg-u5-3B3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBg-u5-3B3">
                                         <rect key="frame" x="220" y="0.0" width="130" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="jbA-Oq-qR5"/>
@@ -1477,6 +1504,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="drC-bk-8Po"/>
                         <color key="backgroundColor" name="BlueWhite"/>
                         <constraints>
                             <constraint firstItem="drC-bk-8Po" firstAttribute="trailing" secondItem="jUd-ue-l6F" secondAttribute="trailing" constant="20" id="7dQ-cy-i1n"/>
@@ -1492,7 +1520,6 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <constraint firstItem="drC-bk-8Po" firstAttribute="trailing" secondItem="2ak-Fc-E5a" secondAttribute="trailing" constant="20" id="wl0-pb-3X0"/>
                             <constraint firstItem="8go-NQ-DMC" firstAttribute="top" secondItem="tvU-MD-pfk" secondAttribute="bottom" constant="10" id="yNf-TN-AmP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="drC-bk-8Po"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="390" height="330"/>
@@ -1545,7 +1572,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                     <userDefinedRuntimeAttribute type="image" keyPath="focusIcon" value="icn_mail_active"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13V-oP-RPl" customClass="FNButton" customModule="FNMotivation" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13V-oP-RPl" customClass="FNButton" customModule="FNMotivation" customModuleProvider="target">
                                 <rect key="frame" x="20" y="338" width="374" height="52"/>
                                 <color key="backgroundColor" name="DarkBlue"/>
                                 <constraints>
@@ -1594,11 +1621,12 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5ms-sb-rcn"/>
                                 </constraints>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="sl0-fF-5sa"/>
                         <color key="backgroundColor" name="BlueWhite"/>
                         <constraints>
                             <constraint firstItem="sl0-fF-5sa" firstAttribute="trailing" secondItem="40c-mp-duY" secondAttribute="trailing" constant="20" id="7zR-VK-OQh"/>
@@ -1620,7 +1648,6 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <constraint firstItem="sl0-fF-5sa" firstAttribute="trailing" secondItem="xa6-5A-3jY" secondAttribute="trailing" constant="20" id="rgu-NC-MFY"/>
                             <constraint firstItem="xa6-5A-3jY" firstAttribute="leading" secondItem="sl0-fF-5sa" secondAttribute="leading" constant="20" id="w3I-EJ-04n"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="sl0-fF-5sa"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="420"/>
@@ -1649,7 +1676,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             </scrollView>
                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="REc-Tu-g0U" customClass="ButtonBarView" customModule="XLPagerTabStrip">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="0Gf-fi-Zjp"/>
                                 </constraints>
@@ -1662,7 +1689,8 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 <cells/>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="iod-aP-4dy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="REc-Tu-g0U" secondAttribute="trailing" id="BF4-Dg-5ou"/>
                             <constraint firstItem="gju-jq-x21" firstAttribute="top" secondItem="REc-Tu-g0U" secondAttribute="bottom" id="Beq-Py-M8Q"/>
@@ -1672,7 +1700,6 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <constraint firstItem="REc-Tu-g0U" firstAttribute="top" secondItem="jlF-cZ-g0m" secondAttribute="top" id="pK0-Wl-ZbN"/>
                             <constraint firstItem="gju-jq-x21" firstAttribute="leading" secondItem="jlF-cZ-g0m" secondAttribute="leading" id="vgf-wY-1aM"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="iod-aP-4dy"/>
                     </view>
                     <connections>
                         <outlet property="buttonBarView" destination="REc-Tu-g0U" id="9XV-WP-OeF"/>
@@ -1693,7 +1720,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="afZ-FT-eJd">
                                 <rect key="frame" x="0.0" y="44" width="414" height="556"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="commentCell" rowHeight="88" id="27A-VC-HqR" customClass="CommentsViewCell" customModule="FNMotivation" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="88"/>
@@ -1772,14 +1799,14 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4GX-8f-mYK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="afZ-FT-eJd" firstAttribute="leading" secondItem="4GX-8f-mYK" secondAttribute="leading" id="9T4-BU-VyK"/>
                             <constraint firstItem="afZ-FT-eJd" firstAttribute="bottom" secondItem="4GX-8f-mYK" secondAttribute="bottom" id="rFj-vO-qOL"/>
                             <constraint firstItem="afZ-FT-eJd" firstAttribute="top" secondItem="4GX-8f-mYK" secondAttribute="top" id="sjf-RF-ZcF"/>
                             <constraint firstItem="afZ-FT-eJd" firstAttribute="trailing" secondItem="4GX-8f-mYK" secondAttribute="trailing" id="tdD-xP-FUp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4GX-8f-mYK"/>
                     </view>
                     <size key="freeformSize" width="414" height="600"/>
                 </viewController>
@@ -1797,17 +1824,17 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CGX-j3-yeQ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="556"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ubh-zW-UX6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CGX-j3-yeQ" firstAttribute="trailing" secondItem="ubh-zW-UX6" secondAttribute="trailing" id="4r4-4a-EhC"/>
                             <constraint firstItem="CGX-j3-yeQ" firstAttribute="leading" secondItem="ubh-zW-UX6" secondAttribute="leading" id="Y8S-U7-95N"/>
                             <constraint firstItem="CGX-j3-yeQ" firstAttribute="bottom" secondItem="ubh-zW-UX6" secondAttribute="bottom" id="bBp-Fx-I5l"/>
                             <constraint firstItem="CGX-j3-yeQ" firstAttribute="top" secondItem="ubh-zW-UX6" secondAttribute="top" id="sk6-tI-hJy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ubh-zW-UX6"/>
                     </view>
                     <size key="freeformSize" width="414" height="600"/>
                 </viewController>
@@ -1848,7 +1875,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="moB-8W-Bf5"/>
                                                 </constraints>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="done" smartInsertDeleteType="yes" smartQuotesType="yes"/>
                                                 <userDefinedRuntimeAttributes>
@@ -1877,6 +1904,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="vjc-lc-PZa"/>
                         <color key="backgroundColor" name="BlueWhite"/>
                         <constraints>
                             <constraint firstItem="Mts-BD-jpc" firstAttribute="top" secondItem="vjc-lc-PZa" secondAttribute="top" id="UMG-Ob-lub"/>
@@ -1884,7 +1912,6 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <constraint firstItem="Mts-BD-jpc" firstAttribute="leading" secondItem="vjc-lc-PZa" secondAttribute="leading" id="xDG-Ox-DzJ"/>
                             <constraint firstItem="Mts-BD-jpc" firstAttribute="trailing" secondItem="vjc-lc-PZa" secondAttribute="trailing" id="ycI-Be-GOL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="vjc-lc-PZa"/>
                     </view>
                     <size key="freeformSize" width="414" height="600"/>
                 </viewController>
@@ -1901,7 +1928,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhk-tt-9o3" customClass="FNTextField" customModule="FNMotivation" customModuleProvider="target">
-                                <rect key="frame" x="20" y="158" width="374" height="46"/>
+                                <rect key="frame" x="20" y="108" width="374" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="DarkBlue"/>
                                 <constraints>
@@ -1915,7 +1942,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0cD-B6-o9Q" customClass="FNTextField" customModule="FNMotivation" customModuleProvider="target">
-                                <rect key="frame" x="20" y="556" width="374" height="46"/>
+                                <rect key="frame" x="20" y="506" width="374" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="DarkBlue"/>
                                 <constraints>
@@ -1928,66 +1955,20 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Body" allowsEditingTextAttributes="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSV-HR-xlz" customClass="FNTextView" customModule="FNMotivation" customModuleProvider="target">
-                                <rect key="frame" x="20" y="224" width="374" height="312"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="20" y="174" width="374" height="312"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="312" id="XmT-Ae-asi"/>
                                 </constraints>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="done" smartInsertDeleteType="yes" smartQuotesType="yes"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_body"/>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EF4-QC-mQv">
-                                <rect key="frame" x="20" y="108" width="374" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqo-PM-Izf" customClass="DLRadioButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="9dO-3U-FgE"/>
-                                            <constraint firstAttribute="height" constant="30" id="Cu3-JW-hkK"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                        <inset key="titleEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Article">
-                                            <color key="titleColor" name="MediumGray"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="checkbox_inactive"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="checkbox_active"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outletCollection property="otherButtons" destination="bsp-X8-BF5" id="kfz-ci-1gQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsp-X8-BF5" customClass="DLRadioButton">
-                                        <rect key="frame" x="254" y="0.0" width="120" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="Eag-GI-LB1"/>
-                                            <constraint firstAttribute="height" constant="30" id="Om5-i9-SW8"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                        <inset key="titleEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Story Post">
-                                            <color key="titleColor" name="MediumGray"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="checkbox_inactive"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="checkbox_active"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outletCollection property="otherButtons" destination="Oqo-PM-Izf" id="qFf-0q-fSZ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="RFd-VK-mDt"/>
-                                </constraints>
-                            </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pJa-N4-Gv4" customClass="FNTextField" customModule="FNMotivation" customModuleProvider="target">
-                                <rect key="frame" x="20" y="622" width="374" height="46"/>
+                                <rect key="frame" x="20" y="572" width="374" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="DarkBlue"/>
                                 <constraints>
@@ -1999,8 +1980,8 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                     <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_community"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldw-Qu-8Xu" customClass="FNButton" customModule="FNMotivation" customModuleProvider="target">
-                                <rect key="frame" x="20" y="698" width="374" height="52"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldw-Qu-8Xu" customClass="FNButton" customModule="FNMotivation" customModuleProvider="target">
+                                <rect key="frame" x="20" y="648" width="374" height="52"/>
                                 <color key="backgroundColor" name="DarkBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="fjk-1A-bbI"/>
@@ -2014,10 +1995,10 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="C46-9e-Abh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="C46-9e-Abh" firstAttribute="trailing" secondItem="0cD-B6-o9Q" secondAttribute="trailing" constant="20" id="3E4-WO-4Mf"/>
-                            <constraint firstItem="Vhk-tt-9o3" firstAttribute="top" secondItem="EF4-QC-mQv" secondAttribute="bottom" constant="20" id="6bC-zi-19k"/>
                             <constraint firstItem="vSV-HR-xlz" firstAttribute="trailing" secondItem="C46-9e-Abh" secondAttribute="trailing" constant="-20" id="7Nc-Gz-pHY"/>
                             <constraint firstItem="vSV-HR-xlz" firstAttribute="top" secondItem="Vhk-tt-9o3" secondAttribute="bottom" constant="20" id="Dwp-RG-8Wm"/>
                             <constraint firstItem="C46-9e-Abh" firstAttribute="trailing" secondItem="pJa-N4-Gv4" secondAttribute="trailing" constant="20" id="EIW-cP-zAk"/>
@@ -2027,30 +2008,25 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <constraint firstItem="0cD-B6-o9Q" firstAttribute="top" secondItem="vSV-HR-xlz" secondAttribute="bottom" constant="20" id="Mug-o5-9jy"/>
                             <constraint firstItem="Ldw-Qu-8Xu" firstAttribute="top" secondItem="pJa-N4-Gv4" secondAttribute="bottom" constant="30" id="OjJ-90-Jp2"/>
                             <constraint firstItem="pJa-N4-Gv4" firstAttribute="leading" secondItem="C46-9e-Abh" secondAttribute="leading" constant="20" id="Ud4-s4-Ply"/>
-                            <constraint firstItem="EF4-QC-mQv" firstAttribute="leading" secondItem="C46-9e-Abh" secondAttribute="leading" constant="20" id="hM9-BS-Q1H"/>
                             <constraint firstItem="Vhk-tt-9o3" firstAttribute="leading" secondItem="C46-9e-Abh" secondAttribute="leading" constant="20" id="hMl-VD-zSE"/>
                             <constraint firstItem="vSV-HR-xlz" firstAttribute="leading" secondItem="C46-9e-Abh" secondAttribute="leading" constant="20" id="l2M-Az-2zf"/>
-                            <constraint firstItem="EF4-QC-mQv" firstAttribute="top" secondItem="C46-9e-Abh" secondAttribute="top" constant="20" id="smd-pk-Jrz"/>
+                            <constraint firstItem="Vhk-tt-9o3" firstAttribute="top" secondItem="C46-9e-Abh" secondAttribute="top" constant="20" id="moc-zx-LEb"/>
                             <constraint firstItem="C46-9e-Abh" firstAttribute="trailing" secondItem="Vhk-tt-9o3" secondAttribute="trailing" constant="20" id="tP8-4c-vmq"/>
-                            <constraint firstItem="C46-9e-Abh" firstAttribute="trailing" secondItem="EF4-QC-mQv" secondAttribute="trailing" constant="20" id="yCZ-bp-Moj"/>
                             <constraint firstItem="pJa-N4-Gv4" firstAttribute="top" secondItem="0cD-B6-o9Q" secondAttribute="bottom" constant="20" id="zo5-Tw-zBH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="C46-9e-Abh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="97X-sT-AkS"/>
                     <navigationItem key="navigationItem" title="Create a Story Post" id="fZm-vd-MMn"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="articleRadioButton" destination="Oqo-PM-Izf" id="qXC-Px-wfH"/>
                         <outlet property="editor" destination="vSV-HR-xlz" id="t7P-oU-NQr"/>
-                        <outlet property="storyRadioButton" destination="bsp-X8-BF5" id="xg6-Rt-cEu"/>
                         <outlet property="storyTags" destination="0cD-B6-o9Q" id="ypO-Jb-eic"/>
                         <outlet property="storyTitle" destination="Vhk-tt-9o3" id="0BI-Jf-lB8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1O-Dw-EGe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3113.04347826087" y="-656.25"/>
+            <point key="canvasLocation" x="3272" y="-916"/>
         </scene>
         <!--Create Story Post-->
         <scene sceneID="mnR-yZ-jpL">
@@ -2070,7 +2046,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFs-sc-0HY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2411.594202898551" y="-656.25"/>
+            <point key="canvasLocation" x="2499" y="-916"/>
         </scene>
         <!--Home Bar View Controller-->
         <scene sceneID="ZIk-Ha-A2h">
@@ -2085,7 +2061,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GsU-bp-6In" customClass="ButtonBarView" customModule="XLPagerTabStrip">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="VB3-de-Vvu"/>
                                 </constraints>
@@ -2122,7 +2098,8 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </userDefinedRuntimeAttributes>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="I52-FU-zMo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GsU-bp-6In" firstAttribute="top" secondItem="biH-la-rGM" secondAttribute="top" id="KdS-XE-yv4"/>
                             <constraint firstAttribute="trailing" secondItem="ymq-0x-kUk" secondAttribute="trailing" id="Mt8-2o-kIs"/>
@@ -2132,7 +2109,6 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <constraint firstAttribute="bottom" secondItem="ymq-0x-kUk" secondAttribute="bottom" id="taw-N9-QWg"/>
                             <constraint firstAttribute="trailing" secondItem="GsU-bp-6In" secondAttribute="trailing" id="uoU-IZ-cWJ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="I52-FU-zMo"/>
                     </view>
                     <connections>
                         <outlet property="buttonBarView" destination="GsU-bp-6In" id="qB6-HI-RjD"/>
@@ -2231,7 +2207,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                                     <state key="normal" image="icn_share">
-                                                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <color key="titleColor" systemColor="labelColor"/>
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="shareStory:" destination="r3n-kE-zZc" eventType="touchUpInside" id="BeE-ZA-GMN"/>
@@ -2248,7 +2224,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                                             <state key="normal" title="120" image="icn_comment">
-                                                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="titleColor" systemColor="labelColor"/>
                                                                             </state>
                                                                             <connections>
                                                                                 <action selector="postComment:" destination="r3n-kE-zZc" eventType="touchUpInside" id="0o3-wv-CyX"/>
@@ -2262,7 +2238,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                                             <state key="normal" title="23" image="icn_like">
-                                                                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="titleColor" systemColor="labelColor"/>
                                                                             </state>
                                                                             <connections>
                                                                                 <action selector="loveStory:" destination="r3n-kE-zZc" eventType="touchUpInside" id="rXR-ZM-Zxv"/>
@@ -2289,7 +2265,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <size key="customSize" width="394" height="200"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -2321,7 +2297,8 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </constraints>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="8gn-b3-oWr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SVn-9e-ZPP" firstAttribute="trailing" secondItem="8gn-b3-oWr" secondAttribute="trailing" id="7BX-5s-yqo"/>
                             <constraint firstItem="y4f-EP-8W1" firstAttribute="top" secondItem="8gn-b3-oWr" secondAttribute="top" constant="20" id="IV6-dM-71o"/>
@@ -2330,7 +2307,6 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <constraint firstItem="SVn-9e-ZPP" firstAttribute="leading" secondItem="8gn-b3-oWr" secondAttribute="leading" id="YuJ-Qw-M4n"/>
                             <constraint firstItem="SVn-9e-ZPP" firstAttribute="top" secondItem="Vtm-kG-G4f" secondAttribute="top" id="ibX-yN-xHg"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="8gn-b3-oWr"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="wVl-kA-azw">
                         <barButtonItem key="backBarButtonItem" title=" " id="kN0-Js-CUU"/>
@@ -2394,7 +2370,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-l2-QQf">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-l2-QQf">
                                                         <rect key="frame" x="274" y="10" width="100" height="30"/>
                                                         <color key="backgroundColor" name="Orange"/>
                                                         <constraints>
@@ -2403,7 +2379,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                                         <state key="normal" title="Follow">
-                                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -2425,13 +2401,13 @@ Sed fringilla felis porttitor dui aliquam, ac rhoncus ipsum dictum. Cras porta q
 Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut suscipit ultricies mauris vel eleifend. Suspendisse congue vestibulum augue vitae auctor. Sed condimentum sem consectetur sapien facilisis, ut vestibulum nibh hendrerit. Etiam cursus tellus sit amet dignissim vulputate. Nulla bibendum orci vel gravida molestie. Morbi iaculis iaculis est eget ullamcorper. Fusce metus ipsum, pharetra non enim in, ultricies ornare nisl. Mauris nec mi ultrices lorem sodales hendrerit a et leo. Morbi et lacinia urna. Donec sed velit dolor. Aenean tellus quam, consectetur eu consectetur quis, tristique non velit.
 
 Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut suscipit ultricies mauris vel eleifend. Suspendisse congue vestibulum augue vitae auctor. Sed condimentum sem consectetur sapien facilisis, ut vestibulum nibh hendrerit. Etiam cursus tellus sit amet dignissim vulputate. Nulla bibendum orci vel gravida molestie. Morbi iaculis iaculis est eget ullamcorper. Fusce metus ipsum, pharetra non enim in, ultricies ornare nisl. Mauris nec mi ultrices lorem sodales hendrerit a et leo. Morbi et lacinia urna. Donec sed velit dolor. Aenean tellus quam, consectetur eu consectetur quis, tristique non velit.</string>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="lfd-My-uUx" firstAttribute="top" secondItem="68u-sd-yjp" secondAttribute="bottom" constant="10" id="CK9-d0-Vu0"/>
                                             <constraint firstAttribute="trailing" secondItem="68u-sd-yjp" secondAttribute="trailing" constant="20" id="DkH-ex-0MR"/>
@@ -2490,7 +2466,8 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="SUl-wr-aaY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="OwP-J3-JDg" firstAttribute="leading" secondItem="SUl-wr-aaY" secondAttribute="leading" id="3Qo-p8-Dik"/>
                             <constraint firstItem="OwP-J3-JDg" firstAttribute="trailing" secondItem="SUl-wr-aaY" secondAttribute="trailing" id="Jzs-QM-tlT"/>
@@ -2500,7 +2477,6 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
                             <constraint firstItem="SUl-wr-aaY" firstAttribute="bottom" secondItem="BG4-mj-YUY" secondAttribute="bottom" id="ifc-2j-Ftd"/>
                             <constraint firstItem="BG4-mj-YUY" firstAttribute="leading" secondItem="SUl-wr-aaY" secondAttribute="leading" id="nIL-BH-brW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="SUl-wr-aaY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Story Post" largeTitleDisplayMode="never" id="1zr-2P-M2a">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="icn_share" style="plain" id="NSj-vY-xMr"/>
@@ -2518,7 +2494,227 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
             </objects>
             <point key="canvasLocation" x="5188.4057971014499" y="-1823.4375"/>
         </scene>
+        <!--Add an Article-->
+        <scene sceneID="9LK-cX-JTS">
+            <objects>
+                <viewController storyboardIdentifier="addArticleViewController" title="Add an Article" id="EOo-vo-dfw" customClass="AddArticleViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0v1-31-6nU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Article Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eC5-8c-izG" customClass="FNTextField" customModule="FNMotivation" customModuleProvider="target">
+                                <rect key="frame" x="20" y="108" width="374" height="46"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="DarkBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="5bt-Rc-K6D"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="WMH-ty-4Io"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="yes" smartQuotesType="yes"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_title"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Redirect Link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eXz-LS-uah" customClass="FNTextField" customModule="FNMotivation" customModuleProvider="target">
+                                <rect key="frame" x="20" y="174" width="374" height="46"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="DarkBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="GCJ-ZR-F4h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="yes" smartQuotesType="yes" textContentType="email"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_link"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgW-Gz-MMe" customClass="FNButton" customModule="FNMotivation" customModuleProvider="target">
+                                <rect key="frame" x="20" y="316" width="374" height="52"/>
+                                <color key="backgroundColor" name="DarkBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="f3l-cV-5yu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="gdL-Ag-ANP" eventType="touchUpInside" id="UKZ-lQ-unm"/>
+                                    <action selector="shareArticleButtonTapped:" destination="EOo-vo-dfw" eventType="touchUpInside" id="7mP-RO-b0H"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Community" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPo-WM-aEP" customClass="FNTextField" customModule="FNMotivation" customModuleProvider="target">
+                                <rect key="frame" x="20" y="240" width="374" height="46"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="DarkBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="arT-ha-LZP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="yes" smartQuotesType="yes" textContentType="email"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="defaultIcon" value="icn_community"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectCommunitySelected:" destination="EOo-vo-dfw" eventType="editingDidBegin" id="Dwm-x5-R0h"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Mo3-Nh-drx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eXz-LS-uah" firstAttribute="leading" secondItem="Mo3-Nh-drx" secondAttribute="leading" constant="20" id="4IF-DP-jlF"/>
+                            <constraint firstItem="ZgW-Gz-MMe" firstAttribute="top" secondItem="ZPo-WM-aEP" secondAttribute="bottom" constant="30" id="FHW-Fa-n3R"/>
+                            <constraint firstItem="eXz-LS-uah" firstAttribute="top" secondItem="eC5-8c-izG" secondAttribute="bottom" constant="20" id="GTO-Jd-RIm"/>
+                            <constraint firstItem="ZgW-Gz-MMe" firstAttribute="leading" secondItem="Mo3-Nh-drx" secondAttribute="leading" constant="20" id="R2A-4m-L0i"/>
+                            <constraint firstItem="Mo3-Nh-drx" firstAttribute="trailing" secondItem="ZPo-WM-aEP" secondAttribute="trailing" constant="20" id="SmJ-FH-YVF"/>
+                            <constraint firstItem="Mo3-Nh-drx" firstAttribute="trailing" secondItem="eXz-LS-uah" secondAttribute="trailing" constant="20" id="eJZ-IA-zOx"/>
+                            <constraint firstItem="Mo3-Nh-drx" firstAttribute="trailing" secondItem="eC5-8c-izG" secondAttribute="trailing" constant="20" id="kES-CF-tEB"/>
+                            <constraint firstItem="eC5-8c-izG" firstAttribute="leading" secondItem="Mo3-Nh-drx" secondAttribute="leading" constant="20" id="lu3-le-JsY"/>
+                            <constraint firstItem="ZPo-WM-aEP" firstAttribute="leading" secondItem="Mo3-Nh-drx" secondAttribute="leading" constant="20" id="mcE-XY-fFl"/>
+                            <constraint firstItem="Mo3-Nh-drx" firstAttribute="trailing" secondItem="ZgW-Gz-MMe" secondAttribute="trailing" constant="20" id="mlk-v0-h15"/>
+                            <constraint firstItem="eC5-8c-izG" firstAttribute="top" secondItem="Mo3-Nh-drx" secondAttribute="top" constant="20" id="po9-vw-cyw"/>
+                            <constraint firstItem="ZPo-WM-aEP" firstAttribute="top" secondItem="eXz-LS-uah" secondAttribute="bottom" constant="20" id="vhq-Bc-GGC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Share an Article" id="U7M-CB-unm"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="communityTextField" destination="ZPo-WM-aEP" id="GCg-by-A94"/>
+                        <outlet property="redirectLinkTextField" destination="eXz-LS-uah" id="MPn-gL-KEm"/>
+                        <outlet property="shareArticleButton" destination="ZgW-Gz-MMe" id="Noe-uY-5UF"/>
+                        <outlet property="titleTextField" destination="eC5-8c-izG" id="nMW-XV-mik"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MHP-yt-i9o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4894" y="-916"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="t9g-sv-p45">
+            <objects>
+                <navigationController storyboardIdentifier="addArticleNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="sp5-O9-dO8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="cVR-nv-wNZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2YQ-4b-1Hb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EOo-vo-dfw" kind="relationship" relationship="rootViewController" id="1Wm-f5-Qem"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Exi-d6-OtK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4170" y="-916"/>
+        </scene>
+        <!--Select Community-->
+        <scene sceneID="dyJ-6q-obo">
+            <objects>
+                <viewController storyboardIdentifier="selectCommunityViewController" title="Select Community" id="CVR-fS-gpD" customClass="SelectCommunityViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x1a-Cu-89P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qj3-s5-Unq">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="communityCell" id="lmB-IA-Zd3">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lmB-IA-Zd3" id="6Hp-EH-EJR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="CVR-fS-gpD" id="poz-jP-3gG"/>
+                                    <outlet property="delegate" destination="CVR-fS-gpD" id="w7J-T4-dpW"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6I2-5l-pe3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3zT-uy-gu3"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Select Community" id="mbJ-e2-u6q"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aTa-DZ-Jk4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6I2-5l-pe3" firstAttribute="top" secondItem="aTa-DZ-Jk4" secondAttribute="top" id="1vs-AZ-5rt"/>
+                            <constraint firstItem="Qj3-s5-Unq" firstAttribute="trailing" secondItem="aTa-DZ-Jk4" secondAttribute="trailing" id="Bon-5I-DpD"/>
+                            <constraint firstItem="6I2-5l-pe3" firstAttribute="leading" secondItem="aTa-DZ-Jk4" secondAttribute="leading" id="G6A-32-aU5"/>
+                            <constraint firstItem="Qj3-s5-Unq" firstAttribute="leading" secondItem="aTa-DZ-Jk4" secondAttribute="leading" id="O9C-pW-Hke"/>
+                            <constraint firstItem="6I2-5l-pe3" firstAttribute="trailing" secondItem="aTa-DZ-Jk4" secondAttribute="trailing" id="bqf-jR-7aJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Qj3-s5-Unq" secondAttribute="bottom" id="fHW-PI-6fp"/>
+                            <constraint firstItem="Qj3-s5-Unq" firstAttribute="top" secondItem="6I2-5l-pe3" secondAttribute="bottom" id="w3H-yz-7Ao"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Community" id="IsQ-Yo-5bv"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableview" destination="Qj3-s5-Unq" id="LSZ-vk-LOL"/>
+                        <segue destination="iro-E5-lAs" kind="unwind" identifier="unwindToAddArticle" unwindAction="unwind:" id="fzT-Lw-aEn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JgV-aR-z0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="iro-E5-lAs" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="5630" y="-916"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="0cD-B6-o9Q">
+            <size key="intrinsicContentSize" width="89" height="34"/>
+        </designable>
+        <designable name="40c-mp-duY">
+            <size key="intrinsicContentSize" width="135" height="34"/>
+        </designable>
+        <designable name="8go-NQ-DMC">
+            <size key="intrinsicContentSize" width="124" height="34"/>
+        </designable>
+        <designable name="Brj-Ba-791">
+            <size key="intrinsicContentSize" width="115" height="20"/>
+        </designable>
+        <designable name="CZz-cG-0sA">
+            <size key="intrinsicContentSize" width="159" height="34"/>
+        </designable>
+        <designable name="JSW-4O-fcs">
+            <size key="intrinsicContentSize" width="129.5" height="34"/>
+        </designable>
+        <designable name="Vhk-tt-9o3">
+            <size key="intrinsicContentSize" width="85.5" height="34"/>
+        </designable>
+        <designable name="ZPo-WM-aEP">
+            <size key="intrinsicContentSize" width="137" height="34"/>
+        </designable>
+        <designable name="bCM-9N-F3V">
+            <size key="intrinsicContentSize" width="159" height="34"/>
+        </designable>
+        <designable name="eC5-8c-izG">
+            <size key="intrinsicContentSize" width="137.5" height="34"/>
+        </designable>
+        <designable name="eXz-LS-uah">
+            <size key="intrinsicContentSize" width="147.5" height="34"/>
+        </designable>
+        <designable name="pJa-N4-Gv4">
+            <size key="intrinsicContentSize" width="125" height="34"/>
+        </designable>
+        <designable name="tvU-MD-pfk">
+            <size key="intrinsicContentSize" width="159" height="34"/>
+        </designable>
+        <designable name="xa6-5A-3jY">
+            <size key="intrinsicContentSize" width="124" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <image name="GoogleLogo" width="825" height="825"/>
         <image name="White Logo Square" width="56" height="56"/>
@@ -2536,6 +2732,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
         <image name="icn_home" width="30" height="30"/>
         <image name="icn_home_active" width="30" height="30"/>
         <image name="icn_like" width="24" height="24"/>
+        <image name="icn_link" width="24" height="24"/>
         <image name="icn_logout" width="20" height="20"/>
         <image name="icn_mail" width="24" height="24"/>
         <image name="icn_mail_active" width="24" height="24"/>
@@ -2581,5 +2778,14 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
         <namedColor name="Red">
             <color red="1" green="0.22745098039215686" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

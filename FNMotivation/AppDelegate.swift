@@ -13,23 +13,16 @@ import FirebaseMessaging
 import Firebase
 import GoogleSignIn
 import IQKeyboardManagerSwift
-import PushNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     
     var window: UIWindow?
-    let beamsClient = PushNotifications.shared
     let gcmMessageIDKey = "gcmMessageIDKey"
     weak var delegate: LoginViewDelegate?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        // Pusher Notifications
-//        self.beamsClient.start(instanceId: "YOUR_INSTANCE_ID")
-//        self.beamsClient.registerForRemoteNotifications()
-//        try? self.beamsClient.addDeviceInterest(interest: "hello")
-        
         // TODO: - move this to the onboarding
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
@@ -52,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         GIDSignIn.sharedInstance().delegate = self
         
         
-        IQKeyboardManager.shared.enable = true
+//        IQKeyboardManager.shared.enable = true
         let backImage = UIImage(named: "icn_back")?.withRenderingMode(.alwaysOriginal)
         UINavigationBar.appearance().backIndicatorImage = backImage
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = backImage
@@ -185,19 +178,18 @@ extension AppDelegate: GIDSignInDelegate {
                 """)
             AuthenticationManager.shared.performThirdPartyRegistration(provider: .google, email: email, userID: userID, fullName: fullName, token: idToken, avatar: "") { (state, message) in
                 if state {
-                    AlertsController().generateAlert(withSuccess: message, andTitle: "Welcome back!")
                     guard let token = defaultsHolder.string(forKey: DefaultValues.tokenKey) else { return }
                     
                     let authNotification = Notification.Name(DefaultValues.authNotificationKey)
-//                    NotificationCenter.default.post(name: authNotification, object: nil, userInfo: ["token": token])
+                    NotificationCenter.default.post(name: authNotification, object: nil, userInfo: ["token": token])
+                    AuthenticationManager().storeUserNames(withData: fullName)
                     self.delegate?.loginSuccessful()
+                    AlertsController().generateAlert(withSuccess: message, andTitle: "Welcome back!")
                 } else {
                     AlertsController().generateAlert(withError: message)
                 }
             }
         }
-//        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-//                                                       accessToken: authentication.accessToken)
     }
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
               withError error: Error!) {

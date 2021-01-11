@@ -59,7 +59,7 @@ class FNTabBarViewController:  UITabBarController, UITabBarControllerDelegate {
                 
                 let selector = UIAlertController(title: "", message: "Select type of post to add", preferredStyle: .actionSheet)
                 let articleAction = UIAlertAction(title: "Article", style: .default) { (action) in
-                    viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "addStoryNavigationViewController")
+                    viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "addArticleNavigationViewController")
                     viewController?.modalPresentationStyle = .overFullScreen
                     self.present(viewController!, animated: true, completion: nil)
                 }

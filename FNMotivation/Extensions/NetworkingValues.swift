@@ -9,7 +9,7 @@
 import Foundation
 
 class NetworkingValues {
-    static let apiUrl = "http://122.179.132.83:403/api/v1"
+    static let apiUrl = "https://fnmotivation.herokuapp.com/api/v1"
     
     static let termsOfUse = "https://albertfnmotivation.herokuapp.com/api/v1/"
 }

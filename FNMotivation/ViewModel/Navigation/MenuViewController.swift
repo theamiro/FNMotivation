@@ -99,7 +99,7 @@ class MenuViewController: UIViewController {
             self.userProfileImage.image = #imageLiteral(resourceName: "avatar")
             self.userFullName.text = "Sign in"
             menuOptions = [
-                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Sign in/Create your account", key: .authentication),
+                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Sign in/Sign up", key: .authentication),
                 MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Home", key: .home),
                 MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "About FNM", key: .about),
                 MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Contact", key: .contact),

@@ -43,7 +43,7 @@ class CommunityViewController: FNViewController {
         guard let url = URL(string: NetworkingValues.apiUrl + "/communities") else { return }
         let urlRequest = URLRequest(url: url)
         
-        AF.request(urlRequest).validate().responseDecodable(of: CommunityResponse.self) { (response) in
+        AF.request(urlRequest).validate().responseDecodable(of: CommunityResponse.self) { [unowned self] (response) in
             guard let communityResponse = response.value else {
                 return
             }

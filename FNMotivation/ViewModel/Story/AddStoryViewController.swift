@@ -10,9 +10,6 @@ import UIKit
 import DLRadioButton
 
 class AddStoryViewController: FNAlternateViewController {
-    
-    @IBOutlet weak var articleRadioButton: DLRadioButton!
-    @IBOutlet weak var storyRadioButton: DLRadioButton!
     @IBOutlet weak var storyTitle: FNTextField!
     @IBOutlet weak var storyTags: FNTextField!
     @IBOutlet weak var editor: UITextView!
@@ -20,13 +17,9 @@ class AddStoryViewController: FNAlternateViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeEditor()
-        initializeRadioButtons()
     }
     
     private func initializeEditor() {
         
-    }
-    private func initializeRadioButtons() {
-        self.articleRadioButton.isSelected = true
     }
 }

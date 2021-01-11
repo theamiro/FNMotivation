@@ -25,6 +25,8 @@
 		021895BA24C6E51900CAEA44 /* Futura Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 021895B724C6E51900CAEA44 /* Futura Bold.ttf */; };
 		021895BB24C6E51900CAEA44 /* Futura Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 021895B824C6E51900CAEA44 /* Futura Light.ttf */; };
 		0229615F24CB1C9B003DB937 /* AlertsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0229615E24CB1C9B003DB937 /* AlertsController.swift */; };
+		0229630125A8778000EB2C6A /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022962FF25A8778000EB2C6A /* CommentsTableViewCell.swift */; };
+		0229630225A8778000EB2C6A /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0229630025A8778000EB2C6A /* CommentsTableViewCell.xib */; };
 		023C7F22251DD5AE009BE502 /* AccountDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C7F21251DD5AE009BE502 /* AccountDataObject.swift */; };
 		02411DEA24B6FF3700E3158F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02411DE924B6FF3700E3158F /* User.swift */; };
 		02411DED24B6FFE300E3158F /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02411DEC24B6FFE300E3158F /* NetworkingService.swift */; };
@@ -64,6 +66,7 @@
 		02AA45E024BDAB5D002624C0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AA45DF24BDAB5D002624C0 /* RegisterViewController.swift */; };
 		02AAC3D62494A57F002A2B49 /* StoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AAC3D52494A57F002A2B49 /* StoriesViewController.swift */; };
 		02AAC3D82494A63B002A2B49 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AAC3D72494A63B002A2B49 /* StoryCollectionViewCell.swift */; };
+		02B16A7D257F57F9007CF21D /* SelectCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B16A7C257F57F9007CF21D /* SelectCommunityViewController.swift */; };
 		02B7F9B224E133D70081F13E /* AddStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7F9B124E133D70081F13E /* AddStoryViewController.swift */; };
 		02B7F9B824E1441A0081F13E /* FNTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7F9B724E1441A0081F13E /* FNTextView.swift */; };
 		02B7F9BA24E1466F0081F13E /* FNToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7F9B924E1466F0081F13E /* FNToolbar.swift */; };
@@ -73,6 +76,7 @@
 		02DF498E24CED08A0071CD6C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DF498D24CED08A0071CD6C /* Date.swift */; };
 		02E89883252F48D40095BE5A /* UnauthenticatedStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E89881252F48D40095BE5A /* UnauthenticatedStateView.swift */; };
 		02E89884252F48D40095BE5A /* UnauthenticatedStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02E89882252F48D40095BE5A /* UnauthenticatedStateView.xib */; };
+		02F4F915257F3BDD003611FA /* ArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4F914257F3BDD003611FA /* ArticleManager.swift */; };
 		02FABDAB24BDBFFC0099A931 /* FNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FABDAA24BDBFFC0099A931 /* FNButton.swift */; };
 		2A33728793CDF5818B456362 /* Pods_FNMotivation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8ED8D6DDE86BE7B0CB6638 /* Pods_FNMotivation.framework */; };
 		A99E572909CF60395070DFE0 /* Pods_FNMotivation_FNMotivationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFCB98DC640C6A68496EB31 /* Pods_FNMotivation_FNMotivationUITests.framework */; };
@@ -116,6 +120,8 @@
 		021895B724C6E51900CAEA44 /* Futura Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Bold.ttf"; sourceTree = "<group>"; };
 		021895B824C6E51900CAEA44 /* Futura Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Light.ttf"; sourceTree = "<group>"; };
 		0229615E24CB1C9B003DB937 /* AlertsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsController.swift; sourceTree = "<group>"; };
+		022962FF25A8778000EB2C6A /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		0229630025A8778000EB2C6A /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
 		023C7F21251DD5AE009BE502 /* AccountDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataObject.swift; sourceTree = "<group>"; };
 		02411DE924B6FF3700E3158F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		02411DEC24B6FFE300E3158F /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 		02AA45DF24BDAB5D002624C0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		02AAC3D52494A57F002A2B49 /* StoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewController.swift; sourceTree = "<group>"; };
 		02AAC3D72494A63B002A2B49 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		02B16A7C257F57F9007CF21D /* SelectCommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCommunityViewController.swift; sourceTree = "<group>"; };
 		02B7F9B124E133D70081F13E /* AddStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoryViewController.swift; sourceTree = "<group>"; };
 		02B7F9B724E1441A0081F13E /* FNTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNTextView.swift; sourceTree = "<group>"; };
 		02B7F9B924E1466F0081F13E /* FNToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNToolbar.swift; sourceTree = "<group>"; };
@@ -171,6 +178,7 @@
 		02DF498D24CED08A0071CD6C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		02E89881252F48D40095BE5A /* UnauthenticatedStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnauthenticatedStateView.swift; sourceTree = "<group>"; };
 		02E89882252F48D40095BE5A /* UnauthenticatedStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnauthenticatedStateView.xib; sourceTree = "<group>"; };
+		02F4F914257F3BDD003611FA /* ArticleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleManager.swift; sourceTree = "<group>"; };
 		02FABDAA24BDBFFC0099A931 /* FNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNButton.swift; sourceTree = "<group>"; };
 		0F03DBA4AC1225A97CF6CEC1 /* Pods_FNMotivationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FNMotivationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3B39107F73353E0A3B91F0 /* Pods-FNMotivation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FNMotivation.release.xcconfig"; path = "Target Support Files/Pods-FNMotivation/Pods-FNMotivation.release.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +282,15 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
+		022962FE25A8771400EB2C6A /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				022962FF25A8778000EB2C6A /* CommentsTableViewCell.swift */,
+				0229630025A8778000EB2C6A /* CommentsTableViewCell.xib */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
 		023C7F20251DD594009BE502 /* AccountDataObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +302,7 @@
 		02411DEB24B6FFC600E3158F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				02F4F913257F3BB2003611FA /* Article */,
 				02B7F9B624E144000081F13E /* TextViews */,
 				02B7F9B324E1374B0081F13E /* Keyboard */,
 				02DC597424DA98550009E55C /* Images */,
@@ -371,6 +389,7 @@
 			children = (
 				026A720A24C5D57200ECC477 /* CommunityViewController.swift */,
 				0289D3E624C7165900EC8311 /* CommunityCollectionViewCell.swift */,
+				02B16A7C257F57F9007CF21D /* SelectCommunityViewController.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -526,6 +545,7 @@
 				025C35BD251798DE00A19CC7 /* Article */,
 				020B200524BE200D003E2F58 /* Story */,
 				02A2A49424BB644A00FF99A7 /* Authentication */,
+				022962FE25A8771400EB2C6A /* Comments */,
 				026A720F24C5F4A100ECC477 /* Home */,
 				026A720D24C5F48800ECC477 /* Notifications */,
 				026A720E24C5F49100ECC477 /* Community */,
@@ -563,6 +583,14 @@
 				02DC597524DA98660009E55C /* Images.swift */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		02F4F913257F3BB2003611FA /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				02F4F914257F3BDD003611FA /* ArticleManager.swift */,
+			);
+			path = Article;
 			sourceTree = "<group>";
 		};
 		02FABDA924BDBFE60099A931 /* Buttons */ = {
@@ -715,6 +743,7 @@
 			files = (
 				020A621C2493EAD50010AB3F /* Main.storyboard in Resources */,
 				020A621E2493F1920010AB3F /* Colors.xcassets in Resources */,
+				0229630225A8778000EB2C6A /* CommentsTableViewCell.xib in Resources */,
 				021895BA24C6E51900CAEA44 /* Futura Bold.ttf in Resources */,
 				0298598F2493E39900FDAF1C /* Assets.xcassets in Resources */,
 				021895B924C6E51900CAEA44 /* Futura Medium.ttf in Resources */,
@@ -931,12 +960,15 @@
 				0298598D2493E39400FDAF1C /* FNMotivation.xcdatamodeld in Sources */,
 				0289D3EF24C7325D00EC8311 /* ProfileViewController.swift in Sources */,
 				021895A424C616AC00CAEA44 /* MenuViewCell.swift in Sources */,
+				02F4F915257F3BDD003611FA /* ArticleManager.swift in Sources */,
 				023C7F22251DD5AE009BE502 /* AccountDataObject.swift in Sources */,
 				02B7F9B824E1441A0081F13E /* FNTextView.swift in Sources */,
+				0229630125A8778000EB2C6A /* CommentsTableViewCell.swift in Sources */,
 				02E89883252F48D40095BE5A /* UnauthenticatedStateView.swift in Sources */,
 				0289D3EB24C7278900EC8311 /* ProfileTabsViewController.swift in Sources */,
 				027FF56E24DAECC30019D09C /* KeychainItem.swift in Sources */,
 				02AAC3D82494A63B002A2B49 /* StoryCollectionViewCell.swift in Sources */,
+				02B16A7D257F57F9007CF21D /* SelectCommunityViewController.swift in Sources */,
 				02411DEA24B6FF3700E3158F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1095,7 +1127,7 @@
 				CODE_SIGN_ENTITLEMENTS = FNMotivation/FNMotivation.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.4;
+				CURRENT_PROJECT_VERSION = 3.1;
 				DEVELOPMENT_TEAM = T7Q9QM92G2;
 				INFOPLIST_FILE = FNMotivation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1118,7 +1150,7 @@
 				CODE_SIGN_ENTITLEMENTS = FNMotivation/FNMotivation.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.4;
+				CURRENT_PROJECT_VERSION = 3.1;
 				DEVELOPMENT_TEAM = T7Q9QM92G2;
 				INFOPLIST_FILE = FNMotivation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

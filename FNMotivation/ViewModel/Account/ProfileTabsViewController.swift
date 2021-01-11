@@ -13,7 +13,7 @@ class ProfileTabsViewController: ButtonBarPagerTabStripViewController {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let profileViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profileViewController")
-        let storyPostsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "storyPostsViewController")
+        _ = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "storyPostsViewController")
         let commentsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "commentsViewController")
         
         return [profileViewController, commentsViewController]

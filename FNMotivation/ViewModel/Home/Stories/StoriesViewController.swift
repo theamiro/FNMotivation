@@ -129,7 +129,18 @@ extension StoriesViewController: UICollectionViewDataSource {
 extension StoriesViewController: StoryCollectionViewFunctionsDelegate {
     func postComment(cell: StoryCollectionViewCell) {}
     
-    func loveStory(cell: StoryCollectionViewCell) {}
+    func likeStory(indexPath: IndexPath?) {
+        if AuthenticationManager().currentSessionIsActive() {
+            
+//            AlertsController().generateAlert(withSuccess: "Followed the Author")
+        } else {
+            let authenticationViewController = UIStoryboard(name: "Main", bundle:
+                Bundle.main).instantiateViewController(withIdentifier:
+                    "authenticationViewController") as! AuthenticationViewController
+            authenticationViewController.modalPresentationStyle = .formSheet
+            self.present(authenticationViewController, animated: true, completion: nil)
+        }
+    }
     
     func shareStory(cell: StoryCollectionViewCell) {
         let message = "Hey! I found this article on Future Now Motivation. Check it out!"
@@ -143,7 +154,8 @@ extension StoriesViewController: StoryCollectionViewFunctionsDelegate {
     
     func followAuthor(cell: StoryCollectionViewCell) {
         if AuthenticationManager().currentSessionIsActive() {
-            AlertsController().generateAlert(withSuccess: "Followed the Author")
+//            AlertsController().generateAlert(withSuccess: "Followed the Author")
+            
         } else {
             let authenticationViewController = UIStoryboard(name: "Main", bundle:
                 Bundle.main).instantiateViewController(withIdentifier:

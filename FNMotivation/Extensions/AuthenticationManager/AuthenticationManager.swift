@@ -49,7 +49,7 @@ class AuthenticationManager {
                     do {
                         let jwt = try decode(jwt: token)
                         let jwtBody = jwt.body
-                        let user = jwtBody["user"]
+                        _ = jwtBody["user"]
                         
                         print(jwtBody) //[String: Any]
                     } catch {
@@ -99,7 +99,7 @@ class AuthenticationManager {
                     "fullname": fullName,
                     "google_id": userID,
                     "googleToken": token,
-                    "avatar": ""
+                    "avatar": avatar
                 ]
                 NetworkingService.shared.makeCall(fromUrl: NetworkingValues.apiUrl + "/auth/googleLogin", networkCallType: .post, requestBody: parameters) { [weak self] (state, message, dataObject)  in
                     if state {
@@ -122,7 +122,7 @@ class AuthenticationManager {
                     "fullname": fullName,
                     "apple_id": userID,
                     "appleToken": token,
-                    "avatar": ""
+                    "avatar": avatar
                 ]
                 NetworkingService.shared.makeCall(fromUrl: NetworkingValues.apiUrl + "/auth/appleLogin", networkCallType: .post, requestBody: parameters) { [weak self] (state, message, dataObject)  in
                     if state {
@@ -132,7 +132,7 @@ class AuthenticationManager {
                         }
                         AuthenticationManager().createUserSession(withNewToken: token)
 //                        Fix the name issue Unexpectedly found nil while unwrapping an Optional value
-//                        self!.storeUserNames(withData: fullName)
+                        self!.storeUserNames(withData: fullName)
                         completion(true, "Congratulations! You are now able to take full advantage of FNMotivation®.")
                     } else {
                         AlertsController().generateAlert(withError: message)

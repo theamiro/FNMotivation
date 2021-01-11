@@ -16,7 +16,6 @@ target 'FNMotivation' do
   pod 'IQKeyboardManagerSwift'
   pod 'JWTDecode'
   pod 'KeychainSwift'
-  pod 'PushNotifications'
   pod 'SwiftyJSON'
   pod 'XLPagerTabStrip'
   pod 'SCLAlertView'

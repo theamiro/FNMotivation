@@ -111,7 +111,6 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - Protobuf (3.11.4)
-  - PushNotifications (3.0.4)
   - SCLAlertView (0.8)
   - SwiftyJSON (5.0.0)
   - XLPagerTabStrip (9.0.0)
@@ -127,7 +126,6 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - JWTDecode
   - KeychainSwift
-  - PushNotifications
   - SCLAlertView
   - SwiftyJSON
   - XLPagerTabStrip
@@ -160,7 +158,6 @@ SPEC REPOS:
     - KeychainSwift
     - nanopb
     - Protobuf
-    - PushNotifications
     - SCLAlertView
     - SwiftyJSON
     - XLPagerTabStrip
@@ -192,11 +189,10 @@ SPEC CHECKSUMS:
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
-  PushNotifications: 6e3d148e5e129af9d4a9279b288c934f9a7f9066
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: a1212b97bceba6ed8eaca17ea65ae89cd227a3d4
+PODFILE CHECKSUM: 64e334e1d529cb668318e5f4d20469ea8e9f190e
 
 COCOAPODS: 1.9.1
