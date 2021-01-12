@@ -58,9 +58,8 @@ class StoryDetailViewController: UIViewController {
         super.viewDidLoad()
         configureTextView()
         initialize()
-        makeCall()
-        textView.delegate = self
-        textView.isScrollEnabled = true
+//        textView.delegate = self
+//        textView.isScrollEnabled = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -68,6 +67,7 @@ class StoryDetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        makeCall()
         textView.becomeFirstResponder()
     }
     @objc
@@ -94,9 +94,26 @@ class StoryDetailViewController: UIViewController {
             guard let storyResponse = response.value else {
                 return
             }
+            self!.comments.removeAll()
             self!.comments.append(contentsOf: storyResponse.data)
             self!.commentsTable.reloadData()
             self!.commentsTable.heightAnchor.constraint(equalToConstant: CGFloat(self!.comments.count * 80)).isActive = true
+        }
+    }
+    
+    @IBAction func postCommentTapped(_ sender: Any) {
+        guard let comment = textView.text else {
+            AlertsController().generateAlert(withError: ErrorMessage.missingData)
+            return
+        }
+        CommentManager().publishComment(storyID: story.storyID, comment: comment) { [weak self] (state, message) in
+            if state {
+                AlertsController().generateAlert(withSuccess: message)
+                self!.makeCall()
+                self!.commentsTable.reloadData()
+            } else {
+                AlertsController().generateAlert(withError: message)
+            }
         }
     }
     

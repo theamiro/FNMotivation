@@ -313,7 +313,7 @@
                                             </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="NHA-jU-XUB">
                                                 <rect key="frame" x="0.0" y="393" width="414" height="283.5"/>
-                                                <mutableString key="text">Sed fringilla felis porttitor dui aliquam, ac rhoncus ipsum dictum. Cras porta quis est nec pellentesque. Aenean interdum vel nunc at rhoncus. Nulla in porta massa. Fusce ante mi, suscipit ut tincidunt eu, ullamcorper nec nibh. Pellentesque pretium elit mattis, accumsan metus vitae, cursus erat. Curabitur scelerisque eros risus, et feugiat libero facilisis sit amet. Nullam sed ullamcorper metus, vel sodales tellus. Aenean eget pellentesque dolor. Curabitur vitae diam vitae leo iaculis commodo. Pellentesque aliquet tincidunt enim in luctus. Curabitur egestas augue sed lacus ornare, eget varius metus molestie. Nunc massa nibh, ultricies ut pulvinar sed, porttitor at ipsum. Praesent semper eu diam eget tristique. Sed finibus diam a augue ultricies dapibus.</mutableString>
+                                                <string key="text">Sed fringilla felis porttitor dui aliquam, ac rhoncus ipsum dictum. Cras porta quis est nec pellentesque. Aenean interdum vel nunc at rhoncus. Nulla in porta massa. Fusce ante mi, suscipit ut tincidunt eu, ullamcorper nec nibh. Pellentesque pretium elit mattis, accumsan metus vitae, cursus erat. Curabitur scelerisque eros risus, et feugiat libero facilisis sit amet. Nullam sed ullamcorper metus, vel sodales tellus. Aenean eget pellentesque dolor. Curabitur vitae diam vitae leo iaculis commodo. Pellentesque aliquet tincidunt enim in luctus. Curabitur egestas augue sed lacus ornare, eget varius metus molestie. Nunc massa nibh, ultricies ut pulvinar sed, porttitor at ipsum. Praesent semper eu diam eget tristique. Sed finibus diam a augue ultricies dapibus.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -391,6 +391,9 @@
                                                 <state key="normal" image="icn_send">
                                                     <color key="titleColor" name="Orange"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="postCommentTapped:" destination="Qau-ja-sge" eventType="touchUpInside" id="34b-g8-7hP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -451,7 +454,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="l5m-Ak-Cdg">
-                                <rect key="frame" x="0.0" y="54" width="414" height="169.5"/>
+                                <rect key="frame" x="0.0" y="54" width="414" height="188"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed ligula egestas urna ultrices interdum non quis dui. Aliquam eu tellus id ante tempor tempus. Duis ornare a tellus vitae mollis. Praesent posuere justo a lectus euismod, id hendrerit dui dignissim. Etiam eget justo gravida nunc convallis volutpat at eu ex. Suspendisse potenti. Duis a velit non lacus ullamcorper aliquet mollis sit amet neque. Aenean luctus faucibus sapien sit amet porttitor.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="16"/>
@@ -2673,46 +2676,46 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
     </scenes>
     <designables>
         <designable name="0cD-B6-o9Q">
-            <size key="intrinsicContentSize" width="89" height="34"/>
+            <size key="intrinsicContentSize" width="61" height="34"/>
         </designable>
         <designable name="40c-mp-duY">
-            <size key="intrinsicContentSize" width="135" height="34"/>
+            <size key="intrinsicContentSize" width="107" height="34"/>
         </designable>
         <designable name="8go-NQ-DMC">
-            <size key="intrinsicContentSize" width="124" height="34"/>
+            <size key="intrinsicContentSize" width="96" height="34"/>
         </designable>
         <designable name="Brj-Ba-791">
-            <size key="intrinsicContentSize" width="115" height="20"/>
+            <size key="intrinsicContentSize" width="97" height="32"/>
         </designable>
         <designable name="CZz-cG-0sA">
-            <size key="intrinsicContentSize" width="159" height="34"/>
+            <size key="intrinsicContentSize" width="131" height="34"/>
         </designable>
         <designable name="JSW-4O-fcs">
-            <size key="intrinsicContentSize" width="129.5" height="34"/>
+            <size key="intrinsicContentSize" width="101.5" height="34"/>
         </designable>
         <designable name="Vhk-tt-9o3">
-            <size key="intrinsicContentSize" width="85.5" height="34"/>
+            <size key="intrinsicContentSize" width="57.5" height="34"/>
         </designable>
         <designable name="ZPo-WM-aEP">
-            <size key="intrinsicContentSize" width="137" height="34"/>
+            <size key="intrinsicContentSize" width="109" height="34"/>
         </designable>
         <designable name="bCM-9N-F3V">
-            <size key="intrinsicContentSize" width="159" height="34"/>
+            <size key="intrinsicContentSize" width="131" height="34"/>
         </designable>
         <designable name="eC5-8c-izG">
-            <size key="intrinsicContentSize" width="137.5" height="34"/>
+            <size key="intrinsicContentSize" width="109.5" height="34"/>
         </designable>
         <designable name="eXz-LS-uah">
-            <size key="intrinsicContentSize" width="147.5" height="34"/>
+            <size key="intrinsicContentSize" width="119.5" height="34"/>
         </designable>
         <designable name="pJa-N4-Gv4">
-            <size key="intrinsicContentSize" width="125" height="34"/>
+            <size key="intrinsicContentSize" width="97" height="34"/>
         </designable>
         <designable name="tvU-MD-pfk">
-            <size key="intrinsicContentSize" width="159" height="34"/>
+            <size key="intrinsicContentSize" width="131" height="34"/>
         </designable>
         <designable name="xa6-5A-3jY">
-            <size key="intrinsicContentSize" width="124" height="34"/>
+            <size key="intrinsicContentSize" width="96" height="34"/>
         </designable>
     </designables>
     <resources>

@@ -32,6 +32,7 @@
 		02411DED24B6FFE300E3158F /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02411DEC24B6FFE300E3158F /* NetworkingService.swift */; };
 		02411DEF24B7026000E3158F /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02411DEE24B7026000E3158F /* DefaultValues.swift */; };
 		0247DED724ED045B00E82747 /* FNAlternateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0247DED624ED045B00E82747 /* FNAlternateViewController.swift */; };
+		025496AE25AD675D00C07A3E /* CommentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025496AD25AD675D00C07A3E /* CommentManager.swift */; };
 		025C35B725178EDA00A19CC7 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C35B625178EDA00A19CC7 /* ArticlesViewController.swift */; };
 		025C35B9251794B900A19CC7 /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C35B8251794B900A19CC7 /* ArticleCollectionViewCell.swift */; };
 		025C35BF251798FF00A19CC7 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C35BE251798FF00A19CC7 /* ArticleDetailViewController.swift */; };
@@ -127,6 +128,7 @@
 		02411DEC24B6FFE300E3158F /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		02411DEE24B7026000E3158F /* DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
 		0247DED624ED045B00E82747 /* FNAlternateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNAlternateViewController.swift; sourceTree = "<group>"; };
+		025496AD25AD675D00C07A3E /* CommentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentManager.swift; sourceTree = "<group>"; };
 		025C35B625178EDA00A19CC7 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		025C35B8251794B900A19CC7 /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
 		025C35BE251798FF00A19CC7 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
@@ -589,6 +591,7 @@
 			isa = PBXGroup;
 			children = (
 				02F4F914257F3BDD003611FA /* ArticleManager.swift */,
+				025496AD25AD675D00C07A3E /* CommentManager.swift */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -956,6 +959,7 @@
 				02B7F9BA24E1466F0081F13E /* FNToolbar.swift in Sources */,
 				027BB39A24BDED1D00F6FFA2 /* FNTextField.swift in Sources */,
 				025C35BF251798FF00A19CC7 /* ArticleDetailViewController.swift in Sources */,
+				025496AE25AD675D00C07A3E /* CommentManager.swift in Sources */,
 				0247DED724ED045B00E82747 /* FNAlternateViewController.swift in Sources */,
 				0298598D2493E39400FDAF1C /* FNMotivation.xcdatamodeld in Sources */,
 				0289D3EF24C7325D00EC8311 /* ProfileViewController.swift in Sources */,
