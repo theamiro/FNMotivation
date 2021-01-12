@@ -60,15 +60,14 @@ class StoryDetailViewController: UIViewController {
         initialize()
 //        textView.delegate = self
 //        textView.isScrollEnabled = true
-        
+        makeCall()
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        makeCall()
-        textView.becomeFirstResponder()
+//        textView.becomeFirstResponder()
     }
     @objc
     func handleKeyboardNotification(notification: NSNotification) {
@@ -102,18 +101,26 @@ class StoryDetailViewController: UIViewController {
     }
     
     @IBAction func postCommentTapped(_ sender: Any) {
-        guard let comment = textView.text else {
-            AlertsController().generateAlert(withError: ErrorMessage.missingData)
-            return
-        }
-        CommentManager().publishComment(storyID: story.storyID, comment: comment) { [weak self] (state, message) in
-            if state {
-                AlertsController().generateAlert(withSuccess: message)
-                self!.makeCall()
-                self!.commentsTable.reloadData()
-            } else {
-                AlertsController().generateAlert(withError: message)
+        if AuthenticationManager().currentSessionIsActive() {
+            let generator = UISelectionFeedbackGenerator()
+            generator.selectionChanged()
+            textView.resignFirstResponder()
+            guard let comment = textView.text else {
+                AlertsController().generateAlert(withError: ErrorMessage.missingData)
+                return
             }
+            CommentManager().publishComment(storyID: story.storyID, comment: comment) { [weak self] (state, message) in
+                if state {
+                    AlertsController().generateAlert(withSuccess: message)
+                    self!.textView.text = ""
+                    self!.makeCall()
+                    self!.commentsTable.reloadData()
+                } else {
+                    AlertsController().generateAlert(withError: message)
+                }
+            }
+        } else {
+            AlertsController().generateAlert(withError: "Please sign in or create an account first before you comment.")
         }
     }
     
@@ -147,6 +154,7 @@ class StoryDetailViewController: UIViewController {
         storyBodyTextView.textContainerInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
     }
 }
+
 extension StoryDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comments.count
