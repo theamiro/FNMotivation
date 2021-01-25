@@ -64,6 +64,8 @@ class StoriesViewController: FNViewController, IndicatorInfoProvider {
         guard let url = URL(string: NetworkingValues.apiUrl + "/stories?from=0&to=100") else { return }
         let urlRequest = URLRequest(url: url)
         
+//        print("URL Request: \(urlRequest)")
+        
         AF.request(urlRequest).validate().responseDecodable(of: StoryResponse.self) { (response) in
             guard let storyResponse = response.value else {
                 return

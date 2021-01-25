@@ -36,7 +36,8 @@ class NotificationsViewController: FNViewController, UIActionSheetDelegate {
         
         tableView.allowsSelection = false
         for i in 1...20 {
-            notifications.append(RemoteNotification(profileImage: UIImage(named: "amiro-memoji")!, message: "Lorem ipsum dolor sit amet.", time: "\(i) mins ago", read: i % 2 == 0 ? true : false))
+            notifications.append(
+                RemoteNotification(profileImage: UIImage(named: "amiro-memoji")!, message: "Lorem ipsum dolor sit amet.", time: "\(i) mins ago", read: i % 2 == 0 ? true : false))
         }
     }
 }

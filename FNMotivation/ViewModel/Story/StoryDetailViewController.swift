@@ -10,32 +10,44 @@ import UIKit
 import Alamofire
 import DZNEmptyDataSet
 
+// MARK: - CommentsResponse
 struct CommentsResponse: Decodable {
     let success: Bool
     let data: [Comment]
 }
 
+// MARK: - Comment
 struct Comment: Decodable {
     let userID: Int
-    let fullname, username, email: String
+    let fullname: String?
+    let username, email: String
     let avatar: String
     let commentID, storyID: Int
-    let message: String
+    let message, createdAt: String
 
     enum CodingKeys: String, CodingKey {
         case userID = "user_id"
         case fullname, username, email, avatar
         case commentID = "comment_id"
         case storyID = "story_id"
-        case message
+        case message, createdAt
     }
 }
+
 
 
 class StoryDetailViewController: UIViewController {
 
     var story: Story!
     var comments: [Comment] = []
+    var tags: [String] = [
+        "#wealth",
+        "#wisdom",
+        "#music",
+        "#cleancode",
+        "#covid-19",
+        "#opportunity"
+    ]
     
     var commentsIdentifier = "commentsIdentifier"
     
@@ -45,10 +57,11 @@ class StoryDetailViewController: UIViewController {
     @IBOutlet weak var storyCategoryLabel: UILabel!
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var storyBodyTextView: UITextView!
-    @IBOutlet weak var commentsTable: UITableView!
+    @IBOutlet weak var commentsTable: SelfSizedTableView!
     @IBOutlet weak var commentToolbar: UIView!
     @IBOutlet weak var commentToolbarBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var tagsCollectionView: UICollectionView!
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -58,6 +71,7 @@ class StoryDetailViewController: UIViewController {
         super.viewDidLoad()
         configureTextView()
         initialize()
+        commentsTable.maxHeight = 900
 //        textView.delegate = self
 //        textView.isScrollEnabled = true
         makeCall()
@@ -88,15 +102,19 @@ class StoryDetailViewController: UIViewController {
     @objc func makeCall() {
         guard let url = URL(string: NetworkingValues.apiUrl + "/comments/stories/\(story.storyID)") else { return }
         let urlRequest = URLRequest(url: url)
+        print(urlRequest)
         
         AF.request(urlRequest).validate().responseDecodable(of: CommentsResponse.self) { [weak self] (response) in
             guard let storyResponse = response.value else {
                 return
             }
-            self!.comments.removeAll()
-            self!.comments.append(contentsOf: storyResponse.data)
-            self!.commentsTable.reloadData()
-            self!.commentsTable.heightAnchor.constraint(equalToConstant: CGFloat(self!.comments.count * 80)).isActive = true
+            self?.comments.removeAll()
+            self?.comments.append(contentsOf: storyResponse.data)
+            self?.commentsTable.reloadData()
+            self?.commentsTable.heightAnchor.constraint(equalToConstant: CGFloat((self?.comments.count)! * 80)).isActive = true
+            self?.commentsTable.maxHeight = CGFloat(((self?.comments.count)! + 2) * 80)
+//            self?.commentsTable.contentSize.height = (self?.commentsTable.frame.height)!
+            self?.view.layoutIfNeeded()
         }
     }
     
@@ -112,9 +130,9 @@ class StoryDetailViewController: UIViewController {
             CommentManager().publishComment(storyID: story.storyID, comment: comment) { [weak self] (state, message) in
                 if state {
                     AlertsController().generateAlert(withSuccess: message)
-                    self!.textView.text = ""
+                    self?.textView.text = ""
                     self!.makeCall()
-                    self!.commentsTable.reloadData()
+                    self?.commentsTable.reloadData()
                 } else {
                     AlertsController().generateAlert(withError: message)
                 }
@@ -134,11 +152,21 @@ class StoryDetailViewController: UIViewController {
         self.present(activityViewController, animated: true, completion: nil)
     }
     func initialize() {
+        commentsTable.delegate = self
+        commentsTable.dataSource = self
+        commentsTable.emptyDataSetSource = self
+        commentsTable.emptyDataSetDelegate = self
+        
         if let thumbnailURL = story.postThumbnail {
-            postThumbnail.getImageFromURL(using: thumbnailURL)
+            if thumbnailURL.isValidURL {
+                postThumbnail.getImageFromURL(using: thumbnailURL)
+            } else {
+                postThumbnail.image = UIImage(named: "placeholder")
+            }
         } else {
             postThumbnail.image = UIImage(named: "placeholder")
         }
+        
         storyTitleLabel.text = story.title
         storyMetaLabel.text = "By \(story.username.capitalizingFirstLetter())"
         storyCategoryLabel.text = story.communityTitle.capitalizingFirstLetter()
@@ -146,12 +174,12 @@ class StoryDetailViewController: UIViewController {
         
         commentsTable.register(UINib(nibName: "CommentsTableViewCell", bundle: nil), forCellReuseIdentifier: "commentsIdentifier")
         commentsTable.translatesAutoresizingMaskIntoConstraints = false
-        commentsTable.delegate = self
-        commentsTable.dataSource = self
+        
+        tagsCollectionView.register(UINib(nibName: "TagsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tagsIdentifier")
     }
     
     fileprivate func configureTextView() {
-        storyBodyTextView.textContainerInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+        storyBodyTextView.textContainerInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
 }
 
@@ -169,8 +197,52 @@ extension StoryDetailViewController: UITableViewDelegate, UITableViewDataSource 
         return 80.0
     }
 }
-extension StoryDetailViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+
+extension StoryDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tags.count
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagsIdentifier", for: indexPath) as? TagsCollectionViewCell else { return UICollectionViewCell()}
+//        cell.configureCells(using: tags[indexPath.row])
+        cell.title.text = tags[indexPath.row].lowercased()
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100.0, height: 24.0)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5.0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 15.0)
+    }
+    
+}
+extension StoryDetailViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+    func emptyDataSetShouldFade(in scrollView: UIScrollView) -> Bool {
+        return true
+    }
+    // Add a title to your empty data set
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "No comments. Be the first to comment!"
+        let attribs = [
+            NSAttributedString.Key.font: UIFont(name: "Futura", size: 16.0)!,
+            NSAttributedString.Key.foregroundColor: UIColor(named: "MediumGray")!
+        ]
+        
+        return NSAttributedString(string: text, attributes: attribs)
+    }
+    // Set the background color of your empty data set
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.systemBackground
+    }
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {
+        return 0
+    }
+
 }
 
 extension StoryDetailViewController: UITextViewDelegate {

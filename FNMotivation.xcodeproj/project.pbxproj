@@ -81,6 +81,10 @@
 		02FABDAB24BDBFFC0099A931 /* FNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FABDAA24BDBFFC0099A931 /* FNButton.swift */; };
 		2A33728793CDF5818B456362 /* Pods_FNMotivation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8ED8D6DDE86BE7B0CB6638 /* Pods_FNMotivation.framework */; };
 		A99E572909CF60395070DFE0 /* Pods_FNMotivation_FNMotivationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFCB98DC640C6A68496EB31 /* Pods_FNMotivation_FNMotivationUITests.framework */; };
+		C91A54E225BE825100F52EA8 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A54E125BE825100F52EA8 /* SelfSizedTableView.swift */; };
+		C91A54EA25BE85A700F52EA8 /* StoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A54E925BE85A700F52EA8 /* StoryManager.swift */; };
+		C91A551D25BEB19A00F52EA8 /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A551B25BEB19A00F52EA8 /* TagsCollectionViewCell.swift */; };
+		C91A551E25BEB19A00F52EA8 /* TagsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91A551C25BEB19A00F52EA8 /* TagsCollectionViewCell.xib */; };
 		EA100E7CB6D8553E55296011 /* Pods_FNMotivationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F03DBA4AC1225A97CF6CEC1 /* Pods_FNMotivationTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -188,6 +192,10 @@
 		4726A73432289BD8005CF7A2 /* Pods-FNMotivationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FNMotivationTests.debug.xcconfig"; path = "Target Support Files/Pods-FNMotivationTests/Pods-FNMotivationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		714F3F163ACD5ADE939BE97D /* Pods-FNMotivation-FNMotivationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FNMotivation-FNMotivationUITests.debug.xcconfig"; path = "Target Support Files/Pods-FNMotivation-FNMotivationUITests/Pods-FNMotivation-FNMotivationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D8ED8D6DDE86BE7B0CB6638 /* Pods_FNMotivation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FNMotivation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C91A54E125BE825100F52EA8 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
+		C91A54E925BE85A700F52EA8 /* StoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryManager.swift; sourceTree = "<group>"; };
+		C91A551B25BEB19A00F52EA8 /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
+		C91A551C25BEB19A00F52EA8 /* TagsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsCollectionViewCell.xib; sourceTree = "<group>"; };
 		CA2AA665972D1D8AB5C19463 /* Pods-FNMotivation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FNMotivation.debug.xcconfig"; path = "Target Support Files/Pods-FNMotivation/Pods-FNMotivation.debug.xcconfig"; sourceTree = "<group>"; };
 		DEEE44EA26DAE620A09070A7 /* Pods-FNMotivationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FNMotivationTests.release.xcconfig"; path = "Target Support Files/Pods-FNMotivationTests/Pods-FNMotivationTests.release.xcconfig"; sourceTree = "<group>"; };
 		EEFCB98DC640C6A68496EB31 /* Pods_FNMotivation_FNMotivationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FNMotivation_FNMotivationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -304,7 +312,9 @@
 		02411DEB24B6FFC600E3158F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C91A54F825BE9F9600F52EA8 /* Date */,
 				02F4F913257F3BB2003611FA /* Article */,
+				C91A54EE25BE85AC00F52EA8 /* Story */,
 				02B7F9B624E144000081F13E /* TextViews */,
 				02B7F9B324E1374B0081F13E /* Keyboard */,
 				02DC597424DA98550009E55C /* Images */,
@@ -317,10 +327,10 @@
 				02FABDA924BDBFE60099A931 /* Buttons */,
 				02A2A49C24BB73BF00FF99A7 /* AuthenticationManager */,
 				02A2A49924BB72A200FF99A7 /* Validation */,
+				C91A54E025BE823800F52EA8 /* TableView */,
 				02411DEC24B6FFE300E3158F /* NetworkingService.swift */,
 				02411DEE24B7026000E3158F /* DefaultValues.swift */,
 				02A2A49724BB649C00FF99A7 /* NetworkingValues.swift */,
-				02DF498D24CED08A0071CD6C /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -541,6 +551,7 @@
 		02AAC3D32494A542002A2B49 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C91A551A25BEB18D00F52EA8 /* Tags */,
 				0279873F24CAE83E00E7A786 /* About */,
 				021895A224C6168600CAEA44 /* Navigation */,
 				0218959F24C60BD500CAEA44 /* Base */,
@@ -614,6 +625,39 @@
 				0F03DBA4AC1225A97CF6CEC1 /* Pods_FNMotivationTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C91A54E025BE823800F52EA8 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				C91A54E125BE825100F52EA8 /* SelfSizedTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		C91A54EE25BE85AC00F52EA8 /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				C91A54E925BE85A700F52EA8 /* StoryManager.swift */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
+		C91A54F825BE9F9600F52EA8 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				02DF498D24CED08A0071CD6C /* Date.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		C91A551A25BEB18D00F52EA8 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				C91A551B25BEB19A00F52EA8 /* TagsCollectionViewCell.swift */,
+				C91A551C25BEB19A00F52EA8 /* TagsCollectionViewCell.xib */,
+			);
+			path = Tags;
 			sourceTree = "<group>";
 		};
 		D372AE1AC00E9522066807F3 /* Pods */ = {
@@ -745,6 +789,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				020A621C2493EAD50010AB3F /* Main.storyboard in Resources */,
+				C91A551E25BEB19A00F52EA8 /* TagsCollectionViewCell.xib in Resources */,
 				020A621E2493F1920010AB3F /* Colors.xcassets in Resources */,
 				0229630225A8778000EB2C6A /* CommentsTableViewCell.xib in Resources */,
 				021895BA24C6E51900CAEA44 /* Futura Bold.ttf in Resources */,
@@ -917,6 +962,7 @@
 				027BB39724BDC53900F6FFA2 /* FNView.swift in Sources */,
 				025C35B9251794B900A19CC7 /* ArticleCollectionViewCell.swift in Sources */,
 				02D33CF6252F06A80089A50A /* CommentsViewCell.swift in Sources */,
+				C91A54E225BE825100F52EA8 /* SelfSizedTableView.swift in Sources */,
 				02AA45DE24BDAA4D002624C0 /* AuthenticationBarViewController.swift in Sources */,
 				0216F60824DB22A900FFE870 /* Validation.swift in Sources */,
 				02AA45D824BD9C69002624C0 /* LoginViewController.swift in Sources */,
@@ -929,6 +975,7 @@
 				027BB39C24BDFC7100F6FFA2 /* FNCheckBox.swift in Sources */,
 				02D33CF8252F19AD0089A50A /* FNImageHolderView.swift in Sources */,
 				021895AE24C6D5D600CAEA44 /* Strings.swift in Sources */,
+				C91A551D25BEB19A00F52EA8 /* TagsCollectionViewCell.swift in Sources */,
 				026A720724C5CD7000ECC477 /* AccountViewController.swift in Sources */,
 				02B7F9B224E133D70081F13E /* AddStoryViewController.swift in Sources */,
 				026A720B24C5D57200ECC477 /* CommunityViewController.swift in Sources */,
@@ -954,6 +1001,7 @@
 				026A720924C5D56500ECC477 /* NotificationsViewController.swift in Sources */,
 				0215D55C24ECFD230063A0F3 /* FNTabBarViewController.swift in Sources */,
 				029859852493E39400FDAF1C /* SceneDelegate.swift in Sources */,
+				C91A54EA25BE85A700F52EA8 /* StoryManager.swift in Sources */,
 				02AA45E024BDAB5D002624C0 /* RegisterViewController.swift in Sources */,
 				02A2A49B24BB72B200FF99A7 /* ErrorMessages.swift in Sources */,
 				02B7F9BA24E1466F0081F13E /* FNToolbar.swift in Sources */,

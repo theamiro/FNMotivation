@@ -60,7 +60,6 @@ class FNTextView: UITextView {
         ]
         textViewToolbar.sizeToFit()
         
-        
         self.inputAccessoryView = textViewToolbar
     }
     

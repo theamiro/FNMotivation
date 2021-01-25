@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h4j-Y6-j7x">
-                        <rect key="frame" x="20" y="6.5" width="280" height="67"/>
+                        <rect key="frame" x="15" y="6.5" width="290" height="67"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amiro-memoji" translatesAutoresizingMaskIntoConstraints="NO" id="l0u-Ph-2ao">
                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -34,7 +34,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wYE-4S-GCS">
-                                <rect key="frame" x="50" y="0.0" width="230" height="67"/>
+                                <rect key="frame" x="50" y="0.0" width="240" height="67"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carlos Hernandez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJT-Jw-VuC">
                                         <rect key="frame" x="0.0" y="0.0" width="108.5" height="17"/>
@@ -43,7 +43,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If there are apprehensions then it may return as people return to work." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IW7-OV-fOp">
-                                        <rect key="frame" x="0.0" y="21" width="226.5" height="29"/>
+                                        <rect key="frame" x="0.0" y="21" width="240" height="29"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
                                         <color key="textColor" name="MediumGray"/>
                                         <nil key="highlightedColor"/>
@@ -60,9 +60,9 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="h4j-Y6-j7x" secondAttribute="trailing" constant="20" id="1aB-pO-NSv"/>
+                    <constraint firstAttribute="trailing" secondItem="h4j-Y6-j7x" secondAttribute="trailing" constant="15" id="1aB-pO-NSv"/>
                     <constraint firstItem="h4j-Y6-j7x" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2Oq-Jb-evx"/>
-                    <constraint firstItem="h4j-Y6-j7x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="lAm-qI-xBG"/>
+                    <constraint firstItem="h4j-Y6-j7x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="lAm-qI-xBG"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

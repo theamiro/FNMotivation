@@ -9,7 +9,7 @@
 import UIKit
 
 class CommentsTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var commentBodyLabel: UILabel!
@@ -21,14 +21,13 @@ class CommentsTableViewCell: UITableViewCell {
     }
     
     func configureCells(using data: Comment){
-        if data.avatar != nil {
+        if data.avatar.isValidURL{
             profileImage.getImageFromURL(using: data.avatar)
         } else {
             profileImage.image = UIImage(named: "placeholder")
         }
         nameLabel.text = data.fullname
         commentBodyLabel.text = data.message
-        timeLabel.text = "2 hours ago"
-//            data.createdAt
+        timeLabel.text = data.createdAt.timeAgo(date: data.createdAt.getDate(), numericDates: true)
     }
 }
