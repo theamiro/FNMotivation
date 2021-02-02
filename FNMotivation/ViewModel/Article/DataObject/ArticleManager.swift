@@ -24,7 +24,8 @@ class ArticleManager {
                 }
                 completion(true, "Your article has been posted successfully.")
             } else {
-                AlertsController().generateAlert(withError: message)
+                completion(false, message)
+                return
             }
         }
     }

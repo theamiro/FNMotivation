@@ -9,6 +9,22 @@
 import Foundation
 
 class StoryManager {
+    func fetchStories(completion: @escaping (Bool, String, [Story]?)->()) {
+        NetworkingService.shared.makeCall(fromUrl: NetworkingValues.apiUrl + "/stories?from=0&to=100", networkCallType: .get) { (state, message, dataObject) in
+            if state {
+                guard let jsonResponse = dataObject as? [String: Any] else {
+                    AlertsController().generateAlert(withError: ErrorMessage.parseError)
+                    completion(false, ErrorMessage.parseError, [])
+                    return
+                }
+                var storiesOutput = [Story]()
+                
+                completion(true, message, storiesOutput)
+            } else {
+                completion(false, message, [])
+            }
+        }
+    }
     func publishStory(title: String, redirectLink: String, communityID: Int, completion: @escaping (Bool, String)->()) {
         let parameters: [String: Any] = [
             "title": title,
@@ -22,10 +38,8 @@ class StoryManager {
                     completion(false, ErrorMessage.parseError)
                     return
                 }
-                completion(true, "Your article has been posted successfully.")
-//                completion(true, message)
+                completion(true, message)
             } else {
-//                AlertsController().generateAlert(withError: message)
                 completion(false, message)
             }
         }

@@ -22,7 +22,8 @@ class CommentManager {
                 }
                 completion(true, "Your comment has been posted successfully.")
             } else {
-                AlertsController().generateAlert(withError: message)
+                completion(false, message)
+                return
             }
         }
     }

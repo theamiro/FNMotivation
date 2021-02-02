@@ -134,19 +134,17 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myW-kQ-eyn">
                                                                     <rect key="frame" x="214" y="7.6666666666666572" width="140" height="30"/>
                                                                     <subviews>
-                                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3S9-mT-Abt">
+                                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3S9-mT-Abt">
                                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="70" id="5da-EJ-pfx"/>
                                                                                 <constraint firstAttribute="height" constant="30" id="N4c-bb-2tU"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                                            <color key="tintColor" name="LightGray"/>
                                                                             <state key="normal" title="120" image="icn_comment">
                                                                                 <color key="titleColor" systemColor="labelColor"/>
                                                                             </state>
-                                                                            <connections>
-                                                                                <action selector="postComment:" destination="D6o-IL-hKG" eventType="touchUpInside" id="Bz3-e1-FMo"/>
-                                                                            </connections>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTG-9E-5te">
                                                                             <rect key="frame" x="70" y="0.0" width="70" height="30"/>
@@ -155,11 +153,12 @@
                                                                                 <constraint firstAttribute="width" constant="70" id="hZD-mt-MQr"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                                            <color key="tintColor" name="LightGray"/>
                                                                             <state key="normal" title="23" image="icn_like">
                                                                                 <color key="titleColor" systemColor="labelColor"/>
                                                                             </state>
                                                                             <connections>
-                                                                                <action selector="loveStory:" destination="D6o-IL-hKG" eventType="touchUpInside" id="HYT-WY-3ui"/>
+                                                                                <action selector="likeStory:" destination="D6o-IL-hKG" eventType="touchUpInside" id="GsS-JC-uXk"/>
                                                                             </connections>
                                                                         </button>
                                                                     </subviews>
@@ -2707,7 +2706,7 @@ Donec posuere porta justo, et aliquam lectus blandit quis. Interdum et malesuada
             <size key="intrinsicContentSize" width="124" height="34"/>
         </designable>
         <designable name="Brj-Ba-791">
-            <size key="intrinsicContentSize" width="115" height="20"/>
+            <size key="intrinsicContentSize" width="120" height="20"/>
         </designable>
         <designable name="CZz-cG-0sA">
             <size key="intrinsicContentSize" width="159" height="34"/>

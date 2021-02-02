@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 let imageCache = NSCache<NSString, UIImage>()
 extension UIImageView {
@@ -30,6 +31,7 @@ extension UIImageView {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 print(error!)
+//                completion(false, error)
                 return
             }
             DispatchQueue.main.async {

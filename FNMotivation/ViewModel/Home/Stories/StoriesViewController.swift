@@ -64,8 +64,6 @@ class StoriesViewController: FNViewController, IndicatorInfoProvider {
         guard let url = URL(string: NetworkingValues.apiUrl + "/stories?from=0&to=100") else { return }
         let urlRequest = URLRequest(url: url)
         
-//        print("URL Request: \(urlRequest)")
-        
         AF.request(urlRequest).validate().responseDecodable(of: StoryResponse.self) { (response) in
             guard let storyResponse = response.value else {
                 return
@@ -105,12 +103,8 @@ extension StoriesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! StoryCollectionViewCell
-        cell.titleLabel.text = stories[indexPath.row].title
-        cell.categoryLabel.text = stories[indexPath.row].communityTitle.capitalizingFirstLetter()
-        cell.authorLabel.text = "By \(stories[indexPath.row].username)"
-//        \(stories[indexPath.row].created.getDate())
-        cell.excerptLabel.text = stories[indexPath.row].body
         cell.delegate = self
+        cell.configure(using: stories[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -129,19 +123,13 @@ extension StoriesViewController: UICollectionViewDataSource {
 }
 
 extension StoriesViewController: StoryCollectionViewFunctionsDelegate {
-    func postComment(cell: StoryCollectionViewCell) {}
+    func postComment(indexPath: IndexPath?) {
+//        self.performSegue(withIdentifier: "toDetailView", sender: self)
+        
+    }
     
     func likeStory(indexPath: IndexPath?) {
-        if AuthenticationManager().currentSessionIsActive() {
-            
-//            AlertsController().generateAlert(withSuccess: "Followed the Author")
-        } else {
-            let authenticationViewController = UIStoryboard(name: "Main", bundle:
-                Bundle.main).instantiateViewController(withIdentifier:
-                    "authenticationViewController") as! AuthenticationViewController
-            authenticationViewController.modalPresentationStyle = .formSheet
-            self.present(authenticationViewController, animated: true, completion: nil)
-        }
+        
     }
     
     func shareStory(cell: StoryCollectionViewCell) {

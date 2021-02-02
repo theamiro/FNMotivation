@@ -9,6 +9,7 @@
 import Foundation
 import JWTDecode
 import SwiftyJSON
+import FirebaseMessaging
 
 enum AuthProvider {
     case google
@@ -17,6 +18,9 @@ enum AuthProvider {
 
 class AuthenticationManager {
     static let shared = AuthenticationManager.init()
+    
+    let deviceID = AppDelegate().deviceTokenString
+    let fcmToken = Messaging.messaging().fcmToken
     
     func createUserSession(withNewToken newToken: String){
         if defaultsHolder.value(forKey: DefaultValues.tokenKey) as? String != nil {
@@ -36,7 +40,11 @@ class AuthenticationManager {
     func performUserAuthentication(userEmail: String, password: String, completion: @escaping (Bool, String)->()) {
         let parameters: [String: Any] = [
             "email": userEmail,
-            "password": password
+            "password": password,
+            "device_id": deviceID,
+            "device_token": deviceID,
+            "fcmToken": fcmToken!,
+            "os_version": "iOS"
         ]
         NetworkingService.shared.makeCall(fromUrl: (NetworkingValues.apiUrl + "/auth/login"), networkCallType: .post, requestBody: parameters) { (state, message, dataObject) in
             if state {
@@ -49,15 +57,22 @@ class AuthenticationManager {
                     do {
                         let jwt = try decode(jwt: token)
                         let jwtBody = jwt.body
-                        _ = jwtBody["user"]
-                        
-                        print(jwtBody) //[String: Any]
+//                        guard let user = jwtBody["user"] as? [String: Any] else {
+//                            return
+//                        }
+//                        guard let username = user["username"] as? String,
+//                              let userID = user["userid"] as? String,
+//                              let email = user["email"] as? String,
+//                              let avatar = user["avatar"] as? String else {
+//                            completion(false, "Failed to decode JWT")
+//                            return
+//                        }
+//                        AuthenticationManager.shared.storeUserNames(withData: username)
                     } catch {
                         print(error)
                     }
                     
                     AuthenticationManager.shared.createUserSession(withNewToken: token)
-//                    AuthenticationManager.shared.storeUserNames(withData: user)
                     completion(true, "Welcome. You can now post and comment on FNMotivation!")
                 }
             } else {
@@ -68,30 +83,42 @@ class AuthenticationManager {
     }
     
     func performUserRegistration(username: String, firstName: String, lastName: String, userEmail: String, password: String, completion: @escaping (Bool, String)->()) {
+        
         let parameters: [String: Any] = [
             "username": username,
             "firstname": firstName,
             "lastname": lastName,
             "email": userEmail,
-            "password": password
+            "password": password,
+            "device_id": deviceID,
+            "device_token": deviceID,
+            "fcmToken": fcmToken!,
+            "os_version": "iOS"
         ]
+        
         NetworkingService.shared.makeCall(fromUrl: (NetworkingValues.apiUrl + "/auth/register"), networkCallType: .post, requestBody: parameters) { (state, message, dataObject) in
             if state {
-                guard let response = dataObject as? [String:Any],
-                    let token = response["token"] as? String else {
-                        completion(false, ErrorMessage.parseError)
-                        return
+                guard let response = dataObject as? [String:Any] else {
+                    completion(false, ErrorMessage.parseError)
+                    return
                 }
-                AuthenticationManager().createUserSession(withNewToken: token)
+                let message = response["msg"] as? String
+                
+                guard let token = response["token"] as? String else {
+                    completion(false, message!)
+                    return
+                }
+                self.createUserSession(withNewToken: token)
+                self.storeUserNames(withData: "\(firstName) \(lastName)")
+                
                 completion(true, "Congratulations! You are now able to take full advantage of FNMotivation®.")
             } else {
                 AlertsController().generateAlert(withError: message)
-                print(message)
                 completion(state, message)
             }
         }
     }
-    func performThirdPartyRegistration(provider: AuthProvider, email: String, userID: String, fullName: String, token: String, avatar: String, completion: @escaping (Bool, String)->()) {
+    func performThirdPartyRegistration(provider: AuthProvider, email: String, userID: String, fullName: String, token: String, avatar: String, deviceID: String, deviceToken: String, fcmToken: String, completion: @escaping (Bool, String)->()) {
         switch provider {
             case .google:
                 let parameters: [String: Any] = [
@@ -99,7 +126,11 @@ class AuthenticationManager {
                     "fullname": fullName,
                     "google_id": userID,
                     "googleToken": token,
-                    "avatar": avatar
+                    "avatar": avatar,
+                    "device_id": deviceID,
+                    "device_token": deviceToken,
+                    "fcm_token": fcmToken,
+                    "os_version": "iOS"
                 ]
                 NetworkingService.shared.makeCall(fromUrl: NetworkingValues.apiUrl + "/auth/googleLogin", networkCallType: .post, requestBody: parameters) { [weak self] (state, message, dataObject)  in
                     if state {
@@ -122,7 +153,11 @@ class AuthenticationManager {
                     "fullname": fullName,
                     "apple_id": userID,
                     "appleToken": token,
-                    "avatar": avatar
+                    "avatar": avatar,
+                    "device_id": deviceID,
+                    "device_token": deviceToken,
+                    "fcm_token": fcmToken,
+                    "os_version": "iOS"
                 ]
                 NetworkingService.shared.makeCall(fromUrl: NetworkingValues.apiUrl + "/auth/appleLogin", networkCallType: .post, requestBody: parameters) { [weak self] (state, message, dataObject)  in
                     if state {

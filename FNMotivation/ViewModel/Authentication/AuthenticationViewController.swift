@@ -92,7 +92,7 @@ extension AuthenticationViewController: ASAuthorizationControllerDelegate {
                             return
                 }
                 
-                AuthenticationManager().performThirdPartyRegistration(provider: .apple, email: email, userID: userIdentifier, fullName: fullName, token: token, avatar: "") { (state, message) in
+                AuthenticationManager().performThirdPartyRegistration(provider: .apple, email: email, userID: userIdentifier, fullName: fullName, token: token, avatar: "", deviceID: "", deviceToken: "", fcmToken: "") { (state, message) in
                     if state {
                         AlertsController().generateAlert(withSuccess: message, andTitle: "Welcome back!")
                         guard let token = defaultsHolder.string(forKey: DefaultValues.tokenKey) else { return }

@@ -13,7 +13,7 @@ protocol StoryCollectionViewFunctionsDelegate {
     
     func shareStory(cell: StoryCollectionViewCell)
     
-    func postComment(cell: StoryCollectionViewCell)
+    func postComment(indexPath: IndexPath?)
     
     func likeStory(indexPath: IndexPath?)
 }
@@ -32,9 +32,19 @@ class StoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var commentsButton: UIButton!
     @IBOutlet weak var likesButton: UIButton!
+    
+    var selectedAtIndex: IndexPath?
 
     override class func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func configure(using data: Story) {
+        titleLabel.text = data.title
+        categoryLabel.text = data.communityTitle.capitalizingFirstLetter()
+        authorLabel.text = "By \(data.username)"
+        excerptLabel.text = data.body
+        commentsButton.addTarget(self, action: #selector(postComment), for: .touchUpInside)
     }
     
     @IBAction func followAuthor(_ sender: Any) {
@@ -46,9 +56,39 @@ class StoryCollectionViewCell: UICollectionViewCell {
     @IBAction func shareStory(_ sender: Any) {
         delegate?.shareStory(cell: self)
     }
-    @IBAction func postComment(_ sender: Any) {
+    
+    @objc
+    func postComment() {
+        if AuthenticationManager().currentSessionIsActive() {
+            delegate?.postComment(indexPath: selectedAtIndex)
+        } else {
+            let authenticationViewController = UIStoryboard(name: "Main", bundle:
+                Bundle.main).instantiateViewController(withIdentifier:
+                    "authenticationViewController") as! AuthenticationViewController
+            authenticationViewController.modalPresentationStyle = .formSheet
+            self.parentContainerViewController()!.present(authenticationViewController, animated: true, completion: nil)
+        }
     }
     @IBAction func likeStory(_ sender: Any) {
+        if AuthenticationManager().currentSessionIsActive() {
+            delegate?.likeStory(indexPath: selectedAtIndex)
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 0.25) {
+                    self.likesButton.tintColor = .systemRed
+                } completion: { (done) in
+                    if done{
+                        let feedback = UIImpactFeedbackGenerator()
+                        feedback.impactOccurred()
+                    }
+                }
+            }
+        } else {
+            let authenticationViewController = UIStoryboard(name: "Main", bundle:
+                Bundle.main).instantiateViewController(withIdentifier:
+                    "authenticationViewController") as! AuthenticationViewController
+            authenticationViewController.modalPresentationStyle = .formSheet
+            self.parentContainerViewController()!.present(authenticationViewController, animated: true, completion: nil)
+        }
     }
     
     private func configureFollowButton() {

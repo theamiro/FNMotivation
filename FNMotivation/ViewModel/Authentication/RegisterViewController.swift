@@ -31,16 +31,15 @@ class RegisterViewController: UIViewController, IndicatorInfoProvider, SFSafariV
     override func viewDidLoad() {
         super.viewDidLoad()
         setTermsOfUse()
-        
     }
     
     @IBAction func signupButtonTapped(_ sender: Any) {
+        
         if let username = usernameTextField.text,
-            let firstName = firstNameTextField.text,
-            let lastName = firstNameTextField.text,
+           let fullName = firstNameTextField.text,
             let emailAddress = emailAddressTextField.text,
             let password = passwordTextField.text {
-            AuthenticationManager().performUserRegistration(username: username, firstName: firstName, lastName: lastName, userEmail: emailAddress, password: password) { (state, message) in
+            AuthenticationManager().performUserRegistration(username: username, firstName: fullName.getFirstName(), lastName: fullName.getLastName(), userEmail: emailAddress, password: password) { (state, message) in
                 if state {
                     let authNotification = Notification.Name(DefaultValues.signUpNotificationKey)
                     NotificationCenter.default.post(name: authNotification, object: nil)
@@ -49,11 +48,11 @@ class RegisterViewController: UIViewController, IndicatorInfoProvider, SFSafariV
                     self.delegate.signupSuccessful()
                 } else {
 //                    resetForm()
-                    AlertsController().generateAlert(withError: "Missing Fields!")
+                    AlertsController().generateAlert(withError: message)
                 }
             }
         } else {
-            AlertsController().generateAlert(withError: "Missing Fields!")
+            AlertsController().generateAlert(withError: "Missing Fields identified!")
         }
     }
     
@@ -71,7 +70,6 @@ class RegisterViewController: UIViewController, IndicatorInfoProvider, SFSafariV
         ]
         self.termsTextView.delegate = self
     }
-    
 }
 
 extension RegisterViewController: UITextViewDelegate {

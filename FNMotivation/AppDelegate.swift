@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     var window: UIWindow?
     let gcmMessageIDKey = "gcmMessageIDKey"
+    
+    var deviceTokenString = ""
+    
     weak var delegate: LoginViewDelegate?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -43,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        
         
 //        IQKeyboardManager.shared.enable = true
         let backImage = UIImage(named: "icn_back")?.withRenderingMode(.alwaysOriginal)
@@ -92,9 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let deviceTokenString = deviceToken.hexString
-        print("This is the token: \(deviceTokenString)")
-//        self.beamsClient.registerDeviceToken(deviceToken)
+        deviceTokenString = deviceToken.hexString
     }
 
     // MARK: UISceneSession Lifecycle
@@ -168,15 +168,18 @@ extension AppDelegate: GIDSignInDelegate {
         if let userID = user.userID,
         let idToken = user.authentication.idToken,
         let fullName = user.profile.name,
-            let email = user.profile.email {
+        let email = user.profile.email,
+        let fcmToken = Messaging.messaging().fcmToken {
             print("""
                 GoogleSignIn Successful: \n
                 user ID: \(userID) \n
                 email: \(email) \n
                 fullName: \(fullName) \n
                 idToken: \(idToken) \n
+                deviceToken: \(self.deviceTokenString) \n
+                fcmToken: \(fcmToken) \n
                 """)
-            AuthenticationManager.shared.performThirdPartyRegistration(provider: .google, email: email, userID: userID, fullName: fullName, token: idToken, avatar: "") { (state, message) in
+            AuthenticationManager.shared.performThirdPartyRegistration(provider: .google, email: email, userID: userID, fullName: fullName, token: idToken, avatar: "", deviceID: deviceTokenString, deviceToken: deviceTokenString, fcmToken: fcmToken) { (state, message) in
                 if state {
                     guard let token = defaultsHolder.string(forKey: DefaultValues.tokenKey) else { return }
                     

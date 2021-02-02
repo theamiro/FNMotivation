@@ -128,5 +128,18 @@ extension String {
             return false
         }
     }
-    
+//    MARK: - Name Functions
+    func getFirstName() -> String {
+        guard let firstName = self.split(separator: " ").first else {
+            return ""
+        }
+        return String(firstName)
+    }
+
+    func getLastName() -> String {
+        guard let lastName = self.split(separator: " ").last else {
+            return ""
+        }
+        return String(lastName)
+    }
 }
