@@ -14,19 +14,17 @@ class FNTabBarViewController:  UITabBarController, UITabBarControllerDelegate {
     var communityViewController: UINavigationController!
     var addStoryViewController: AddStoryViewController!
     var notificationsViewController: UINavigationController!
-    var profileViewController: UINavigationController!
+    var accountViewController: UINavigationController!
     
     override func viewDidLoad(){
         super.viewDidLoad()
         self.delegate = self
         
-        homeViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "homeNavigationViewController")
-        communityViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "communityNavigationViewController")
+        homeViewController = Storyboards.homeStoryboard.instantiateViewController(identifier: "homeNavigationViewController")
+        communityViewController = Storyboards.communitiesStoryboard.instantiateViewController(identifier: "communityNavigationViewController")
         addStoryViewController = AddStoryViewController()
-//            UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "addStoryNavigationViewController")
-        
-        notificationsViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "notificationsNavigationViewController")
-        profileViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "profileNavigationViewController")
+        notificationsViewController = Storyboards.notificationsStoryboard.instantiateViewController(identifier: "notificationsNavigationViewController")
+        accountViewController = Storyboards.accountStoryboard.instantiateViewController(identifier: "profileNavigationViewController")
         
         homeViewController.tabBarItem.image = UIImage(named: "icn_home")
         homeViewController.tabBarItem.selectedImage = UIImage(named: "icn_home_active")
@@ -40,10 +38,10 @@ class FNTabBarViewController:  UITabBarController, UITabBarControllerDelegate {
         notificationsViewController.tabBarItem.image = UIImage(named: "icn_notification")
         notificationsViewController.tabBarItem.selectedImage = UIImage(named: "icn_notification_active")
         
-        profileViewController.tabBarItem.image = UIImage(named: "icn_user")
-        profileViewController.tabBarItem.selectedImage = UIImage(named: "icn_user_active")
+        accountViewController.tabBarItem.image = UIImage(named: "icn_user")
+        accountViewController.tabBarItem.selectedImage = UIImage(named: "icn_user_active")
         
-        viewControllers = [homeViewController, communityViewController, addStoryViewController, notificationsViewController, profileViewController]
+        viewControllers = [homeViewController, communityViewController, addStoryViewController, notificationsViewController, accountViewController]
         
         for tabBarItem in tabBar.items! {
             tabBarItem.title = ""
@@ -59,12 +57,12 @@ class FNTabBarViewController:  UITabBarController, UITabBarControllerDelegate {
                 
                 let selector = UIAlertController(title: "", message: "Select type of post to add", preferredStyle: .actionSheet)
                 let articleAction = UIAlertAction(title: "Article", style: .default) { (action) in
-                    viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "addArticleNavigationViewController")
+                    viewController = Storyboards.articlesStoryboard.instantiateViewController(identifier: "addArticleNavigationViewController")
                     viewController?.modalPresentationStyle = .overFullScreen
                     self.present(viewController!, animated: true, completion: nil)
                 }
                 let storyAction = UIAlertAction(title: "Story", style: .default) { (action) in
-                    viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "addStoryNavigationViewController")
+                    viewController = Storyboards.storiesStoryboard.instantiateViewController(identifier: "addStoryNavigationViewController")
                     viewController?.modalPresentationStyle = .overFullScreen
                     self.present(viewController!, animated: true, completion: nil)
                 }
@@ -75,7 +73,7 @@ class FNTabBarViewController:  UITabBarController, UITabBarControllerDelegate {
                 selector.addAction(storyAction)
                 self.present(selector, animated: true, completion: nil)
             } else {
-                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "authenticationViewController")
+                let vc = Storyboards.authStoryboard.instantiateViewController(identifier: "authenticationViewController")
                 vc.modalPresentationStyle = .formSheet
                 self.present(vc, animated: true, completion: nil)
             }

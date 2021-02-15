@@ -22,6 +22,7 @@ class AuthenticationManager {
     let deviceID = AppDelegate().deviceTokenString
     let fcmToken = Messaging.messaging().fcmToken
     
+//    MARK: - Session
     func createUserSession(withNewToken newToken: String){
         if defaultsHolder.value(forKey: DefaultValues.tokenKey) as? String != nil {
             defaultsHolder.removeObject(forKey: DefaultValues.tokenKey)
@@ -37,6 +38,30 @@ class AuthenticationManager {
         defaultsHolder.set(fullName, forKey: DefaultValues.fullname)
     }
     
+    func logoutUser(completion: @escaping (String)->()){
+        self.removeUserSession()
+        completion("Logout Successful")
+    }
+    
+    private func removeUserSession(){
+        if defaultsHolder.value(forKey: DefaultValues.tokenKey) as? String != nil {
+            defaultsHolder.removeObject(forKey: DefaultValues.tokenKey)
+        }
+        if defaultsHolder.value(forKey: DefaultValues.fullname) as? String != nil {
+            defaultsHolder.removeObject(forKey: DefaultValues.fullname)
+        }
+        if defaultsHolder.value(forKey: DefaultValues.avatar) as? String != nil {
+            defaultsHolder.removeObject(forKey: DefaultValues.avatar)
+        }
+        if defaultsHolder.value(forKey: DefaultValues.email) as? String != nil {
+            defaultsHolder.removeObject(forKey: DefaultValues.email)
+        }
+        if defaultsHolder.value(forKey: DefaultValues.username) as? String != nil {
+            defaultsHolder.removeObject(forKey: DefaultValues.username)
+        }
+    }
+    
+//    MARK: - Basic Auth
     func performUserAuthentication(userEmail: String, password: String, completion: @escaping (Bool, String)->()) {
         let parameters: [String: Any] = [
             "email": userEmail,
@@ -57,17 +82,23 @@ class AuthenticationManager {
                     do {
                         let jwt = try decode(jwt: token)
                         let jwtBody = jwt.body
-//                        guard let user = jwtBody["user"] as? [String: Any] else {
-//                            return
-//                        }
-//                        guard let username = user["username"] as? String,
+                        guard let user = jwtBody["user"] as? [String: Any] else {
+                            return
+                        }
+                        guard let username = user["username"] as? String,
 //                              let userID = user["userid"] as? String,
-//                              let email = user["email"] as? String,
-//                              let avatar = user["avatar"] as? String else {
-//                            completion(false, "Failed to decode JWT")
-//                            return
-//                        }
-//                        AuthenticationManager.shared.storeUserNames(withData: username)
+                              let email = user["email"] as? String,
+                              let avatar = user["avatar"] as? String else {
+                            completion(false, "Failed to decode JWT")
+                            return
+                        }
+//                        defaultsHolder.set(fullName, forKey: DefaultValues.fullname)
+                        defaultsHolder.set(username, forKey: DefaultValues.username)
+                        defaultsHolder.set(email, forKey: DefaultValues.email)
+                        defaultsHolder.set(avatar, forKey: DefaultValues.avatar)
+                        
+                        completion(true, "Welcome back!")
+                        AuthenticationManager.shared.storeUserNames(withData: username)
                     } catch {
                         print(error)
                     }
@@ -82,6 +113,7 @@ class AuthenticationManager {
         }
     }
     
+//    MARK: - Registration
     func performUserRegistration(username: String, firstName: String, lastName: String, userEmail: String, password: String, completion: @escaping (Bool, String)->()) {
         
         let parameters: [String: Any] = [
@@ -108,6 +140,28 @@ class AuthenticationManager {
                     completion(false, message!)
                     return
                 }
+                do {
+                    let jwt = try decode(jwt: token)
+                    let jwtBody = jwt.body
+                    guard let user = jwtBody["user"] as? [String: Any] else {
+                        return
+                    }
+                    guard let username = user["username"] as? String,
+//                              let userID = user["userid"] as? String,
+                          let email = user["email"] as? String,
+                          let avatar = user["avatar"] as? String else {
+                        completion(false, "Failed to decode JWT")
+                        return
+                    }
+//                        defaultsHolder.set(fullName, forKey: DefaultValues.fullname)
+                    defaultsHolder.set(username, forKey: DefaultValues.username)
+                    defaultsHolder.set(email, forKey: DefaultValues.email)
+                    defaultsHolder.set(avatar, forKey: DefaultValues.avatar)
+                    
+                    completion(true, message!)
+                } catch {
+                    print(error)
+                }
                 self.createUserSession(withNewToken: token)
                 self.storeUserNames(withData: "\(firstName) \(lastName)")
                 
@@ -118,6 +172,8 @@ class AuthenticationManager {
             }
         }
     }
+    
+//    MARK: - Third-party Auth
     func performThirdPartyRegistration(provider: AuthProvider, email: String, userID: String, fullName: String, token: String, avatar: String, deviceID: String, deviceToken: String, fcmToken: String, completion: @escaping (Bool, String)->()) {
         switch provider {
             case .google:
@@ -134,13 +190,21 @@ class AuthenticationManager {
                 ]
                 NetworkingService.shared.makeCall(fromUrl: NetworkingValues.apiUrl + "/auth/googleLogin", networkCallType: .post, requestBody: parameters) { [weak self] (state, message, dataObject)  in
                     if state {
-                        guard let response = dataObject as? [String:Any], let token = response["token"] as? String else {
+                        guard let response = dataObject as? [String:Any] else {
                             completion(false, ErrorMessage.parseError)
                             return
                         }
-                        AuthenticationManager().createUserSession(withNewToken: token)
-                        self!.storeUserNames(withData: fullName)
-                        completion(true, "Congratulations! You are now able to take full advantage of FNMotivation®.")
+                        if response["success"] as? Bool == true {
+                            guard let token = response["token"] as? String else {
+                                completion(false, ErrorMessage.missingData)
+                                return
+                            }
+                            AuthenticationManager().createUserSession(withNewToken: token)
+                            self!.storeUserNames(withData: fullName)
+                            completion(true, "Congratulations! You are now able to take full advantage of FNMotivation®.")
+                        } else {
+                            completion(false, ErrorMessage.noData)
+                        }
                     } else {
                         AlertsController().generateAlert(withError: message)
                         completion(state, message)
@@ -178,19 +242,4 @@ class AuthenticationManager {
         }
 
     }
-//    func logoutUser(completion: @escaping (Bool, String)->()){
-    func logoutUser(completion: @escaping (String)->()){
-        self.removeUserSession()
-        completion("Logout Successful")
-    }
-    
-    private func removeUserSession(){
-        if defaultsHolder.value(forKey: DefaultValues.tokenKey) as? String != nil {
-            defaultsHolder.removeObject(forKey: DefaultValues.tokenKey)
-        }
-        if defaultsHolder.value(forKey: DefaultValues.fullname) as? String != nil {
-            defaultsHolder.removeObject(forKey: DefaultValues.fullname)
-        }
-    }
-    
 }

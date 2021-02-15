@@ -10,34 +10,23 @@ import UIKit
 import XLPagerTabStrip
 
 // MARK: - Welcome
-struct ProfileResponse: Codable {
+struct ProfileResponse: Decodable {
     let success: Bool
     let data: UserProfileData
 }
 
-// MARK: - DataClass
-struct UserProfileData: Codable {
+struct UserProfileData: Decodable {
+    let id: String
     let username: String
-    let fullname: String?
-    let gender: String?
-    let dob: String?
-    let role: String
-    let avatar: String?
-    let createdAt: String
-    
-    enum CodingKeys: String, CodingKey {
-        case username, fullname, gender, dob, role, avatar
-        case createdAt
-    }
+    let email: String
+    let avatar: String
 }
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, IndicatorInfoProvider {
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(stringLiteral: "PROFILE")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-}
-extension ProfileViewController: IndicatorInfoProvider {
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(stringLiteral: "Profile")
     }
 }

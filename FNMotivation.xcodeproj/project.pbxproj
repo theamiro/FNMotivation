@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0204439825178B880085F159 /* HomeBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204439725178B880085F159 /* HomeBarViewController.swift */; };
-		020A621C2493EAD50010AB3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020A621B2493EAD50010AB3F /* Main.storyboard */; };
+		020A621C2493EAD50010AB3F /* Base.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020A621B2493EAD50010AB3F /* Base.storyboard */; };
 		020A621E2493F1920010AB3F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 020A621D2493F1920010AB3F /* Colors.xcassets */; };
 		020B200424BE18FD003E2F58 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B200324BE18FD003E2F58 /* AuthenticationViewController.swift */; };
 		020B200724BE2023003E2F58 /* StoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B200624BE2023003E2F58 /* StoryDetailViewController.swift */; };
@@ -84,6 +84,15 @@
 		C91A54EA25BE85A700F52EA8 /* StoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A54E925BE85A700F52EA8 /* StoryManager.swift */; };
 		C91A551D25BEB19A00F52EA8 /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91A551B25BEB19A00F52EA8 /* TagsCollectionViewCell.swift */; };
 		C91A551E25BEB19A00F52EA8 /* TagsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91A551C25BEB19A00F52EA8 /* TagsCollectionViewCell.xib */; };
+		C9B32D6525C96D8F00368C9D /* Stories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B32D6425C96D8F00368C9D /* Stories.storyboard */; };
+		C9B32D6925C9931F00368C9D /* Articles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B32D6825C9931F00368C9D /* Articles.storyboard */; };
+		C9B32D6D25C993EE00368C9D /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B32D6C25C993EE00368C9D /* Auth.storyboard */; };
+		C9B32D7425C994B100368C9D /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B32D7325C994B100368C9D /* Storyboards.swift */; };
+		C9B32D7825C995C000368C9D /* Communities.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B32D7725C995C000368C9D /* Communities.storyboard */; };
+		C9B32D7E25C9960800368C9D /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B32D7D25C9960800368C9D /* Account.storyboard */; };
+		C9B32D8225C9966A00368C9D /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B32D8125C9966A00368C9D /* Notifications.storyboard */; };
+		C9B32D8625C9969000368C9D /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B32D8525C9969000368C9D /* About.storyboard */; };
+		C9B32D8A25C996CD00368C9D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B32D8925C996CD00368C9D /* Home.storyboard */; };
 		EA100E7CB6D8553E55296011 /* Pods_FNMotivationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F03DBA4AC1225A97CF6CEC1 /* Pods_FNMotivationTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,7 +129,7 @@
 /* Begin PBXFileReference section */
 		0204439725178B880085F159 /* HomeBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBarViewController.swift; sourceTree = "<group>"; };
 		020A62172493EA5C0010AB3F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		020A621B2493EAD50010AB3F /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		020A621B2493EAD50010AB3F /* Base.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Base.storyboard; sourceTree = "<group>"; };
 		020A621D2493F1920010AB3F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		020B200324BE18FD003E2F58 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		020B200624BE2023003E2F58 /* StoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +216,15 @@
 		C91A54E925BE85A700F52EA8 /* StoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryManager.swift; sourceTree = "<group>"; };
 		C91A551B25BEB19A00F52EA8 /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C91A551C25BEB19A00F52EA8 /* TagsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsCollectionViewCell.xib; sourceTree = "<group>"; };
+		C9B32D6425C96D8F00368C9D /* Stories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stories.storyboard; sourceTree = "<group>"; };
+		C9B32D6825C9931F00368C9D /* Articles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Articles.storyboard; sourceTree = "<group>"; };
+		C9B32D6C25C993EE00368C9D /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		C9B32D7325C994B100368C9D /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		C9B32D7725C995C000368C9D /* Communities.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Communities.storyboard; sourceTree = "<group>"; };
+		C9B32D7D25C9960800368C9D /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		C9B32D8125C9966A00368C9D /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
+		C9B32D8525C9969000368C9D /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		C9B32D8925C996CD00368C9D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		CA2AA665972D1D8AB5C19463 /* Pods-FNMotivation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FNMotivation.debug.xcconfig"; path = "Target Support Files/Pods-FNMotivation/Pods-FNMotivation.debug.xcconfig"; sourceTree = "<group>"; };
 		DEEE44EA26DAE620A09070A7 /* Pods-FNMotivationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FNMotivationTests.release.xcconfig"; path = "Target Support Files/Pods-FNMotivationTests/Pods-FNMotivationTests.release.xcconfig"; sourceTree = "<group>"; };
 		EEFCB98DC640C6A68496EB31 /* Pods_FNMotivation_FNMotivationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FNMotivation_FNMotivationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -479,18 +497,16 @@
 				027FF56A24DADC690019D09C /* FNMotivation.entitlements */,
 				02411DEB24B6FFC600E3158F /* Extensions */,
 				02AAC3D12494A52B002A2B49 /* Model */,
-				02AAC3D42494A54F002A2B49 /* View */,
 				02AAC3D32494A542002A2B49 /* ViewModel */,
+				C9B32D7025C9945100368C9D /* View */,
 				029859822493E39400FDAF1C /* AppDelegate.swift */,
 				029859842493E39400FDAF1C /* SceneDelegate.swift */,
+				021895B524C6E4F900CAEA44 /* Fonts */,
 				0298598E2493E39900FDAF1C /* Assets.xcassets */,
 				020A621D2493F1920010AB3F /* Colors.xcassets */,
-				020A62172493EA5C0010AB3F /* LaunchScreen.storyboard */,
-				020A621B2493EAD50010AB3F /* Main.storyboard */,
 				0298598B2493E39400FDAF1C /* FNMotivation.xcdatamodeld */,
 				029859932493E39A00FDAF1C /* Info.plist */,
 				02A7C47224ED402500129E1C /* GoogleService-Info.plist */,
-				021895B524C6E4F900CAEA44 /* Fonts */,
 			);
 			path = FNMotivation;
 			sourceTree = "<group>";
@@ -568,13 +584,6 @@
 				026A720C24C5F47900ECC477 /* Account */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		02AAC3D42494A54F002A2B49 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		02B7F9B324E1374B0081F13E /* Keyboard */ = {
@@ -668,6 +677,24 @@
 				C91A54E925BE85A700F52EA8 /* StoryManager.swift */,
 			);
 			path = DataObject;
+			sourceTree = "<group>";
+		};
+		C9B32D7025C9945100368C9D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				020A62172493EA5C0010AB3F /* LaunchScreen.storyboard */,
+				020A621B2493EAD50010AB3F /* Base.storyboard */,
+				C9B32D8925C996CD00368C9D /* Home.storyboard */,
+				C9B32D8525C9969000368C9D /* About.storyboard */,
+				C9B32D6C25C993EE00368C9D /* Auth.storyboard */,
+				C9B32D6425C96D8F00368C9D /* Stories.storyboard */,
+				C9B32D6825C9931F00368C9D /* Articles.storyboard */,
+				C9B32D7725C995C000368C9D /* Communities.storyboard */,
+				C9B32D8125C9966A00368C9D /* Notifications.storyboard */,
+				C9B32D7D25C9960800368C9D /* Account.storyboard */,
+				C9B32D7325C994B100368C9D /* Storyboards.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D372AE1AC00E9522066807F3 /* Pods */ = {
@@ -799,16 +826,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				020A621C2493EAD50010AB3F /* Main.storyboard in Resources */,
+				020A621C2493EAD50010AB3F /* Base.storyboard in Resources */,
 				C91A551E25BEB19A00F52EA8 /* TagsCollectionViewCell.xib in Resources */,
+				C9B32D7825C995C000368C9D /* Communities.storyboard in Resources */,
+				C9B32D8A25C996CD00368C9D /* Home.storyboard in Resources */,
 				020A621E2493F1920010AB3F /* Colors.xcassets in Resources */,
+				C9B32D8625C9969000368C9D /* About.storyboard in Resources */,
 				0229630225A8778000EB2C6A /* CommentsTableViewCell.xib in Resources */,
 				021895BA24C6E51900CAEA44 /* Futura Bold.ttf in Resources */,
+				C9B32D6925C9931F00368C9D /* Articles.storyboard in Resources */,
+				C9B32D7E25C9960800368C9D /* Account.storyboard in Resources */,
 				0298598F2493E39900FDAF1C /* Assets.xcassets in Resources */,
+				C9B32D8225C9966A00368C9D /* Notifications.storyboard in Resources */,
 				021895B924C6E51900CAEA44 /* Futura Medium.ttf in Resources */,
 				021895BB24C6E51900CAEA44 /* Futura Light.ttf in Resources */,
+				C9B32D6D25C993EE00368C9D /* Auth.storyboard in Resources */,
 				02A7C47324ED402500129E1C /* GoogleService-Info.plist in Resources */,
 				02E89884252F48D40095BE5A /* UnauthenticatedStateView.xib in Resources */,
+				C9B32D6525C96D8F00368C9D /* Stories.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,6 +1011,7 @@
 				C91A54E225BE825100F52EA8 /* SelfSizedTableView.swift in Sources */,
 				02AA45DE24BDAA4D002624C0 /* AuthenticationBarViewController.swift in Sources */,
 				0216F60824DB22A900FFE870 /* Validation.swift in Sources */,
+				C9B32D7425C994B100368C9D /* Storyboards.swift in Sources */,
 				02AA45D824BD9C69002624C0 /* LoginViewController.swift in Sources */,
 				02AAC3D62494A57F002A2B49 /* StoriesViewController.swift in Sources */,
 				021895A624C6171A00CAEA44 /* MenuViewController.swift in Sources */,

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="FY2-X6-fa0">
+            <objects>
+                <navigationController storyboardIdentifier="homeNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="aYx-nT-dLX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icn_home" selectedImage="icn_home_active" id="OcM-3D-wGZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0M1-Ln-Ej2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="Orange"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="37"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rLV-WR-xsL">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <gestureRecognizers/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="PgN-th-mjv" kind="relationship" relationship="rootViewController" id="u6s-cY-DS8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RFX-C0-j53" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1441" y="-1341"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="wLb-Nz-Pau">
+            <objects>
+                <viewController title="Home" id="PgN-th-mjv" customClass="FNViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x7H-25-CGa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4UA-7d-jWL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quZ-eN-TDb">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                        <connections>
+                                            <segue destination="Xnp-fz-Ooc" kind="embed" id="5Rc-bJ-cqI"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="quZ-eN-TDb" firstAttribute="top" secondItem="4UA-7d-jWL" secondAttribute="top" id="G5u-2z-pQc"/>
+                                    <constraint firstAttribute="trailing" secondItem="quZ-eN-TDb" secondAttribute="trailing" id="fnK-gk-eBd"/>
+                                    <constraint firstItem="quZ-eN-TDb" firstAttribute="leading" secondItem="4UA-7d-jWL" secondAttribute="leading" id="izp-Tz-Iw1"/>
+                                    <constraint firstAttribute="bottom" secondItem="quZ-eN-TDb" secondAttribute="bottom" id="zvh-e3-P71"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HGI-gZ-b5p"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4UA-7d-jWL" firstAttribute="top" secondItem="HGI-gZ-b5p" secondAttribute="top" id="Kas-nD-njD"/>
+                            <constraint firstItem="4UA-7d-jWL" firstAttribute="trailing" secondItem="HGI-gZ-b5p" secondAttribute="trailing" id="dDY-33-Ok1"/>
+                            <constraint firstAttribute="bottom" secondItem="4UA-7d-jWL" secondAttribute="bottom" id="eyy-7Z-JRD"/>
+                            <constraint firstItem="4UA-7d-jWL" firstAttribute="leading" secondItem="HGI-gZ-b5p" secondAttribute="leading" id="sv6-I4-qQd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="KBS-2U-IKW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pGW-e0-sM4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-717.39130434782612" y="-1341.2946428571429"/>
+        </scene>
+        <!--Home Bar View Controller-->
+        <scene sceneID="y2r-PS-Fed">
+            <objects>
+                <viewController id="Xnp-fz-Ooc" customClass="HomeBarViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bQS-Pm-7ze">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFz-Oo-5SV">
+                                <rect key="frame" x="0.0" y="50" width="414" height="758"/>
+                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mpx-VM-dHQ" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="j69-1e-156"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dL7-42-QSN">
+                                    <size key="itemSize" width="128" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="E7B-bN-C5V">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="huh-iZ-T68">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="128" height="50"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                        <color key="value" name="MediumGray"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kro-jy-7BW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mpx-VM-dHQ" firstAttribute="leading" secondItem="bQS-Pm-7ze" secondAttribute="leading" id="TBc-x9-CQJ"/>
+                            <constraint firstItem="UFz-Oo-5SV" firstAttribute="top" secondItem="mpx-VM-dHQ" secondAttribute="bottom" id="Xv4-uB-dD2"/>
+                            <constraint firstItem="mpx-VM-dHQ" firstAttribute="top" secondItem="bQS-Pm-7ze" secondAttribute="top" id="eqb-ju-S42"/>
+                            <constraint firstAttribute="bottom" secondItem="UFz-Oo-5SV" secondAttribute="bottom" id="kZ3-Jy-GRP"/>
+                            <constraint firstAttribute="trailing" secondItem="UFz-Oo-5SV" secondAttribute="trailing" id="mxb-dj-Wvh"/>
+                            <constraint firstItem="UFz-Oo-5SV" firstAttribute="leading" secondItem="bQS-Pm-7ze" secondAttribute="leading" id="sND-J2-aqM"/>
+                            <constraint firstAttribute="trailing" secondItem="mpx-VM-dHQ" secondAttribute="trailing" id="udR-NK-qdK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonBarView" destination="mpx-VM-dHQ" id="QYb-46-9BT"/>
+                        <outlet property="containerView" destination="UFz-Oo-5SV" id="1qC-qs-38x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bB-l2-OFn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.666666666666671" y="-1191.2946428571429"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icn_home" width="30" height="30"/>
+        <image name="icn_home_active" width="30" height="30"/>
+        <namedColor name="MediumGray">
+            <color red="0.58039215686274515" green="0.58039215686274515" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Orange">
+            <color red="0.9882352941176471" green="0.69019607843137254" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

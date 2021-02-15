@@ -128,7 +128,7 @@ class BaseViewController: UIViewController {
     
     func addOverlay() {
         self.contentContainer.addSubview(self.overlay)
-        self.overlay.heightAnchor.constraint(equalTo: self.contentContainer.heightAnchor, multiplier: 1).isActive = true
+        self.overlay.heightAnchor.constraint(equalTo: self.contentContainer.heightAnchor).isActive = true
         self.overlay.widthAnchor.constraint(equalToConstant: self.view.frame.width - self.menuContainer.frame.width).isActive = true
         self.overlay.leadingAnchor.constraint(equalTo: self.contentContainer.leadingAnchor).isActive = true
         self.overlay.centerYAnchor.constraint(equalTo: self.contentContainer.centerYAnchor).isActive = true

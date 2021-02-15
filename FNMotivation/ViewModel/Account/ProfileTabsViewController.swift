@@ -12,11 +12,11 @@ import XLPagerTabStrip
 class ProfileTabsViewController: ButtonBarPagerTabStripViewController {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let profileViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profileViewController")
-        _ = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "storyPostsViewController")
-        let commentsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "commentsViewController")
+        let profileViewController = Storyboards.accountStoryboard.instantiateViewController(withIdentifier: "profileViewController")
+        let storyPostsViewController = Storyboards.accountStoryboard.instantiateViewController(withIdentifier: "storyPostsViewController")
+        let commentsViewController = Storyboards.accountStoryboard.instantiateViewController(withIdentifier: "commentsViewController")
         
-        return [profileViewController, commentsViewController]
+        return [profileViewController, storyPostsViewController, commentsViewController]
     }
 
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class ProfileTabsViewController: ButtonBarPagerTabStripViewController {
         self.settings.style.buttonBarItemBackgroundColor = UIColor(named: "BrilliantWhite")!
         
         self.settings.style.selectedBarBackgroundColor = UIColor(named: "DarkBlue")!
-        self.settings.style.buttonBarItemFont = UIFont(name: "Futura", size: 13.0)!
+        self.settings.style.buttonBarItemFont = UIFont(name: "Futura Medium", size: 13.0)!
         
         self.settings.style.buttonBarItemTitleColor = UIColor(named: "DarkGray")!
         containerView.isScrollEnabled = false

@@ -45,9 +45,7 @@ class RegisterViewController: UIViewController, IndicatorInfoProvider, SFSafariV
                     NotificationCenter.default.post(name: authNotification, object: nil)
                     
                     AlertsController().generateAlert(withSuccess: message, andTitle: "Welcome")
-                    self.delegate.signupSuccessful()
                 } else {
-//                    resetForm()
                     AlertsController().generateAlert(withError: message)
                 }
             }

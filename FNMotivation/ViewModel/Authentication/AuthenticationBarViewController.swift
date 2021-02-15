@@ -12,10 +12,10 @@ import XLPagerTabStrip
 class AuthenticationBarViewController: ButtonBarPagerTabStripViewController {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        guard let loginViewController = storyboard?.instantiateViewController(withIdentifier: "loginViewController") as? LoginViewController else { return []}
+        guard let loginViewController = Storyboards.authStoryboard.instantiateViewController(withIdentifier: "loginViewController") as? LoginViewController else { return []}
         loginViewController.delegate = self
         
-        guard let registrationViewController = storyboard?.instantiateViewController(withIdentifier: "registrationViewController") as? RegisterViewController else { return [] }
+        guard let registrationViewController = Storyboards.authStoryboard.instantiateViewController(withIdentifier: "registrationViewController") as? RegisterViewController else { return [] }
         registrationViewController.delegate = self
         return [loginViewController, registrationViewController]
     }
@@ -26,7 +26,7 @@ class AuthenticationBarViewController: ButtonBarPagerTabStripViewController {
         self.settings.style.buttonBarItemBackgroundColor = UIColor(named: "OffWhite")!
         
         self.settings.style.selectedBarBackgroundColor = UIColor(named: "DarkBlue")!
-        self.settings.style.buttonBarItemFont = UIFont(name: "Futura", size: 13.0)!
+        self.settings.style.buttonBarItemFont = UIFont(name: "Futura Medium", size: 13.0)!
         
         self.settings.style.buttonBarItemTitleColor = UIColor(named: "DarkGray")!
         containerView.isScrollEnabled = false

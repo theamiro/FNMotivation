@@ -16,8 +16,7 @@ class UnauthenticatedStateView: UIViewController {
         
     }
     @IBAction func authenticationButtonTapped() {
-        let authenticationViewController = UIStoryboard(name: "Main", bundle:
-            Bundle.main).instantiateViewController(withIdentifier:
+        let authenticationViewController = Storyboards.authStoryboard.instantiateViewController(withIdentifier:
                 "authenticationViewController") as! AuthenticationViewController
         authenticationViewController.modalPresentationStyle = .formSheet
         self.present(authenticationViewController, animated: true, completion: nil)

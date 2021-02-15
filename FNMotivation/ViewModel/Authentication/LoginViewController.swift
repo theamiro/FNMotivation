@@ -46,9 +46,10 @@ class LoginViewController: UIViewController, IndicatorInfoProvider {
                     AlertsController().generateAlert(withSuccess: message, andTitle: "Welcome back!")
                     guard let token = defaultsHolder.string(forKey: DefaultValues.tokenKey) else { return }
                     
-                    let authNotification = Notification.Name(DefaultValues.authNotificationKey)
-//                    NotificationCenter.default.post(name: authNotification, object: nil, userInfo: ["token": token])
-                    self.delegate?.loginSuccessful()
+                    DispatchQueue.main.async {
+                        let authNotification = Notification.Name(DefaultValues.signUpNotificationKey)
+                        NotificationCenter.default.post(name: authNotification, object: nil, userInfo: ["token": token])
+                    }
                 } else {
                     self.resetForm()
                     AlertsController().generateAlert(withError: message)

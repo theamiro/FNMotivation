@@ -132,7 +132,7 @@ extension StoriesViewController: StoryCollectionViewFunctionsDelegate {
         
     }
     
-    func shareStory(cell: StoryCollectionViewCell) {
+    func shareStory(indexPath: IndexPath?) {
         let message = "Hey! I found this article on Future Now Motivation. Check it out!"
         let url = "https://wp.me"
         
@@ -142,13 +142,12 @@ extension StoriesViewController: StoryCollectionViewFunctionsDelegate {
         self.present(activityViewController, animated: true, completion: nil)
     }
     
-    func followAuthor(cell: StoryCollectionViewCell) {
+    func followAuthor(indexPath: IndexPath?) {
         if AuthenticationManager().currentSessionIsActive() {
 //            AlertsController().generateAlert(withSuccess: "Followed the Author")
             
         } else {
-            let authenticationViewController = UIStoryboard(name: "Main", bundle:
-                Bundle.main).instantiateViewController(withIdentifier:
+            let authenticationViewController = Storyboards.authStoryboard.instantiateViewController(withIdentifier:
                     "authenticationViewController") as! AuthenticationViewController
             authenticationViewController.modalPresentationStyle = .formSheet
             self.present(authenticationViewController, animated: true, completion: nil)
@@ -185,7 +184,7 @@ extension StoriesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate 
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let text = "Sorry, no stories at this time."
         let attribs = [
-            NSAttributedString.Key.font: UIFont(name: "Futura", size: 20.0)!,
+            NSAttributedString.Key.font: UIFont(name: "Futura Medium", size: 20.0)!,
             NSAttributedString.Key.foregroundColor: UIColor(named: "MediumGray")!
         ]
         
@@ -200,7 +199,7 @@ extension StoriesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate 
         para.lineBreakMode = NSLineBreakMode.byWordWrapping
         para.alignment = NSTextAlignment.center
         let attribs = [
-            NSAttributedString.Key.font: UIFont(name: "Futura", size: 14.0)!,
+            NSAttributedString.Key.font: UIFont(name: "Futura Medium", size: 14.0)!,
             NSAttributedString.Key.foregroundColor: UIColor.lightGray,
             NSAttributedString.Key.paragraphStyle: para
         ]
@@ -210,7 +209,7 @@ extension StoriesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate 
     func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControl.State) -> NSAttributedString? {
         let text = "Try again"
         let attribs = [
-            NSAttributedString.Key.font: UIFont(name: "Futura-Medium", size: 14.0)!
+            NSAttributedString.Key.font: UIFont(name: "Futura Medium", size: 14.0)!
         ]
         return NSAttributedString(string: text, attributes: attribs)
     }

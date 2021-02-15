@@ -9,13 +9,13 @@
 import UIKit
 
 struct MenuOption {
-    var menuIcon: UIImage
-    var menuTitle: String
+    var icon: UIImage
+    var title: String
     var key: MenuDataKeys
     
-    init(menuIcon: UIImage, menuTitle: String, key: MenuDataKeys) {
-        self.menuIcon = menuIcon
-        self.menuTitle = menuTitle
+    init(icon: UIImage, title: String, key: MenuDataKeys) {
+        self.icon = icon
+        self.title = title
         self.key = key
     }
 }
@@ -83,27 +83,31 @@ class MenuViewController: UIViewController {
     }
     func handleAuthenticatedState() {
         if AuthenticationManager().currentSessionIsActive() {
-            self.userProfileImage.image = UIImage(named: "avatar")
+            if let avatarURL = defaultsHolder.value(forKey: DefaultValues.avatar) as? String {
+                self.userProfileImage.getImageFromURL(using: avatarURL)
+            } else {
+                self.userProfileImage.image = UIImage(named: "avatar")
+            }
             // TODO: - Refactor
             self.userFullName.isHidden = false
             self.userFullName.text = defaultsHolder.value(forKey: DefaultValues.fullname) as? String
             
             menuOptions = [
-                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Home", key: .home),
-                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "About FNM", key: .about),
-                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Contact", key: .contact),
-                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Visit Website", key: .other)
+                MenuOption(icon: UIImage(named: "icn_about")!, title: "Home", key: .home),
+                MenuOption(icon: UIImage(named: "icn_about")!, title: "About FNM", key: .about),
+                MenuOption(icon: UIImage(named: "icn_about")!, title: "Contact", key: .contact),
+                MenuOption(icon: UIImage(named: "icn_about")!, title: "Visit Website", key: .other)
             ]
             self.logoutButton.isHidden = false
         } else {
             self.userProfileImage.image = #imageLiteral(resourceName: "avatar")
             self.userFullName.text = "Sign in"
             menuOptions = [
-                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Sign in/Sign up", key: .authentication),
-                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Home", key: .home),
-                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "About FNM", key: .about),
-                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Contact", key: .contact),
-                MenuOption(menuIcon: UIImage(named: "icn_about")!, menuTitle: "Visit Website", key: .other)
+                MenuOption(icon: UIImage(named: "icn_about")!, title: "Sign in/Sign up", key: .authentication),
+                MenuOption(icon: UIImage(named: "icn_about")!, title: "Home", key: .home),
+                MenuOption(icon: UIImage(named: "icn_about")!, title: "About FNM", key: .about),
+                MenuOption(icon: UIImage(named: "icn_about")!, title: "Contact", key: .contact),
+                MenuOption(icon: UIImage(named: "icn_about")!, title: "Visit Website", key: .other)
             ]
             self.logoutButton.isHidden = true
         }
@@ -122,8 +126,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as! MenuViewCell
-        //        cell.menuIcon = UIImageView(image: menuOptions[indexPath.row].menuIcon)
-        cell.menuTitle.text = menuOptions[indexPath.row].menuTitle
+        cell.configure(using: menuOptions[indexPath.row])
         return cell
     }
     
@@ -133,7 +136,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             baseViewController.hideSideMenu()
             switch menuOptions[indexPath.row].key {
                 case .authentication:
-                    guard let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "authenticationViewController") as? AuthenticationViewController else { return }
+                    guard let controller = Storyboards.authStoryboard.instantiateViewController(withIdentifier: "authenticationViewController") as? AuthenticationViewController else { return }
                     if let baseViewController = self.parent as? BaseViewController {
                         baseViewController.hideSideMenu()
                         baseViewController.present(controller, animated: true, completion: nil)
@@ -143,19 +146,19 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
                     currentActiveNav.popToRootViewController(animated: true)
                 case .about:
                     print("about")
-                    if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "aboutViewController") as? AboutViewController {
+                    if let controller = Storyboards.aboutStoryboard.instantiateViewController(withIdentifier: "aboutViewController") as? AboutViewController {
                         currentActiveNav.pushViewController(controller, animated: true)
                     } else {
                         print("controllerFail")
                     }
                 case .contact:
                     print("contact")
-                    if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "aboutViewController") as? AboutViewController {
+                    if let controller = Storyboards.aboutStoryboard.instantiateViewController(withIdentifier: "aboutViewController") as? AboutViewController {
                         currentActiveNav.pushViewController(controller, animated: true)
                     }
                 case .other:
                     print("other")
-                    if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "aboutViewController") as? AboutViewController {
+                    if let controller = Storyboards.aboutStoryboard.instantiateViewController(withIdentifier: "aboutViewController") as? AboutViewController {
                         currentActiveNav.pushViewController(controller, animated: true)
                 }
             }
@@ -163,17 +166,5 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
-    }
-}
-
-extension MenuViewController: LoginViewDelegate {
-    func loginSuccessful() {
-        
-    }
-}
-
-extension MenuViewController: SignupViewDelegate {
-    func signupSuccessful() {
-        
     }
 }

@@ -14,7 +14,7 @@ class CommentsViewController: UIViewController, IndicatorInfoProvider {
     var reuseIdentifier = "commentCell"
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "Comments")
+        return IndicatorInfo(title: "COMMENTS")
     }
     override func viewDidLoad() {
         super.viewDidLoad()

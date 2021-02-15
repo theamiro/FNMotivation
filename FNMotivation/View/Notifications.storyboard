@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Futura Light.ttf">
+            <string>FuturaBT-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Notifications-->
+        <scene sceneID="xgl-YD-1SV">
+            <objects>
+                <viewController id="PxF-Yc-T0v" customClass="NotificationsViewController" customModule="FNMotivation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pN6-pX-eFL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gOt-Vb-bfI">
+                                <rect key="frame" x="0.0" y="40" width="414" height="822"/>
+                                <color key="backgroundColor" name="BlueWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notificationCell" rowHeight="64" id="EqF-bs-euq" customClass="NotificationViewCell" customModule="FNMotivation" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EqF-bs-euq" id="W4a-SV-nW0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UN7-cA-HhB">
+                                                    <rect key="frame" x="20" y="7" width="374" height="50"/>
+                                                    <subviews>
+                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6AC-1g-kbP">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="FHe-2d-FrP">
+                                                                    <rect key="frame" x="1.5" y="1.5" width="47" height="47"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="47" id="EYS-Uo-XBz"/>
+                                                                        <constraint firstAttribute="height" constant="47" id="MGH-kn-aDU"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="10"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="FHe-2d-FrP" firstAttribute="centerX" secondItem="6AC-1g-kbP" secondAttribute="centerX" id="KQK-1y-3bC"/>
+                                                                <constraint firstAttribute="height" constant="50" id="UiK-bZ-A5o"/>
+                                                                <constraint firstAttribute="width" constant="50" id="iSv-TK-nPr"/>
+                                                                <constraint firstItem="FHe-2d-FrP" firstAttribute="centerY" secondItem="6AC-1g-kbP" secondAttribute="centerY" id="xUA-2E-N5i"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="9py-us-hUY">
+                                                            <rect key="frame" x="60" y="0.0" width="296" height="47.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alonzo created a new comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLQ-J6-cSq">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="198.5" height="27.5"/>
+                                                                    <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 minutes ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grV-os-VBM">
+                                                                    <rect key="frame" x="0.0" y="27.5" width="63.5" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="zaQ-ru-9yT"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="FuturaBT-Light" family="Futura" pointSize="10"/>
+                                                                    <color key="textColor" name="MediumGray"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7W-9m-lRL">
+                                                            <rect key="frame" x="366" y="0.0" width="8" height="8"/>
+                                                            <color key="backgroundColor" name="Red"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="8" id="910-WX-Fxp"/>
+                                                                <constraint firstAttribute="width" constant="8" id="NwX-N9-hKo"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="WBv-aa-KZU"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="UN7-cA-HhB" secondAttribute="trailing" constant="20" id="QIg-5x-WhT"/>
+                                                <constraint firstItem="UN7-cA-HhB" firstAttribute="leading" secondItem="W4a-SV-nW0" secondAttribute="leading" constant="20" id="fKJ-Ay-qFb"/>
+                                                <constraint firstItem="UN7-cA-HhB" firstAttribute="centerY" secondItem="W4a-SV-nW0" secondAttribute="centerY" id="qk8-0j-Nlj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="notificationMessage" destination="VLQ-J6-cSq" id="bhx-eR-Pfy"/>
+                                            <outlet property="statusIndicator" destination="r7W-9m-lRL" id="J6m-7c-KVD"/>
+                                            <outlet property="timeLabel" destination="grV-os-VBM" id="fNK-8y-Lfl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PxF-Yc-T0v" id="etD-aE-aBc"/>
+                                    <outlet property="delegate" destination="PxF-Yc-T0v" id="m9K-Wt-mCY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fTO-p4-oZF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gOt-Vb-bfI" firstAttribute="bottom" secondItem="fTO-p4-oZF" secondAttribute="bottom" id="9aM-ko-0fD"/>
+                            <constraint firstItem="gOt-Vb-bfI" firstAttribute="leading" secondItem="fTO-p4-oZF" secondAttribute="leading" id="CzP-gm-Zjf"/>
+                            <constraint firstItem="gOt-Vb-bfI" firstAttribute="top" secondItem="pN6-pX-eFL" secondAttribute="top" constant="40" id="lL1-dB-Qs7"/>
+                            <constraint firstItem="gOt-Vb-bfI" firstAttribute="trailing" secondItem="fTO-p4-oZF" secondAttribute="trailing" id="sl4-uG-6Yc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Notifications" id="Dh4-2P-32V"/>
+                    <connections>
+                        <outlet property="tableView" destination="gOt-Vb-bfI" id="RQo-R3-w9E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="waG-cB-Lo9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1768.1159420289857" y="750"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="K9S-4H-cbZ">
+            <objects>
+                <navigationController storyboardIdentifier="notificationsNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="9jV-SB-bzB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icn_notification" selectedImage="icn_notification_active" id="QfX-l8-JVA"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="phG-OY-Tp1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PxF-Yc-T0v" kind="relationship" relationship="rootViewController" id="kBP-Ae-jN2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Arp-cC-mYT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976.81159420289862" y="750"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="avatar" width="128" height="128"/>
+        <image name="icn_notification" width="30" height="30"/>
+        <image name="icn_notification_active" width="30" height="30"/>
+        <namedColor name="BlueWhite">
+            <color red="0.94509803921568625" green="0.95294117647058818" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MediumGray">
+            <color red="0.58039215686274515" green="0.58039215686274515" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Red">
+            <color red="1" green="0.22745098039215686" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

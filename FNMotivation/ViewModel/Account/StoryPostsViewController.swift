@@ -11,7 +11,7 @@ import XLPagerTabStrip
 
 class StoryPostsViewController: UIViewController, IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(stringLiteral: "Story Posts")
+        return IndicatorInfo(stringLiteral: "STORY POSTS")
     }
     override func viewDidLoad() {
         super.viewDidLoad()

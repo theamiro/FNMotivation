@@ -21,7 +21,7 @@ class AddArticleViewController: FNAlternateViewController {
     }
 
     @IBAction func selectCommunitySelected(_ sender: Any) {
-        guard let selectCommunityViewController = storyboard?.instantiateViewController(identifier: "selectCommunityViewController") as? SelectCommunityViewController else {
+        guard let selectCommunityViewController = Storyboards.communitiesStoryboard.instantiateViewController(identifier: "selectCommunityViewController") as? SelectCommunityViewController else {
             return
         }
         selectCommunityViewController.delegate = self

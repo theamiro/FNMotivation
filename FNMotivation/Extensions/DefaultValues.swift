@@ -12,7 +12,12 @@ public let defaultsHolder = UserDefaults.standard
 
 class DefaultValues {
     static let fullname = "USER_FULLNAME"
+    static let username = "USERNAME"
+    static let email = "USER_EMAIL"
     static let tokenKey = "USER_TOKEN"
+    static let avatar = "USER_AVATAR"
+    static let deviceToken = "DEVICE_TOKEN"
+    
     static let authNotificationKey = "authNotificationKey"
     static let logoutNotificationKey = "logoutNotificationKey"
     static let signUpNotificationKey = "signUpNotificationKey"

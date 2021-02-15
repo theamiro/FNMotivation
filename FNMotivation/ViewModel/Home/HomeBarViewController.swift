@@ -12,8 +12,8 @@ import XLPagerTabStrip
 class HomeBarViewController: ButtonBarPagerTabStripViewController {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let storiesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "storiesViewController")
-        let articlesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "articlesViewController")
+        let storiesViewController = Storyboards.storiesStoryboard.instantiateViewController(withIdentifier: "storiesViewController")
+        let articlesViewController = Storyboards.articlesStoryboard.instantiateViewController(withIdentifier: "articlesViewController")
         
         return [storiesViewController, articlesViewController]
     }
@@ -25,7 +25,7 @@ class HomeBarViewController: ButtonBarPagerTabStripViewController {
         self.settings.style.buttonBarItemBackgroundColor = UIColor(named: "BrilliantWhite")!
         
         self.settings.style.selectedBarBackgroundColor = UIColor(named: "DarkBlue")!
-        self.settings.style.buttonBarItemFont = UIFont(name: "Futura", size: 13.0)!
+        self.settings.style.buttonBarItemFont = UIFont(name: "Futura Medium", size: 13.0)!
         
         self.settings.style.buttonBarItemTitleColor = UIColor(named: "DarkGray")!
         containerView.isScrollEnabled = false

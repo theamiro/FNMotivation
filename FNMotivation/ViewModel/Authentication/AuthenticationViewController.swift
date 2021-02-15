@@ -91,6 +91,7 @@ extension AuthenticationViewController: ASAuthorizationControllerDelegate {
                             AlertsController().generateAlert(withError: "Error getting Apple Sign in Credentials")
                             return
                 }
+                print(email)
                 
                 AuthenticationManager().performThirdPartyRegistration(provider: .apple, email: email, userID: userIdentifier, fullName: fullName, token: token, avatar: "", deviceID: "", deviceToken: "", fcmToken: "") { (state, message) in
                     if state {
@@ -99,7 +100,6 @@ extension AuthenticationViewController: ASAuthorizationControllerDelegate {
                         
                         let authNotification = Notification.Name(DefaultValues.authNotificationKey)
                         NotificationCenter.default.post(name: authNotification, object: nil, userInfo: ["token": token])
-                        self.loginDelegate?.loginSuccessful()
                     } else {
                         AlertsController().generateAlert(withError: message)
                     }

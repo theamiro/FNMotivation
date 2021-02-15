@@ -134,8 +134,7 @@ extension ArticlesViewController: ArticleCollectionViewFunctionsDelegate {
     }
     
     func followAuthor(cell: ArticleCollectionViewCell) {
-        let authenticationViewController = UIStoryboard(name: "Main", bundle:
-            Bundle.main).instantiateViewController(withIdentifier:
+        let authenticationViewController = Storyboards.authStoryboard.instantiateViewController(withIdentifier:
                 "authenticationViewController") as! AuthenticationViewController
         authenticationViewController.modalPresentationStyle = .formSheet
         self.present(authenticationViewController, animated: true, completion: nil)
@@ -163,7 +162,6 @@ extension ArticlesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
         return image
     }
     
-    // Add a title to your empty data set
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let text = "Sorry, no stories at this time."
         let attribs = [
@@ -174,7 +172,6 @@ extension ArticlesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
         return NSAttributedString(string: text, attributes: attribs)
     }
     
-    // Add a description to your empty data set
     func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let text = "It's either us or you. Can't figure it out!"
         
@@ -201,7 +198,6 @@ extension ArticlesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate
         makeCall()
     }
     
-    // Set the background color of your empty data set
     func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
         return UIColor.systemBackground
     }

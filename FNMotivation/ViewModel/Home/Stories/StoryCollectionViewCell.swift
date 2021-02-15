@@ -9,9 +9,9 @@
 import UIKit
 
 protocol StoryCollectionViewFunctionsDelegate {
-    func followAuthor(cell: StoryCollectionViewCell)
+    func followAuthor(indexPath: IndexPath?)
     
-    func shareStory(cell: StoryCollectionViewCell)
+    func shareStory(indexPath: IndexPath?)
     
     func postComment(indexPath: IndexPath?)
     
@@ -48,13 +48,13 @@ class StoryCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func followAuthor(_ sender: Any) {
-        delegate?.followAuthor(cell: self)
+        delegate?.followAuthor(indexPath: selectedAtIndex)
         followState = !followState
         configureFollowButton()
     }
     
     @IBAction func shareStory(_ sender: Any) {
-        delegate?.shareStory(cell: self)
+        delegate?.shareStory(indexPath: selectedAtIndex)
     }
     
     @objc
@@ -62,8 +62,7 @@ class StoryCollectionViewCell: UICollectionViewCell {
         if AuthenticationManager().currentSessionIsActive() {
             delegate?.postComment(indexPath: selectedAtIndex)
         } else {
-            let authenticationViewController = UIStoryboard(name: "Main", bundle:
-                Bundle.main).instantiateViewController(withIdentifier:
+            let authenticationViewController = Storyboards.authStoryboard.instantiateViewController(withIdentifier:
                     "authenticationViewController") as! AuthenticationViewController
             authenticationViewController.modalPresentationStyle = .formSheet
             self.parentContainerViewController()!.present(authenticationViewController, animated: true, completion: nil)
@@ -83,8 +82,7 @@ class StoryCollectionViewCell: UICollectionViewCell {
                 }
             }
         } else {
-            let authenticationViewController = UIStoryboard(name: "Main", bundle:
-                Bundle.main).instantiateViewController(withIdentifier:
+            let authenticationViewController = Storyboards.authStoryboard.instantiateViewController(withIdentifier:
                     "authenticationViewController") as! AuthenticationViewController
             authenticationViewController.modalPresentationStyle = .formSheet
             self.parentContainerViewController()!.present(authenticationViewController, animated: true, completion: nil)
@@ -92,21 +90,29 @@ class StoryCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureFollowButton() {
-        let generator = UISelectionFeedbackGenerator()
-        generator.selectionChanged()
-        if self.followState{
-            followButton.setTitle("Unfollow", for: .normal)
-            followButton.backgroundColor = .clear
-            followButton.layer.borderWidth = 1.5
-            followButton.tintColor = UIColor(named: "Orange")
-            followButton.setTitleColor(UIColor(named: "Orange"), for: .normal)
-            followButton.layer.borderColor = UIColor(named: "Orange")?.cgColor
+        if AuthenticationManager().currentSessionIsActive() {
+            delegate?.followAuthor(indexPath: selectedAtIndex)
+            let generator = UISelectionFeedbackGenerator()
+            generator.selectionChanged()
+            if self.followState{
+                followButton.setTitle("Unfollow", for: .normal)
+                followButton.backgroundColor = .clear
+                followButton.layer.borderWidth = 1.5
+                followButton.tintColor = UIColor(named: "Orange")
+                followButton.setTitleColor(UIColor(named: "Orange"), for: .normal)
+                followButton.layer.borderColor = UIColor(named: "Orange")?.cgColor
+            } else {
+                followButton.setTitle("Follow", for: .normal)
+                followButton.setTitleColor(.white, for: .normal)
+                followButton.backgroundColor = UIColor(named: "Orange")
+                followButton.tintColor = .white
+                followButton.layer.borderWidth = 0
+            }
         } else {
-            followButton.setTitle("Follow", for: .normal)
-            followButton.setTitleColor(.white, for: .normal)
-            followButton.backgroundColor = UIColor(named: "Orange")
-            followButton.tintColor = .white
-            followButton.layer.borderWidth = 0
+            let authenticationViewController = Storyboards.authStoryboard.instantiateViewController(withIdentifier:
+                    "authenticationViewController") as! AuthenticationViewController
+            authenticationViewController.modalPresentationStyle = .formSheet
+            self.parentContainerViewController()!.present(authenticationViewController, animated: true, completion: nil)
         }
     }
 }
