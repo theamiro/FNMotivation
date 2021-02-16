@@ -37,15 +37,15 @@ The vars and constants are named as per the specific action or object e.g userna
 The UI is accurate as per spec, broken down into each storyboard named appropriately. Uses a mix of TableViews and Xibs to achieve the complex UI.
 
 ## Known Issues
-JWT Token doesn't return all necessary data - missing number of followers and follows - The API also misses those.\
-Notifications are still static - no endpoint\
-Profile page also has partially static data, no endpoints or filters from the /notifications endpoint\
-Google Sign in returns an error in the API - all correct data is sent but returns an error - the googleToken is too long\
-Publishing stories always fails despite correct data being sent\
-Getting Articles fails - request returns a 400-500 error\
-Getting communities fails - the endpoint was changed to require auth (not as per spec)\
-Story Likes button si halfway implemented, remaining to plug into the endpoint\
-Share buttons exists but with static content as API response doesn't return a web url to the post\
-Form Validation is implemented just not attached\
+- JWT Token doesn't return all necessary data - missing number of followers and follows - The API also misses those.\
+- Notifications are still static - no endpoint\
+- Profile page also has partially static data, no endpoints or filters from the /notifications endpoint\
+- Google Sign in returns an error in the API - all correct data is sent but returns an error - the googleToken is too long\
+- Publishing stories always fails despite correct data being sent\
+- Getting Articles fails - request returns a 400-500 error\
+- Getting communities fails - the endpoint was changed to require auth (not as per spec)\
+- Story Likes button si halfway implemented, remaining to plug into the endpoint\
+- Share buttons exists but with static content as API response doesn't return a web url to the post\
+- Form Validation is implemented just not attached\
 
 
